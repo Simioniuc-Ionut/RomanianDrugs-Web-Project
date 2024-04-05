@@ -1,5 +1,5 @@
 <?php
-
+    
 ?>
 
 <html lang="en">
@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AddDrug</title>
     <link rel="stylesheet" href="styleAdd.css">
+
 </head>
 <body>
 <div class="container">
