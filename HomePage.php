@@ -1,5 +1,5 @@
 <?php
-require_once "NavBar.php";
+    require_once "NavBar.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ require_once "NavBar.php";
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <nav class="navbar">
     <div class="navbar__links">
         <a href="HomePage.php" class="navbar__link">Home</a>
