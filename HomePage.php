@@ -19,16 +19,16 @@
 <div class="container">
     <div class="content">
         <?php
-        $sql = "SELECT name, image FROM     drugstable";
+        $sql = "SELECT id,name, image FROM  drugstable";
         $result = $dbConnection->query($sql);
 
         if ($result->rowCount() > 0) {
 
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                echo '<a href="element-pagin.php" class="box__link">';
+                echo '<a href="element-pagin.php?id=' . $row["id"] . '" class="box__link">';
                 echo '<div class="box">';
-                echo '<text class="box__text">' . $row["name"] . '</text>'; // Changed from "nume" to "name"
-                echo '<img src="' . $row["image"] . '" class="box__img">'; // Changed from "cale_imagine" to "image"
+                echo '<text class="box__text">' . $row["name"] . '</text>';
+                echo '<img src="' . $row["image"] . '" class="box__img">';
                 echo '</div>';
                 echo '</a>';
             }
