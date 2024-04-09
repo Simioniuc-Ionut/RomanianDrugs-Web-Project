@@ -107,4 +107,32 @@
   object-fit: cover;
 }
 
+.container_item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding-top: 100px;
+}
+
+.container_item img {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+}
+
+.container_item .details {
+  flex-grow: 1;
+}
+
+.details h2 {
+  margin: 0;
+  color: #333;
+}
+
+.details p {
+  margin: 5px 0;
+  color: #666;
+}
+
 /*# sourceMappingURL=style.css.map */
