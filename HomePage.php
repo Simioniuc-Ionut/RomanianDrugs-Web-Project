@@ -19,7 +19,7 @@
 <div class="container">
     <div class="content">
         <?php
-        $sql = "SELECT name, image FROM drugstable";
+        $sql = "SELECT name, image FROM     drugstable";
         $result = $dbConnection->query($sql);
 
         if ($result->rowCount() > 0) {
