@@ -1,6 +1,7 @@
 <?php
 ?>
 
+
 <nav class="navbar">
     <div>
         <a href="#home">Home</a>

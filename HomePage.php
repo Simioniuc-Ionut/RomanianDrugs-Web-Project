@@ -1,5 +1,9 @@
 <?php
-    require_once "NavBar.php";
+
+    require_once "db_connect.php";
+    global $dbConnection;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -8,45 +12,30 @@
     <meta charset="UTF-8">
     <title>Romanina Drug Explorer</title>
     <link rel="stylesheet" href="style.css">
+    <?php include "NavBar.php"; ?>
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="navbar__links">
-        <a href="HomePage.php" class="navbar__link">Home</a>
-        <a href="#news" class="navbar__link">Campaigns</a>
-        <a href="#contact" class="navbar__link">Contact Us</a>
-        <a href="#about" class="navbar__link">About</a>
-    </div>
-    <div class="navbar__title">
-        Romanina Drug Explorer
-    </div>
-</nav>
 <div class="container">
     <div class="content">
-        <a href="element-pagin.php" class="box__link">
-            <div class="box">
-             aaa
-             <text class="box__text"> bbbbc </text>
-             <img src="imgtest.jpg" class="box__img">
-            </div>
-        </a>
-        <div class="box">sal</div>
-        <div class="box">cf</div>
-        <div class="box">aaa</div>
-        <div class="box">sal</div>
-        <div class="box">cf</div>
-        <div class="box">sal</div>
-        <div class="box">cf</div>
-        <div class="box">aaa</div>
-        <div class="box">sal</div>
-        <div class="box">cf</div>
-        <div class="box">sal</div>
-        <div class="box">cf</div>
-        <div class="box">aaa</div>
-        <div class="box">sal</div>
-        <div class="box">cf</div>
-    </div>
+        <?php
+        $sql = "SELECT name, image FROM drugstable";
+        $result = $dbConnection->query($sql);
+
+        if ($result->rowCount() > 0) {
+
+            while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                echo '<a href="element-pagin.php" class="box__link">';
+                echo '<div class="box">';
+                echo '<text class="box__text">' . $row["name"] . '</text>'; // Changed from "nume" to "name"
+                echo '<img src="' . $row["image"] . '" class="box__img">'; // Changed from "cale_imagine" to "image"
+                echo '</div>';
+                echo '</a>';
+            }
+        } else {
+            echo "Nu sunt rezultate în baza de date.";
+        }
+        ?>
 </div>
 <div id="contact-us">
 
