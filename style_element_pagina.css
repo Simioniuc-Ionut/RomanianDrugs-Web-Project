@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container_item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: calc(3% + 90px);
+  margin-top: calc(3% + 90px);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-image {
+  width: 300px;
+  height: auto;
+}
+
+.details {
+  max-width: 600px;
+}
+
+/*# sourceMappingURL=style_element_pagina.css.map */

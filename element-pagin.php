@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Romanina Drug Explorer</title>
     <link rel="stylesheet" href="style.css">
-    <?php include 'NavBar.php'; ?>
+    <?php include "NavBar.php"; ?>
 </head>
 <body>
 
