@@ -70,29 +70,40 @@ $background-color-header: #272727;
     padding: 10px 14px;
   }
 }
-@media (max-width: 768px){
-  .navbar .toggler-icon{
+@media (max-width: 768px) {
+  .navbar .toggler-icon {
     display: block;
   }
 
-  .navbar .navbar__link {
-    display: none;
-    width: 100%; /* Asigură-te că linkurile se întind pe toată lățimea containerului */
-    text-align: center; /* Centrează textul linkurilor */
-  }
-
-  /* Afișează linkurile atunci când se face clic pe butonul toggler */
-  #toggler:checked ~ .navbar .navbar__link{
-    display: block;
-  }
-
-  /* Adaugă un mic container sub navbar pentru linkuri */
-  #toggler:checked ~ .navbar .navbar__links {
+  .navbar__links {
     position: absolute;
-    width: 100%;
+    top: 100%;
+    left: 0;
+    right: 0;
     background: #7a766b;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scaleY(0); /* Inițial ascuns */
+    transform-origin: top;
+    transition: transform 0.3s ease; /* Adăugăm o tranziție pentru efectul de deschidere/închidere */
+  }
+
+  .navbar #toggler:checked ~ .navbar__links {
+    transform: scaleY(1); /* Afișăm meniul când toggler-ul este activat */
+  }
+
+  .navbar__links .navbar__link {
+    margin: 1.3rem;
+    padding: 1.3rem;
+    border-radius: 25px;
+    background: #1a310f; /* Alegeți culoarea dorită */
+    border-top: .1rem solid rgba(0, 0, 0, .1);
   }
 }
+
 
 @media (max-width: 450px){
   html{font-size: 55%}
@@ -168,3 +179,4 @@ $background-color-header: #272727;
   width: 50vw;
   object-fit: cover;
 }
+
