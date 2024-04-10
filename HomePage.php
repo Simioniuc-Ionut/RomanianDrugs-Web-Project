@@ -39,7 +39,9 @@
 </div>
 <div id="contact-us">
 
+
 </div>
 
+    <?php include "footer.php";?>
 </body>
 </html>
