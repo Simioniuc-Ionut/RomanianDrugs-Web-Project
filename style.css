@@ -1,11 +1,8 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .navbar {
@@ -70,42 +67,36 @@
     padding: 10px 14px;
   }
 }
-/*nu functioneaza*/
 @media (max-width: 768px) {
   .navbar .toggler-icon {
     display: block;
   }
-
   .navbar__links {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background: #7a766b;
-    border-top: .1rem solid rgba(0, 0, 0, .1);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: scaleY(0);
+    transform: scaleY(0); /* Inițial ascuns */
     transform-origin: top;
-    transition: transform 0.3s ease;
-    
+    transition: transform 0.3s ease; /* Adăugăm o tranziție pentru efectul de deschidere/închidere */
   }
-
-  .navbar #toggler:checked + .toggler-icon ~ .navbar__links {
-    transform: scaleY(1);
+  .navbar #toggler:checked ~ .navbar__links {
+    transform: scaleY(1); /* Afișăm meniul când toggler-ul este activat */
   }
-
   .navbar__links .navbar__link {
     margin: 1.3rem;
     padding: 1.3rem;
     border-radius: 25px;
-    background: #1a310f;
-    border-top: .1rem solid rgba(0, 0, 0, .1);
+    background: #1a310f; /* Alegeți culoarea dorită */
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
   }
 }
-
 @media (max-width: 450px) {
   html {
     font-size: 55%;
@@ -178,8 +169,8 @@
   width: 50vw;
   object-fit: cover;
 }
-<<<<<<< Updated upstream
-=======
+
+/*partea de footer*/
 .container_item {
   display: flex;
   align-items: center;
@@ -384,6 +375,5 @@
 .footer form button[type="submit"]:hover {
   background-color: #4cae4c;
 }
-
 
 /*# sourceMappingURL=style.css.map */

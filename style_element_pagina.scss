@@ -6,22 +6,44 @@ body {
 }
 
 .container_item {
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-left: 40px;
+  margin-right: 40px;
+
+
   margin-bottom: calc(3% + 90px);
   margin-top: calc(3% + 90px);
 
-  padding: 20px;
+  padding: 40hv;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.image_sub_container{
+
+  justify-content: space-around;
+
+}
 
 .item-image {
-  width: 300px;
-  height: auto;
+   /* Spațiul de jos între imagine și detaliile elementului */
+}
+.item-description {
+  font-size: 16px; /* Mărimea fontului pentru descriere */
+  color: #333; /* Culoarea textului pentru descriere */
+
 }
 
 .details {
   max-width: 600px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+.item-name {
+  order: -1;
 }
