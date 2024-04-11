@@ -13,9 +13,10 @@ body {
   align-items: center;
   margin-left: 40px;
   margin-right: 40px;
+  border-radius: 25px;
   margin-bottom: calc(3% + 90px);
   margin-top: calc(3% + 90px);
-  padding: 40hv;
+  padding: 4vh;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -26,6 +27,7 @@ body {
 
 .item-image {
   /* Spațiul de jos între imagine și detaliile elementului */
+  margin-bottom: 100px;
 }
 
 .item-description {
@@ -38,10 +40,34 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .item-name {
   order: -1;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.text-button {
+  background-color: #1A310F; /* Schimbă culoarea de fundal a butonului */
+  color: white; /* Schimbă culoarea textului butonului */
+  border: none;
+  border-radius: 25px; /* Face colțurile mai rotunde */
+  padding: 15px 20px; /* Adaugă spațiu de sus și de jos și spațiu la stânga și la dreapta */
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+}
+.text-button:hover {
+  background-color: #70bad9; /* Schimbă culoarea de fundal a butonului la hover */
 }
 
 /*# sourceMappingURL=style_element_pagina.css.map */

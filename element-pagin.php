@@ -27,7 +27,8 @@ if(isset($_GET['id'])) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if($row) {
-        echo '<div class="container_item ' . $row["type"] . '">';
+      //  echo '<div class="container_item" >' . $row["type"] . '">';
+        echo  '<div class="container_item" >';
         echo '<div class="item-image" >';
         echo '<h2 class="item-name">' . $row["name"] . '</h2>';
         echo '<img  src="' . $row["image"] . '" alt="' . $row["name"] . '">';
@@ -35,6 +36,11 @@ if(isset($_GET['id'])) {
         echo '<div class="details" >';
         echo '<p><strong>Type:</strong> ' . $row["type"] . '</p>';
         echo '<p class="item-description"><strong>Description:</strong> ' . $row["description"] . '</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="center">';
+        echo '<div class="button-generate">';
+        echo '<button class="text-button">Generate</button>';
         echo '</div>';
         echo '</div>';
     }
