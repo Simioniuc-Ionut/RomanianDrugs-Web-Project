@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>Romanina Drug Explorer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_element_pagina.css">
     <?php include "NavBar.php"; ?>
 </head>
 <body>
@@ -27,10 +28,12 @@ if(isset($_GET['id'])) {
 
     if($row) {
         echo '<div class="container_item ' . $row["type"] . '">';
-        echo '<img class="item-image" src="' . $row["image"] . '" alt="' . $row["name"] . '">';
-        echo '<div class="details">';
+        echo '<div class="item-image" >';
         echo '<h2 class="item-name">' . $row["name"] . '</h2>';
-        echo '<p class="item-type"><strong>Type:</strong> ' . $row["type"] . '</p>';
+        echo '<img  src="' . $row["image"] . '" alt="' . $row["name"] . '">';
+        echo '</div>';
+        echo '<div class="details" >';
+        echo '<p><strong>Type:</strong> ' . $row["type"] . '</p>';
         echo '<p class="item-description"><strong>Description:</strong> ' . $row["description"] . '</p>';
         echo '</div>';
         echo '</div>';
