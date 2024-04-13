@@ -273,5 +273,95 @@
 }
 
 
+#contactForm {
+  margin-top:200px;
+  height: 400px;
+  width: 70%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#contactForm h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#contactForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+#contactForm input[type="text"]:focus,
+#contactForm input[type="email"]:focus,
+#contactForm textarea:focus {
+  border-color: #1A310F;
+  outline: none;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+#contactForm button[type="submit"] {
+  padding: 12px 20px;
+  background-color: #167707;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contactForm button[type="submit"]:hover {
+  background-color: #0C1A07;
+}
+
+.campaign {
+  margin-top: 100px;
+  margin-left: 40px;
+}
+.campaign-title {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.campaign-description,
+.campaign-section-description {
+  color: #666;
+  line-height: 1.6em;
+}
+
+.campaign-section-title {
+  color: #333;
+  font-size: 1.5em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.campaign-list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

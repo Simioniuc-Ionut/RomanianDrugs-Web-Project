@@ -21,7 +21,7 @@
                 <p>With a focus on user experience, RoDX offers a variety of visualization options, with at least three different styles available for export in PNG and SVG formats. Dive into the intricate world of drug statistics with RoDX and gain valuable insights into the landscape of substance abuse prevention.</p>
             </div>
             <div class="data">
-                <a href="#" class="hire">Help</a>
+                <a href="contact_us.php" class="hire">Help</a>
             </div>
         </div>
     </div>
