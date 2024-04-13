@@ -70,4 +70,66 @@ body {
   background-color: #70bad9; /* Schimbă culoarea de fundal a butonului la hover */
 }
 
+/*partea de grafice*/
+.graficLinie {
+  width: 100%;
+  height: 100%;
+}
+
+.grafic-container {
+  width: 70%; /* Lățime mai mare pentru a fi mai vizibil */
+  height: 40%; /* Înălțime mai mare pentru a fi mai vizibil */
+  border: 2px solid rgb(75, 192, 192);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(75, 192, 192, 0.5);
+  margin: 0 auto; /* Aliniază pe centru */
+}
+
+.slider-container {
+  width: 80%;
+  margin: 50px auto;
+  position: relative; /* Asigură poziționarea corectă a markerelor de ani */
+}
+
+.year-markers {
+  position: absolute;
+  top: -30px; /* Poziția markerelor deasupra butonului */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.year-marker {
+  font-size: 12px;
+  color: #555; /* Culoare pentru anii deasupra butonului */
+}
+
+.slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 30px; /* Crește înălțimea butonului pentru a face loc markerelor deasupra */
+  background: #f0f0f0; /* Culore buton */
+  outline: none;
+  border-radius: 15px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px; /* Lățimea și înălțimea butonului */
+  height: 30px;
+  background: rgb(75, 192, 192); /* Culore buton */
+  cursor: pointer;
+  border-radius: 50%; /* Forma butonului */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Umbra butonului */
+}
+
+#selectedYear {
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
 /*# sourceMappingURL=style_element_pagina.css.map */
