@@ -269,6 +269,9 @@
                     <ul>
                    <li>Aceasta pagina prezinta o descriere generala a produsului web.
                    </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="about-page.png"
+                                                                           width=800>
+                        </li>
                     </ul>
                 </li>
                  <li id="help-page"><b> Pagina de ajutor</b></li>
