@@ -82,18 +82,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: scaleY(0); /* Inițial ascuns */
+    transform: scaleY(0);
     transform-origin: top;
-    transition: transform 0.3s ease; /* Adăugăm o tranziție pentru efectul de deschidere/închidere */
+    transition: transform 0.3s ease;
   }
   .navbar #toggler:checked ~ .navbar__links {
-    transform: scaleY(1); /* Afișăm meniul când toggler-ul este activat */
+    transform: scaleY(1); /* afisez meniul cand toggler-ul este activat */
   }
   .navbar__links .navbar__link {
     margin: 1.3rem;
     padding: 1.3rem;
     border-radius: 25px;
-    background: #1a310f; /* Alegeți culoarea dorită */
+    background: #1a310f;
     border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
   }
 }
