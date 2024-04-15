@@ -12,7 +12,6 @@
     <meta charset="UTF-8">
     <title>Romanina Drug Explorer</title>
     <link rel="stylesheet" href="style.css">
-<!--    <link rel="stylesheet" href="style_navbar.css">-->
     <?php include "NavBar.php"; ?>
 </head>
 <body>

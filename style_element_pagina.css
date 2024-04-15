@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -26,13 +25,13 @@ body {
 }
 
 .item-image {
-  /* Spațiul de jos între imagine și detaliile elementului */
+  /* spatiul de jos dintre imagine si detaliile elementului */
   margin-bottom: 100px;
 }
 
 .item-description {
-  font-size: 16px; /* Mărimea fontului pentru descriere */
-  color: #333; /* Culoarea textului pentru descriere */
+  font-size: 16px; /* marimea fontului pentru descriere */
+  color: #333; /*culoarea textului pentru descriere */
 }
 
 .details {
@@ -55,11 +54,11 @@ body {
 }
 
 .text-button {
-  background-color: #1A310F; /* Schimbă culoarea de fundal a butonului */
-  color: white; /* Schimbă culoarea textului butonului */
+  background-color: #1A310F;
+  color: white;
   border: none;
-  border-radius: 25px; /* Face colțurile mai rotunde */
-  padding: 15px 20px; /* Adaugă spațiu de sus și de jos și spațiu la stânga și la dreapta */
+  border-radius: 25px;
+  padding: 15px 20px;
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 25px;
@@ -67,7 +66,7 @@ body {
   margin-bottom: 25px;
 }
 .text-button:hover {
-  background-color: #70bad9; /* Schimbă culoarea de fundal a butonului la hover */
+  background-color: #70bad9;
 }
 
 /*partea de grafice*/
@@ -77,23 +76,23 @@ body {
 }
 
 .grafic-container {
-  width: 70%; /* Lățime mai mare pentru a fi mai vizibil */
-  height: 40%; /* Înălțime mai mare pentru a fi mai vizibil */
+  width: 70%;
+  height: 40%;
   border: 2px solid rgb(75, 192, 192);
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(75, 192, 192, 0.5);
-  margin: 0 auto; /* Aliniază pe centru */
+  margin: 0 auto;
 }
 
 .slider-container {
   width: 80%;
   margin: 50px auto;
-  position: relative; /* Asigură poziționarea corectă a markerelor de ani */
+  position: relative;
 }
 
 .year-markers {
   position: absolute;
-  top: -30px; /* Poziția markerelor deasupra butonului */
+  top: -30px;
   left: 0;
   width: 100%;
   display: flex;
@@ -102,15 +101,15 @@ body {
 
 .year-marker {
   font-size: 12px;
-  color: #555; /* Culoare pentru anii deasupra butonului */
+  color: #555;
 }
 
 .slider {
   width: 100%;
   -webkit-appearance: none;
   appearance: none;
-  height: 30px; /* Crește înălțimea butonului pentru a face loc markerelor deasupra */
-  background: #f0f0f0; /* Culore buton */
+  height: 30px;
+  background: #f0f0f0;
   outline: none;
   border-radius: 15px;
 }
@@ -118,12 +117,12 @@ body {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 30px; /* Lățimea și înălțimea butonului */
+  width: 30px;
   height: 30px;
-  background: rgb(75, 192, 192); /* Culore buton */
+  background: rgb(75, 192, 192);
   cursor: pointer;
-  border-radius: 50%; /* Forma butonului */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Umbra butonului */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #selectedYear {
