@@ -32,7 +32,9 @@ if(isset($_GET['id'])) {
         echo  '<div class="container_item" >';
         echo '<div class="item-image" >';
         echo '<h2 class="item-name">' . $row["name"] . '</h2>';
-        echo '<img  src="' . $row["image"] . '" alt="' . $row["name"] . '">';
+        echo '<div class="box_image_element" >';
+        echo '<img  src="'.'images/' . $row["image"] . '" alt="' . $row["name"] . '">';
+        echo '</div>';
         echo '</div>';
         echo '<div class="details" >';
         echo '<p><strong>Type:</strong> ' . $row["type"] . '</p>';
