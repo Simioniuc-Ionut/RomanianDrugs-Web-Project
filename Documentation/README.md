@@ -111,7 +111,7 @@
             </span>
                     <ul>
                         <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-                            <a href="mailto:hutanstefan1@gmail.com" property="schema:email">hutanstefan1@gmail.com</a>
+                            <a href="mailto:hutanstefan@gmail.com" property="schema:email">hutanstefan@gmail.com</a>
                         </li>
                     </ul>
             </ul>
