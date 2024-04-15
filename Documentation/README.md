@@ -277,8 +277,11 @@
                  <li id="help-page"><b> Pagina de ajutor</b></li>
                 <li style="list-style: none">
                     <ul>
-                    <li>Aceasta pagina prezinta o documentatie despre functionalitatiile paginii.
+                    <li>Aceasta pagina permite utilizatorului completarea unui form pentru a primi ajutor.
                    </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="contact_us.png"
+                                                                           width=800>
+                        </li>
                     </ul>
                 </li> 
                  <li id="element-page"><b> Pagina specifica fiecarui drog</b></li>
@@ -298,9 +301,15 @@
                         </li>
                     </ul>
                 </li> 
-                 <li id="campings-page"><b> Pagina specifica campaniilor anti-drog</b></li>
-                <li style="list-style: none">
+                <ul>
+                 <li id="campings-page"><b> Pagina specifica campaniilor anti-drog</b>
+                 </li>
+                <li style="list-style: none">Prezinta pagina cu campanii ale site-ului.
                  </li> 
+                 <li class="pictures" style="list-style: none"><img alt="overview" src="camp.png"
+                                                                           width=800>
+                        </li>
+                 </ul>
                  <li id="admin"><b>Pagina Administratorului</b></li>
                 <li style="list-style: none">
                     <ul>
