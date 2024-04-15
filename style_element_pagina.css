@@ -132,4 +132,11 @@ body {
   text-align: center;
 }
 
+.box_image_element{
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  max-width: 100%;
+}
+
 /*# sourceMappingURL=style_element_pagina.css.map */
