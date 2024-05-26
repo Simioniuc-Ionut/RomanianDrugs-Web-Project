@@ -60,14 +60,20 @@ if(isset($_GET['id'])) {
         var graficLinie = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai'],
+                labels: ['Ianuarie', 'Februarie', 'Martie', 'Aprilie', 'Mai', 'Iunie', 'Iulie', 'August', 'Septembrie', 'Octombrie', 'Noiembrie', 'Decembrie'],
                 datasets: [{
-                    label: 'Exemplu de date',
-                    data: [10, 15, 7, 10, 15],
+                    label: 'Consum in anul respectiv',
+                    data: [120, 150, 180, 200, 170, 210, 240, 220, 230, 250, 270, 300],
                     fill: false,
                     borderColor: 'rgb(75, 192, 192)',
                     tension: 0.1
-                }]
+                }, {
+                        label: 'Alt exemplu',
+                        data: [101, 115, 110, 201, 117, 211, 210, 210, 231, 251, 127, 310],
+                        fill: false,
+                        borderColor: 'rgb(192, 12, 12)',
+                        tension: 0.1
+                    }]
             }
         });
     </script>
