@@ -3,7 +3,7 @@
 
     <nav class="navbar">
         <div class="navbar__title">
-            Romanina Drug Explorer
+            Romanian Drug Explorer
         </div>
         <div class="navbar__links">
             <a href="HomePage.php" class="navbar__link">Home</a>
