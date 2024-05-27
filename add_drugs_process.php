@@ -11,7 +11,7 @@
         //stripos ,nu este case sensitive
         global $dbConnection;
 
-        $filename = "/fisiere_date/urgente-medicale-droguri-$year.csv";
+        $filename = "/fisiere_date/urgente_medicale_$year.csv";
 
         // Setez internal encoding pentru UTF-8
         mb_internal_encoding("UTF-8");
@@ -316,9 +316,9 @@
 
     //apelez func
     addUrgenteMedicale(2022);
-    addInfractionalitati(2022);
-    addCapturiDroguri(2022);
-    addCampanii(2022);
+   // addInfractionalitati(2022);
+   // addCapturiDroguri(2022);
+   // addCampanii(2022);
 
     //codul de mai jos este pentru a adauga un nou medicament in baza de date
     $max_id_query = $dbConnection->query("SELECT MAX(id) AS max_id FROM drugstable");
