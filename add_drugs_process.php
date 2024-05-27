@@ -7,12 +7,16 @@
     // urgente-medicale
     function addUrgenteMedicale($year)
     {
+        //strpos ,case sensitive (cauta un substring intr un string)
+        //stripos ,nu este case sensitive
         global $dbConnection;
 
-        $filename = '/fisiere_date/urgente-medicale-droguri-2022.csv';
-        $lineCounter = 0;
+        $filename = "/fisiere_date/urgente-medicale-droguri-$year.csv";
 
-        // deschid fisierul CSV pentru citire
+        // Setez internal encoding pentru UTF-8
+        mb_internal_encoding("UTF-8");
+
+        // Deschid fisierul CSV pentru citire
         $f = fopen($filename, 'r');
         if ($f === false) {
             die('Eroare la deschiderea fisierului ' . $filename);
@@ -24,59 +28,89 @@
         $insert_model = $dbConnection->prepare("INSERT INTO urgente_tip_model (model, canabis, stimulanti, opiacee, nsp, year) VALUES (?, ?, ?, ?, ?, ?)");
         $insert_diagnostic = $dbConnection->prepare("INSERT INTO urgente_tip_diagnostic (diagnostic, canabis, stimulanti, opiacee, nsp, year) VALUES (?, ?, ?, ?, ?, ?)");
 
-        // citesc fiecare rand din fisier
-        while (($row = fgetcsv($f)) !== false) {
-            $lineCounter++;
+        $current_section = '';
 
-            // sar peste primele linii nefolositoare
-            if ($lineCounter <= 6 || $lineCounter == 10 || $lineCounter == 16 || $lineCounter == 22 || $lineCounter == 28) {
+        // Citesc fiecare rand din fisier
+        while (($row = fgetcsv($f)) !== false) {
+            // Convertim fiecare linie la UTF-8 dacă nu este deja
+            $row = array_map(function($field) {
+                return mb_convert_encoding($field, "UTF-8", "auto");
+            }, $row);
+
+            // Detectez sectiunile pe baza cuvintelor cheie din randuri
+            if (stripos($row[0], 'sex') !== false) {
+                $current_section = 'sex';
+                continue;
+            } elseif (stripos($row[0], 'vârstă') !== false) {
+                $current_section = 'varsta';
+                continue;
+            } elseif (stripos($row[0], 'calea de administrare') !== false) {
+                $current_section = 'cale';
+                continue;
+            } elseif (stripos($row[0], 'modelul de consum') !== false) {
+                $current_section = 'model';
+                continue;
+            } elseif (stripos($row[0], 'diagnosticul de urgență') !== false) {
+                $current_section = 'diagnostic';
                 continue;
             }
 
-            // distributia pe tipul drogului si sex
-            if ($lineCounter >= 7 && $lineCounter <= 8) {
-                $sex = $row[0];
-                $canabis = (int) $row[1];
-                $stimulanti = (int) $row[2];
-                $opiacee = (int) $row[3];
-                $nsp = (int) $row[4];
-                $insert_sex->execute([$sex, $canabis, $stimulanti, $opiacee, $nsp, $year]);
-            }
-            // distributia pe tipul drogului si varsta
-            elseif ($lineCounter >= 11 && $lineCounter <= 13) {
-                $varsta = $row[0];
-                $canabis = (int) $row[1];
-                $stimulanti = (int) $row[2];
-                $opiacee = (int) $row[3];
-                $nsp = (int) $row[4];
-                $insert_varsta->execute([$varsta, $canabis, $stimulanti, $opiacee, $nsp, $year]);
-            }
-            // distributia pe tipul drogului si calea de administrare
-            elseif ($lineCounter >= 17 && $lineCounter <= 19) {
-                $cale = $row[0];
-                $canabis = (int) $row[1];
-                $stimulanti = (int) $row[2];
-                $opiacee = (int) $row[3];
-                $nsp = (int) $row[4];
-                $insert_cale->execute([$cale, $canabis, $stimulanti, $opiacee, $nsp, $year]);
-            }
-            // distributia pe tipul drogului si modelul de consum
-            elseif ($lineCounter >= 23 && $lineCounter <= 24) {
-                $model = $row[0];
-                $canabis = (int) $row[1];
-                $stimulanti = (int) $row[2];
-                $opiacee = (int) $row[3];
-                $nsp = (int) $row[4];
-                $insert_model->execute([$model, $canabis, $stimulanti, $opiacee, $nsp, $year]);
-            }
-            // distributia pe tipul drogului si diagnosticul de urgenta
-            elseif ($lineCounter >= 29 && $lineCounter <= 36) {
-                $diagnostic = $row[0];
-                $canabis = (int) $row[1];
-                $stimulanti = (int) $row[2];
-                $opiacee = (int) $row[3];
-                $nsp = (int) $row[4];
-                $insert_diagnostic->execute([$diagnostic, $canabis, $stimulanti, $opiacee, $nsp, $year]);
+            // Procesez datele in functie de sectiunea curenta
+            switch ($current_section) {
+                case 'sex':
+                    if (!empty($row[0]) && !empty($row[1]) && !empty($row[2]) && !empty($row[3]) && !empty($row[4])) {
+                        $sex = $row[0];
+                        $canabis = (int) $row[1];
+                        $stimulanti = (int) $row[2];
+                        $opiacee = (int) $row[3];
+                        $nsp = (int) $row[4];
+                        $insert_sex->execute([$sex, $canabis, $stimulanti, $opiacee, $nsp, $year]);
+                    }
+                    break;
+
+                case 'varsta':
+                    if (!empty($row[0]) && !empty($row[1]) && !empty($row[2]) && !empty($row[3]) && !empty($row[4])) {
+                        $varsta = $row[0];
+                        $canabis = (int) $row[1];
+                        $stimulanti = (int) $row[2];
+                        $opiacee = (int) $row[3];
+                        $nsp = (int) $row[4];
+                        $insert_varsta->execute([$varsta, $canabis, $stimulanti, $opiacee, $nsp, $year]);
+                    }
+                    break;
+
+                case 'cale':
+                    if (!empty($row[0]) && !empty($row[1]) && !empty($row[2]) && !empty($row[3]) && !empty($row[4])) {
+                        $cale = $row[0];
+                        $canabis = (int) $row[1];
+                        $stimulanti = (int) $row[2];
+                        $opiacee = (int) $row[3];
+                        $nsp = (int) $row[4];
+                        $insert_cale->execute([$cale, $canabis, $stimulanti, $opiacee, $nsp, $year]);
+                    }
+                    break;
+
+                case 'model':
+                    if (!empty($row[0]) && !empty($row[1]) && !empty($row[2]) && !empty($row[3]) && !empty($row[4])) {
+                        $model = $row[0];
+                        $canabis = (int) $row[1];
+                        $stimulanti = (int) $row[2];
+                        $opiacee = (int) $row[3];
+                        $nsp = (int) $row[4];
+                        $insert_model->execute([$model, $canabis, $stimulanti, $opiacee, $nsp, $year]);
+                    }
+                    break;
+
+                case 'diagnostic':
+                    if (!empty($row[0]) && !empty($row[1]) && !empty($row[2]) && !empty($row[3]) && !empty($row[4])) {
+                        $diagnostic = $row[0];
+                        $canabis = (int) $row[1];
+                        $stimulanti = (int) $row[2];
+                        $opiacee = (int) $row[3];
+                        $nsp = (int) $row[4];
+                        $insert_diagnostic->execute([$diagnostic, $canabis, $stimulanti, $opiacee, $nsp, $year]);
+                    }
+                    break;
             }
         }
 
@@ -88,8 +122,7 @@
     {
         global $dbConnection;
 
-        $filename = '/fisiere_date/capturi-droguri-2022.csv';
-        $lineCounter = 0;
+        $filename = "/fisiere_date/capturi-droguri-$year.csv";
 
         // deschid fisierul CSV pentru citire
         $f = fopen($filename, 'r');
@@ -97,59 +130,97 @@
             die('Eroare la deschiderea fisierului ' . $filename);
         }
 
+        // setez internal encoding pentru UTF-8
+        mb_internal_encoding("UTF-8");
+
         $insert_statement1 = $dbConnection->prepare("INSERT INTO persoane_cercetate_judecata_condamnate (categorie, numar, year) VALUES (?, ?, ?)");
         $insert_statement2 = $dbConnection->prepare("INSERT INTO persoane_condamnate_incadrarea_juridica (incadrare_juridica, numar, year) VALUES (?, ?, ?)");
         $insert_statement3 = $dbConnection->prepare("INSERT INTO persoane_condamnate_sexe (sex, majore, minore, year) VALUES (?, ?, ?, ?)");
         $insert_statement4 = $dbConnection->prepare("INSERT INTO grupari_infractionale (categorie, numar, year) VALUES (?, ?, ?)");
         $insert_statement5 = $dbConnection->prepare("INSERT INTO pedepse_aplicate (tip_pedeapsa, lege_143_2000, lege_194_2011, year) VALUES (?, ?, ?, ?)");
 
+        $current_section = '';
+
         // citesc fiecare rand din fisier
         while (($row = fgetcsv($f)) !== false) {
-            $lineCounter++;
-            if ($lineCounter >= 6) {
-                // primul bloc de date
-                if ($lineCounter == 6 || $lineCounter == 7 || $lineCounter == 8) {
-                    $categorie = $row[0];
-                    $numar = (int) $row[1];
-                    $insert_statement1->execute([$categorie, $numar, $year]);
-                }
-                // al doilea bloc de date
-                elseif ($lineCounter >= 12 && $lineCounter <= 15) {
-                    $incadrare_juridica = $row[0];
-                    $numar = (int) $row[1];
-                    $insert_statement2->execute([$incadrare_juridica, $numar, $year]);
-                }
-                // al treilea bloc de date
-                elseif ($lineCounter >= 19 && $lineCounter <= 20) {
-                    $sex = $row[0];
-                    $majore = (int) $row[1];
-                    $minore = (int) $row[2];
-                    $insert_statement3->execute([$sex, $majore, $minore, $year]);
-                }
-                // al patrulea bloc de date
-                elseif ($lineCounter == 25 || $lineCounter == 26) {
-                    $categorie = $row[0];
-                    $numar = (int) $row[1];
-                    $insert_statement4->execute([$categorie, $numar, $year]);
-                }
-                // al cincilea bloc de date
-                elseif ($lineCounter >= 31 && $lineCounter <= 35) {
-                    $tip_pedeapsa = $row[0];
-                    $lege_143_2000 = (int) $row[1];
-                    $lege_194_2011 = (int) $row[2];
-                    $insert_statement5->execute([$tip_pedeapsa, $lege_143_2000, $lege_194_2011, $year]);
-                }
+            // Convertim fiecare linie la UTF-8 dacă nu este deja
+            $row = array_map(function($field) {
+                return mb_convert_encoding($field, "UTF-8", "auto");
+            }, $row);
+
+            // detectez sectiunile pe baza continutului randurilor
+            if (mb_strpos($row[0], 'PERSOANE CERCETATE') !== false) {
+                $current_section = 'persoane_cercetate_judecata_condamnate';
+                continue;
+            } elseif (mb_strpos($row[0], 'PERSOANE CONDAMNATE') !== false && mb_strpos($row[0], 'PE SEXE') === false) {
+                $current_section = 'persoane_condamnate_incadrarea_juridica';
+                continue;
+            } elseif (mb_strpos($row[0], 'PE SEXE') !== false) {
+                $current_section = 'persoane_condamnate_sexe';
+                continue;
+            } elseif (mb_strpos($row[0], 'GRUPARILOR INFRACTIONALE') !== false) {
+                $current_section = 'grupari_infractionale';
+                continue;
+            } elseif (mb_strpos($row[0], 'PEDEPSELOR APLICATE') !== false) {
+                $current_section = 'pedepse_aplicate';
+                continue;
+            }
+
+            // procesez datele in functie de sectiunea curenta
+            switch ($current_section) {
+                case 'persoane_cercetate_judecata_condamnate':
+                    if (!empty($row[0]) && !empty($row[1])) {
+                        $categorie = $row[0];
+                        $numar = (int) $row[1];
+                        $insert_statement1->execute([$categorie, $numar, $year]);
+                    }
+                    break;
+
+                case 'persoane_condamnate_incadrarea_juridica':
+                    if (!empty($row[0]) && !empty($row[1])) {
+                        $incadrare_juridica = $row[0];
+                        $numar = (int) $row[1];
+                        $insert_statement2->execute([$incadrare_juridica, $numar, $year]);
+                    }
+                    break;
+
+                case 'persoane_condamnate_sexe':
+                    if (!empty($row[0]) && !empty($row[1]) && !empty($row[2])) {
+                        $sex = $row[0];
+                        $majore = (int) $row[1];
+                        $minore = (int) $row[2];
+                        $insert_statement3->execute([$sex, $majore, $minore, $year]);
+                    }
+                    break;
+
+                case 'grupari_infractionale':
+                    if (!empty($row[0]) && !empty($row[1])) {
+                        $categorie = $row[0];
+                        $numar = (int) $row[1];
+                        $insert_statement4->execute([$categorie, $numar, $year]);
+                    }
+                    break;
+
+                case 'pedepse_aplicate':
+                    if (!empty($row[0]) && !empty($row[1]) && !empty($row[2])) {
+                        $tip_pedeapsa = $row[0];
+                        $lege_143_2000 = (int) $row[1];
+                        $lege_194_2011 = (int) $row[2];
+                        $insert_statement5->execute([$tip_pedeapsa, $lege_143_2000, $lege_194_2011, $year]);
+                    }
+                    break;
             }
         }
 
         fclose($f);
     }
 
+
     // campanii si prevenire
     function addCampanii($year)
     {
         global $dbConnection;
-        $filename = '/fisiere_date/proiecte-si-campanii-2022.csv';
+        $filename = "/fisiere_date/proiecte-si-campanii-$year.csv";
         $lineCounter = 2;
 
         // deschid fisierul CSV pentru citire
@@ -181,7 +252,7 @@
     {
         global $dbConnection;
 
-        $filename = '/fisiere_date/capturi-droguri-2022.csv';
+        $filename = "/fisiere_date/capturi-droguri-$year.csv";
         $lineCounter = 0;
 
         // deschid fisierul CSV pentru citire
