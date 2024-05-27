@@ -41,6 +41,13 @@
 
 
         <button type="submit">Add</button>
+
+    </form>
+    <h2>Upload CSV File</h2>
+    <form action="upload_csv.php" method="post" enctype="multipart/form-data" novalidate>
+        <label for="file">Upload CSV File:</label>
+        <input type="file" id="file" name="file" required>
+        <button type="submit">Upload</button>
     </form>
 </div>
 </body>
