@@ -28,7 +28,7 @@
                 echo '<a href="element-pagin.php?id=' . $row["id"] . '" class="box__link">';
                 echo '<div class="box">';
                 echo '<text class="box__text">' . $row["name"] . '</text>';
-                echo '<img src="'.'images/' . $row["image"] . '" class="box__img">';
+                echo '<img src="'.'imaginiDroguri/' . $row["image"] . '" class="box__img">';
                 echo '</div>';
                 echo '</a>';
             }

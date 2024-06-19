@@ -315,7 +315,7 @@
     }
 
     //apelez func
-    addUrgenteMedicale(2022);
+   // addUrgenteMedicale(2022);
    // addInfractionalitati(2022);
    // addCapturiDroguri(2022);
    // addCampanii(2022);
