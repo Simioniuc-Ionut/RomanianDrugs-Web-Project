@@ -34,6 +34,15 @@ $routes = [
     'update/type' => function() use ($controller) {
         $controller->processRequest('update/type');
     },
+    'get/drugs' => function() use ($controller) { // Noua rută pentru a obține lista de droguri
+        $controller->processRequest('get/drugs');
+    },
+    'delete/drug' => function() use ($controller) { // Noua rută pentru a șterge un drog
+        $controller->processRequest('delete/drug');
+    },
+    'add/drug' => function() use ($controller) {
+        $controller->processRequest('add/drug');
+    },
     // Adăugați aici alte rute...
 ];
 
@@ -47,6 +56,8 @@ if ($method == 'POST') {
         http_response_code(404);
         echo json_encode(["message" => "Route not found"]);
     }
+} else if ($method == 'GET' && isset($routes[$route])) {
+    $routes[$route]();
 } else {
     http_response_code(405);
     echo json_encode(["message" => "Method not allowed"]);

@@ -42,22 +42,35 @@ private DataManager $dataManager;
                 }
                 break;
             case 'update/image':
-                if(isset($_POST['name']) && isset($_FILES['image']))
-                {
+                if (isset($_POST['name']) && isset($_FILES['image'])) {
                     $file = $_FILES['image'];
-                    $uploadDirectory = '..//';
+                    $uploadDirectory = '../imaginiDroguri/';
                     $uploadFile = $uploadDirectory . basename($file['name']);
 
-                    // verificam daca exista deja un fisier cu acelasi nume
-                    if ($this->fileExists($uploadFile)) {
-                        echo json_encode(["error" => "Un fisier cu acelasi nume exista deja."]);
+                    // Verificăm dacă fișierul este valid
+                    $validMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+                    if (!in_array($file['type'], $validMimeTypes)) {
+                        echo json_encode(["error" => "Tip de fișier invalid. Acceptăm doar imagini JPEG, PNG sau GIF."]);
                         return;
                     }
-                    $this->dataManager = new DrugManager($this->dbConnection);
-                    $this->dataManager->updateDrugImage($_POST['name'], $_FILES['image']);
-                }
-                else
-                {
+
+                    // Verificăm dacă există deja un fișier cu același nume
+                    if (file_exists($uploadFile)) {
+                        echo json_encode(["error" => "Un fișier cu același nume există deja."]);
+                        return;
+                    }
+
+                    try {
+                        if (move_uploaded_file($file['tmp_name'], $uploadFile)) {
+                            $this->dataManager = new DrugManager($this->dbConnection);
+                            $this->dataManager->updateDrugImage($_POST['name'], $uploadFile);
+                        } else {
+                            echo json_encode(["error" => "Eroare la încărcarea fișierului."]);
+                        }
+                    } catch (Exception $e) {
+                        echo json_encode(["error" => "Eroare la încărcarea fișierului: " . $e->getMessage()]);
+                    }
+                } else {
                     $this->methodNotAllowed();
                 }
                 break;
@@ -72,7 +85,26 @@ private DataManager $dataManager;
                     $this->methodNotAllowed();
                 }
                 break;
-
+            case 'get/drugs':
+                $this->dataManager = new DrugManager($this->dbConnection);
+                $this->dataManager->getDrugs();
+                break;
+            case 'delete/drug':
+                if (isset($_POST['name'])) {
+                    $this->dataManager = new DrugManager($this->dbConnection);
+                    $this->dataManager->deleteDrug($_POST['name']);
+                } else {
+                    $this->methodNotAllowed();
+                }
+                break;
+            case 'add/drug':
+                if (isset($_POST['name']) && isset($_POST['type']) && isset($_POST['image']) && isset($_POST['description'])) {
+                    $this->dataManager = new DrugManager($this->dbConnection);
+                    $this->dataManager->addDrug($_POST['name'], $_POST['type'], $_POST['image'], $_POST['description']);
+                } else {
+                    echo json_encode(["error" => "Toate câmpurile sunt obligatorii."]);
+                }
+                break;
             // Adăugați aici alte acțiuni...
             default:
                 http_response_code(405);
@@ -126,13 +158,14 @@ private DataManager $dataManager;
                 echo json_encode(["error" => "Numele fisierului nu este valid. Trebuie sa fie de forma tip-fisier-YYYY.csv"]);
             }
         } else {
-            echo json_encode(["error" => "Eroare la incarcarea fisierului."]);
+            echo json_encode(["error" => "Eroare la incarcarea fisierului." ] );
         }
     }
     private function fileExists($filename): bool {
         return file_exists($filename);
     }
-    private function methodNotAllowed() {
+    private function methodNotAllowed(): void
+    {
         http_response_code(405);
         echo json_encode(["message" => "Method not allowed"]);
     }

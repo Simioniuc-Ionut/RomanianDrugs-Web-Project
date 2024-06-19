@@ -4,7 +4,6 @@
     global $dbConnection;
 
     echo "\n fisierul curent este : " . getcwd();
-
     // urgente-medicale
     function addUrgenteMedicale($year)
     {
@@ -12,7 +11,7 @@
         //stripos ,nu este case sensitive
         global $dbConnection;
 
-        $filename = "./fisiere_date/urgente_medicale_$year.csv";
+        $filename = "/fisiere_date/urgente_medicale_$year.csv";
 
         // Setez internal encoding pentru UTF-8
         mb_internal_encoding("UTF-8");
@@ -123,7 +122,7 @@
     {
         global $dbConnection;
 
-        $filename = "./fisiere_date/infractionalitate-$year.csv";
+        $filename = "/fisiere_date/capturi-droguri-$year.csv";
 
         // deschid fisierul CSV pentru citire
         $f = fopen($filename, 'r');
@@ -216,11 +215,12 @@
         fclose($f);
     }
 
+
     // campanii si prevenire
     function addCampanii($year)
     {
         global $dbConnection;
-        $filename = "./fisiere_date/proiecte-si-campanii-$year.csv";
+        $filename = "/fisiere_date/proiecte-si-campanii-$year.csv";
         $lineCounter = 2;
 
         // deschid fisierul CSV pentru citire
@@ -252,7 +252,7 @@
     {
         global $dbConnection;
 
-        $filename = "./fisiere_date/capturi-droguri-$year.csv";
+        $filename = "/fisiere_date/capturi-droguri-$year.csv";
         $lineCounter = 0;
 
         // deschid fisierul CSV pentru citire
@@ -278,14 +278,14 @@
 
                 // inserez si numele drogului daca nu exista
                 if (!verifyIfDrogNameExist($atribut1)) {
-                    $insert_statement2->execute([$atribut1,'','','']);
+                    $insert_statement2->execute([$atribut1]);
                 }
 
                 // obtin id-ul drogului inserat sau existent
                 $drug_id = getIdDrog($atribut1);
 
                 // inserez datele din rand in baza de date droguri_confiscate, folosind drug_id-ul obtinut
-                $insert_statement->execute([$drug_id, $atribut1,$atribut2, $atribut3, $atribut4, $atribut5, $atribut6, $year]);
+                $insert_statement->execute([$drug_id, $atribut2, $atribut3, $atribut4, $atribut5, $atribut6, $year]);
             }
         }
         fclose($f);
@@ -314,10 +314,10 @@
         return $result['id'];
     }
 
-    //apelez functiile de mai jos pentru a adauga datele in baza de date
-    //addUrgenteMedicale(2022);
-    addInfractionalitati(2022);
-    //addCapturiDroguri(2022);
+    //apelez func
+   // addUrgenteMedicale(2022);
+   // addInfractionalitati(2022);
+   // addCapturiDroguri(2022);
    // addCampanii(2022);
 
     //codul de mai jos este pentru a adauga un nou medicament in baza de date
