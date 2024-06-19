@@ -52,12 +52,61 @@ class DrugManager extends DataManager {
 
     //update in admin
     public function updateDrugDescription($drogName,$description) : void{
+        if(!$this->verifyIfDrogNameExist($drogName)){
+            echo json_encode(["error" => "Drug not found."]);
+            return;
+        }
         try {
             $stmt = $this->dbConnection->prepare("UPDATE drugstable SET description = ? WHERE name = ?");
             $stmt->execute([$description, $drogName]);
             echo json_encode(["message" => "Description updated successfully."]);
         } catch (Exception $e) {
             echo json_encode(["error" => "Error updating description: " . $e->getMessage()]);
+        }
+
+    }
+    public function updateDrugName($currentName,$newName) : void{
+        if(!$this->verifyIfDrogNameExist($currentName)){
+            echo json_encode(["error" => "Drug not found."]);
+            return;
+        }
+
+        try {
+            $stmt = $this->dbConnection->prepare("UPDATE drugstable SET name = ? WHERE name = ?");
+            $stmt->execute([$newName, $currentName]);
+            echo json_encode(["message" => "Name updated successfully."]);
+        } catch (Exception $e) {
+            echo json_encode(["error" => "Error updating name: " . $e->getMessage()]);
+        }
+
+    }
+    public function updateDrugType($name,$type) : void{
+        if(!$this->verifyIfDrogNameExist($name)){
+            echo json_encode(["error" => "Drug not found."]);
+            return;
+        }
+
+        try {
+            $stmt = $this->dbConnection->prepare("UPDATE drugstable SET type = ? WHERE name = ?");
+            $stmt->execute([$type, $name]);
+            echo json_encode(["message" => "Type updated successfully."]);
+        } catch (Exception $e) {
+            echo json_encode(["error" => "Error updating type: " . $e->getMessage()]);
+        }
+
+    }
+    public function updateDrugImage($name,$image) : void{
+        if(!$this->verifyIfDrogNameExist($name)){
+            echo json_encode(["error" => "Drug not found."]);
+            return;
+        }
+
+        try {
+            $stmt = $this->dbConnection->prepare("UPDATE drugstable SET image = ? WHERE name = ?");
+            $stmt->execute([$image, $name]);
+            echo json_encode(["message" => "Image updated successfully."]);
+        } catch (Exception $e) {
+            echo json_encode(["error" => "Error updating image: " . $e->getMessage()]);
         }
     }
 

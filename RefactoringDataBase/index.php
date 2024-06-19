@@ -25,6 +25,15 @@ $routes = [
     'update/description' => function() use ($controller) {
         $controller->processRequest('update/description');
     },
+    'update/name' => function() use ($controller) {
+        $controller->processRequest('update/name');
+    },
+    'update/image' => function() use ($controller) {
+        $controller->processRequest('update/image');
+    },
+    'update/type' => function() use ($controller) {
+        $controller->processRequest('update/type');
+    },
     // Adăugați aici alte rute...
 ];
 
