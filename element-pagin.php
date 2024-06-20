@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style_element_pagina.css">
     <?php include "NavBar.php"; ?>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -94,8 +99,33 @@ if(isset($_GET['id'])) {
     echo "Nu s-a specificat niciun id.";
 }
 ?>
-<div id="grafic-container" class="grafic-container">
-    <canvas id="graficLinie" class="graficLinie"></canvas>
+
+<div class="tab-buttons">
+    <button class="tablinks" onclick="openTab(event, 'Graph')">Graph</button>
+    <button class="tablinks" onclick="openTab(event, 'Table')">Table</button>
+</div>
+
+<div id="Graph" class="tabcontent">
+    <div id="grafic-container" class="grafic-container">
+        <canvas id="graficLinie" class="graficLinie"></canvas>
+    </div>
+</div>
+
+<div id="Table" class="tabcontent">
+    <table id="dataTable">
+        <thead>
+        <tr>
+            <th>Year</th>
+            <th>TotalConsumption</th>
+            <th>Masculin</th>
+            <th>Feminin</th>
+            <th><25</th>
+            <th>25-34</th>
+            <th>>35</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 </div>
 
 <div class="slider-container">
@@ -108,8 +138,9 @@ if(isset($_GET['id'])) {
         <div class="year-marker" style="left: 75%;">2023</div>
         <div class="year-marker" style="left: 100%;">2024</div>
     </div>
+    <div id="selectedYear">2020 - 2024</div>
 </div>
-<div id="selectedYear">2020 - 2024</div>
+
 
 <script>
     var ctx = document.getElementById('graficLinie').getContext('2d');
@@ -160,15 +191,15 @@ if(isset($_GET['id'])) {
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             },
-            {
-                label: 'Masculin',
-                data: consumption_ma,
-                fill: false,
-                borderColor: 'rgb(0, 0, 204)',
-                tension: 0.1
-            },
                 {
-                label: 'Feminin',
+                    label: 'Masculin',
+                    data: consumption_ma,
+                    fill: false,
+                    borderColor: 'rgb(0, 0, 204)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Feminin',
                     data: consumption_f,
                     fill: false,
                     borderColor: 'rgb(255, 0, 255)',
@@ -239,6 +270,57 @@ if(isset($_GET['id'])) {
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
+    }
+
+    function populateTable() {
+        const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = '';
+
+        for (let i = 0; i < years.length; i++) {
+            let row = tableBody.insertRow();
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
+            let cell7 = row.insertCell(6);
+
+            cell1.innerHTML = years[i];
+            cell2.innerHTML = consumption[i][1];
+            cell3.innerHTML = consumption_ma[i][1];
+            cell4.innerHTML = consumption_f[i][1];
+            cell5.innerHTML = consumption_y[i][1];
+            cell6.innerHTML = consumption_mi[i][1];
+            cell7.innerHTML = consumption_o[i][1];
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        populateTable();
+        document.getElementsByClassName('tablinks')[0].click();
+    });
+
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+
+        // Hide or show slider container based on the selected tab
+        var sliderContainer = document.getElementsByClassName("slider-container")[0];
+        if (tabName === 'Table') {
+            sliderContainer.classList.add("hidden");
+        } else {
+            sliderContainer.classList.remove("hidden");
+        }
     }
 </script>
 

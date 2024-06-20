@@ -13,28 +13,25 @@ body {
   margin-left: 40px;
   margin-right: 40px;
   border-radius: 25px;
-
   margin-bottom: calc(3% + 90px);
   margin-top: calc(3% + 90px);
-
   padding: 4vh;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.image_sub_container{
 
+.image_sub_container {
   justify-content: space-around;
-
 }
 
 .item-image {
-   /* spatiul de jos dintre imagine si detaliile elementului */
+  /* spatiul de jos dintre imagine si detaliile elementului */
   margin-bottom: 100px;
 }
+
 .item-description {
   font-size: 16px; /* marimea fontului pentru descriere */
-  color: #333; /*culoarea textului pentru descriere */
-
+  color: #333; /* culoarea textului pentru descriere */
 }
 
 .details {
@@ -45,18 +42,16 @@ body {
   margin-bottom: 100px;
 }
 
-
 .item-name {
   order: -1;
 }
-//generare button
 
-.center{
+/* generare button */
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
-
 }
 
 .text-button {
@@ -70,25 +65,28 @@ body {
   margin-top: 25px;
   margin-left: 10px;
   margin-bottom: 25px;
-  &:hover {
-    background-color: #70bad9;
-  }
 }
-/*partea de grafice*/
-.graficLinie{
+
+.text-button:hover {
+  background-color: #70bad9;
+}
+
+/* partea de grafice */
+.graficLinie {
   width: 100%;
   height: 100%;
-
 }
+
 .grafic-container {
   width: 70%;
   height: 40%;
   border: 2px solid rgb(75, 192, 192);
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(75, 192, 192, .5);
+  box-shadow: 0 0 10px rgba(75, 192, 192, 0.5);
   margin: 0 auto;
 }
-//buton de selectare ani
+
+/* buton de selectare ani */
 .slider-container {
   width: 80%;
   margin: 50px auto;
@@ -130,8 +128,10 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+
 #selectedYear {
   margin-top: 20px;
   font-size: 20px;
   text-align: center;
 }
+
