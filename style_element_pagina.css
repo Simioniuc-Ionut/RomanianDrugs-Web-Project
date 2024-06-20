@@ -75,8 +75,8 @@ body {
 }
 
 .grafic-container {
-  width: 70%;
-  height: 40%;
+  width: 75%;
+  height: 750px;
   border: 2px solid rgb(75, 192, 192);
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(75, 192, 192, 0.5);
