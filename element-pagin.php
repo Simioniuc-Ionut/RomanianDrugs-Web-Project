@@ -74,7 +74,7 @@ if(isset($_GET['id'])) {
     $graphDataStmt5->execute();
     $graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
 
-    $graphDataQuery6 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='>35' ORDER BY year";
+        $graphDataQuery6 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='>35' ORDER BY year";
     $graphDataStmt6 = $dbConnection->prepare($graphDataQuery6);
     $graphDataStmt6->execute();
     $graphData6 = $graphDataStmt6->fetchAll(PDO::FETCH_ASSOC);

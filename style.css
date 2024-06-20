@@ -115,20 +115,26 @@ body {
 .container {
   background: #E5E3D9;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap; /* Schimbat din flex-wrap în flex-direction */
   flex-grow: 1;
-  padding: 20px;
+  justify-content: center;
 }
 
 .content {
+  position: relative;
   margin-top: calc(3% + 90px);
   margin-bottom: calc(3% + 30px);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: #f2f2f2;
+  background-image: url("imaginiDroguri/cannabis.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
   background-color: rgba(242, 242, 242, 0.96);
+  text-align: left;
+  overflow: auto;
   width: 80%;
   border-radius: 10px;
   padding: 20px;
@@ -156,6 +162,7 @@ body {
   width: 150px;
   height: 150px;
   object-fit: cover;
+  max-width: 200px;
 }
 .box__text {
   align-content: end;
@@ -277,5 +284,11 @@ body {
 .footer form button[type=submit]:hover {
   background-color: #4cae4c;
 }
+
+.tab-buttons {
+  margin: 20px;
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

@@ -18,6 +18,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+
 }
 
 .navbar {
@@ -121,14 +122,13 @@ body {
   html{font-size: 55%}
 }
 
-  .container {
-    background: $container-color;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 100vh;
-  }
+.container {
+  background: $container-color;
+  display: flex;
+  flex-wrap: wrap; /* Schimbat din flex-wrap în flex-direction */
+  flex-grow: 1;
+  justify-content: center;
+}
 
 .content {
   position: relative;
