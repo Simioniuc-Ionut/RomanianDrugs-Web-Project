@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -107,24 +117,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 100vh;
+  flex-grow: 1;
+  padding: 20px;
 }
 
 .content {
-  position: relative;
   margin-top: calc(3% + 90px);
   margin-bottom: calc(3% + 30px);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #f2f2f2;
-  background-image: url("imaginiDroguri/cannabis.jpg");
-  background-size: cover;
-  background-blend-mode: multiply;
   background-color: rgba(242, 242, 242, 0.96);
-  text-align: left;
-  overflow: auto;
   width: 80%;
   border-radius: 10px;
   padding: 20px;
@@ -133,31 +137,30 @@
 .box {
   background-color: rgba(255, 255, 255, 0.3);
   width: 200px;
-  height: 150px;
+  height: 200px;
   margin: 10px;
   padding: 10px;
   box-sizing: border-box;
   border: 2px solid black;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
-  z-index: 2;
 }
 .box:hover {
   transform: scale(1.1);
 }
 .box__link {
-  text-decoration: none; /* Elimină sublinierea */
+  text-decoration: none;
   color: inherit;
 }
 .box__img {
-  width: 95%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  max-width: 200px;
 }
 .box__text {
   align-content: end;
   text-align: end;
+  margin-top: 5px;
 }
 
 .imagine-home {
@@ -201,8 +204,11 @@
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 50px 0;
+  padding: 20px 0; /* Reducem padding-ul de la 50px la 20px */
   width: 100%;
+  /* position: fixed; */ /* Eliminăm această linie */
+  bottom: 0;
+  flex-shrink: 0;
 }
 
 .footer-row {
@@ -271,7 +277,5 @@
 .footer form button[type=submit]:hover {
   background-color: #4cae4c;
 }
-
-
 
 /*# sourceMappingURL=style.css.map */

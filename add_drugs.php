@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style2.css">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('RefactoringDataBase/index.php/get/drugs')
+            fetch('RefactoringDataBase/index.php/get/drugsName')
                 .then(response => response.json())
                 .then(data => {
                     const selects = document.querySelectorAll('select[name="name"], select[name="current_name"]');

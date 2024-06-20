@@ -85,9 +85,9 @@ private DataManager $dataManager;
                     $this->methodNotAllowed();
                 }
                 break;
-            case 'get/drugs':
+            case 'get/drugsName':
                 $this->dataManager = new DrugManager($this->dbConnection);
-                $this->dataManager->getDrugs();
+                $this->dataManager->getDrugsName();
                 break;
             case 'delete/drug':
                 if (isset($_POST['name'])) {
@@ -104,6 +104,29 @@ private DataManager $dataManager;
                 } else {
                     echo json_encode(["error" => "Toate câmpurile sunt obligatorii."]);
                 }
+                break;
+            case 'drug/details':
+                if (isset($_GET['id'])) {
+                    $this->dataManager = new DrugManager($this->dbConnection);
+                    $drugDetails =   $this->dataManager->getDrugDetails((int)$_GET['id']);
+                    echo json_encode($drugDetails);
+                } else {
+                    $this->methodNotAllowed();
+                }
+                break;
+            case 'drug/graph':
+                if (isset($_GET['drugName']) && isset($_GET['table'])) {
+                    $this->dataManager = new DrugManager($this->dbConnection);
+                    $graphData =  $this->dataManager->getGraphData($_GET['drugName'], $_GET['table']);
+                    echo json_encode($graphData);
+                } else {
+                    $this->methodNotAllowed();
+                }
+                break;
+            case 'get/allDrugs':
+                $this->dataManager = new DrugManager($this->dbConnection);
+                $drugs = $this->dataManager->getAllDrugs();
+                echo json_encode($drugs);
                 break;
             // Adăugați aici alte acțiuni...
             default:

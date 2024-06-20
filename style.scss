@@ -3,11 +3,23 @@ $box-color: rgba(255,255,255,0.3);
 $container-color: #E5E3D9;
 $fourth-color: #6892d5;
 $background-color-header: #272727;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -17,6 +29,7 @@ $background-color-header: #272727;
   overflow: hidden;
   padding: 10px 14px;
   z-index: 10;
+
   &__link {
     float: right;
     display: flex;
@@ -45,10 +58,12 @@ $background-color-header: #272727;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 }
-.navbar #toggler{
-  display:none;
+
+.navbar #toggler {
+  display: none;
 }
-.navbar .toggler-icon{
+
+.navbar .toggler-icon {
   font-size: 3rem;
   color: #E5E3D9;
   border-radius: .5rem;
@@ -61,14 +76,17 @@ $background-color-header: #272727;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 @media (max-width: 991px) {
-  html{
+  html {
     font-size: 70%;
   }
-  .navbar{
+
+  .navbar {
     padding: 10px 14px;
   }
 }
+
 @media (max-width: 768px) {
   .navbar .toggler-icon {
     display: block;
@@ -103,71 +121,68 @@ $background-color-header: #272727;
   }
 }
 
-
-@media (max-width: 450px){
-  html{font-size: 55%}
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
 }
 
-  .container {
-    background: $container-color;
+.container {
+  background: $container-color;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 20px;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 100vh;
-  }
+
+}
 
 .content {
-  position: relative;
   margin-top: calc(3% + 90px);
   margin-bottom: calc(3% + 30px);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #f2f2f2;
-  background-image: url('imaginiDroguri/cannabis.jpg');
-  background-size: cover;
-  background-blend-mode: multiply;
   background-color: rgba(242, 242, 242, 0.96);
-  text-align: left;
-  overflow: auto;
   width: 80%;
   border-radius: 10px;
   padding: 20px;
 }
-
 .box {
   background-color: $box-color;
   width: 200px;
-  height: 150px;
+  height: 200px;
   margin: 10px;
   padding: 10px;
   box-sizing: border-box;
   border: 2px solid black;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
-  z-index: 2;
+
   &:hover {
     transform: scale(1.1);
   }
-  &__link{
-    text-decoration: none; /* Elimină sublinierea */
+
+  &__link {
+    text-decoration: none;
     color: inherit;
   }
-  &__img {
-    width: 95%;
-    height: auto;
-    object-fit: cover;
-    max-width: 200px;
 
+  &__img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
   }
 
   &__text {
     align-content: end;
     text-align: end;
+    margin-top: 5px;
   }
 }
+
 
 .imagine-home {
   display: block;
@@ -191,6 +206,7 @@ $background-color-header: #272727;
   width: 150px;
   height: 150px;
   margin-right: 10px;
+
 }
 
 .container_item .details {
@@ -210,15 +226,19 @@ $background-color-header: #272727;
 .footer {
   background-color: #333;
   color: #fff;
-  padding: 50px 0;
+  padding: 20px 0; /* Reducem padding-ul de la 50px la 20px */
   width: 100%;
+  /* position: fixed; */ /* Eliminăm această linie */
+  bottom: 0;
+  flex-shrink: 0;
 }
+
 
 .footer-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-left:100px;
+  margin-left: 100px;
   margin-right: 100px;
 }
 
@@ -280,5 +300,3 @@ $background-color-header: #272727;
 .footer form button[type="submit"]:hover {
   background-color: #4cae4c;
 }
-
-/*# sourceMappingURL=style.css.map */

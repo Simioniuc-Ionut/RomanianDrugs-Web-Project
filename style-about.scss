@@ -2,6 +2,8 @@
 body {
   background: #f4f4f4;
   font-family: "Verdana", sans-serif;
+  margin:  0;
+  padding: 0;
 }
 .about-us {
   display: flex;
@@ -113,5 +115,9 @@ html {
 .about-text ul li {
   margin-bottom: 10px;
 }
-
+/* Ajustare padding pentru navbar și footer */
+body {
+  padding-top: 70px; /* height navbar-ului */
+  padding-bottom: 50px; /* height footer-ului */
+}
 /*# sourceMappingURL=AboutUsDesign.css.map */

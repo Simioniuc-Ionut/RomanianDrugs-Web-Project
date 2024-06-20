@@ -11,7 +11,7 @@
 <body>
 <section class="about-us">
     <div class="about">
-        <img src="imaginiDroguri/cannabis-about.jpg" class="pic" />
+        <img alt src="imaginiDroguri/cannabis-about.jpg" class="pic" />
         <div class="text">
             <h2>About Us</h2>
             <h5> <span>Students: </span>Simioniuc & Hutan</h5>

@@ -91,7 +91,7 @@ class DrugManager extends DataManager {
             echo json_encode(["error" => "Error updating image: " . $e->getMessage()]);
         }
     }
-    public function getDrugs(): void {
+    public function getDrugsName(): void {
         try {
             $stmt = $this->dbConnection->prepare("SELECT name FROM drugstable");
             $stmt->execute();
@@ -132,7 +132,25 @@ class DrugManager extends DataManager {
             echo json_encode(["error" => "Error deleting drug: " . $e->getMessage()]);
         }
     }
-
+    public function getDrugDetails(int $id): array {
+        $sql = "SELECT * FROM drugstable WHERE id = :id";
+        $stmt = $this->dbConnection->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function getAllDrugs(): array {
+        $sql = "SELECT id, name, image FROM drugstable";
+        $stmt = $this->dbConnection->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getGraphData(string $drugName, string $table): array {
+        $graphDataQuery = "SELECT year, $drugName FROM $table ORDER BY year";
+        $graphDataStmt = $this->dbConnection->prepare($graphDataQuery);
+        $graphDataStmt->execute();
+        return $graphDataStmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     // Alte metode pentru interacțiunea cu tabela de droguri
 
 }

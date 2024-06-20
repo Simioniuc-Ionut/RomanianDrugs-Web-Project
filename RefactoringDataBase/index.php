@@ -34,14 +34,23 @@ $routes = [
     'update/type' => function() use ($controller) {
         $controller->processRequest('update/type');
     },
-    'get/drugs' => function() use ($controller) { // Noua rută pentru a obține lista de droguri
-        $controller->processRequest('get/drugs');
+    'get/drugsName' => function() use ($controller) { // Noua rută pentru a obține lista de droguri
+        $controller->processRequest('get/drugsName');
     },
     'delete/drug' => function() use ($controller) { // Noua rută pentru a șterge un drog
         $controller->processRequest('delete/drug');
     },
     'add/drug' => function() use ($controller) {
         $controller->processRequest('add/drug');
+    },
+    'drug/details' => function() use ($controller) { // Rută nouă pentru detalii
+        $controller->processRequest('drug/details');
+    },
+    'drug/graph' => function() use ($controller) { // Rută nouă pentru datele grafice
+        $controller->processRequest('drug/graph');
+    },
+    'get/allDrugs' => function() use ($controller) {
+        $controller->processRequest('get/allDrugs');
     },
     // Adăugați aici alte rute...
 ];
