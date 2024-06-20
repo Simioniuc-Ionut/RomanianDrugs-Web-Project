@@ -4,29 +4,12 @@
     <meta charset="UTF-8">
     <title>Campanii</title>
     <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="map/style.css">
     <link rel="stylesheet" href="style_element_pagina.css">
     <?php include "NavBar.php"; ?>
+        <script src="map/map_interactions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        .hidden {
-            display: none;
-        }
-        #map-container {
-            width: 70%;
-            margin: auto;
-        }
-        #info-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-        svg path {
-            cursor: pointer;
-            transition: fill 0.3s;
-        }
-        svg path:hover {
-            fill: #aaa;
-        }
-    </style>
+
 </head>
 <body>
 
@@ -113,7 +96,15 @@ global $dbConnection;
 <div id="map-container">
     <?php echo file_get_contents('map/romania_map.svg'); ?>
 </div>
-<div id="info-container"></div>
+
+<div id="info-container">
+    <h2 id="region-title"></h2>
+    <p id="region-population"></p>
+    <p id="region-area"></p>
+    <p id="region-density"></p>
+    <p id="region-description"></p>
+</div>
+
 
 <script>
     // Codul JavaScript pentru procesarea datelor și actualizarea graficelor și tabelelor

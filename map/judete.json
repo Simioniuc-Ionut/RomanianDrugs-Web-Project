@@ -1,0 +1,24 @@
+{
+  "Cluj": {
+    "nume": "Transilvania",
+    "populatie": "3,000,000",
+    "suprafata": "100,000 km²",
+    "densitate": "30 loc/km²",
+    "descriere": "O regiune istorică și culturală din România."
+  },
+  "Iasi": {
+    "nume": "Moldova",
+    "populatie": "2,500,000",
+    "suprafata": "80,000 km²",
+    "densitate": "31.25 loc/km²",
+    "descriere": "O regiune din partea de nord-est a României, cunoscută pentru istoria și cultura sa bogată."
+  },
+  "Suceava": {
+    "nume": "Bucovina",
+    "populatie": "750,000",
+    "suprafata": "20,000 km²",
+    "densitate": "37.5 loc/km²",
+    "descriere": "O regiune montană din nordul României, renumită pentru peisajele sale naturale și tradițiile populare."
+  }
+  // Adaugă restul regiunilor aici
+}
