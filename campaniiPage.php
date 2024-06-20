@@ -11,6 +11,21 @@
         .hidden {
             display: none;
         }
+        #map-container {
+            width: 70%;
+            margin: auto;
+        }
+        #info-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        svg path {
+            cursor: pointer;
+            transition: fill 0.3s;
+        }
+        svg path:hover {
+            fill: #aaa;
+        }
     </style>
 </head>
 <body>
@@ -18,11 +33,7 @@
 <?php
 require_once "db_connect.php";
 global $dbConnection;
-
-
 ?>
-
-
 
 <div class="container_item">
     <div class="item-image">
@@ -41,10 +52,8 @@ global $dbConnection;
     <div class="campaign">
         <h1 class="campaign-title">Campanii de Prevenire a Consumului de Droguri</h1>
         <p class="campaign-description">Consumul de droguri este o problemă majoră în societatea modernă, afectând milioane de vieți în fiecare an. Pentru a combate această problemă, au fost lansate numeroase campanii de prevenire a consumului de droguri, atât la nivel local, cât și la nivel național și global.</p>
-
         <h2 class="campaign-section-title">Scopul Campaniilor de Prevenire</h2>
         <p class="campaign-section-description">Scopul principal al acestor campanii este de a informa și educa publicul despre pericolele și riscurile asociate consumului de droguri. Ele își propun să reducă prevalența consumului de droguri în rândul populației și să promoveze un stil de viață sănătos și lipsit de substanțe toxice.</p>
-
         <h2 class="campaign-section-title">Inițiative și Proiecte</h2>
         <p class="campaign-section-description">Campaniile de prevenire a consumului de droguri implică o varietate de inițiative și proiecte, inclusiv:</p>
         <ul class="campaign-list">
@@ -54,7 +63,6 @@ global $dbConnection;
             <li>Campanii media și sociale pentru sensibilizarea publicului</li>
             <li>Programare de consiliere și sprijin pentru cei afectați de consumul de droguri</li>
         </ul>
-
         <h2 class="campaign-section-title">Implicarea Comunității</h2>
         <p class="campaign-section-description">Un aspect important al acestor campanii este implicarea comunității. Prin colaborarea între organizațiile guvernamentale și neguvernamentale, grupurile comunitare și membrii societății în general, putem construi un mediu mai sănătos și mai sigur pentru toți.</p>
     </div>
@@ -100,6 +108,12 @@ global $dbConnection;
     </div>
     <div id="selectedYear">2020 - 2024</div>
 </div>
+
+<!-- Adaugă harta interactivă aici -->
+<div id="map-container">
+    <?php echo file_get_contents('map/romania_map.svg'); ?>
+</div>
+<div id="info-container"></div>
 
 <script>
     // Codul JavaScript pentru procesarea datelor și actualizarea graficelor și tabelelor
@@ -168,8 +182,28 @@ global $dbConnection;
         graficLinie.data.datasets[0].data = filteredData.map(data => data.campanie);
         graficLinie.update();
     }
-</script>
 
+    // Cod pentru harta interactivă
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("svg path").forEach(function(path) {
+            path.addEventListener("click", function() {
+                var regiune = this.getAttribute("id");
+                fetch(`get_regiune_info.php?regiune=${regiune}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        var infoContainer = document.getElementById("info-container");
+                        infoContainer.innerHTML = `
+                            <h2>${regiune}</h2>
+                            <p>Populație: ${data.populatie}</p>
+                            <p>Suprafață: ${data.suprafata}</p>
+                            <p>Densitate: ${data.densitate}</p>
+                        `;
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+        });
+    });
+</script>
 <?php include "footer.php";?>
 </body>
 </html>

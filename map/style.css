@@ -1,0 +1,16 @@
+#map-container {
+    width: 70%;
+    margin: auto;
+}
+
+#info-container {
+    margin-top: 20px;
+    text-align: center;
+}
+svg path {
+    cursor: pointer;
+    transition: fill 0.3s;
+}
+svg path:hover {
+    fill: #aaa;
+}

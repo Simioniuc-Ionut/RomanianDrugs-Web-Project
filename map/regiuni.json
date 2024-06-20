@@ -1,0 +1,18 @@
+{
+  "Transilvania": {
+    "populatie": "3,000,000",
+    "suprafata": "100,000 km²",
+    "densitate": "30 loc/km²"
+  },
+  "Moldova": {
+    "populatie": "2,500,000",
+    "suprafata": "80,000 km²",
+    "densitate": "31.25 loc/km²"
+  },
+  "Bucovina": {
+    "populatie": "750,000",
+    "suprafata": "20,000 km²",
+    "densitate": "37.5 loc/km²"
+  }
+  // Adaugă restul regiunilor aici
+}
