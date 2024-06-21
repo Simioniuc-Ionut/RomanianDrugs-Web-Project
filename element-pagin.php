@@ -302,6 +302,7 @@ if(isset($_GET['id'])) {
     });
 
     function openTab(evt, tabName) {
+
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
@@ -318,8 +319,12 @@ if(isset($_GET['id'])) {
         var sliderContainer = document.getElementsByClassName("slider-container")[0];
         if (tabName === 'Table') {
             sliderContainer.classList.add("hidden");
+            document.getElementById('grafB').classList.add('hidden');
+            document.getElementById('tableB').classList.remove('hidden');
         } else {
             sliderContainer.classList.remove("hidden");
+            document.getElementById('grafB').classList.remove('hidden');
+            document.getElementById('tableB').classList.add('hidden');
         }
     }
 
@@ -360,10 +365,60 @@ if(isset($_GET['id'])) {
             table.tBodies[0].appendChild(row);
         }
     }
+    function exportChart() {
+        var link = document.createElement('a');
+        link.href = graficLinie.toBase64Image();
+        link.download = 'grafic.png';
+        link.click();
+    }
+
+    function exportTable() {
+        var table = document.getElementById('dataTable');
+        var canvas = document.createElement('canvas');
+
+        // Ajustăm dimensiunea canvas-ului pentru a include toate rândurile tabelului
+        var tableWidth = table.offsetWidth;
+        var tableHeight = table.offsetHeight;
+        canvas.width = tableWidth;
+        canvas.height = tableHeight;
+
+        var ctx = canvas.getContext('2d');
+
+        // Desenăm fundalul alb pentru canvas
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Desenăm tabelul pe canvas
+        var rows = table.rows;
+        var yOffset = 0;
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var xOffset = 0;
+            for (var j = 0; j < row.cells.length; j++) {
+                var cell = row.cells[j];
+                ctx.fillStyle = '#000000';
+                ctx.font = '14px Arial';
+                ctx.fillText(cell.innerText, xOffset, yOffset + 20); // Ajustăm 20 pentru marginea de sus
+                xOffset += cell.offsetWidth;
+            }
+            yOffset += row.offsetHeight;
+        }
+
+        // Creăm link-ul pentru descărcare
+        var link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'tabel.png';
+        link.click();
+    }
+
 </script>
 
-<div class="center">
-    <button class="text-button">Generate</button>
+<div id="grafB" class="center hidden">
+    <button class="text-button" onclick="exportChart()">Export Graphic</button>
+</div>
+
+<div id="tableB" class="center hidden">
+    <button class="text-button" onclick="exportTable()">Export Table</button>
 </div>
 
 <?php include "footer.php";?>
