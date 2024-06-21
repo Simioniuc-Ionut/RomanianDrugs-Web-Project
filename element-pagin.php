@@ -111,7 +111,7 @@ if(isset($_GET['id'])) {
     </div>
 </div>
 
-<div id="Table" class="tabcontent">
+<div id="Table" class="tabcontent table-data">
     <table id="dataTable">
         <thead>
         <tr>
