@@ -105,6 +105,8 @@ global $dbConnection;
     <p id="region-description"></p>
 </div>
 
+<div id="tooltip" class="hidden"></div>
+
 
 <script>
     // Codul JavaScript pentru procesarea datelor și actualizarea graficelor și tabelelor

@@ -4,21 +4,20 @@
     "populatie": "3,000,000",
     "suprafata": "100,000 km²",
     "densitate": "30 loc/km²",
-    "descriere": "O regiune istorică și culturală din România."
+    "descriere": "O regiune istorica si culturala din Romania."
   },
   "Iasi": {
     "nume": "Moldova",
     "populatie": "2,500,000",
     "suprafata": "80,000 km²",
     "densitate": "31.25 loc/km²",
-    "descriere": "O regiune din partea de nord-est a României, cunoscută pentru istoria și cultura sa bogată."
+    "descriere": "O regiune din partea de nord-est a Romaniei, cunoscuta pentru istoria si cultura sa bogata."
   },
   "Suceava": {
     "nume": "Bucovina",
     "populatie": "750,000",
     "suprafata": "20,000 km²",
     "densitate": "37.5 loc/km²",
-    "descriere": "O regiune montană din nordul României, renumită pentru peisajele sale naturale și tradițiile populare."
+    "descriere": "O regiune montana din nordul Romaniei, renumita pentru peisajele sale naturale si traditiile populare."
   }
-  // Adaugă restul regiunilor aici
 }
