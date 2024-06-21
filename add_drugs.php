@@ -8,8 +8,12 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('RefactoringDataBase/index.php/get/drugsName')
-                .then(response => response.json())
+                .then(response => {
+                    console.log('Response status:', response.status);
+                    return response.json();
+                })
                 .then(data => {
+                    console.log('Received data:', data);
                     const selects = document.querySelectorAll('select[name="name"], select[name="current_name"]');
                     selects.forEach(select => {
                         data.forEach(drug => {
@@ -24,6 +28,7 @@
                     console.error('Error fetching drugs:', error);
                 });
 
+            // Definează obiectele forms cu id-urile și URL-urile corespunzătoare
             const forms = [
                 { id: 'addDrugForm', url: 'RefactoringDataBase/index.php/add/drug' },
                 { id: 'updateNameForm', url: 'RefactoringDataBase/index.php/update/name' },
@@ -31,7 +36,8 @@
                 { id: 'updateImageForm', url: 'RefactoringDataBase/index.php/update/image' },
                 { id: 'updateDescriptionForm', url: 'RefactoringDataBase/index.php/update/description' },
                 { id: 'deleteDrugForm', url: 'RefactoringDataBase/index.php/delete/drug' },
-                { id: 'uploadFileForm', url: 'RefactoringDataBase/index.php/upload' }
+                { id: 'uploadFileForm', url: 'RefactoringDataBase/index.php/upload' },
+                { id: 'generateDataForm', url: 'RefactoringDataBase/index.php/generateDataInJudete' }
             ];
 
             forms.forEach(form => {
@@ -63,9 +69,14 @@
                             messageDiv.style.display = 'none';
                         }, 5000);
                     };
+                    console.info('Sending form data:', formData);
                     xhr.send(formData);
                 });
             });
+
+
+
+
         });
     </script>
     <style>
@@ -161,7 +172,7 @@
         </div>
         <button type="submit">Update Type</button>
     </form>
-    <!-- Form to update name based on current name -->
+   <!-- Form to update name based on current name -->
     <form id="updateNameForm" novalidate>
         <h3>Update Name</h3>
         <label for="current_name">Current Name:</label>
@@ -188,6 +199,22 @@
         <input type="file" id="file" name="file" required>
         <button type="submit">Upload</button>
     </form>
+    <!-- Formular pentru generarea datelor în județe -->
+    <div>
+        <h2>Generate Data in Counties</h2>
+        <form id="generateDataForm" novalidate enctype="multipart/form-data">
+            <label for="select_year">Select Year:</label>
+            <input type="number" id="select_year" name="year" min="2000" max="2100" required>
+            <br><br>
+            <label for="drug_name">Select Drugs:</label>
+            <select id="drug_name" name="name" required>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <br><br>
+            <button type="submit">Generate Data</button>
+        </form>
+    </div>
+
 </div>
 
 <div id="message"></div>

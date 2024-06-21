@@ -1,7 +1,8 @@
 <?php
 
 class Database {
-    private string $host = "127.0.0.1:3307";
+    public $error;
+    private string $host = "127.0.0.1:3306";
     private string $db_name = "projectdb";
     private string $username = "root";
     private string $password = "";
@@ -13,6 +14,7 @@ class Database {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         } catch(PDOException $e) {
+            $this->error=$e;
             echo "Connection failed to database: " . $e->getMessage();
         }
     }

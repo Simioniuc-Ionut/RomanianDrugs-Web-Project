@@ -30,26 +30,27 @@ if(isset($_GET['id'])) {
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if($row) {
-        $drugName = $row["name"];
-        echo '<div class="container_item">';
-        echo '<div class="item-image">';
-        echo '<h2 class="item-name">' . $row["name"] . '</h2>';
-        echo '<div class="box_image_element">';
-        echo '<img src="imaginiDroguri/' . $row["image"] . '" alt="' . $row["name"] . '">';
-        echo '</div>';
-        echo '</div>';
-        echo '<div class="details">';
-        echo '<p><strong>Type:</strong> ' . $row["type"] . '</p>';
-        echo '<p class="item-description"><strong>Description:</strong> ' . $row["description"] . '</p>';
-        echo '</div>';
-        echo '</div>';
-        echo '<div class="center"></div>';
-    } else {
-        echo "Elementul nu a fost găsit.";
-    }
+if ($row) {
+    $drugName = $row["name"];
+    echo '<div class="container_item">';
+    echo '<div class="item-image">';
+    echo '<h2 class="item-name">' . $row["name"] . '</h2>';
+    echo '<div class="box_image_element">';
+    echo '<img src="imaginiDroguri/' . $row["image"] . '" alt="' . $row["name"] . '">';
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="details">';
+    echo '<p><strong>Type:</strong> ' . $row["type"] . '</p>';
+    echo '<p class="item-description"><strong>Description:</strong> ' . $row["description"] . '</p>';
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="center"></div>';
+} else {
+    echo "Elementul nu a fost găsit.";
+}
 
-    // Fetch data for the graph
+
+// Fetch data for the graph
     $graphDataQuery1 = "SELECT year, $drugName FROM urgente_tip_cale ORDER BY year";
     $graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
     $graphDataStmt1->execute();

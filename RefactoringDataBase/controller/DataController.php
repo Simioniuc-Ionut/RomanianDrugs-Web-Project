@@ -128,6 +128,12 @@ private DataManager $dataManager;
                 $drugs = $this->dataManager->getAllDrugs();
                 echo json_encode($drugs);
                 break;
+            case 'generateDataInJudete':
+                $this->dataManager = new DrugManager($this->dbConnection);
+                $year = $_POST['year'];
+                $drug_name = $_POST['name'];
+                $this->dataManager->generateDataInJudete($year,$drug_name);
+                break;
             // Adăugați aici alte acțiuni...
             default:
                 http_response_code(405);

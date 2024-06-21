@@ -52,6 +52,10 @@ $routes = [
     'get/allDrugs' => function() use ($controller) {
         $controller->processRequest('get/allDrugs');
     },
+    'generateDataInJudete' => function() use ($controller) {
+    $controller->processRequest('generateDataInJudete');
+    }
+
     // Adăugați aici alte rute...
 ];
 
