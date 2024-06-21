@@ -22,7 +22,6 @@ global $dbConnection;
 if(isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 
-    // Fetch drug details
     $sql = "SELECT * FROM drugstable WHERE id = :id";
     $stmt = $dbConnection->prepare($sql);
     $stmt->bindParam(':id', $id);
