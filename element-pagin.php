@@ -150,6 +150,17 @@ if ($row) {
 
         <div id="tooltip" class="hidden"></div>
 
+        <div class="slider-container-map">
+            <input type="range" min="2020" max="2024" value="2020" class="sliderMap" id="startYearSliderMap">
+            <div class="year-markers-map">
+                <div class="year-marker-map" style="left: 0%;">2020</div>
+                <div class="year-marker-map" style="left: 25%;">2021</div>
+                <div class="year-marker-map" style="left: 50%;">2022</div>
+                <div class="year-marker-map" style="left: 75%;">2023</div>
+                <div class="year-marker-map" style="left: 100%;">2024</div>
+            </div>
+            <div id="selectedYearMap">2020</div>
+        </div>
 </div>
 
 <div class="slider-container">
@@ -405,9 +416,40 @@ if ($row) {
             link.download = 'grafic.png';
             link.click();
         } else if (format === 'svg') {
-            //svg
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            var img = new Image();
+
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+
+                var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                svg.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink'); // Add xlink namespace
+                svg.setAttribute('width', img.width);
+                svg.setAttribute('height', img.height);
+
+                var svgImg = document.createElementNS("http://www.w3.org/2000/svg", "image");
+                svgImg.setAttributeNS('http://www.w3.org/1999/xlink', 'href', canvas.toDataURL("image/png"));
+                svgImg.setAttribute('width', img.width);
+                svgImg.setAttribute('height', img.height);
+                svg.appendChild(svgImg);
+
+                var svgBlob = new Blob([svg.outerHTML], { type: 'image/svg+xml;charset=utf-8' });
+                var svgUrl = URL.createObjectURL(svgBlob);
+
+                var link = document.createElement('a');
+                link.href = svgUrl;
+                link.download = 'grafic.svg';
+                link.click();
+            };
+
+            img.src = graficLinie.toBase64Image();
         }
     }
+
 
     function exportTable() {
         var format = document.getElementById('exportFormatTable').value;
@@ -475,6 +517,17 @@ if ($row) {
             });
         });
     });
+
+    startYearSliderMap = document.getElementById('startYearSliderMap');
+    startYearSliderMap.addEventListener('input', updateYearMap);
+
+    function updateYearMap()
+    {
+        const yearMapStart = document.getElementById('startYearSliderMap');
+        const yearMapSelect = document.getElementById('selectedYearMap');
+
+        yearMapSelect.textContent = yearMapStart.value;
+    }
 
 </script>
 
