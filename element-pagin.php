@@ -73,7 +73,7 @@ if(isset($_GET['id'])) {
     $graphDataStmt5->execute();
     $graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
 
-        $graphDataQuery6 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='>35' ORDER BY year";
+    $graphDataQuery6 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='>35' ORDER BY year";
     $graphDataStmt6 = $dbConnection->prepare($graphDataQuery6);
     $graphDataStmt6->execute();
     $graphData6 = $graphDataStmt6->fetchAll(PDO::FETCH_ASSOC);
@@ -114,18 +114,19 @@ if(isset($_GET['id'])) {
     <table id="dataTable">
         <thead>
         <tr>
-            <th>Year</th>
-            <th>TotalConsumption</th>
-            <th>Masculin</th>
-            <th>Feminin</th>
-            <th><25</th>
-            <th>25-34</th>
-            <th>>35</th>
+            <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(1)">TotalConsumption <span class="sort-arrow" id="arrow-1"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(2)">Masculin <span class="sort-arrow" id="arrow-2"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(3)">Feminin <span class="sort-arrow" id="arrow-3"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(4)">&lt;25 <span class="sort-arrow" id="arrow-4"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(5)">25-34 <span class="sort-arrow" id="arrow-5"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(6)">&gt;35 <span class="sort-arrow" id="arrow-6"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
     </table>
 </div>
+
 
 <div class="slider-container">
     <input type="range" min="2020" max="2024" value="2020" class="slider" id="startYearSlider">
@@ -319,6 +320,44 @@ if(isset($_GET['id'])) {
             sliderContainer.classList.add("hidden");
         } else {
             sliderContainer.classList.remove("hidden");
+        }
+    }
+
+    // Sort table function
+    let sortDirections = [true, true, true, true, true, true, true]; // Default sort directions
+
+    function sortTable(columnIndex) {
+        const table = document.getElementById('dataTable');
+        const rows = Array.from(table.rows).slice(1);
+        const ascending = sortDirections[columnIndex];
+        const isNumericColumn = columnIndex !== 0;
+
+        rows.sort((a, b) => {
+            const aText = a.cells[columnIndex].innerText;
+            const bText = b.cells[columnIndex].innerText;
+
+            if (isNumericColumn) {
+                const aValue = parseFloat(aText);
+                const bValue = parseFloat(bText);
+                return ascending ? aValue - bValue : bValue - aValue;
+            } else {
+                return ascending ? aText.localeCompare(bText) : bText.localeCompare(aText);
+            }
+        });
+
+        sortDirections[columnIndex] = !ascending;
+
+        // Remove existing arrow icons
+        document.querySelectorAll('.sort-arrow').forEach(arrow => {
+            arrow.classList.remove('asc', 'desc');
+        });
+
+        // Add new arrow icon for the current column
+        const arrowElement = document.getElementById(`arrow-${columnIndex}`);
+        arrowElement.classList.add(ascending ? 'asc' : 'desc');
+
+        for (const row of rows) {
+            table.tBodies[0].appendChild(row);
         }
     }
 </script>
