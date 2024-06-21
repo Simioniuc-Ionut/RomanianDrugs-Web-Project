@@ -156,6 +156,13 @@ body {
   th,td{
     border: 1px solid #ddd;
   }
+
+  .header-container {
+    padding-right: 20px; /* Spațiul dintre text și săgeată */
+    position: relative; /* Păstrează poziția relativă pentru săgeată */
+    cursor: pointer; /* Indicator de cursor pentru elementele sortabile */
+  }
+
 }
 
 .tab-buttons {
@@ -186,4 +193,18 @@ body {
   color: white;
 }
 
+.sort-arrow {
+  position: absolute;
+  right: 1px;
+  display: inline-block;
+
+}
+
+.sort-arrow.asc::after {
+  content: '▲';
+}
+
+.sort-arrow.desc::after {
+  content: '▼';
+}
 /*# sourceMappingURL=style_element_pagina.css.map */
