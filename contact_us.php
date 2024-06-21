@@ -16,7 +16,7 @@
 <body>
 
 <div class="container-form">
-    <form action="process.php" method="post" id="contactForm">
+    <form action="sendContactEmail.php" method="post" id="contactForm">
         <h1 class="form-title">Contact Us</h1>
 
         <div class="form-group">
@@ -45,4 +45,5 @@
 <?php include "Footer.php"; ?>
 </body>
 </html>
+
 
