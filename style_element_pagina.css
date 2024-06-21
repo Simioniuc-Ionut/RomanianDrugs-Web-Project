@@ -76,7 +76,7 @@ body {
 
 .grafic-container {
   width: 75%;
-  height: 750px;
+  height: 100%;
   border: 2px solid rgb(75, 192, 192);
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(75, 192, 192, 0.5);
@@ -129,6 +129,61 @@ body {
   margin-top: 20px;
   font-size: 20px;
   text-align: center;
+}
+
+.table-data{
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+
+  thead th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+  }
+
+  tbody td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  th,td{
+    border: 1px solid #ddd;
+  }
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.tablinks {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 5px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+  outline: none;
+}
+
+.tablinks:hover {
+  background-color: #ddd;
+}
+
+.tablinks.active {
+  background-color: #167707;
+  color: white;
 }
 
 /*# sourceMappingURL=style_element_pagina.css.map */
