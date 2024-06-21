@@ -220,4 +220,16 @@ body {
   margin-left: 20%;
 }
 
+.export-format {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+}
+
+
 /*# sourceMappingURL=style_element_pagina.css.map */
