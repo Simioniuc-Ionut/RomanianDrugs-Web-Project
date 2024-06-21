@@ -1,5 +1,6 @@
 <?php
-
+require_once 'model/DataManager.php';
+require_once 'model/DrugManager.php'; // Ajustează calea către clasa DrugManager
 class Database {
     public $error;
     private string $host = "127.0.0.1:3306";

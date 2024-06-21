@@ -1,5 +1,6 @@
 <?php
-require_once(realpath(dirname(__FILE__) . '/../DataBase.php'));
+require_once 'RefactoringDataBase/DataBase.php'; // Presupunând că DataBase.php este în același director cu DrugManager.php
+require_once 'RefactoringDataBase/model/DataManager.php'; // Ajustează calea către clasa DataManager
 
 // DrugManager.php
 class DrugManager extends DataManager {
@@ -213,6 +214,49 @@ class DrugManager extends DataManager {
         // În final, trimitem răspunsul în format JSON
         echo json_encode(['message' => $results]);
     }
+
+
+    public function getDataFromJudete($year, $drugName, $judet): bool|string
+    {
+        try {
+            // Interogarea bazei de date pentru a obține datele necesare
+            $sql = "SELECT judete, confiscari, total_droguri, an
+                FROM droguri_judete
+                WHERE an = :year
+                AND judete = :judet
+                AND id_drog = (SELECT id FROM drugstable WHERE name = :drugName)";
+
+            $stmt = $this->dbConnection->prepare($sql);
+            $stmt->bindParam(':year', $year, PDO::PARAM_INT);
+            $stmt->bindParam(':judet', $judet, PDO::PARAM_STR);
+            $stmt->bindParam(':drugName', $drugName, PDO::PARAM_STR);
+            $stmt->execute();
+
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if (!$data) {
+                return json_encode(["error" => "Nu s-au găsit date pentru județul specificat."]);
+            }
+
+            // Returnăm un singur obiect, nu un obiect imbricat
+            $result = [];
+            foreach ($data as $row) {
+                $result = [
+                    'name' => $drugName,
+                    'judete' => $row['judete'],
+                    'confiscari' => $row['confiscari'],
+                    'total_droguri' => $row['total_droguri'],
+                    'an' => $row['an']
+                ];
+            }
+
+            return json_encode($result);
+
+        } catch (PDOException $e) {
+            return json_encode(["error" => "Eroare de conexiune la bază de date: " . $e->getMessage()]);
+        }
+    }
+
 
 
     public function exportInCsvDataJudete($an,$numeDrog) : void

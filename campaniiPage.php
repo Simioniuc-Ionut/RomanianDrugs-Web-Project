@@ -1,3 +1,15 @@
+<?php
+//// index.php (sau numele corespunzător al paginii tale)
+//
+//require_once "map/generate_json.php"; // Ajustează calea către fișierul 'generate_json.php'
+//require_once "RefactoringDataBase/model/DrugManager.php";
+//require_once "RefactoringDataBase/model/CampaniiManager.php";
+//
+//// Apelează funcția pentru a genera și actualiza fișierul JSON la încărcarea paginii
+//generateJsonFile(2021, 'Cocaina'); // Ajustează anul și numele drogului după necesități
+//?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,13 +109,13 @@ global $dbConnection;
     <?php echo file_get_contents('map/romania_map.svg'); ?>
 </div>
 
-<div id="info-container">
-    <h2 id="region-title"></h2>
-    <p id="region-population"></p>
-    <p id="region-area"></p>
-    <p id="region-density"></p>
-    <p id="region-description"></p>
-</div>
+<!--<div id="info-container">-->
+<!--    <h2 id="region-title"></h2>-->
+<!--    <p id="region-population"></p>-->
+<!--    <p id="region-area"></p>-->
+<!--    <p id="region-density"></p>-->
+<!--    <p id="region-description"></p>-->
+<!--</div>-->
 
 <div id="tooltip" class="hidden"></div>
 
@@ -176,26 +188,6 @@ global $dbConnection;
         graficLinie.update();
     }
 
-    // Cod pentru harta interactivă
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll("svg path").forEach(function(path) {
-            path.addEventListener("click", function() {
-                var regiune = this.getAttribute("id");
-                fetch(`get_regiune_info.php?regiune=${regiune}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        var infoContainer = document.getElementById("info-container");
-                        infoContainer.innerHTML = `
-                            <h2>${regiune}</h2>
-                            <p>Populație: ${data.populatie}</p>
-                            <p>Suprafață: ${data.suprafata}</p>
-                            <p>Densitate: ${data.densitate}</p>
-                        `;
-                    })
-                    .catch(error => console.error('Error:', error));
-            });
-        });
-    });
 </script>
 <?php include "footer.php";?>
 </body>

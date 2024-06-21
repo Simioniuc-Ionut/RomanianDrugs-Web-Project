@@ -134,6 +134,18 @@ private DataManager $dataManager;
                 $drug_name = $_POST['name'];
                 $this->dataManager->generateDataInJudete($year,$drug_name);
                 break;
+            case 'getDataFromJudete':
+                if (isset($_GET['year']) && isset($_GET['drugName']) && isset($_GET['judet'])) {
+                    $this->dataManager = new DrugManager($this->dbConnection);
+                    $year = $_GET['year'];
+                    $drugName = $_GET['drugName'];
+                    $judet = $_GET['judet'];
+                    $data = $this->dataManager->getDataFromJudete($year, $drugName, $judet);
+                    echo $data;
+                } else {
+                    $this->methodNotAllowed();
+                }
+                break;
             // Adăugați aici alte acțiuni...
             default:
                 http_response_code(405);
