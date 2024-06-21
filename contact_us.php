@@ -15,24 +15,32 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container-form">
     <form action="process.php" method="post" id="contactForm">
-        <h1>Contact Us</h1>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <span class="error" id="nameError"></span>
+        <h1 class="form-title">Contact Us</h1>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <span class="error" id="emailError"></span>
+        <div class="form-group">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+            <span class="error" id="nameError"></span>
+        </div>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <span class="error" id="messageError"></span>
+        <div class="form-group">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+            <span class="error" id="emailError"></span>
+        </div>
 
-        <button type="submit">Submit</button>
+        <div class="form-group">
+            <label for="message" class="form-label">Message:</label>
+            <textarea id="message" name="message" class="form-textarea" required></textarea>
+            <span class="error" id="messageError"></span>
+        </div>
+
+        <button type="submit" class="form-button">Submit</button>
     </form>
 </div>
+
 
 <?php include "Footer.php"; ?>
 </body>
