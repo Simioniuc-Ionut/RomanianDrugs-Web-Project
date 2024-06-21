@@ -9,6 +9,7 @@
     <?php include "NavBar.php"; ?>
     <script src="map/map_interactions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
     <style>
         .hidden {
             display: none;
@@ -395,50 +396,64 @@ if ($row) {
             table.tBodies[0].appendChild(row);
         }
     }
+
     function exportChart() {
-        var link = document.createElement('a');
-        link.href = graficLinie.toBase64Image();
-        link.download = 'grafic.png';
-        link.click();
+        var format = document.getElementById('exportFormatChart').value;
+        if (format === 'png') {
+            var link = document.createElement('a');
+            link.href = graficLinie.toBase64Image();
+            link.download = 'grafic.png';
+            link.click();
+        } else if (format === 'svg') {
+            //svg
+        }
     }
 
     function exportTable() {
+        var format = document.getElementById('exportFormatTable').value;
         var table = document.getElementById('dataTable');
-        var canvas = document.createElement('canvas');
+        if (format === 'png') {
+            var canvas = document.createElement('canvas');
+            var tableWidth = table.offsetWidth;
+            var tableHeight = table.offsetHeight;
+            canvas.width = tableWidth;
+            canvas.height = tableHeight;
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Ajustăm dimensiunea canvas-ului pentru a include toate rândurile tabelului
-        var tableWidth = table.offsetWidth;
-        var tableHeight = table.offsetHeight;
-        canvas.width = tableWidth;
-        canvas.height = tableHeight;
-
-        var ctx = canvas.getContext('2d');
-
-        // Desenăm fundalul alb pentru canvas
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        // Desenăm tabelul pe canvas
-        var rows = table.rows;
-        var yOffset = 0;
-        for (var i = 0; i < rows.length; i++) {
-            var row = rows[i];
-            var xOffset = 0;
-            for (var j = 0; j < row.cells.length; j++) {
-                var cell = row.cells[j];
-                ctx.fillStyle = '#000000';
-                ctx.font = '14px Arial';
-                ctx.fillText(cell.innerText, xOffset, yOffset + 20); // Ajustăm 20 pentru marginea de sus
-                xOffset += cell.offsetWidth;
+            var rows = table.rows;
+            var yOffset = 0;
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+                var xOffset = 0;
+                for (var j = 0; j < row.cells.length; j++) {
+                    var cell = row.cells[j];
+                    ctx.fillStyle = '#000000';
+                    ctx.font = '14px Arial';
+                    ctx.fillText(cell.innerText, xOffset, yOffset + 20);
+                    xOffset += cell.offsetWidth;
+                }
+                yOffset += row.offsetHeight;
             }
-            yOffset += row.offsetHeight;
-        }
 
-        // Creăm link-ul pentru descărcare
-        var link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'tabel.png';
-        link.click();
+            var link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'tabel.png';
+            link.click();
+        } else if (format === 'svg') {
+            var serializer = new XMLSerializer();
+            var svgData = `<svg xmlns="http://www.w3.org/2000/svg" width="${table.offsetWidth}" height="${table.offsetHeight}">
+            <foreignObject width="100%" height="100%">
+                <div xmlns="http://www.w3.org/1999/xhtml">${table.outerHTML}</div>
+            </foreignObject>
+        </svg>`;
+            var svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(svgBlob);
+            link.download = 'tabel.svg';
+            link.click();
+        }
     }
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -464,10 +479,22 @@ if ($row) {
 </script>
 
 <div id="grafB" class="center hidden">
+    <label>Type of export
+        <select id="exportFormatChart" class="export-format">
+            <option value="png">PNG</option>
+            <option value="svg">SVG</option>
+        </select>
+    </label>
     <button class="text-button" onclick="exportChart()">Export Graphic</button>
 </div>
 
 <div id="tableB" class="center hidden">
+    <label>Type of export
+        <select id="exportFormatTable" class="export-format">
+            <option value="png">PNG</option>
+            <option value="svg">SVG</option>
+        </select>
+    </label>
     <button class="text-button" onclick="exportTable()">Export Table</button>
 </div>
 
