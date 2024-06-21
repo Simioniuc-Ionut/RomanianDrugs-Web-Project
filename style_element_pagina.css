@@ -207,4 +207,17 @@ body {
 .sort-arrow.desc::after {
   content: '▼';
 }
+
+.container-map {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.map-image{
+  margin-left: 20%;
+}
+
 /*# sourceMappingURL=style_element_pagina.css.map */

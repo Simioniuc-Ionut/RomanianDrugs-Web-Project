@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Romanina Drug Explorer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="map/style.css">
     <link rel="stylesheet" href="style_element_pagina.css">
     <?php include "NavBar.php"; ?>
+    <script src="map/map_interactions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .hidden {
@@ -129,7 +131,23 @@ if(isset($_GET['id'])) {
 </div>
 
 <div id="Map" class="tabcontent">
-    Map
+
+        <div id="map-container">
+            <div class="map-image">
+                <?php echo file_get_contents('map/romania_map.svg'); ?>
+            </div>
+        </div>
+
+        <div id="info-container">
+            <h2 id="region-title"></h2>
+            <p id="region-population"></p>
+            <p id="region-area"></p>
+            <p id="region-density"></p>
+            <p id="region-description"></p>
+        </div>
+
+        <div id="tooltip" class="hidden"></div>
+
 </div>
 
 <div class="slider-container">
@@ -421,6 +439,26 @@ if(isset($_GET['id'])) {
         link.download = 'tabel.png';
         link.click();
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll("svg path").forEach(function(path) {
+            path.addEventListener("click", function() {
+                var regiune = this.getAttribute("id");
+                fetch(`get_regiune_info.php?regiune=${regiune}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        var infoContainer = document.getElementById("info-container");
+                        infoContainer.innerHTML = `
+                            <h2>${regiune}</h2>
+                            <p>Populație: ${data.populatie}</p>
+                            <p>Suprafață: ${data.suprafata}</p>
+                            <p>Densitate: ${data.densitate}</p>
+                        `;
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+        });
+    });
 
 </script>
 
