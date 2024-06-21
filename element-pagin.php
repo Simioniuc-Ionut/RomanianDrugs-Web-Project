@@ -102,6 +102,7 @@ if(isset($_GET['id'])) {
 <div class="tab-buttons">
     <button class="tablinks" onclick="openTab(event, 'Graph')">Graph</button>
     <button class="tablinks" onclick="openTab(event, 'Table')">Table</button>
+    <button class="tablinks" onclick="openTab(event, 'Map')">Map</button>
 </div>
 
 <div id="Graph" class="tabcontent">
@@ -127,6 +128,9 @@ if(isset($_GET['id'])) {
     </table>
 </div>
 
+<div id="Map" class="tabcontent">
+    Map
+</div>
 
 <div class="slider-container">
     <input type="range" min="2020" max="2024" value="2020" class="slider" id="startYearSlider">
@@ -320,11 +324,18 @@ if(isset($_GET['id'])) {
         if (tabName === 'Table') {
             sliderContainer.classList.add("hidden");
             document.getElementById('grafB').classList.add('hidden');
+            document.getElementById('mapB').classList.add('hidden');
             document.getElementById('tableB').classList.remove('hidden');
-        } else {
+        } else if(tabName === 'Graph') {
             sliderContainer.classList.remove("hidden");
             document.getElementById('grafB').classList.remove('hidden');
             document.getElementById('tableB').classList.add('hidden');
+            document.getElementById('mapB').classList.add('hidden');
+        } else {
+            sliderContainer.classList.add("hidden");
+            document.getElementById('grafB').classList.add('hidden');
+            document.getElementById('tableB').classList.add('hidden');
+            document.getElementById('mapB').classList.remove('hidden');
         }
     }
 
@@ -419,6 +430,10 @@ if(isset($_GET['id'])) {
 
 <div id="tableB" class="center hidden">
     <button class="text-button" onclick="exportTable()">Export Table</button>
+</div>
+
+<div id="mapB" class="center hidden">
+    <button class="text-button" onclick="">Export Map</button>
 </div>
 
 <?php include "footer.php";?>
