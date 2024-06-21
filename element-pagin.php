@@ -150,6 +150,17 @@ if ($row) {
 
         <div id="tooltip" class="hidden"></div>
 
+        <div class="slider-container-map">
+            <input type="range" min="2020" max="2024" value="2020" class="sliderMap" id="startYearSliderMap">
+            <div class="year-markers-map">
+                <div class="year-marker-map" style="left: 0%;">2020</div>
+                <div class="year-marker-map" style="left: 25%;">2021</div>
+                <div class="year-marker-map" style="left: 50%;">2022</div>
+                <div class="year-marker-map" style="left: 75%;">2023</div>
+                <div class="year-marker-map" style="left: 100%;">2024</div>
+            </div>
+            <div id="selectedYearMap">2020</div>
+        </div>
 </div>
 
 <div class="slider-container">
@@ -506,6 +517,17 @@ if ($row) {
             });
         });
     });
+
+    startYearSliderMap = document.getElementById('startYearSliderMap');
+    startYearSliderMap.addEventListener('input', updateYearMap);
+
+    function updateYearMap()
+    {
+        const yearMapStart = document.getElementById('startYearSliderMap');
+        const yearMapSelect = document.getElementById('selectedYearMap');
+
+        yearMapSelect.textContent = yearMapStart.value;
+    }
 
 </script>
 
