@@ -146,6 +146,21 @@ private DataManager $dataManager;
                     $this->methodNotAllowed();
                 }
                 break;
+            case 'generateDataInCampanii':
+                $this->dataManager = new CampaniiManager($this->dbConnection);
+                $year = $_POST['year'];
+                $this->dataManager->generateCampaignDataInJudete($year);
+                break;
+            case 'generateDataInInfractiuni':
+                $this->dataManager = new InfractionalitatiManager($this->dbConnection);
+                $year = $_POST['year'];
+                $this->dataManager->generateDataInInfractiuni($year);
+                break;
+            case 'generateDataInUrgenteMedicale':
+                $this->dataManager = new UrgenteMedicaleManager($this->dbConnection);
+                $year = $_POST['year'];
+                $this->dataManager->generateDataInUrgenteMedicale($year);
+                break;
             // Adăugați aici alte acțiuni...
             default:
                 http_response_code(405);

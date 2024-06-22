@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drug Management</title>
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2_admin_button.scss">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('RefactoringDataBase/index.php/get/drugsName')
@@ -37,7 +38,10 @@
                 { id: 'updateDescriptionForm', url: 'RefactoringDataBase/index.php/update/description' },
                 { id: 'deleteDrugForm', url: 'RefactoringDataBase/index.php/delete/drug' },
                 { id: 'uploadFileForm', url: 'RefactoringDataBase/index.php/upload' },
-                { id: 'generateDataForm', url: 'RefactoringDataBase/index.php/generateDataInJudete' }
+                { id: 'generateDataForm', url: 'RefactoringDataBase/index.php/generateDataInJudete' },
+                { id: 'generateCampaniiForm', url: 'RefactoringDataBase/index.php/generateDataInCampanii' },
+                { id: 'generateInfractionalitatiForm', url: 'RefactoringDataBase/index.php/generateDataInInfractiuni'},
+                { id: 'generateUrgenteMedicaleFrom', url: 'RefactoringDataBase/index.php/generateDataInUrgenteMedicale'}
             ];
 
             forms.forEach(form => {
@@ -213,9 +217,39 @@
             <button type="submit">Generate Data</button>
         </form>
     </div>
+    <!-- Formular pentru generarea datelor în campanii -->
+    <div>
+    <h2>Generate Data in Campanii</h2>
+        <form id="generateCampaniiForm" method="post">
+            <label for="year">Anul:</label>
+            <input type="number" id="year" name="year" required>
+            <button type="submit">Generate Data</button>
+        </form>
+    </div>
+    <!-- Formular pentru generarea datelor in infractiuni -->
+    <div>
+        <h2>Generate Data in Condamnari</h2>
+        <form id="generateInfractionalitatiForm" method="post">
+            <label for="year">Anul:</label>
+            <input type="number" id="year" name="year" required>
+            <button type="submit">Generate Data</button>
+        </form>
+    </div>
+    <!-- Formular pentru generarea datelor in urgente medicale -->
+    <div>
+        <h2>Generare Date Urgente Medicale</h2>
+        <form id="generateUrgenteMedicaleFrom" method="post">
+            <label for="year">Anul:</label>
+            <input type="number" id="year" name="year" required>
+            <button type="submit">Generate Data</button>
+        </form>
+    </div>
 
 </div>
 
 <div id="message"></div>
+<form action="HomePage.php" method="get" id="backForm">
+    <button type="submit" class="fixed-back-button">Back</button>
+</form>
 </body>
 </html>

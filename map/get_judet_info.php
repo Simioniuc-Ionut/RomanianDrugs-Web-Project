@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['judet'])) {
     $judet = $_GET['judet'];
-    $data = file_get_contents('judete.json');
+    $data = file_get_contents('drug_data.json');
     $judete = json_decode($data, true);
 
     if (isset($judete[$judet])) {

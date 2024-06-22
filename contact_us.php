@@ -39,6 +39,7 @@
 
         <button type="submit" class="form-button-contact">Submit</button>
     </form>
+    <a href="adminLogin.php" class="admin-login-button">Admin Login</a>
 </div>
 
 

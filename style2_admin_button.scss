@@ -1,0 +1,50 @@
+/* style2.css */
+$primary-color: #4cae4c;
+$secondary-color: #f4f4f4;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $secondary-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+.form-button-contact {
+  background-color: $primary-color;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form-button-contact:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+/* Stilizare pentru butonul "Back" fix */
+.fixed-back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: rgb(92, 184, 92);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.fixed-back-button:hover {
+  background-color: darken(#f44336, 10%);
+}

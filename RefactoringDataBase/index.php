@@ -57,6 +57,15 @@ $routes = [
     },
     'getDataFromJudete' => function() use ($controller) {
         $controller->processRequest('getDataFromJudete');
+    },
+    'generateDataInCampanii' => function() use ($controller) {
+    $controller->processRequest('generateDataInCampanii');
+    },
+    'generateDataInInfractiuni' => function() use ($controller) {
+    $controller->processRequest('generateDataInInfractiuni');
+    },
+    'generateDataInUrgenteMedicale' => function() use ($controller) {
+    $controller->processRequest('generateDataInUrgenteMedicale');
     }
     // Adăugați aici alte rute...
 ];
