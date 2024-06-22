@@ -1,23 +1,70 @@
 {
-  "Cluj": {
-    "nume": "Transilvania",
-    "populatie": "3,000,000",
-    "suprafata": "100,000 km²",
-    "densitate": "30 loc/km²",
-    "descriere": "O regiune istorica si culturala din Romania."
-  },
   "Iasi": {
-    "nume": "Moldova",
-    "populatie": "2,500,000",
-    "suprafata": "80,000 km²",
-    "densitate": "31.25 loc/km²",
-    "descriere": "O regiune din partea de nord-est a Romaniei, cunoscuta pentru istoria si cultura sa bogata."
+    "drugs": [
+      {
+        "drugname": "canabis",
+        "ani": [
+          {
+            "an": "2020",
+            "confiscari": "6411",
+            "total_droguri": "314"
+          },
+          {
+            "an": "2021",
+            "confiscari": "64",
+            "total_droguri": "31411"
+          }
+        ]
+      },
+      {
+        "drugname": "123",
+        "ani": [
+          {
+            "an": "2020",
+            "confiscari": "1",
+            "total_droguri": "2"
+          },
+          {
+            "an": "2021",
+            "confiscari": "3",
+            "total_droguri": "4"
+          }
+        ]
+      }
+    ]
   },
-  "Suceava": {
-    "nume": "Bucovina",
-    "populatie": "750,000",
-    "suprafata": "20,000 km²",
-    "densitate": "37.5 loc/km²",
-    "descriere": "O regiune montana din nordul Romaniei, renumita pentru peisajele sale naturale si traditiile populare."
+  "Cluj": {
+    "drugs": [
+      {
+        "drugname": "canabis",
+        "ani": [
+          {
+            "an": "2020",
+            "confiscari": "500",
+            "total_droguri": "100"
+          },
+          {
+            "an": "2021",
+            "confiscari": "600",
+            "total_droguri": "150"
+          }
+        ]
+      },
+      {
+        "drugname": "cocaine",
+        "ani": [
+          {
+            "an": "2020",
+            "confiscari": "400",
+            "total_droguri": "90"
+          },
+          {
+            "an": "2021",
+            "confiscari": "700",
+            "total_droguri": "130"
+          }
+        ]
+      }
+    ]
   }
 }

@@ -1,25 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Selectează toate elementele <path> din SVG
+
     var judete = document.querySelectorAll('.judet');
     var tooltip = document.getElementById('tooltip');
+    var selectedYearMap = document.getElementById('selectedYearMap');
+    var startYearSliderMap = document.getElementById('startYearSliderMap');
 
-    // Adaugă event listener pentru fiecare județ
+    var selectedDrug = document.getElementById('drug-name');
+    var drugName = selectedDrug.textContent.trim();
+
+    console.log(drugName);
+
     judete.forEach(function(judet) {
         judet.addEventListener('click', function(event) {
-            var regionId = judet.id; // ID-ul județului
+            var regionId = judet.id;
             fetch(`map/get_judet_info.php?judet=${regionId}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
                         tooltip.innerHTML = "No data found yet.";
                     } else {
-                        // Actualizează tooltip-ul
-                        tooltip.innerHTML = `
-                            <strong>${data.nume}</strong><br>
-                            Populatie: ${data.populatie}<br>
-                            Suprafata: ${data.suprafata}<br>
-                            Densitate: ${data.densitate}
-                        `;
+                        var selectedYear = selectedYearMap.textContent; // Anul selectat
+                        var found = false;
+
+                        data.drugs.forEach(function(drug) {
+                            drug.ani.forEach(function(anData) {
+                                if ( drug.drugname == drugName && anData.an === selectedYear) {
+                                    tooltip.innerHTML = `
+                                        <strong> Drug: ${drug.drugname} </strong><br>
+                                        Confiscari: ${anData.confiscari}<br>
+                                        Total droguri: ${anData.total_droguri}<br>
+                                        An: ${anData.an}
+                                    `;
+                                    found = true;
+                                }
+                            });
+                        });
+
+                        if (!found) {
+                            tooltip.innerHTML = "No data for selected year and drug.";
+                        }
                     }
                     tooltip.style.left = `${event.pageX + 10}px`;
                     tooltip.style.top = `${event.pageY + 10}px`;
@@ -49,4 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
             tooltip.classList.add('hidden');
         }
     });
+
+    startYearSliderMap.addEventListener('input', updateYearMap);
+
+    function updateYearMap() {
+        var yearMapStart = document.getElementById('startYearSliderMap');
+        selectedYearMap.textContent = yearMapStart.value;
+    }
 });
