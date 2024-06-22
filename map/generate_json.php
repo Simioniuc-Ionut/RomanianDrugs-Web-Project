@@ -1,47 +1,74 @@
 <?php
-require './RefactoringDataBase/DataBase.php';
-function generateJsonFile($year, $drugName): void
-{
-    try {
-        $dbConnection = new DataBase();
+header('Content-Type: application/json');
+$servername = "127.0.0.1:3306";
+$username = "root";
+$password = "";
+$dbname = "projectdb";
 
-        $sql = "SELECT judete, confiscari, total_droguri, an
-                FROM droguri_judete
-                JOIN drugstable ON droguri_judete.id_drog = drugstable.id
-                WHERE an = :year AND drugstable.name = :drugName";
+// Crearea conexiunii
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-        $stmt = $dbConnection->prepare($sql);
-        $stmt->bindParam(':year', $year, PDO::PARAM_INT);
-        $stmt->bindParam(':drugName', $drugName, PDO::PARAM_STR);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Verificarea conexiunii
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-        if (!$data) {
-            echo json_encode(["error" => "Nu s-au găsit date în baza de date."]);
-            exit;
+$sql = "SELECT dj.judete, d.name AS drugname, dj.an, dj.confiscari, dj.total_droguri
+        FROM droguri_judete dj
+        JOIN drugstable d ON dj.id_drog = d.id";
+$result = $conn->query($sql);
+
+$data = [];
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $judet = $row['judete'];
+        $drugname = $row['drugname'];
+        $an = $row['an'];
+        $confiscari = $row['confiscari'];
+        $total_droguri = $row['total_droguri'];
+
+        if (!isset($data[$judet])) {
+            $data[$judet] = ['drugs' => []];
         }
 
-        $jsonData = [];
-        foreach ($data as $row) {
-            $judet = $row['judete'];
-            $jsonData[$judet] = [
-                'name' => $drugName,
-                'confiscari' => $row['confiscari'],
-                'total_droguri' => $row['total_droguri'],
-                'an' => $row['an']
+        $found = false;
+        foreach ($data[$judet]['drugs'] as &$drug) {
+            if ($drug['drugname'] == $drugname) {
+                $drug['ani'][] = [
+                    'an' => $an,
+                    'confiscari' => $confiscari,
+                    'total_droguri' => $total_droguri
+                ];
+                $found = true;
+                break;
+            }
+        }
+
+        if (!$found) {
+            $data[$judet]['drugs'][] = [
+                'drugname' => $drugname,
+                'ani' => [
+                    [
+                        'an' => $an,
+                        'confiscari' => $confiscari,
+                        'total_droguri' => $total_droguri
+                    ]
+                ]
             ];
         }
-        $jsonFilePath = 'map/judete_data.json';
-        file_put_contents($jsonFilePath, json_encode($jsonData, JSON_PRETTY_PRINT));
-        echo json_encode(["success" => "Fișierul JSON a fost generat cu succes."]);
-    } catch (PDOException $e) {
-        echo json_encode(["error" => "Eroare de conexiune la baza de date: " . $e->getMessage()]);
     }
 }
 
-// Asumăm că aceste date sunt trimise prin POST
-//$year = $_POST['year'];
-//$drugName = $_POST['drugName'];
-//
-//generateJsonFile($year, $drugName);
+$conn->close();
+
+// Convertim datele în JSON
+$json_data = json_encode($data, JSON_PRETTY_PRINT);
+
+// Salvăm JSON-ul în fișier
+$file_path = 'map/drug_data.json';
+file_put_contents($file_path, $json_data);
+
+// Returnăm calea fișierulaui
+echo json_encode(['file_path' => $file_path]);
 ?>

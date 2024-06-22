@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         data.drugs.forEach(function(drug) {
                             drug.ani.forEach(function(anData) {
-                                if ( drug.drugname == drugName && anData.an === selectedYear) {
+                                if ( drug.drugname.toLowerCase() === drugName.toLowerCase() && anData.an === selectedYear) {
                                     tooltip.innerHTML = `
                                         <strong> Drug: ${drug.drugname} </strong><br>
                                         Confiscari: ${anData.confiscari}<br>
