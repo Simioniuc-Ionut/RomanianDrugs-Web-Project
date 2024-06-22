@@ -35,7 +35,7 @@ if ($row) {
     $drugName = $row["name"];
     echo '<div class="container_item">';
     echo '<div class="item-image">';
-    echo '<h2 class="item-name">' . $row["name"] . '</h2>';
+    echo '<h2 id="drug-name" class="item-name">' . $row["name"] . '</h2>';
     echo '<div class="box_image_element">';
     echo '<img src="imaginiDroguri/' . $row["image"] . '" alt="' . $row["name"] . '">';
     echo '</div>';
