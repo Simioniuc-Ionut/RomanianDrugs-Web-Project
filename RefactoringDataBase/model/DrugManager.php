@@ -1,6 +1,4 @@
 <?php
-require_once 'RefactoringDataBase/DataBase.php'; // Presupunând că DataBase.php este în același director cu DrugManager.php
-require_once 'RefactoringDataBase/model/DataManager.php'; // Ajustează calea către clasa DataManager
 
 // DrugManager.php
 class DrugManager extends DataManager {
