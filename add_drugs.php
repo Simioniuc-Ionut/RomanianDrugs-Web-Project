@@ -76,7 +76,6 @@
 
 
 
-
         });
     </script>
     <style>
@@ -214,13 +213,7 @@
             <button type="submit">Generate Data</button>
         </form>
     </div>
-    <!-- Form to generate JSON -->
-    <div>
-        <h2>Generate JSON</h2>
-        <form id="generateJsonForm" novalidate>
-            <button type="submit">Generate JSON</button>
-        </form>
-    </div>
+
 </div>
 
 <div id="message"></div>

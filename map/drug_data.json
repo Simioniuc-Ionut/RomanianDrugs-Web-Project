@@ -1,0 +1,2690 @@
+{
+    "Alba": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 23,
+                        "total_droguri": 336
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 12,
+                        "total_droguri": 421
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 31,
+                        "total_droguri": 19
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 6,
+                        "total_droguri": 342
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 36,
+                        "total_droguri": 230
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 95,
+                        "total_droguri": 126
+                    }
+                ]
+            }
+        ]
+    },
+    "Arad": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 96,
+                        "total_droguri": 374
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 56,
+                        "total_droguri": 34
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 49,
+                        "total_droguri": 339
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 94,
+                        "total_droguri": 280
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 1,
+                        "total_droguri": 112
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 39,
+                        "total_droguri": 384
+                    }
+                ]
+            }
+        ]
+    },
+    "Arges": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 29,
+                        "total_droguri": 73
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 4,
+                        "total_droguri": 391
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 64,
+                        "total_droguri": 215
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 76,
+                        "total_droguri": 64
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 11,
+                        "total_droguri": 466
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 97,
+                        "total_droguri": 70
+                    }
+                ]
+            }
+        ]
+    },
+    "Bacau": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 24,
+                        "total_droguri": 424
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 51,
+                        "total_droguri": 143
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 59,
+                        "total_droguri": 353
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 6,
+                        "total_droguri": 124
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 27,
+                        "total_droguri": 310
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 67,
+                        "total_droguri": 470
+                    }
+                ]
+            }
+        ]
+    },
+    "Bihor": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 70,
+                        "total_droguri": 241
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 77,
+                        "total_droguri": 361
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 4,
+                        "total_droguri": 253
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 15,
+                        "total_droguri": 245
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 10,
+                        "total_droguri": 74
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 61,
+                        "total_droguri": 326
+                    }
+                ]
+            }
+        ]
+    },
+    "Bistrita-Nasaud": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 53,
+                        "total_droguri": 131
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 3,
+                        "total_droguri": 22
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 39,
+                        "total_droguri": 348
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 8,
+                        "total_droguri": 201
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 16,
+                        "total_droguri": 191
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 53,
+                        "total_droguri": 236
+                    }
+                ]
+            }
+        ]
+    },
+    "Botosani": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 86,
+                        "total_droguri": 149
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 53,
+                        "total_droguri": 479
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 30,
+                        "total_droguri": 399
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 79,
+                        "total_droguri": 402
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 71,
+                        "total_droguri": 282
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 79,
+                        "total_droguri": 39
+                    }
+                ]
+            }
+        ]
+    },
+    "Braila": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 39,
+                        "total_droguri": 290
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 75,
+                        "total_droguri": 406
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 50,
+                        "total_droguri": 430
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 100,
+                        "total_droguri": 105
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 14,
+                        "total_droguri": 267
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 68,
+                        "total_droguri": 193
+                    }
+                ]
+            }
+        ]
+    },
+    "Brasov": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 41,
+                        "total_droguri": 279
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 32,
+                        "total_droguri": 249
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 33,
+                        "total_droguri": 216
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 24,
+                        "total_droguri": 291
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 60,
+                        "total_droguri": 32
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 65,
+                        "total_droguri": 342
+                    }
+                ]
+            }
+        ]
+    },
+    "Bucuresti": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 23,
+                        "total_droguri": 213
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 35,
+                        "total_droguri": 171
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 24,
+                        "total_droguri": 410
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 31,
+                        "total_droguri": 251
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 20,
+                        "total_droguri": 392
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 12,
+                        "total_droguri": 465
+                    }
+                ]
+            }
+        ]
+    },
+    "Buzau": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 55,
+                        "total_droguri": 84
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 48,
+                        "total_droguri": 354
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 26,
+                        "total_droguri": 435
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 96,
+                        "total_droguri": 347
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 40,
+                        "total_droguri": 500
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 59,
+                        "total_droguri": 469
+                    }
+                ]
+            }
+        ]
+    },
+    "Calarasi": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 47,
+                        "total_droguri": 310
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 38,
+                        "total_droguri": 134
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 11,
+                        "total_droguri": 121
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 0,
+                        "total_droguri": 350
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 24,
+                        "total_droguri": 456
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 81,
+                        "total_droguri": 128
+                    }
+                ]
+            }
+        ]
+    },
+    "Caras-Severin": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 82,
+                        "total_droguri": 49
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 3,
+                        "total_droguri": 241
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 36,
+                        "total_droguri": 273
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 2,
+                        "total_droguri": 410
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 13,
+                        "total_droguri": 351
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 77,
+                        "total_droguri": 133
+                    }
+                ]
+            }
+        ]
+    },
+    "Cluj": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 33,
+                        "total_droguri": 285
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 88,
+                        "total_droguri": 124
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 98,
+                        "total_droguri": 200
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 63,
+                        "total_droguri": 137
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 96,
+                        "total_droguri": 36
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 8,
+                        "total_droguri": 101
+                    }
+                ]
+            }
+        ]
+    },
+    "Constanta": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 9,
+                        "total_droguri": 308
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 63,
+                        "total_droguri": 362
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 76,
+                        "total_droguri": 77
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 40,
+                        "total_droguri": 187
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 7,
+                        "total_droguri": 480
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 72,
+                        "total_droguri": 385
+                    }
+                ]
+            }
+        ]
+    },
+    "Covasna": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 58,
+                        "total_droguri": 208
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 80,
+                        "total_droguri": 142
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 78,
+                        "total_droguri": 120
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 98,
+                        "total_droguri": 437
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 28,
+                        "total_droguri": 458
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 63,
+                        "total_droguri": 416
+                    }
+                ]
+            }
+        ]
+    },
+    "Dambovita": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 2,
+                        "total_droguri": 250
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 7,
+                        "total_droguri": 134
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 61,
+                        "total_droguri": 482
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 71,
+                        "total_droguri": 462
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 30,
+                        "total_droguri": 60
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 39,
+                        "total_droguri": 194
+                    }
+                ]
+            }
+        ]
+    },
+    "Dolj": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 31,
+                        "total_droguri": 190
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 15,
+                        "total_droguri": 353
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 13,
+                        "total_droguri": 376
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 79,
+                        "total_droguri": 393
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 95,
+                        "total_droguri": 100
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 50,
+                        "total_droguri": 395
+                    }
+                ]
+            }
+        ]
+    },
+    "Galati": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 59,
+                        "total_droguri": 257
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 8,
+                        "total_droguri": 417
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 87,
+                        "total_droguri": 64
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 63,
+                        "total_droguri": 478
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 61,
+                        "total_droguri": 18
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 44,
+                        "total_droguri": 145
+                    }
+                ]
+            }
+        ]
+    },
+    "Giurgiu": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 40,
+                        "total_droguri": 409
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 76,
+                        "total_droguri": 380
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 90,
+                        "total_droguri": 452
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 37,
+                        "total_droguri": 196
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 85,
+                        "total_droguri": 473
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 27,
+                        "total_droguri": 143
+                    }
+                ]
+            }
+        ]
+    },
+    "Gorj": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 44,
+                        "total_droguri": 108
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 100,
+                        "total_droguri": 18
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 86,
+                        "total_droguri": 174
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 42,
+                        "total_droguri": 354
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 85,
+                        "total_droguri": 332
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 92,
+                        "total_droguri": 441
+                    }
+                ]
+            }
+        ]
+    },
+    "Harghita": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 25,
+                        "total_droguri": 212
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 60,
+                        "total_droguri": 448
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 38,
+                        "total_droguri": 1
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 1,
+                        "total_droguri": 46
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 23,
+                        "total_droguri": 475
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 72,
+                        "total_droguri": 460
+                    }
+                ]
+            }
+        ]
+    },
+    "Hunedoara": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 43,
+                        "total_droguri": 54
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 31,
+                        "total_droguri": 197
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 92,
+                        "total_droguri": 10
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 0,
+                        "total_droguri": 251
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 75,
+                        "total_droguri": 179
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 36,
+                        "total_droguri": 128
+                    }
+                ]
+            }
+        ]
+    },
+    "Ialomita": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 18,
+                        "total_droguri": 466
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 40,
+                        "total_droguri": 381
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 53,
+                        "total_droguri": 232
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 14,
+                        "total_droguri": 456
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 8,
+                        "total_droguri": 464
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 21,
+                        "total_droguri": 28
+                    }
+                ]
+            }
+        ]
+    },
+    "Iasi": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 83,
+                        "total_droguri": 128
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 12,
+                        "total_droguri": 357
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 34,
+                        "total_droguri": 183
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 11,
+                        "total_droguri": 446
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 89,
+                        "total_droguri": 227
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 99,
+                        "total_droguri": 434
+                    }
+                ]
+            }
+        ]
+    },
+    "Ilfov": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 96,
+                        "total_droguri": 98
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 100,
+                        "total_droguri": 459
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 88,
+                        "total_droguri": 183
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 46,
+                        "total_droguri": 259
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 26,
+                        "total_droguri": 271
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 98,
+                        "total_droguri": 453
+                    }
+                ]
+            }
+        ]
+    },
+    "Maramures": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 14,
+                        "total_droguri": 36
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 14,
+                        "total_droguri": 192
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 68,
+                        "total_droguri": 367
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 56,
+                        "total_droguri": 465
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 76,
+                        "total_droguri": 163
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 49,
+                        "total_droguri": 474
+                    }
+                ]
+            }
+        ]
+    },
+    "Mehedinti": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 75,
+                        "total_droguri": 14
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 74,
+                        "total_droguri": 184
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 11,
+                        "total_droguri": 71
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 70,
+                        "total_droguri": 153
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 92,
+                        "total_droguri": 32
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 84,
+                        "total_droguri": 164
+                    }
+                ]
+            }
+        ]
+    },
+    "Mures": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 23,
+                        "total_droguri": 402
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 2,
+                        "total_droguri": 91
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 49,
+                        "total_droguri": 309
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 64,
+                        "total_droguri": 329
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 70,
+                        "total_droguri": 317
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 77,
+                        "total_droguri": 54
+                    }
+                ]
+            }
+        ]
+    },
+    "Neamt": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 79,
+                        "total_droguri": 361
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 41,
+                        "total_droguri": 413
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 77,
+                        "total_droguri": 334
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 80,
+                        "total_droguri": 52
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 60,
+                        "total_droguri": 259
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 74,
+                        "total_droguri": 43
+                    }
+                ]
+            }
+        ]
+    },
+    "Olt": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 97,
+                        "total_droguri": 65
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 99,
+                        "total_droguri": 428
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 88,
+                        "total_droguri": 106
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 53,
+                        "total_droguri": 414
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 22,
+                        "total_droguri": 323
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 98,
+                        "total_droguri": 488
+                    }
+                ]
+            }
+        ]
+    },
+    "Prahova": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 85,
+                        "total_droguri": 15
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 21,
+                        "total_droguri": 203
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 4,
+                        "total_droguri": 442
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 1,
+                        "total_droguri": 264
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 49,
+                        "total_droguri": 61
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 79,
+                        "total_droguri": 13
+                    }
+                ]
+            }
+        ]
+    },
+    "Satu Mare": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 68,
+                        "total_droguri": 416
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 3,
+                        "total_droguri": 315
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 46,
+                        "total_droguri": 275
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 66,
+                        "total_droguri": 91
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 61,
+                        "total_droguri": 207
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 97,
+                        "total_droguri": 197
+                    }
+                ]
+            }
+        ]
+    },
+    "Salaj": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 69,
+                        "total_droguri": 77
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 27,
+                        "total_droguri": 235
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 0,
+                        "total_droguri": 32
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 64,
+                        "total_droguri": 461
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 68,
+                        "total_droguri": 117
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 37,
+                        "total_droguri": 348
+                    }
+                ]
+            }
+        ]
+    },
+    "Sibiu": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 96,
+                        "total_droguri": 485
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 24,
+                        "total_droguri": 26
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 16,
+                        "total_droguri": 418
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 80,
+                        "total_droguri": 257
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 29,
+                        "total_droguri": 454
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 48,
+                        "total_droguri": 127
+                    }
+                ]
+            }
+        ]
+    },
+    "Suceava": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 39,
+                        "total_droguri": 73
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 94,
+                        "total_droguri": 174
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 2,
+                        "total_droguri": 485
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 32,
+                        "total_droguri": 196
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 56,
+                        "total_droguri": 356
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 98,
+                        "total_droguri": 199
+                    }
+                ]
+            }
+        ]
+    },
+    "Teleorman": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 50,
+                        "total_droguri": 93
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 0,
+                        "total_droguri": 293
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 18,
+                        "total_droguri": 436
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 63,
+                        "total_droguri": 391
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 57,
+                        "total_droguri": 424
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 21,
+                        "total_droguri": 203
+                    }
+                ]
+            }
+        ]
+    },
+    "Timis": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 69,
+                        "total_droguri": 107
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 100,
+                        "total_droguri": 245
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 31,
+                        "total_droguri": 373
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 24,
+                        "total_droguri": 370
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 32,
+                        "total_droguri": 249
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 44,
+                        "total_droguri": 387
+                    }
+                ]
+            }
+        ]
+    },
+    "Tulcea": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 96,
+                        "total_droguri": 62
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 65,
+                        "total_droguri": 149
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 4,
+                        "total_droguri": 163
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 34,
+                        "total_droguri": 379
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 30,
+                        "total_droguri": 77
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 52,
+                        "total_droguri": 77
+                    }
+                ]
+            }
+        ]
+    },
+    "Valcea": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 75,
+                        "total_droguri": 46
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 50,
+                        "total_droguri": 18
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 93,
+                        "total_droguri": 220
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 63,
+                        "total_droguri": 50
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 70,
+                        "total_droguri": 212
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 17,
+                        "total_droguri": 356
+                    }
+                ]
+            }
+        ]
+    },
+    "Vaslui": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 49,
+                        "total_droguri": 321
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 88,
+                        "total_droguri": 301
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 48,
+                        "total_droguri": 226
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 91,
+                        "total_droguri": 463
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 53,
+                        "total_droguri": 112
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 18,
+                        "total_droguri": 118
+                    }
+                ]
+            }
+        ]
+    },
+    "Vrancea": {
+        "drugs": [
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2020",
+                        "confiscari": 76,
+                        "total_droguri": 329
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 35,
+                        "total_droguri": 16
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2021",
+                        "confiscari": 35,
+                        "total_droguri": 27
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2022",
+                        "confiscari": 5,
+                        "total_droguri": 36
+                    }
+                ]
+            },
+            {
+                "drugname": "Canabis",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 41,
+                        "total_droguri": 290
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2023",
+                        "confiscari": 39,
+                        "total_droguri": 245
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -151,8 +151,68 @@ class DrugManager extends DataManager {
         return $graphDataStmt->fetchAll(PDO::FETCH_ASSOC);
     }
     // Alte metode pentru interacțiunea cu tabela de droguri
-    public function generateDataInJudete($year, $drug_name): void
-    {
+//    public function generateDataInJudete($year, $drug_name): void
+//    {
+//        // Anul pentru care se generează datele
+//        $an = $year;
+//
+//        // Verificăm dacă numele drogului este valid
+//        $sql_check_drug = "SELECT id FROM drugstable WHERE name = ?";
+//        $stmt_check_drug = $this->dbConnection->prepare($sql_check_drug);
+//        $stmt_check_drug->bindParam(1, $drug_name, PDO::PARAM_STR);
+//        $stmt_check_drug->execute();
+//        $id_drog_row = $stmt_check_drug->fetch(PDO::FETCH_ASSOC);
+//
+//        if (!$id_drog_row) {
+//            echo json_encode(['error' => 'Numele drogului nu este valid.']);
+//            return;
+//        }
+//
+//        $id_drog = $id_drog_row['id'];
+//
+//        // Lista de județe din România (poți adăuga orice județe lipsă)
+//        $judete = [
+//            "Alba", "Arad", "Argeș", "Bacău", "Bihor", "Bistrița-Năsăud", "Botoșani", "Brăila", "Brașov", "București",
+//            "Buzău", "Călărași", "Caraș-Severin", "Cluj", "Constanța", "Covasna", "Dâmbovița", "Dolj", "Galați", "Giurgiu",
+//            "Gorj", "Harghita", "Hunedoara", "Ialomița", "Iași", "Ilfov", "Maramureș", "Mehedinți", "Mureș", "Neamț", "Olt",
+//            "Prahova", "Satu Mare", "Sălaj", "Sibiu", "Suceava", "Teleorman", "Timiș", "Tulcea", "Vâlcea", "Vaslui", "Vrancea"
+//        ];
+//
+//        // Prepararea declarației SQL pentru inserare
+//        $sql = "INSERT INTO droguri_judete (id_drog, confiscari, total_droguri, judete, an)
+//            VALUES (?, ?, ?, ?, ?)";
+//        $stmt = $this->dbConnection->prepare($sql);
+//        if (!$stmt) {
+//            $results[] = "Eroare la pregătirea declarației SQL: " . $this->dbConnection->error;
+//            echo json_encode(['error' => $results]);
+//            return;
+//        }
+//
+//        // Generarea și inserarea datelor
+//        foreach ($judete as $judet) {
+//            $confiscari = rand(0, 100); // Număr aleatoriu de confiscări între 0 și 100
+//            $total_droguri = rand(0, 500); // Număr aleatoriu de total de droguri între 0 și 500
+//
+//            // Legăm parametrii și executăm declarația
+//            $stmt->bindParam(1, $id_drog, PDO::PARAM_INT);
+//            $stmt->bindParam(2, $confiscari, PDO::PARAM_INT);
+//            $stmt->bindParam(3, $total_droguri, PDO::PARAM_INT);
+//            $stmt->bindParam(4, $judet, PDO::PARAM_STR);
+//            $stmt->bindParam(5, $an, PDO::PARAM_INT);
+//
+//            if ($stmt->execute()) {
+//                // Adăugăm mesajul de succes în array-ul de rezultate
+//                $results = "Datele au fost inserate cu succes";
+//            } else {
+//                // Adăugăm mesajul de eroare în array-ul de rezultate
+//                $results = "Eroare la inserarea datelor pentru $drug_name în județul $judet: " . $stmt->errorInfo()[2];
+//            }
+//        }
+//
+//        // În final, trimitem răspunsul în format JSON
+//        echo json_encode(['message' => $results]);
+//    }
+    public function generateDataInJudete($year, $drug_name): void {
         // Anul pentru care se generează datele
         $an = $year;
 
@@ -172,46 +232,104 @@ class DrugManager extends DataManager {
 
         // Lista de județe din România (poți adăuga orice județe lipsă)
         $judete = [
-            "Alba", "Arad", "Argeș", "Bacău", "Bihor", "Bistrița-Năsăud", "Botoșani", "Brăila", "Brașov", "București",
-            "Buzău", "Călărași", "Caraș-Severin", "Cluj", "Constanța", "Covasna", "Dâmbovița", "Dolj", "Galați", "Giurgiu",
-            "Gorj", "Harghita", "Hunedoara", "Ialomița", "Iași", "Ilfov", "Maramureș", "Mehedinți", "Mureș", "Neamț", "Olt",
-            "Prahova", "Satu Mare", "Sălaj", "Sibiu", "Suceava", "Teleorman", "Timiș", "Tulcea", "Vâlcea", "Vaslui", "Vrancea"
+            "Alba", "Arad", "Arges", "Bacau", "Bihor", "Bistrita-Nasaud", "Botosani", "Braila", "Brasov", "Bucuresti",
+            "Buzau", "Calarasi", "Caras-Severin", "Cluj", "Constanta", "Covasna", "Dambovita", "Dolj", "Galati", "Giurgiu",
+            "Gorj", "Harghita", "Hunedoara", "Ialomita", "Iasi", "Ilfov", "Maramures", "Mehedinti", "Mures", "Neamt", "Olt",
+            "Prahova", "Satu Mare", "Salaj", "Sibiu", "Suceava", "Teleorman", "Timis", "Tulcea", "Valcea", "Vaslui", "Vrancea"
         ];
 
-        // Prepararea declarației SQL pentru inserare
-        $sql = "INSERT INTO droguri_judete (id_drog, confiscari, total_droguri, judete, an) 
-            VALUES (?, ?, ?, ?, ?)";
-        $stmt = $this->dbConnection->prepare($sql);
-        if (!$stmt) {
-            $results[] = "Eroare la pregătirea declarației SQL: " . $this->dbConnection->error;
-            echo json_encode(['error' => $results]);
-            return;
-        }
+        $results = [];
 
-        // Generarea și inserarea datelor
+        // Verificăm dacă există deja date pentru același drog și an în baza de date și în fișierul JSON
         foreach ($judete as $judet) {
+            // Verificăm în baza de date
+            $sql_check_duplicate = "SELECT COUNT(*) AS cnt FROM droguri_judete WHERE id_drog = ? AND judete = ? AND an = ?";
+            $stmt_check_duplicate = $this->dbConnection->prepare($sql_check_duplicate);
+            $stmt_check_duplicate->bindParam(1, $id_drog, PDO::PARAM_INT);
+            $stmt_check_duplicate->bindParam(2, $judet, PDO::PARAM_STR);
+            $stmt_check_duplicate->bindParam(3, $an, PDO::PARAM_INT);
+            $stmt_check_duplicate->execute();
+            $duplicate_row = $stmt_check_duplicate->fetch(PDO::FETCH_ASSOC);
+
+            if ($duplicate_row['cnt'] > 0) {
+                $results[0] = "Datele  există deja în baza de date.";
+                continue; // Trecem la următorul județ fără să facem inserare
+            }
+
+            // Verificăm în fișierul JSON
+            $file_path = '../map/drug_data.json';
+            $json_data = file_get_contents($file_path);
+            $existing_data = json_decode($json_data, true);
+
+            $found = false;
+            if (isset($existing_data[$judet])) {
+                foreach ($existing_data[$judet]['drugs'] as $drug) {
+                    if ($drug['drugname'] == $drug_name) {
+                        foreach ($drug['ani'] as $ani) {
+                            if ($ani['an'] == $an) {
+                                $found = true;
+                                break 3; // Ieșim din toate buclele
+                            }
+                        }
+                    }
+                }
+            }
+
+            if ($found) {
+                $results[1] = "Datele există deja în fișierul JSON.";
+                continue; // Trecem la următorul județ fără să facem inserare
+            }
+
+            // Dacă nu am găsit duplicat, inserăm în baza de date
             $confiscari = rand(0, 100); // Număr aleatoriu de confiscări între 0 și 100
             $total_droguri = rand(0, 500); // Număr aleatoriu de total de droguri între 0 și 500
 
-            // Legăm parametrii și executăm declarația
-            $stmt->bindParam(1, $id_drog, PDO::PARAM_INT);
-            $stmt->bindParam(2, $confiscari, PDO::PARAM_INT);
-            $stmt->bindParam(3, $total_droguri, PDO::PARAM_INT);
-            $stmt->bindParam(4, $judet, PDO::PARAM_STR);
-            $stmt->bindParam(5, $an, PDO::PARAM_INT);
+            $sql_insert = "INSERT INTO droguri_judete (id_drog, confiscari, total_droguri, judete, an) 
+                       VALUES (?, ?, ?, ?, ?)";
+            $stmt_insert = $this->dbConnection->prepare($sql_insert);
+            $stmt_insert->bindParam(1, $id_drog, PDO::PARAM_INT);
+            $stmt_insert->bindParam(2, $confiscari, PDO::PARAM_INT);
+            $stmt_insert->bindParam(3, $total_droguri, PDO::PARAM_INT);
+            $stmt_insert->bindParam(4, $judet, PDO::PARAM_STR);
+            $stmt_insert->bindParam(5, $an, PDO::PARAM_INT);
 
-            if ($stmt->execute()) {
-                // Adăugăm mesajul de succes în array-ul de rezultate
-                $results = "Datele au fost inserate cu succes";
+            if ($stmt_insert->execute()) {
+                $results[3] = "Datele au fost inserate cu succes în baza de date.";
             } else {
-                // Adăugăm mesajul de eroare în array-ul de rezultate
-                $results = "Eroare la inserarea datelor pentru $drug_name în județul $judet: " . $stmt->errorInfo()[2];
+                $results[4] = "Eroare la inserarea datelor pentru drogul '$drug_name' și anul '$an' în județul '$judet': " . $stmt_insert->errorInfo()[2];
+            }
+
+            // Inserăm în fișierul JSON doar dacă nu am găsit duplicat
+            if (!$found) {
+                if (!isset($existing_data[$judet])) {
+                    $existing_data[$judet] = ['drugs' => []];
+                }
+
+                $existing_data[$judet]['drugs'][] = [
+                    'drugname' => $drug_name,
+                    'ani' => [
+                        [
+                            'an' => $an,
+                            'confiscari' => $confiscari,
+                            'total_droguri' => $total_droguri
+                        ]
+                    ]
+                ];
+
+                // Salvăm JSON-ul actualizat înapoi în fișier
+                $updated_json_data = json_encode($existing_data, JSON_PRETTY_PRINT);
+                if (file_put_contents($file_path, $updated_json_data) === false) {
+                    $results[5] = "Eroare la actualizarea fișierului JSON.";
+                } else {
+                    $results[6] = "Fișierul JSON a fost actualizat cu noile date.";
+                }
             }
         }
 
-        // În final, trimitem răspunsul în format JSON
-        echo json_encode(['message' => $results]);
+        // Întoarcem răspunsul în format JSON cu rezultatele operațiunilor
+        echo json_encode(['message' => implode(". ", $results) . "."]);
     }
+
 
 
     public function getDataFromJudete($year, $drugName, $judet): bool|string
@@ -308,3 +426,4 @@ class DrugManager extends DataManager {
     }
 
 }
+?>
