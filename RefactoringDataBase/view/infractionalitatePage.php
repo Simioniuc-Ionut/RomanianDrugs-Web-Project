@@ -32,10 +32,32 @@ $graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
 $graphDataStmt2->execute();
 $graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
 
+$graphDataQuery3 = "SELECT numar FROM persoane_cercetate_judecata_condamnate WHERE categorie = 'Persoane cercetate' ORDER BY year";
+$graphDataStmt3 = $dbConnection->prepare($graphDataQuery3);
+$graphDataStmt3->execute();
+$graphData3 = $graphDataStmt3->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery4 = "SELECT numar FROM persoane_cercetate_judecata_condamnate WHERE categorie = 'Persoane trimise în judecată' ORDER BY year";
+$graphDataStmt4 = $dbConnection->prepare($graphDataQuery4);
+$graphDataStmt4->execute();
+$graphData4 = $graphDataStmt4->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery5 = "SELECT numar FROM persoane_cercetate_judecata_condamnate WHERE categorie = 'Persoane condamnate' ORDER BY year";
+$graphDataStmt5 = $dbConnection->prepare($graphDataQuery5);
+$graphDataStmt5->execute();
+$graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
+
+
 echo "<script>
     var graphData1 = " . json_encode($graphData1) . "; 
       
     var graphData2 = " . json_encode($graphData2) . "; 
+    
+     var graphData3 = " . json_encode($graphData3) . "; 
+     
+     var graphData4 = " . json_encode($graphData4) . "; 
+     
+     var graphData5 = " . json_encode($graphData5) . "; 
          
     </script>";
 
@@ -73,6 +95,9 @@ echo "<script>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
             <th><div class="header-container" onclick="sortTable(1)">Numar Persoane Infractionale<span class="sort-arrow" id="arrow-1"></span></div></th>
             <th><div class="header-container" onclick="sortTable(2)">Numar Grupari Infractionale <span class="sort-arrow" id="arrow-2"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(3)">Persoane cercetate<span class="sort-arrow" id="arrow-3"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(4)">Persoane trimise în judecată <span class="sort-arrow" id="arrow-4"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(5)">Persoane condamnate<span class="sort-arrow" id="arrow-5"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -137,11 +162,26 @@ echo "<script>
     });
 
     var nr_g = graphData2.map(function(e) {
-        console.log(e)
         let values = e.numar;
         return values;
     });
 
+    var nr_1 = graphData3.map(function(e) {
+        let values = e.numar;
+        return values;
+    });
+
+    var nr_2 = graphData4.map(function(e) {
+        let values = e.numar;
+
+        return values;
+    });
+
+    var nr_3 = graphData5.map(function(e) {
+        let values = e.numar;
+
+        return values;
+    });
 
     const graficLinie = new Chart(ctx, {
         type: 'line',
@@ -159,6 +199,27 @@ echo "<script>
                     data: nr_g,
                     fill: false,
                     borderColor: 'rgb(0, 0, 204)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Persoane cercetate',
+                    data: nr_1,
+                    fill: false,
+                    borderColor: 'rgb(168,5,5)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Persoane trimise în judecată',
+                    data: nr_2,
+                    fill: false,
+                    borderColor: 'rgb(208,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Persoane condamnate',
+                    data: nr_3,
+                    fill: false,
+                    borderColor: 'rgb(204,0,201)',
                     tension: 0.1
                 },
             ]
@@ -190,10 +251,15 @@ echo "<script>
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
         const filteredPersoane = nr_p.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filteredGrupari = nr_g.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-
+        const filtered1 = nr_1.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filtered2 = nr_2.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filtered3 = nr_3.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredPersoane;
         graficLinie.data.datasets[1].data = filteredGrupari;
+        graficLinie.data.datasets[2].data = filtered1;
+        graficLinie.data.datasets[3].data = filtered2;
+        graficLinie.data.datasets[4].data = filtered3;
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
@@ -208,11 +274,17 @@ echo "<script>
             let cell1 = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
 
 
             cell1.innerHTML = years[i];
             cell2.innerHTML = nr_p[i][1];
             cell3.innerHTML = nr_g[i];
+            cell4.innerHTML = nr_1[i];
+            cell5.innerHTML = nr_2[i];
+            cell6.innerHTML = nr_3[i];
         }
     }
 
