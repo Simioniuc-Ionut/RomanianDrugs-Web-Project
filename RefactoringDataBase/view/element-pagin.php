@@ -50,8 +50,8 @@ if ($row) {
     echo "Elementul nu a fost găsit.";
 }
 
+    $drugName = strtolower($drugName);
 
-// Fetch data for the graph
     $graphDataQuery1 = "SELECT year, $drugName FROM urgente_tip_cale ORDER BY year";
     $graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
     $graphDataStmt1->execute();
@@ -173,13 +173,13 @@ if ($row) {
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
     // Process the PHP data
-    var years = graphData1.map(function(e) {
+    var years = graphData2.map(function(e) {
         return e.year;
     });
 
     var consumption = graphData1.map(function(e) {
         let values = Object.values(e);
-        return values;
+        return values[1];
     });
 
     var consumption_ma = graphData2.map(function(e) {
@@ -287,6 +287,7 @@ if ($row) {
         const filteredConsumptionMi = consumption_mi.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filteredConsumptionO = consumption_o.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
 
+
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredConsumption;
         graficLinie.data.datasets[1].data = filteredConsumptionMa;
@@ -314,7 +315,7 @@ if ($row) {
             let cell7 = row.insertCell(6);
 
             cell1.innerHTML = years[i];
-            cell2.innerHTML = consumption[i][1];
+            cell2.innerHTML = consumption[i];
             cell3.innerHTML = consumption_ma[i][1];
             cell4.innerHTML = consumption_f[i][1];
             cell5.innerHTML = consumption_y[i][1];
