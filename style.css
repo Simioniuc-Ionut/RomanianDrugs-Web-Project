@@ -388,5 +388,36 @@ body {
 }
 
 
+.campaign-title {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.campaign-description {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.campaign-section-title {
+  color: #1a73e8;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.campaign-section-description {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.campaign-list {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
 
 /*# sourceMappingURL=style.css.map */

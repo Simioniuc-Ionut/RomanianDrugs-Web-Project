@@ -148,4 +148,39 @@ document.addEventListener('DOMContentLoaded', function() {
     function debugDataReceived(data) {
         console.log('Received data:', data);
     }
+
 });
+
+function exportMap() {
+    var format = document.getElementById('exportFormatMap').value;
+    var mapContainer = document.getElementById('map-container');
+
+    if (format === 'png') {
+        var svgElement = document.querySelector('svg');
+        var svgData = new XMLSerializer().serializeToString(svgElement);
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            var link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'map.png';
+            link.click();
+        };
+
+        var svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+        var url = URL.createObjectURL(svgBlob);
+        img.src = url;
+    } else if (format === 'svg') {
+        var svgData = new XMLSerializer().serializeToString(document.querySelector('svg'));
+        var svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+        var link = document.createElement('a');
+        link.href = URL.createObjectURL(svgBlob);
+        link.download = 'map.svg';
+        link.click();
+    }
+}

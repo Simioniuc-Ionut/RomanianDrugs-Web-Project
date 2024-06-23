@@ -50,8 +50,8 @@ if ($row) {
     echo "Elementul nu a fost găsit.";
 }
 
+    $drugName = strtolower($drugName);
 
-// Fetch data for the graph
     $graphDataQuery1 = "SELECT year, $drugName FROM urgente_tip_cale ORDER BY year";
     $graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
     $graphDataStmt1->execute();
@@ -173,13 +173,13 @@ if ($row) {
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
     // Process the PHP data
-    var years = graphData1.map(function(e) {
+    var years = graphData2.map(function(e) {
         return e.year;
     });
 
     var consumption = graphData1.map(function(e) {
         let values = Object.values(e);
-        return values;
+        return values[1];
     });
 
     var consumption_ma = graphData2.map(function(e) {
@@ -287,6 +287,7 @@ if ($row) {
         const filteredConsumptionMi = consumption_mi.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filteredConsumptionO = consumption_o.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
 
+
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredConsumption;
         graficLinie.data.datasets[1].data = filteredConsumptionMa;
@@ -314,7 +315,7 @@ if ($row) {
             let cell7 = row.insertCell(6);
 
             cell1.innerHTML = years[i];
-            cell2.innerHTML = consumption[i][1];
+            cell2.innerHTML = consumption[i];
             cell3.innerHTML = consumption_ma[i][1];
             cell4.innerHTML = consumption_f[i][1];
             cell5.innerHTML = consumption_y[i][1];
@@ -443,6 +444,7 @@ if ($row) {
     }
 
 
+
     function exportTable() {
         var format = document.getElementById('exportFormatTable').value;
         var table = document.getElementById('dataTable');
@@ -490,16 +492,62 @@ if ($row) {
         }
     }
 
-
     startYearSliderMap = document.getElementById('startYearSliderMap');
     startYearSliderMap.addEventListener('input', updateYearMap);
 
-    function updateYearMap()
-    {
-        const yearMapStart = document.getElementById('startYearSliderMap');
-        const yearMapSelect = document.getElementById('selectedYearMap');
+    function exportAll() {
+        fetch('../../map/judete.json') // Încărcăm fișierul judete.json
+            .then(response => response.json())
+            .then(data => {
+                    // Selectarea tabelului și antetelor
+                    var table = document.getElementById('dataTable');
+                    var headers = Array.from(table.querySelectorAll('thead th')).map(header => header.innerText.trim());
 
-        yearMapSelect.textContent = yearMapStart.value;
+                    // Colectarea datelor din fiecare rând al tabelului
+                    var rows = [];
+
+                    Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+                        var rowData = Array.from(row.querySelectorAll('td')).map(cell => cell.innerText.trim());
+                        rows.push(rowData);
+                    });
+
+
+                    Object.keys(data).forEach(judet => {
+
+                        data[judet].drugs.forEach(drug => {
+                            drug.ani.forEach(an => {
+                                var rowData = [
+                                    judet, // Numele județului
+                                    drug.drugname, // Numele substanței drog
+                                    an.an, // Anul
+                                    an.confiscari, // Numărul de confiscări
+                                    an.total_droguri // Totalul de droguri
+                                ];
+                                rows.push(rowData);
+                            });
+                        });
+                    });
+
+                    // Construim șirul CSV
+                    var csvContent = "data:text/csv;charset=utf-8,";
+
+                    // Adăugăm antetul la șirul CSV
+                    csvContent += headers.join(',') + '\n';
+
+                    // Adăugăm datele din fiecare rând la șirul CSV
+                    rows.forEach(row => {
+                        csvContent += row.join(',') + '\n';
+                    });
+
+                    var encodedUri = encodeURI(csvContent);
+                    var link = document.createElement("a");
+                    link.setAttribute("href", encodedUri);
+                    link.setAttribute("download", "table_data.csv");
+                    document.body.appendChild(link); // necesar pentru Firefox
+                    link.click(); // Simularea clicului pe link pentru descărcare
+                    document.body.removeChild(link); // eliminarea link-ului din document după descărcare
+            })
+            .catch(error => console.error('Eroare în încărcarea datelor:', error));
     }
 
 </script>
@@ -525,7 +573,17 @@ if ($row) {
 </div>
 
 <div id="mapB" class="center hidden">
-    <button class="text-button" onclick="">Export Map</button>
+    <label>Type of export
+        <select id="exportFormatMap" class="export-format">
+            <option value="png">PNG</option>
+            <option value="svg">SVG</option>
+        </select>
+    </label>
+    <button class="text-button" onclick="exportMap()">Export Map</button>
+</div>
+
+<div id="allB" class="center">
+    <button class="text-button" onclick="exportAll()">Export All</button>
 </div>
 
 <?php include "footer.php";?>

@@ -33,10 +33,45 @@ $graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
 $graphDataStmt2->execute();
 $graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
 
+$graphDataQuery4 = "SELECT * FROM urgente_tip_varsta WHERE varsta='<25' ORDER BY year";
+$graphDataStmt4 = $dbConnection->prepare($graphDataQuery4);
+$graphDataStmt4->execute();
+$graphData4 = $graphDataStmt4->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery5 = "SELECT * FROM urgente_tip_varsta WHERE varsta='25-34' ORDER BY year";
+$graphDataStmt5 = $dbConnection->prepare($graphDataQuery5);
+$graphDataStmt5->execute();
+$graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery6 = "SELECT * FROM urgente_tip_varsta WHERE varsta='>35' ORDER BY year";
+$graphDataStmt6 = $dbConnection->prepare($graphDataQuery6);
+$graphDataStmt6->execute();
+$graphData6 = $graphDataStmt6->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery7 = "SELECT * FROM urgente_tip_cale WHERE cale ='Oral/fumat/prizat' ORDER BY year";
+$graphDataStmt7 = $dbConnection->prepare($graphDataQuery7);
+$graphDataStmt7->execute();
+$graphData7 = $graphDataStmt7->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery8 = "SELECT * FROM urgente_tip_cale WHERE cale ='Injectabil' ORDER BY year";
+$graphDataStmt8 = $dbConnection->prepare($graphDataQuery8);
+$graphDataStmt8->execute();
+$graphData8 = $graphDataStmt8->fetchAll(PDO::FETCH_ASSOC);
+
 echo "<script>
     var graphData1 = " . json_encode($graphData1) . "; 
      
    var graphData2 = " . json_encode($graphData2) . "; 
+   
+    var graphData4 = " . json_encode($graphData4) . "; 
+    
+    var graphData5 = " . json_encode($graphData5) . ";
+    
+    var graphData6 = " . json_encode($graphData6) . ";
+    
+    var graphData7 = " . json_encode($graphData7) . ";
+    
+    var graphData8 = " . json_encode($graphData8) . ";
          
     </script>";
 
@@ -54,26 +89,23 @@ echo "<script>
         <p class="item-description"><strong>Description:</strong> Datele statistice despre urgențele medicale înregistrate în diferite categorii. Aceste date sunt esențiale pentru a înțelege tendințele și modelele de urgențe medicale și pentru a informa strategiile de prevenire și intervenție.</p>
     </div>
 </div>
+
 <div class="container_item">
     <div class="campaign">
-        <h1 class="campaign-title">Campanii de Prevenire a Consumului de Droguri</h1>
-        <p class="campaign-description">Consumul de droguri este o problemă majoră în societatea modernă, afectând milioane de vieți în fiecare an. Pentru a combate această problemă, au fost lansate numeroase campanii de prevenire a consumului de droguri, atât la nivel local, cât și la nivel național și global.</p>
-
-        <h2 class="campaign-section-title">Scopul Campaniilor de Prevenire</h2>
-        <p class="campaign-section-description">Scopul principal al acestor campanii este de a informa și educa publicul despre pericolele și riscurile asociate consumului de droguri. Ele își propun să reducă prevalența consumului de droguri în rândul populației și să promoveze un stil de viață sănătos și lipsit de substanțe toxice.</p>
-
-        <h2 class="campaign-section-title">Inițiative și Proiecte</h2>
-        <p class="campaign-section-description">Campaniile de prevenire a consumului de droguri implică o varietate de inițiative și proiecte, inclusiv:</p>
+        <h1 class="campaign-title">Urgențele Medicale în Consumul de Droguri</h1>
+        <p class="campaign-description">Consumul de droguri provoacă urgente medicale semnificative și este o problemă critică în societatea contemporană, afectând grav sănătatea și bunăstarea indivizilor. Este vital să înțelegem și să gestionăm corect aceste situații pentru a minimiza impactul lor asupra indivizilor și comunităților.</p>
+        <h2 class="campaign-section-title">Aspecte Critice ale Urgențelor Medicale</h2>
+        <p class="campaign-section-description">Urgențele medicale asociate consumului de droguri implică:</p>
         <ul class="campaign-list">
-            <li>Educație și conștientizare în școli și comunități</li>
-            <li>Distribuirea de materiale informative și resurse educaționale</li>
-            <li>Evenimente și întâlniri comunitare pentru promovarea unui stil de viață sănătos</li>
-            <li>Campanii media și sociale pentru sensibilizarea publicului</li>
-            <li>Programare de consiliere și sprijin pentru cei afectați de consumul de droguri</li>
+            <li>Intervenții de urgență pentru supradoze și complicații medicale severe</li>
+            <li>Acces la tratamente de salvare și terapii de dezintoxicare</li>
+            <li>Educație despre primul ajutor în caz de supradoză</li>
+            <li>Sensibilizare cu privire la riscurile imediate și pe termen lung ale drogurilor</li>
+            <li>Colaborare cu unitățile de urgență și serviciile de intervenție rapidă</li>
         </ul>
 
-        <h2 class="campaign-section-title">Implicarea Comunității</h2>
-        <p class="campaign-section-description">Un aspect important al acestor campanii este implicarea comunității. Prin colaborarea între organizațiile guvernamentale și neguvernamentale, grupurile comunitare și membrii societății în general, putem construi un mediu mai sănătos și mai sigur pentru toți.</p>
+        <h2 class="campaign-section-title">Rolul Comunității în Gestionarea Urgențelor</h2>
+        <p class="campaign-section-description">Comunitățile joacă un rol crucial în abordarea urgencelor medicale legate de consumul de droguri. Prin educație continuă și suport reciproc, putem reduce numărul de cazuri de urgențe și contribui la îmbunătățirea accesului la îngrijiri adecvate și prevenție.</p>
     </div>
 </div>
 
@@ -96,7 +128,11 @@ echo "<script>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
             <th><div class="header-container" onclick="sortTable(1)">Masculin <span class="sort-arrow" id="arrow-1"></span></div></th>
             <th><div class="header-container" onclick="sortTable(2)">Feminin <span class="sort-arrow" id="arrow-2"></span></div></th>
-
+            <th><div class="header-container" onclick="sortTable(3)">&lt;25 <span class="sort-arrow" id="arrow-3"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(4)">25-34 <span class="sort-arrow" id="arrow-4"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(5)">&gt;35 <span class="sort-arrow" id="arrow-5"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(6)">Oral/fumat/prizat <span class="sort-arrow" id="arrow-6"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(7)">Injectabil <span class="sort-arrow" id="arrow-7"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -150,40 +186,36 @@ echo "<script>
 
 
 <script>
+
+
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
     var years = graphData1.map(function(e) {
         return e.year;
     });
 
-    var male = graphData1.map(function(e) {
+    function getSumOfSelectedValues(graphData) {
+        return graphData.map(function(e) {
+            let values = Object.values(e);
+            let selectedValues = values.slice(2, -1);
+            let sum = 0;
 
-        let values = Object.values(e);
-        let selectedValues = values.slice(2, -1);
-        let sum = 0;
+            selectedValues.forEach(function(value) {
+                console.log(value);
+                sum += value;
+            });
 
-        selectedValues.forEach(function(value) {
-            console.log(value);
-            sum +=value;
+            return sum;
         });
+    }
 
-        return sum;
-    });
-
-    var female = graphData2.map(function(e) {
-        let values = Object.values(e);
-        let selectedValues = values.slice(2, -1);
-        let sum = 0;
-
-        selectedValues.forEach(function(value) {
-            console.log(value);
-            sum +=value;
-        });
-
-        return sum;
-    });
-
-
+    var male = getSumOfSelectedValues(graphData1);
+    var female = getSumOfSelectedValues(graphData2);
+    var consumption_y = getSumOfSelectedValues(graphData4);
+    var consumption_mi = getSumOfSelectedValues(graphData5);
+    var consumption_o = getSumOfSelectedValues(graphData6);
+    var consumption_OFP = getSumOfSelectedValues(graphData7);
+    var consumption_inj = getSumOfSelectedValues(graphData8);
 
     const graficLinie = new Chart(ctx, {
         type: 'line',
@@ -203,7 +235,43 @@ echo "<script>
                     fill: false,
                     borderColor: 'rgb(255, 0, 255)',
                     tension: 0.1
-                }
+                },
+                {
+                    label: '<25',
+                    data: consumption_y,
+                    fill: false,
+                    borderColor: 'rgb(208,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: '25-34',
+                    data: consumption_mi,
+                    fill: false,
+                    borderColor: 'rgb(55,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: '>35',
+                    data: consumption_o,
+                    fill: false,
+                    borderColor: 'rgb(168,5,5)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Oral/Fumat/Prizat',
+                    data: consumption_OFP,
+                    fill: false,
+                    borderColor: 'rgb(22,60,16)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Injectabil',
+                    data: consumption_inj,
+                    fill: false,
+                    borderColor: 'rgb(0,0,0)',
+                    tension: 0.1
+                },
+
             ]
         }
     });
@@ -233,10 +301,20 @@ echo "<script>
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
         const filteredMale = male.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filteredFemale = female.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionY = consumption_y.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionMi = consumption_mi.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionO = consumption_o.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionOFP = consumption_OFP.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionInj = consumption_inj.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
 
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredMale;
         graficLinie.data.datasets[1].data = filteredFemale;
+        graficLinie.data.datasets[2].data = filteredConsumptionY;
+        graficLinie.data.datasets[3].data = filteredConsumptionMi;
+        graficLinie.data.datasets[4].data = filteredConsumptionO;
+        graficLinie.data.datasets[5].data = filteredConsumptionOFP;
+        graficLinie.data.datasets[6].data = filteredConsumptionInj;
 
         graficLinie.update();
 
@@ -252,10 +330,20 @@ echo "<script>
             let cell1 = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
+            let cell7 = row.insertCell(6);
+            let cell8 = row.insertCell(7);
 
             cell1.innerHTML = years[i];
             cell2.innerHTML = male[i];
             cell3.innerHTML = female[i];
+            cell4.innerHTML = consumption_y[i];
+            cell5.innerHTML = consumption_mi[i];
+            cell6.innerHTML = consumption_o[i];
+            cell7.innerHTML = consumption_OFP[i];
+            cell8.innerHTML = consumption_inj[i];
 
         }
     }
@@ -427,6 +515,57 @@ echo "<script>
         }
     }
 
+    function exportAll() {
+        fetch('../../map/urgente_medicale_data.json') // Încărcăm fișierul judete.json
+            .then(response => response.json())
+            .then(data => {
+                // Selectarea tabelului și antetelor
+                var table = document.getElementById('dataTable');
+                var headers = Array.from(table.querySelectorAll('thead th')).map(header => header.innerText.trim());
+
+                // Colectarea datelor din fiecare rând al tabelului
+                var rows = [];
+
+                Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+                    var rowData = Array.from(row.querySelectorAll('td')).map(cell => cell.innerText.trim());
+                    rows.push(rowData);
+                });
+
+
+                Object.keys(data).forEach(judet => {
+                    data[judet].ani.forEach(an => {
+                        var rowData = [
+                            judet,  // Accessing judet (county name) directly
+                            an.an,
+                            an.interventii,
+                            an.bolnavi
+                        ];
+                        rows.push(rowData);
+                    });
+                });
+
+                // Construim șirul CSV
+                var csvContent = "data:text/csv;charset=utf-8,";
+
+                // Adăugăm antetul la șirul CSV
+                csvContent += headers.join(',') + '\n';
+
+                // Adăugăm datele din fiecare rând la șirul CSV
+                rows.forEach(row => {
+                    csvContent += row.join(',') + '\n';
+                });
+
+                var encodedUri = encodeURI(csvContent);
+                var link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "table_data.csv");
+                document.body.appendChild(link); // necesar pentru Firefox
+                link.click(); // Simularea clicului pe link pentru descărcare
+                document.body.removeChild(link); // eliminarea link-ului din document după descărcare
+            })
+            .catch(error => console.error('Eroare în încărcarea datelor:', error));
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll("svg path").forEach(function(path) {
             path.addEventListener("click", function() {
@@ -481,7 +620,17 @@ echo "<script>
 </div>
 
 <div id="mapB" class="center hidden">
-    <button class="text-button" onclick="">Export Map</button>
+    <label>Type of export
+        <select id="exportFormatMap" class="export-format">
+            <option value="png">PNG</option>
+            <option value="svg">SVG</option>
+        </select>
+    </label>
+    <button class="text-button" onclick="exportMap()">Export Map</button>
+</div>
+
+<div id="allB" class="center">
+    <button class="text-button" onclick="exportAll()">Export All</button>
 </div>
 
 <?php include "footer.php";?>

@@ -18,6 +18,9 @@
 </head>
 <body data-file="condamnari_data.json">
 
+
+
+
 <?php
 require_once "../../RefactoringDataBase/DataBase.php";
  $dbConnection = new Database();
@@ -32,10 +35,32 @@ $graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
 $graphDataStmt2->execute();
 $graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
 
+$graphDataQuery3 = "SELECT numar FROM persoane_cercetate_judecata_condamnate WHERE categorie = 'Persoane cercetate' ORDER BY year";
+$graphDataStmt3 = $dbConnection->prepare($graphDataQuery3);
+$graphDataStmt3->execute();
+$graphData3 = $graphDataStmt3->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery4 = "SELECT numar FROM persoane_cercetate_judecata_condamnate WHERE categorie = 'Persoane trimise în judecată' ORDER BY year";
+$graphDataStmt4 = $dbConnection->prepare($graphDataQuery4);
+$graphDataStmt4->execute();
+$graphData4 = $graphDataStmt4->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery5 = "SELECT numar FROM persoane_cercetate_judecata_condamnate WHERE categorie = 'Persoane condamnate' ORDER BY year";
+$graphDataStmt5 = $dbConnection->prepare($graphDataQuery5);
+$graphDataStmt5->execute();
+$graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
+
+
 echo "<script>
     var graphData1 = " . json_encode($graphData1) . "; 
       
     var graphData2 = " . json_encode($graphData2) . "; 
+    
+     var graphData3 = " . json_encode($graphData3) . "; 
+     
+     var graphData4 = " . json_encode($graphData4) . "; 
+     
+     var graphData5 = " . json_encode($graphData5) . "; 
          
     </script>";
 
@@ -51,6 +76,26 @@ echo "<script>
     <div class="details">
         <p><strong>Type:</strong> Statisticile pentru Infractionalitate în funcție de an, sex și vârstă</p>
         <p class="item-description"><strong>Description:</strong> Datele statistice despre infracțiunile înregistrate în diferite categorii</p>
+    </div>
+</div>
+
+<div class="container_item">
+    <div class="campaign">
+        <h1 class="campaign-title">Infracțiunile Legate de Droguri în România</h1>
+        <p class="campaign-description">Problema infracțiunilor legate de droguri reprezintă o preocupare majoră în societatea românească contemporană, având un impact semnificativ asupra securității și sănătății publice. Este crucial să identificăm și să gestionăm corect aceste infracțiuni pentru a asigura un mediu sigur și sănătos pentru toți cetățenii.</p>
+
+        <h2 class="campaign-section-title">Aspecte Critice ale Infracțiunilor Legate de Droguri</h2>
+        <p class="campaign-section-description">Infracțiunile legate de droguri în România includ:</p>
+        <ul class="campaign-list">
+            <li>Producția ilegală și traficul de substanțe interzise</li>
+            <li>Consumul și posesia ilegală de droguri</li>
+            <li>Spălarea banilor proveniți din traficul de droguri</li>
+            <li>Implicarea în rețele de distribuție și trafic internațional</li>
+            <li>Criza opioidelor și alte forme emergente de infracțiuni legate de droguri</li>
+        </ul>
+
+        <h2 class="campaign-section-title">Rolul Comunității în Combaterea Infracțiunilor</h2>
+        <p class="campaign-section-description">Comunitățile joacă un rol esențial în lupta împotriva infracțiunilor legate de droguri prin colaborare strânsă cu autoritățile, educație preventivă și promovarea unui mediu de informare și responsabilitate. Este vital să continuăm să dezvoltăm strategii eficiente pentru reducerea acestor infracțiuni și pentru protejarea cetățenilor împotriva efectelor nocive ale consumului și traficului de droguri.</p>
     </div>
 </div>
 
@@ -73,6 +118,9 @@ echo "<script>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
             <th><div class="header-container" onclick="sortTable(1)">Numar Persoane Infractionale<span class="sort-arrow" id="arrow-1"></span></div></th>
             <th><div class="header-container" onclick="sortTable(2)">Numar Grupari Infractionale <span class="sort-arrow" id="arrow-2"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(3)">Persoane cercetate<span class="sort-arrow" id="arrow-3"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(4)">Persoane trimise în judecată <span class="sort-arrow" id="arrow-4"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(5)">Persoane condamnate<span class="sort-arrow" id="arrow-5"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -137,11 +185,26 @@ echo "<script>
     });
 
     var nr_g = graphData2.map(function(e) {
-        console.log(e)
         let values = e.numar;
         return values;
     });
 
+    var nr_1 = graphData3.map(function(e) {
+        let values = e.numar;
+        return values;
+    });
+
+    var nr_2 = graphData4.map(function(e) {
+        let values = e.numar;
+
+        return values;
+    });
+
+    var nr_3 = graphData5.map(function(e) {
+        let values = e.numar;
+
+        return values;
+    });
 
     const graficLinie = new Chart(ctx, {
         type: 'line',
@@ -159,6 +222,27 @@ echo "<script>
                     data: nr_g,
                     fill: false,
                     borderColor: 'rgb(0, 0, 204)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Persoane cercetate',
+                    data: nr_1,
+                    fill: false,
+                    borderColor: 'rgb(168,5,5)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Persoane trimise în judecată',
+                    data: nr_2,
+                    fill: false,
+                    borderColor: 'rgb(208,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Persoane condamnate',
+                    data: nr_3,
+                    fill: false,
+                    borderColor: 'rgb(204,0,201)',
                     tension: 0.1
                 },
             ]
@@ -190,10 +274,15 @@ echo "<script>
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
         const filteredPersoane = nr_p.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filteredGrupari = nr_g.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-
+        const filtered1 = nr_1.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filtered2 = nr_2.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filtered3 = nr_3.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredPersoane;
         graficLinie.data.datasets[1].data = filteredGrupari;
+        graficLinie.data.datasets[2].data = filtered1;
+        graficLinie.data.datasets[3].data = filtered2;
+        graficLinie.data.datasets[4].data = filtered3;
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
@@ -208,11 +297,17 @@ echo "<script>
             let cell1 = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
 
 
             cell1.innerHTML = years[i];
             cell2.innerHTML = nr_p[i][1];
             cell3.innerHTML = nr_g[i];
+            cell4.innerHTML = nr_1[i];
+            cell5.innerHTML = nr_2[i];
+            cell6.innerHTML = nr_3[i];
         }
     }
 
@@ -383,6 +478,58 @@ echo "<script>
         }
     }
 
+    function exportAll() {
+        fetch('../../map/condamnari_data.json') // Încărcăm fișierul judete.json
+            .then(response => response.json())
+            .then(data => {
+                // Selectarea tabelului și antetelor
+                var table = document.getElementById('dataTable');
+                var headers = Array.from(table.querySelectorAll('thead th')).map(header => header.innerText.trim());
+
+                // Colectarea datelor din fiecare rând al tabelului
+                var rows = [];
+
+                Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+                    var rowData = Array.from(row.querySelectorAll('td')).map(cell => cell.innerText.trim());
+                    rows.push(rowData);
+                });
+
+
+                Object.keys(data).forEach(judet => {
+
+                    data[judet].ani.forEach(an => {
+                            var rowData = [
+                                judet,
+                                an.an,
+                                an.condamnari,
+                                an.alte_infractiuni
+                            ];
+                            rows.push(rowData);
+                    });
+                });
+
+                // Construim șirul CSV
+                var csvContent = "data:text/csv;charset=utf-8,";
+
+                // Adăugăm antetul la șirul CSV
+                csvContent += headers.join(',') + '\n';
+
+                // Adăugăm datele din fiecare rând la șirul CSV
+                rows.forEach(row => {
+                    csvContent += row.join(',') + '\n';
+                });
+
+                var encodedUri = encodeURI(csvContent);
+                var link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "table_data.csv");
+                document.body.appendChild(link); // necesar pentru Firefox
+                link.click(); // Simularea clicului pe link pentru descărcare
+                document.body.removeChild(link); // eliminarea link-ului din document după descărcare
+            })
+            .catch(error => console.error('Eroare în încărcarea datelor:', error));
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll("svg path").forEach(function(path) {
             path.addEventListener("click", function() {
@@ -437,7 +584,17 @@ echo "<script>
 </div>
 
 <div id="mapB" class="center hidden">
-    <button class="text-button" onclick="">Export Map</button>
+    <label>Type of export
+        <select id="exportFormatMap" class="export-format">
+            <option value="png">PNG</option>
+            <option value="svg">SVG</option>
+        </select>
+    </label>
+    <button class="text-button" onclick="exportMap()">Export Map</button>
+</div>
+
+<div id="allB" class="center">
+    <button class="text-button" onclick="exportAll()">Export All</button>
 </div>
 
 <?php include "footer.php";?>
