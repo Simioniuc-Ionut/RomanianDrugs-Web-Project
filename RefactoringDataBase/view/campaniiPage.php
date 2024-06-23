@@ -397,6 +397,58 @@ echo "<script>
         }
     }
 
+    function exportAll() {
+        fetch('../../map/campanii_data.json') // Încărcăm fișierul judete.json
+            .then(response => response.json())
+            .then(data => {
+                // Selectarea tabelului și antetelor
+                var table = document.getElementById('dataTable');
+                var headers = Array.from(table.querySelectorAll('thead th')).map(header => header.innerText.trim());
+
+                // Colectarea datelor din fiecare rând al tabelului
+                var rows = [];
+
+                Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+                    var rowData = Array.from(row.querySelectorAll('td')).map(cell => cell.innerText.trim());
+                    rows.push(rowData);
+                });
+
+
+                Object.keys(data).forEach(judet => {
+
+                    data[judet].ani.forEach(an => {
+                            var rowData = [
+                                judet,
+                                an.campanii_prevenire,
+                                an.campanii_combatere,
+                            ];
+                            rows.push(rowData);
+                    });
+                });
+
+                // Construim șirul CSV
+                var csvContent = "data:text/csv;charset=utf-8,";
+
+                // Adăugăm antetul la șirul CSV
+                csvContent += headers.join(',') + '\n';
+
+                // Adăugăm datele din fiecare rând la șirul CSV
+                rows.forEach(row => {
+                    csvContent += row.join(',') + '\n';
+                });
+
+                var encodedUri = encodeURI(csvContent);
+                var link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "table_data.csv");
+                document.body.appendChild(link); // necesar pentru Firefox
+                link.click(); // Simularea clicului pe link pentru descărcare
+                document.body.removeChild(link); // eliminarea link-ului din document după descărcare
+            })
+            .catch(error => console.error('Eroare în încărcarea datelor:', error));
+    }
+
+
     // document.addEventListener("DOMContentLoaded", function() {
     //     document.querySelectorAll("svg path").forEach(function(path) {
     //         path.addEventListener("click", function() {
@@ -451,7 +503,17 @@ echo "<script>
 </div>
 
 <div id="mapB" class="center hidden">
-    <button class="text-button" onclick="">Export Map</button>
+    <label>Type of export
+        <select id="exportFormatMap" class="export-format">
+            <option value="png">PNG</option>
+            <option value="svg">SVG</option>
+        </select>
+    </label>
+    <button class="text-button" onclick="exportMap()">Export Map</button>
+</div>
+
+<div id="allB" class="center">
+    <button class="text-button" onclick="exportAll()">Export All</button>
 </div>
 
 <?php include "footer.php";?>
