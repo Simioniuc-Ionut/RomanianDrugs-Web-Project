@@ -66,6 +66,11 @@ $routes = [
     },
     'generateDataInUrgenteMedicale' => function() use ($controller) {
     $controller->processRequest('generateDataInUrgenteMedicale');
+    },
+    'contact' => function() use ($controller) {
+        var_dump("pla");
+       $controller->processRequest('contact');
+
     }
     // Adăugați aici alte rute...
 ];

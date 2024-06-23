@@ -1,10 +1,13 @@
 <?php
 
+use JetBrains\PhpStorm\NoReturn;
+
 require_once(realpath(dirname(__FILE__) . '/../model/DataManager.php'));
 require_once(realpath(dirname(__FILE__) . '/../model/DrugManager.php'));
 require_once(realpath(dirname(__FILE__) . '/../model/InfractionalitatiManager.php'));
 require_once(realpath(dirname(__FILE__) . '/../model/CampaniiManager.php'));
 require_once(realpath(dirname(__FILE__) . '/../model/UrgenteMedicaleManager.php'));
+require_once(realpath(dirname(__FILE__) . '/../model/ContactManager.php'));
 
 class DataController {
 private Database $dbConnection;
@@ -161,6 +164,25 @@ private DataManager $dataManager;
                 $year = $_POST['year'];
                 $this->dataManager->generateDataInUrgenteMedicale($year);
                 break;
+            case 'contact':
+                var_dump("pla controller");
+                if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
+
+                    error_log('POST data: ' . print_r($_POST, true));
+                    $contactManager = new ContactManager($this->dbConnection);
+                    $result = $contactManager->sendContactEmail($_POST['name'], $_POST['email'], $_POST['message']);
+                    var_dump($result);
+                    if ($result) {
+                        $this->sendJsonResponse(['message' => 'Email sent successfully in controller']);
+                    } else {
+
+                        $this->sendJsonResponse(['error' => 'Failed to send email'], 500);
+                    }
+                }
+                else {
+                    $this->sendJsonResponse(['error' => 'Missing parameters for sending email'], 400);
+                }
+                break;
             // Adăugați aici alte acțiuni...
             default:
                 http_response_code(405);
@@ -224,6 +246,17 @@ private DataManager $dataManager;
     {
         http_response_code(405);
         echo json_encode(["message" => "Method not allowed"]);
+    }
+     #[NoReturn] private function sendJsonResponse($data, $statusCode = 200)
+    {
+
+        var_dump($data);
+        header('Content-Type: application/json');
+
+        http_response_code($statusCode);
+
+        echo json_encode($data);
+        exit; // Asigură-te că scriptul se oprește aici
     }
 }
 
