@@ -33,10 +33,45 @@ $graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
 $graphDataStmt2->execute();
 $graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
 
+$graphDataQuery4 = "SELECT * FROM urgente_tip_varsta WHERE varsta='<25' ORDER BY year";
+$graphDataStmt4 = $dbConnection->prepare($graphDataQuery4);
+$graphDataStmt4->execute();
+$graphData4 = $graphDataStmt4->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery5 = "SELECT * FROM urgente_tip_varsta WHERE varsta='25-34' ORDER BY year";
+$graphDataStmt5 = $dbConnection->prepare($graphDataQuery5);
+$graphDataStmt5->execute();
+$graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery6 = "SELECT * FROM urgente_tip_varsta WHERE varsta='>35' ORDER BY year";
+$graphDataStmt6 = $dbConnection->prepare($graphDataQuery6);
+$graphDataStmt6->execute();
+$graphData6 = $graphDataStmt6->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery7 = "SELECT * FROM urgente_tip_cale WHERE cale ='Oral/fumat/prizat' ORDER BY year";
+$graphDataStmt7 = $dbConnection->prepare($graphDataQuery7);
+$graphDataStmt7->execute();
+$graphData7 = $graphDataStmt7->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery8 = "SELECT * FROM urgente_tip_cale WHERE cale ='Injectabil' ORDER BY year";
+$graphDataStmt8 = $dbConnection->prepare($graphDataQuery8);
+$graphDataStmt8->execute();
+$graphData8 = $graphDataStmt8->fetchAll(PDO::FETCH_ASSOC);
+
 echo "<script>
     var graphData1 = " . json_encode($graphData1) . "; 
      
    var graphData2 = " . json_encode($graphData2) . "; 
+   
+    var graphData4 = " . json_encode($graphData4) . "; 
+    
+    var graphData5 = " . json_encode($graphData5) . ";
+    
+    var graphData6 = " . json_encode($graphData6) . ";
+    
+    var graphData7 = " . json_encode($graphData7) . ";
+    
+    var graphData8 = " . json_encode($graphData8) . ";
          
     </script>";
 
@@ -96,7 +131,11 @@ echo "<script>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
             <th><div class="header-container" onclick="sortTable(1)">Masculin <span class="sort-arrow" id="arrow-1"></span></div></th>
             <th><div class="header-container" onclick="sortTable(2)">Feminin <span class="sort-arrow" id="arrow-2"></span></div></th>
-
+            <th><div class="header-container" onclick="sortTable(3)">&lt;25 <span class="sort-arrow" id="arrow-3"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(4)">25-34 <span class="sort-arrow" id="arrow-4"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(5)">&gt;35 <span class="sort-arrow" id="arrow-5"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(6)">Oral/fumat/prizat <span class="sort-arrow" id="arrow-6"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(7)">Injectabil <span class="sort-arrow" id="arrow-7"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -150,40 +189,36 @@ echo "<script>
 
 
 <script>
+
+
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
     var years = graphData1.map(function(e) {
         return e.year;
     });
 
-    var male = graphData1.map(function(e) {
+    function getSumOfSelectedValues(graphData) {
+        return graphData.map(function(e) {
+            let values = Object.values(e);
+            let selectedValues = values.slice(2, -1);
+            let sum = 0;
 
-        let values = Object.values(e);
-        let selectedValues = values.slice(2, -1);
-        let sum = 0;
+            selectedValues.forEach(function(value) {
+                console.log(value);
+                sum += value;
+            });
 
-        selectedValues.forEach(function(value) {
-            console.log(value);
-            sum +=value;
+            return sum;
         });
+    }
 
-        return sum;
-    });
-
-    var female = graphData2.map(function(e) {
-        let values = Object.values(e);
-        let selectedValues = values.slice(2, -1);
-        let sum = 0;
-
-        selectedValues.forEach(function(value) {
-            console.log(value);
-            sum +=value;
-        });
-
-        return sum;
-    });
-
-
+    var male = getSumOfSelectedValues(graphData1);
+    var female = getSumOfSelectedValues(graphData2);
+    var consumption_y = getSumOfSelectedValues(graphData4);
+    var consumption_mi = getSumOfSelectedValues(graphData5);
+    var consumption_o = getSumOfSelectedValues(graphData6);
+    var consumption_OFP = getSumOfSelectedValues(graphData7);
+    var consumption_inj = getSumOfSelectedValues(graphData8);
 
     const graficLinie = new Chart(ctx, {
         type: 'line',
@@ -203,7 +238,43 @@ echo "<script>
                     fill: false,
                     borderColor: 'rgb(255, 0, 255)',
                     tension: 0.1
-                }
+                },
+                {
+                    label: '<25',
+                    data: consumption_y,
+                    fill: false,
+                    borderColor: 'rgb(208,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: '25-34',
+                    data: consumption_mi,
+                    fill: false,
+                    borderColor: 'rgb(55,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: '>35',
+                    data: consumption_o,
+                    fill: false,
+                    borderColor: 'rgb(168,5,5)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Oral/Fumat/Prizat',
+                    data: consumption_OFP,
+                    fill: false,
+                    borderColor: 'rgb(22,60,16)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Injectabil',
+                    data: consumption_inj,
+                    fill: false,
+                    borderColor: 'rgb(0,0,0)',
+                    tension: 0.1
+                },
+
             ]
         }
     });
@@ -233,10 +304,20 @@ echo "<script>
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
         const filteredMale = male.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filteredFemale = female.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionY = consumption_y.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionMi = consumption_mi.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionO = consumption_o.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionOFP = consumption_OFP.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionInj = consumption_inj.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
 
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredMale;
         graficLinie.data.datasets[1].data = filteredFemale;
+        graficLinie.data.datasets[2].data = filteredConsumptionY;
+        graficLinie.data.datasets[3].data = filteredConsumptionMi;
+        graficLinie.data.datasets[4].data = filteredConsumptionO;
+        graficLinie.data.datasets[5].data = filteredConsumptionOFP;
+        graficLinie.data.datasets[6].data = filteredConsumptionInj;
 
         graficLinie.update();
 
@@ -252,10 +333,20 @@ echo "<script>
             let cell1 = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
+            let cell7 = row.insertCell(6);
+            let cell8 = row.insertCell(7);
 
             cell1.innerHTML = years[i];
             cell2.innerHTML = male[i];
             cell3.innerHTML = female[i];
+            cell4.innerHTML = consumption_y[i];
+            cell5.innerHTML = consumption_mi[i];
+            cell6.innerHTML = consumption_o[i];
+            cell7.innerHTML = consumption_OFP[i];
+            cell8.innerHTML = consumption_inj[i];
 
         }
     }

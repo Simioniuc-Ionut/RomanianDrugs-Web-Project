@@ -25,6 +25,33 @@
 <?php
 require_once "../../RefactoringDataBase/DataBase.php";
  $dbConnection = new Database();
+
+$graphDataQuery1 = "SELECT DISTINCT year  FROM campanii_prevenire ORDER BY year";
+$graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
+$graphDataStmt1->execute();
+$graphData1 = $graphDataStmt1->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery2 = "SELECT year, COUNT(*) as count FROM campanii_prevenire GROUP BY year ORDER BY year";
+$graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
+$graphDataStmt2->execute();
+$graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery = "SELECT year, proiecte FROM campanii_prevenire ORDER BY year";
+$graphDataStmt = $dbConnection->prepare($graphDataQuery);
+$graphDataStmt->execute();
+$graphData = $graphDataStmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+echo "<script>
+
+    var graphData = " . json_encode($graphData) . ";
+
+    var graphData1 = " . json_encode($graphData1) . "; 
+    
+    var graphData2 = " . json_encode($graphData2) . "; 
+       
+    </script>";
+
 ?>
 
 <div class="container_item">
@@ -77,12 +104,7 @@ require_once "../../RefactoringDataBase/DataBase.php";
         <thead>
         <tr>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(1)">TotalConsumption <span class="sort-arrow" id="arrow-1"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(2)">Masculin <span class="sort-arrow" id="arrow-2"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(3)">Feminin <span class="sort-arrow" id="arrow-3"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(4)">&lt;25 <span class="sort-arrow" id="arrow-4"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(5)">25-34 <span class="sort-arrow" id="arrow-5"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(6)">&gt;35 <span class="sort-arrow" id="arrow-6"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(1)">Numar de Campanii <span class="sort-arrow" id="arrow-1"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -127,6 +149,7 @@ require_once "../../RefactoringDataBase/DataBase.php";
 
 
 <script>
+
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
     // Process the PHP data
@@ -134,34 +157,8 @@ require_once "../../RefactoringDataBase/DataBase.php";
         return e.year;
     });
 
-    var consumption = graphData1.map(function(e) {
-        let values = Object.values(e);
-        return values;
-    });
-
-    var consumption_ma = graphData2.map(function(e) {
-        let values = Object.values(e);
-        return values;
-    });
-
-    var consumption_f = graphData3.map(function(e) {
-        let values = Object.values(e);
-        return values;
-    });
-
-    var consumption_y = graphData4.map(function(e) {
-        let values = Object.values(e);
-        return values;
-    });
-
-    var consumption_mi = graphData5.map(function(e) {
-        let values = Object.values(e);
-        return values;
-    });
-
-    var consumption_o = graphData6.map(function(e) {
-        let values = Object.values(e);
-        return values;
+    var counts = graphData2.map(function(e) {
+        return e.count;
     });
 
     const graficLinie = new Chart(ctx, {
@@ -169,48 +166,12 @@ require_once "../../RefactoringDataBase/DataBase.php";
         data: {
             labels: years,
             datasets: [{
-                label: 'Consum in anul respectiv',
-                data: consumption,
+                label: 'Numărul de campanii pe an',
+                data: counts,
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
-            },
-                {
-                    label: 'Masculin',
-                    data: consumption_ma,
-                    fill: false,
-                    borderColor: 'rgb(0, 0, 204)',
-                    tension: 0.1
-                },
-                {
-                    label: 'Feminin',
-                    data: consumption_f,
-                    fill: false,
-                    borderColor: 'rgb(255, 0, 255)',
-                    tension: 0.1
-                },
-                {
-                    label: '<25',
-                    data: consumption_y,
-                    fill: false,
-                    borderColor: 'rgb(208,255,0)',
-                    tension: 0.1
-                },
-                {
-                    label: '25-34',
-                    data: consumption_mi,
-                    fill: false,
-                    borderColor: 'rgb(55,255,0)',
-                    tension: 0.1
-                },
-                {
-                    label: '>35',
-                    data: consumption_o,
-                    fill: false,
-                    borderColor: 'rgb(168,5,5)',
-                    tension: 0.1
-                },
-            ]
+            }]
         }
     });
 
@@ -237,20 +198,10 @@ require_once "../../RefactoringDataBase/DataBase.php";
         const selectedEndYear = Math.max(startYear, endYear);
 
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
-        const filteredConsumption = consumption.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionMa = consumption_ma.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionF = consumption_f.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionY = consumption_y.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionMi = consumption_mi.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionO = consumption_o.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredCounts = counts.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
 
         graficLinie.data.labels = filteredYears;
-        graficLinie.data.datasets[0].data = filteredConsumption;
-        graficLinie.data.datasets[1].data = filteredConsumptionMa;
-        graficLinie.data.datasets[2].data = filteredConsumptionF;
-        graficLinie.data.datasets[3].data = filteredConsumptionY;
-        graficLinie.data.datasets[4].data = filteredConsumptionMi;
-        graficLinie.data.datasets[5].data = filteredConsumptionO;
+        graficLinie.data.datasets[0].data = filteredCounts;
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
@@ -260,25 +211,24 @@ require_once "../../RefactoringDataBase/DataBase.php";
         const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
         tableBody.innerHTML = '';
 
-        for (let i = 0; i < years.length; i++) {
-            let row = tableBody.insertRow();
-            let cell1 = row.insertCell(0);
-            let cell2 = row.insertCell(1);
-            let cell3 = row.insertCell(2);
-            let cell4 = row.insertCell(3);
-            let cell5 = row.insertCell(4);
-            let cell6 = row.insertCell(5);
-            let cell7 = row.insertCell(6);
+        for (const item of graphData) {
+            if(item.proiecte) {
+                let row = tableBody.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
 
-            cell1.innerHTML = years[i];
-            cell2.innerHTML = consumption[i][1];
-            cell3.innerHTML = consumption_ma[i][1];
-            cell4.innerHTML = consumption_f[i][1];
-            cell5.innerHTML = consumption_y[i][1];
-            cell6.innerHTML = consumption_mi[i][1];
-            cell7.innerHTML = consumption_o[i][1];
+                cell1.innerHTML = item.year;
+                cell2.innerHTML = item.proiecte;
+            }
         }
+
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        populateTable();
+        document.getElementsByClassName('tablinks')[0].click();
+    });
+
 
     document.addEventListener('DOMContentLoaded', function() {
         populateTable();
