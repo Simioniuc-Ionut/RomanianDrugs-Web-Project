@@ -1,52 +1,113 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     var judete = document.querySelectorAll('.judet');
     var tooltip = document.getElementById('tooltip');
     var selectedYearMap = document.getElementById('selectedYearMap');
     var startYearSliderMap = document.getElementById('startYearSliderMap');
-
     var selectedDrug = document.getElementById('drug-name');
-    var drugName = selectedDrug.textContent.trim();
+    var drugName = selectedDrug ? selectedDrug.textContent.trim() : null; // Verificăm dacă există selectedDrug
 
-    // Adaugăm o variabilă globală pentru calea către fișierul JSON specific fiecărei pagini
-    var dataFile = 'drug_data.json'; // Default
 
-    // Verificăm dacă există un atribut data-file specificat pe body pentru a decide ce fișier JSON să folosim
-    if (document.body.dataset.file) {
-        dataFile = document.body.dataset.file;
+    // Verificăm dacă există atributul data-file pe body pentru a decide ce fișier JSON să folosim
+    var dataFile = document.body.dataset.file;
+
+    if (!dataFile) {
+        console.error('No data-file attribute specified on the body element.');
+        return; // Întrerupe execuția în cazul în care nu există data-file specificat
     }
-    console.log(drugName);
 
     judete.forEach(function(judet) {
         judet.addEventListener('click', function(event) {
             var regionId = judet.id;
             fetch(`../../map/get_judet_info.php?judet=${regionId}&dataFile=${dataFile}`)
-                .then(response => response.json())
+                .then(response => {
+                    console.log('Response status:', response.status); // Verifică statusul răspunsului HTTP
+                   return response.json();
+                })
                 .then(data => {
+                    // Funcție de debugging pentru a afișa datele primite
+                    debugDataReceived(data);
+
                     if (data.error) {
                         tooltip.innerHTML = "No data found yet.";
                     } else {
                         var selectedYear = selectedYearMap.textContent; // Anul selectat
                         var found = false;
 
-                        data.drugs.forEach(function(drug) {
-                            drug.ani.forEach(function(anData) {
-                                if ( drug.drugname.toLowerCase() === drugName.toLowerCase() && anData.an === selectedYear) {
-                                    tooltip.innerHTML = `
-                                        <strong> Drug: ${drug.drugname} </strong><br>
-                                        Confiscari: ${anData.confiscari}<br>
-                                        Total droguri: ${anData.total_droguri}<br>
-                                        An: ${anData.an}
-                                    `;
-                                    found = true;
+                        // Switch pentru a decide cum să căutăm în funcție de tipul de fișier JSON
+                        switch (dataFile) {
+                            case 'drug_data.json':
+                                if (data.drugs) {
+                                    data.drugs.forEach(function(drug) {
+                                        drug.ani.forEach(function(anData) {
+                                            if (drug.drugname.toLowerCase() === drugName.toLowerCase() && anData.an === selectedYear) {
+                                                tooltip.innerHTML = `
+                                                    <strong> Drug: ${drug.drugname} </strong><br>
+                                                    Confiscări: ${anData.confiscari}<br>
+                                                    Total droguri: ${anData.total_droguri}<br>
+                                                    An: ${anData.an}
+                                                `;
+                                                found = true;
+                                            }
+                                        });
+                                    });
                                 }
-                            });
-                        });
+                                break;
+                            case 'campanii_data.json':
+                                //debug
+                                console.log(regionId + ' ' + selectedYear + ' ' + data[regionId]);
+                                if (data.ani) {
+                                    data.ani.forEach(function(anData) {
+                                        if (anData.an === selectedYear) {
+                                            console.log('Data found for year:', selectedYear);
+                                            tooltip.innerHTML = `
+                                                <strong> An: ${anData.an} </strong><br>
+                                                Campanii de prevenire: ${anData.campanii_prevenire}<br>
+                                                Campanii de combatere: ${anData.campanii_combatere}<br>
+                                            `;
+                                            found = true;
+                                        }
+
+                                    });
+                                }
+                                break;
+                            case 'condamnari_data.json':
+                                if (data.ani) {
+                                    data.ani.forEach(function(anData) {
+                                        if (anData.an === selectedYear) {
+                                            tooltip.innerHTML = `
+                                                An: ${anData.an}<br>
+                                                Condamnări: ${anData.condamnari}<br>
+                                                Alte infracțiuni: ${anData.alte_infractiuni}
+                                            `;
+                                            found = true;
+                                        }
+                                    });
+                                }
+                                break;
+                            case 'urgente_medicale_data.json':
+                                if (data.ani) {
+                                    data.ani.forEach(function(anData) {
+                                        if (anData.an === selectedYear) {
+                                            tooltip.innerHTML = `
+                                                An: ${anData.an}<br>
+                                                Recuperări: ${anData.recuperari}<br>
+                                                Intervenții: ${anData.interventii}<br>
+                                                Bolnavi: ${anData.bolnavi}
+                                            `;
+                                            found = true;
+                                        }
+                                    });
+                                }
+                                break;
+                            default:
+                                tooltip.innerHTML = "Invalid data file specified.";
+                        }
 
                         if (!found) {
-                            tooltip.innerHTML = "No data for selected year and drug.";
+                            tooltip.innerHTML = "No data for selected year.";
                         }
                     }
+
                     tooltip.style.left = `${event.pageX + 10}px`;
                     tooltip.style.top = `${event.pageY + 10}px`;
                     tooltip.classList.remove('hidden');
@@ -81,5 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateYearMap() {
         var yearMapStart = document.getElementById('startYearSliderMap');
         selectedYearMap.textContent = yearMapStart.value;
+    }
+
+    // Funcție de debugging pentru a afișa datele primite în consolă
+    function debugDataReceived(data) {
+        console.log('Received data:', data);
     }
 });
