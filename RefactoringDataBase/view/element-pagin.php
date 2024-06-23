@@ -50,53 +50,20 @@ if ($row) {
     echo "Elementul nu a fost găsit.";
 }
 
-    $drugName = strtolower($drugName);
+    //$drugName = strtolower($drugName);
 
-    $graphDataQuery1 = "SELECT year, $drugName FROM urgente_tip_cale ORDER BY year";
+    $graphDataQuery1 = "SELECT year, capturi,mililitri,doze_pe_buc,comprimate,grame FROM droguri_confiscate WHERE name = :drugName ORDER BY year";
     $graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
+    $graphDataStmt1->bindParam(':drugName', $drugName, PDO::PARAM_STR);
     $graphDataStmt1->execute();
     $graphData1 = $graphDataStmt1->fetchAll(PDO::FETCH_ASSOC);
 
-    $graphDataQuery2 = "SELECT year, $drugName FROM urgente_tip_sex WHERE sex='Masculin' ORDER BY year";
-    $graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
-    $graphDataStmt2->execute();
-    $graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
-
-    $graphDataQuery3 = "SELECT year, $drugName FROM urgente_tip_sex WHERE sex='Feminin' ORDER BY year";
-    $graphDataStmt3 = $dbConnection->prepare($graphDataQuery3);
-    $graphDataStmt3->execute();
-    $graphData3 = $graphDataStmt3->fetchAll(PDO::FETCH_ASSOC);
-
-    $graphDataQuery4 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='<25' ORDER BY year";
-    $graphDataStmt4 = $dbConnection->prepare($graphDataQuery4);
-    $graphDataStmt4->execute();
-    $graphData4 = $graphDataStmt4->fetchAll(PDO::FETCH_ASSOC);
-
-    $graphDataQuery5 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='25-34' ORDER BY year";
-    $graphDataStmt5 = $dbConnection->prepare($graphDataQuery5);
-    $graphDataStmt5->execute();
-    $graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
-
-    $graphDataQuery6 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='>35' ORDER BY year";
-    $graphDataStmt6 = $dbConnection->prepare($graphDataQuery6);
-    $graphDataStmt6->execute();
-    $graphData6 = $graphDataStmt6->fetchAll(PDO::FETCH_ASSOC);
 
     echo "<script>
     var graphData1 = " . json_encode($graphData1) . "; 
     var drugName = " . json_encode($drugName) . ";
     
-    var graphData2 = " . json_encode($graphData2) . "; 
     
-    var graphData3 = " . json_encode($graphData3) . "; 
-    
-    var graphData4 = " . json_encode($graphData4) . "; 
-    
-    var graphData5 = " . json_encode($graphData5) . ";
-    
-    var graphData6 = " . json_encode($graphData6) . ";
-    
-      
     </script>";
 } else {
     echo "Nu s-a specificat niciun id.";
@@ -120,12 +87,12 @@ if ($row) {
         <thead>
         <tr>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(1)">TotalConsumption <span class="sort-arrow" id="arrow-1"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(2)">Masculin <span class="sort-arrow" id="arrow-2"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(3)">Feminin <span class="sort-arrow" id="arrow-3"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(4)">&lt;25 <span class="sort-arrow" id="arrow-4"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(5)">25-34 <span class="sort-arrow" id="arrow-5"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(6)">&gt;35 <span class="sort-arrow" id="arrow-6"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(1)">Confiscări<span class="sort-arrow" id="arrow-1"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(2)">Mililitri<span class="sort-arrow" id="arrow-2"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(3)">Doze pe Buc<span class="sort-arrow" id="arrow-3"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(4)">Comprimate<span class="sort-arrow" id="arrow-4"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(5)">Grame<span class="sort-arrow" id="arrow-5"></span></div></th>
+        </tr>
         </tr>
         </thead>
         <tbody></tbody>
@@ -173,38 +140,44 @@ if ($row) {
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
     // Process the PHP data
-    var years = graphData2.map(function(e) {
+    var years = graphData1.map(function(e) {
+
         return e.year;
     });
 
-    var consumption = graphData1.map(function(e) {
-        let values = Object.values(e);
-        return values[1];
+    var confiscari = graphData1.map(function(e) {
+        if(e.capturi)
+        return e.capturi;
+
+        return 0;
     });
 
-    var consumption_ma = graphData2.map(function(e) {
-        let values = Object.values(e);
-        return values;
+    var mililitri = graphData1.map(function(e) {
+        if(e.mililitri)
+            return e.mililitri;
+
+        return 0;
     });
 
-    var consumption_f = graphData3.map(function(e) {
-        let values = Object.values(e);
-        return values;
+    var doze_pe_buc = graphData1.map(function (e){
+        if(e.doze_pe_buc)
+            return e.doze_pe_buc;
+
+        return 0;
     });
 
-    var consumption_y = graphData4.map(function(e) {
-        let values = Object.values(e);
-        return values;
+    var comprimate = graphData1.map(function (e){
+        if(e.comprimate)
+            return e.comprimate;
+
+        return 0;
     });
 
-    var consumption_mi = graphData5.map(function(e) {
-        let values = Object.values(e);
-        return values;
-    });
+    var grame = graphData1.map(function (e){
+        if(e.grame)
+            return e.grame;
 
-    var consumption_o = graphData6.map(function(e) {
-        let values = Object.values(e);
-        return values;
+        return 0;
     });
 
     const graficLinie = new Chart(ctx, {
@@ -212,45 +185,38 @@ if ($row) {
         data: {
             labels: years,
             datasets: [{
-                label: 'Consum in anul respectiv',
-                data: consumption,
+                label: 'Confiscari',
+                data: confiscari,
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             },
                 {
-                    label: 'Masculin',
-                    data: consumption_ma,
+                    label: 'Mililitri',
+                    data: mililitri,
                     fill: false,
-                    borderColor: 'rgb(0, 0, 204)',
+                    borderColor: 'rgb(0,98,255)',
                     tension: 0.1
                 },
                 {
-                    label: 'Feminin',
-                    data: consumption_f,
-                    fill: false,
-                    borderColor: 'rgb(255, 0, 255)',
-                    tension: 0.1
-                },
-                {
-                    label: '<25',
-                    data: consumption_y,
+                    label: 'Doze pe Bucati',
+                    data: doze_pe_buc,
                     fill: false,
                     borderColor: 'rgb(208,255,0)',
                     tension: 0.1
                 },
                 {
-                    label: '25-34',
-                    data: consumption_mi,
+                    label: 'Comprimate',
+                    data: comprimate,
                     fill: false,
-                    borderColor: 'rgb(55,255,0)',
+                    borderColor: 'rgb(194,6,6)',
                     tension: 0.1
                 },
                 {
-                    label: '>35',
-                    data: consumption_o,
+                    label: 'Grame',
+                    data: grame,
                     fill: false,
-                    borderColor: 'rgb(168,5,5)',
+                    borderColor: 'rgb(0,0,0)',
                     tension: 0.1
                 },
             ]
@@ -268,37 +234,27 @@ if ($row) {
         const startYear = parseInt(startYearSlider.value);
         const endYear = parseInt(endYearSlider.value);
 
-        if (startYear > endYear) {
-            if (this === startYearSlider) {
-                endYearSlider.value = startYear;
-            } else {
-                startYearSlider.value = endYear;
-            }
-        }
-
         const selectedStartYear = Math.min(startYear, endYear);
         const selectedEndYear = Math.max(startYear, endYear);
 
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
-        const filteredConsumption = consumption.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionMa = consumption_ma.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionF = consumption_f.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionY = consumption_y.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionMi = consumption_mi.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredConsumptionO = consumption_o.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-
+        const filteredConfiscari = confiscari.slice(startYear - 2020, endYear - 2020 + 1);
+        const filteredMililitri = mililitri.slice(startYear - 2020, endYear - 2020 + 1);
+        const filteredDoze_pe_buc = doze_pe_buc.slice(startYear - 2020, endYear - 2020 + 1);
+        const filteredComprimate = comprimate.slice(startYear - 2020, endYear - 2020 + 1);
+        const filteredGrame = grame.slice(startYear - 2020, endYear - 2020 + 1);
 
         graficLinie.data.labels = filteredYears;
-        graficLinie.data.datasets[0].data = filteredConsumption;
-        graficLinie.data.datasets[1].data = filteredConsumptionMa;
-        graficLinie.data.datasets[2].data = filteredConsumptionF;
-        graficLinie.data.datasets[3].data = filteredConsumptionY;
-        graficLinie.data.datasets[4].data = filteredConsumptionMi;
-        graficLinie.data.datasets[5].data = filteredConsumptionO;
+        graficLinie.data.datasets[0].data = filteredConfiscari;
+        graficLinie.data.datasets[1].data = filteredMililitri;
+        graficLinie.data.datasets[2].data = filteredDoze_pe_buc;
+        graficLinie.data.datasets[3].data = filteredComprimate;
+        graficLinie.data.datasets[4].data = filteredGrame;
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
     }
+
 
     function populateTable() {
         const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
@@ -312,15 +268,14 @@ if ($row) {
             let cell4 = row.insertCell(3);
             let cell5 = row.insertCell(4);
             let cell6 = row.insertCell(5);
-            let cell7 = row.insertCell(6);
 
             cell1.innerHTML = years[i];
-            cell2.innerHTML = consumption[i];
-            cell3.innerHTML = consumption_ma[i][1];
-            cell4.innerHTML = consumption_f[i][1];
-            cell5.innerHTML = consumption_y[i][1];
-            cell6.innerHTML = consumption_mi[i][1];
-            cell7.innerHTML = consumption_o[i][1];
+            cell2.innerHTML = confiscari[i];
+            cell3.innerHTML = mililitri[i];
+            cell4.innerHTML = doze_pe_buc[i];
+            cell5.innerHTML = comprimate[i];
+            cell6.innerHTML = grame[i];
+
         }
     }
 
