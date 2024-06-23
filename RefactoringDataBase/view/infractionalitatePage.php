@@ -18,6 +18,9 @@
 </head>
 <body data-file="condamnari_data.json">
 
+
+
+
 <?php
 require_once "../../RefactoringDataBase/DataBase.php";
  $dbConnection = new Database();
@@ -73,6 +76,26 @@ echo "<script>
     <div class="details">
         <p><strong>Type:</strong> Statisticile pentru Infractionalitate în funcție de an, sex și vârstă</p>
         <p class="item-description"><strong>Description:</strong> Datele statistice despre infracțiunile înregistrate în diferite categorii</p>
+    </div>
+</div>
+
+<div class="container_item">
+    <div class="campaign">
+        <h1 class="campaign-title">Infracțiunile Legate de Droguri în România</h1>
+        <p class="campaign-description">Problema infracțiunilor legate de droguri reprezintă o preocupare majoră în societatea românească contemporană, având un impact semnificativ asupra securității și sănătății publice. Este crucial să identificăm și să gestionăm corect aceste infracțiuni pentru a asigura un mediu sigur și sănătos pentru toți cetățenii.</p>
+
+        <h2 class="campaign-section-title">Aspecte Critice ale Infracțiunilor Legate de Droguri</h2>
+        <p class="campaign-section-description">Infracțiunile legate de droguri în România includ:</p>
+        <ul class="campaign-list">
+            <li>Producția ilegală și traficul de substanțe interzise</li>
+            <li>Consumul și posesia ilegală de droguri</li>
+            <li>Spălarea banilor proveniți din traficul de droguri</li>
+            <li>Implicarea în rețele de distribuție și trafic internațional</li>
+            <li>Criza opioidelor și alte forme emergente de infracțiuni legate de droguri</li>
+        </ul>
+
+        <h2 class="campaign-section-title">Rolul Comunității în Combaterea Infracțiunilor</h2>
+        <p class="campaign-section-description">Comunitățile joacă un rol esențial în lupta împotriva infracțiunilor legate de droguri prin colaborare strânsă cu autoritățile, educație preventivă și promovarea unui mediu de informare și responsabilitate. Este vital să continuăm să dezvoltăm strategii eficiente pentru reducerea acestor infracțiuni și pentru protejarea cetățenilor împotriva efectelor nocive ale consumului și traficului de droguri.</p>
     </div>
 </div>
 
