@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="style-about.css">
-    <?php include "NavBar.php"; ?>
+    <link rel="stylesheet" href="../../style-about.css">
+    <?php include "navBar.php"; ?>
     <title>Title</title>
 </head>
 <body>
 <section class="about-us">
     <div class="about">
-        <img alt src="imaginiDroguri/cannabis-about.jpg" class="pic" />
+        <img alt src="../../imaginiDroguri/cannabis-about.jpg" class="pic" />
         <div class="text">
             <h2>About Us</h2>
             <h5> <span>Students: </span>Simioniuc & Hutan</h5>

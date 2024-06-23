@@ -48,3 +48,18 @@ body {
 .fixed-back-button:hover {
   background-color: darken(#f44336, 10%);
 }
+.back-button, .logout-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #5CB85CFF; /* Culoare verde similară cu butonul submit */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.logout-button {
+  left: 100px; /* Puțin deplasat de la butonul back */
+}

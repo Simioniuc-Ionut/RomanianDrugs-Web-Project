@@ -1,13 +1,4 @@
-<?php
-//// index.php (sau numele corespunzător al paginii tale)
-//
-//require_once "map/generate_json.php"; // Ajustează calea către fișierul 'generate_json.php'
-//require_once "RefactoringDataBase/model/DrugManager.php";
-//require_once "RefactoringDataBase/model/CampaniiManager.php";
-//
-//// Apelează funcția pentru a genera și actualiza fișierul JSON la încărcarea paginii
-//generateJsonFile(2021, 'Cocaina'); // Ajustează anul și numele drogului după necesități
-//?>
+
 
 
 <!DOCTYPE html>
@@ -15,26 +6,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Campanii</title>
-    <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="map/style.css">
-    <link rel="stylesheet" href="style_element_pagina.css">
-    <?php include "NavBar.php"; ?>
-        <script src="map/map_interactions.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="../../map/style.css">
+    <link rel="stylesheet" href="../../style_element_pagina.css">
+    <?php include "navBar.php"; ?>
+        <script src="../../map/map_interactions.js" data-file="campanii_data.json"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
-<body>
+<body data-file="campanii_data.json"> <!-- adaug data-file aici pentru a specifica fisierul JSON dorit -->
 
 <?php
-require_once "db_connect.php";
-global $dbConnection;
+require_once "../../RefactoringDataBase/DataBase.php";
+ $dbConnection = new Database();
 ?>
 
 <div class="container_item">
     <div class="item-image">
         <h2 class="item-name">Campanii</h2>
         <div class="box_image_element">
-            <img src="imaginiDroguri/campanii.jpg" alt="Urgente Medicale" style="width:100%;max-width:300px">
+            <img src="../../imaginiDroguri/campanii.jpg" alt="Urgente Medicale" style="width:100%;max-width:300px">
         </div>
     </div>
     <div class="details">
@@ -66,6 +57,7 @@ global $dbConnection;
 <div class="tab-buttons">
     <button class="tablinks" onclick="openTab(event, 'Graph')">Graph</button>
     <button class="tablinks" onclick="openTab(event, 'Table')">Table</button>
+    <button class="tablinks" onclick="openTab(event, 'Map')">Map</button>
 </div>
 
 <div id="Graph" class="tabcontent">
@@ -90,36 +82,30 @@ global $dbConnection;
         <tbody></tbody>
     </table>
 </div>
-
-<div class="slider-container">
-    <input type="range" min="2020" max="2024" value="2020" class="slider" id="startYearSlider">
-    <input type="range" min="2020" max="2024" value="2024" class="slider" id="endYearSlider">
-    <div class="year-markers">
-        <div class="year-marker" style="left: 0%;">2020</div>
-        <div class="year-marker" style="left: 25%;">2021</div>
-        <div class="year-marker" style="left: 50%;">2022</div>
-        <div class="year-marker" style="left: 75%;">2023</div>
-        <div class="year-marker" style="left: 100%;">2024</div>
-    </div>
-    <div id="selectedYear">2020 - 2024</div>
-</div>
-
 <!-- Adaugă harta interactivă aici -->
-<div id="map-container">
-    <?php echo file_get_contents('map/romania_map.svg'); ?>
+<!-- Map tab content with the map and the year selection slider -->
+<div id="Map" class="tabcontent">
+
+    <div id="map-container">
+        <div class="map-image">
+            <?php echo file_get_contents('../../map/romania_map.svg'); ?>
+        </div>
+    </div>
+
+    <div id="tooltip" class="hidden"></div>
+
+    <div class="slider-container-map">
+        <input type="range" min="2020" max="2024" value="2020" class="sliderMap" id="startYearSliderMap">
+        <div class="year-markers-map">
+            <div class="year-marker-map" style="left: 0%;">2020</div>
+            <div class="year-marker-map" style="left: 25%;">2021</div>
+            <div class="year-marker-map" style="left: 50%;">2022</div>
+            <div class="year-marker-map" style="left: 75%;">2023</div>
+            <div class="year-marker-map" style="left: 100%;">2024</div>
+        </div>
+        <div id="selectedYearMap">2020</div>
+    </div>
 </div>
-
-<!--<div id="info-container">-->
-<!--    <h2 id="region-title"></h2>-->
-<!--    <p id="region-population"></p>-->
-<!--    <p id="region-area"></p>-->
-<!--    <p id="region-density"></p>-->
-<!--    <p id="region-description"></p>-->
-<!--</div>-->
-
-<div id="tooltip" class="hidden"></div>
-
-
 <script>
     // Codul JavaScript pentru procesarea datelor și actualizarea graficelor și tabelelor
     function openTab(evt, tabName) {
@@ -188,6 +174,18 @@ global $dbConnection;
         graficLinie.update();
     }
 
+    <!-- map buttons range -->
+    // Add this function
+    startYearSliderMap = document.getElementById('startYearSliderMap');
+    startYearSliderMap.addEventListener('input', updateYearMap);
+
+    function updateYearMap()
+    {
+        const yearMapStart = document.getElementById('startYearSliderMap');
+        const yearMapSelect = document.getElementById('selectedYearMap');
+
+        yearMapSelect.textContent = yearMapStart.value;
+    }
 </script>
 <?php include "footer.php";?>
 </body>

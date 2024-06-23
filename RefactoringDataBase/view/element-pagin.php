@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Infractionalitate</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="map/style.css">
-    <link rel="stylesheet" href="style_element_pagina.css">
-    <?php include "NavBar.php"; ?>
-    <script src="map/map_interactions.js"></script>
+    <title>Romanina Drug Explorer</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../map/style.css">
+    <link rel="stylesheet" href="../../style_element_pagina.css">
+    <?php include "navBar.php"; ?>
+    <script src="../../map/map_interactions.js" data-file="drug_data.json"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
     <style>
@@ -16,43 +16,92 @@
         }
     </style>
 </head>
-<body>
+<body data-file="drug_data.json">
 
 <?php
-require_once "db_connect.php";
-global $dbConnection;
+require_once "../../RefactoringDataBase/DataBase.php";
+$dbConnection = new Database();
 
-$graphDataQuery1 = "SELECT year, numar FROM grupari_infractionale WHERE categorie = 'numar_persoane' ORDER BY year";
-$graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
-$graphDataStmt1->execute();
-$graphData1 = $graphDataStmt1->fetchAll(PDO::FETCH_ASSOC);
+if(isset($_GET['id'])) {
+    $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 
-$graphDataQuery2 = "SELECT numar FROM grupari_infractionale WHERE categorie = 'numar_grupari' ORDER BY year";
-$graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
-$graphDataStmt2->execute();
-$graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
+    $sql = "SELECT * FROM drugstable WHERE id = :id";
+    $stmt = $dbConnection->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-echo "<script>
+if ($row) {
+    $drugName = $row["name"];
+    echo '<div class="container_item">';
+    echo '<div class="item-image">';
+    echo '<h2 id="drug-name" class="item-name">' . $row["name"] . '</h2>';
+    echo '<div class="box_image_element">';
+    echo '<img src="../../imaginiDroguri/' . $row["image"] . '" alt="' . $row["name"] . '">';
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="details">';
+    echo '<p><strong>Type:</strong> ' . $row["type"] . '</p>';
+    echo '<p class="item-description"><strong>Description:</strong> ' . $row["description"] . '</p>';
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="center"></div>';
+} else {
+    echo "Elementul nu a fost găsit.";
+}
+
+
+// Fetch data for the graph
+    $graphDataQuery1 = "SELECT year, $drugName FROM urgente_tip_cale ORDER BY year";
+    $graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
+    $graphDataStmt1->execute();
+    $graphData1 = $graphDataStmt1->fetchAll(PDO::FETCH_ASSOC);
+
+    $graphDataQuery2 = "SELECT year, $drugName FROM urgente_tip_sex WHERE sex='Masculin' ORDER BY year";
+    $graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
+    $graphDataStmt2->execute();
+    $graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
+
+    $graphDataQuery3 = "SELECT year, $drugName FROM urgente_tip_sex WHERE sex='Feminin' ORDER BY year";
+    $graphDataStmt3 = $dbConnection->prepare($graphDataQuery3);
+    $graphDataStmt3->execute();
+    $graphData3 = $graphDataStmt3->fetchAll(PDO::FETCH_ASSOC);
+
+    $graphDataQuery4 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='<25' ORDER BY year";
+    $graphDataStmt4 = $dbConnection->prepare($graphDataQuery4);
+    $graphDataStmt4->execute();
+    $graphData4 = $graphDataStmt4->fetchAll(PDO::FETCH_ASSOC);
+
+    $graphDataQuery5 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='25-34' ORDER BY year";
+    $graphDataStmt5 = $dbConnection->prepare($graphDataQuery5);
+    $graphDataStmt5->execute();
+    $graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
+
+    $graphDataQuery6 = "SELECT year, $drugName FROM urgente_tip_varsta WHERE varsta='>35' ORDER BY year";
+    $graphDataStmt6 = $dbConnection->prepare($graphDataQuery6);
+    $graphDataStmt6->execute();
+    $graphData6 = $graphDataStmt6->fetchAll(PDO::FETCH_ASSOC);
+
+    echo "<script>
     var graphData1 = " . json_encode($graphData1) . "; 
-      
+    var drugName = " . json_encode($drugName) . ";
+    
     var graphData2 = " . json_encode($graphData2) . "; 
-         
+    
+    var graphData3 = " . json_encode($graphData3) . "; 
+    
+    var graphData4 = " . json_encode($graphData4) . "; 
+    
+    var graphData5 = " . json_encode($graphData5) . ";
+    
+    var graphData6 = " . json_encode($graphData6) . ";
+    
+      
     </script>";
-
+} else {
+    echo "Nu s-a specificat niciun id.";
+}
 ?>
-
-<div class="container_item">
-    <div class="item-image">
-    <h2 class="item-name">Infractionalitate</h2>
-    <div class="box_image_element">
-        <img src="imaginiDroguri/infractionalitate.jpg" alt="Urgente Medicale" style="width:100%;max-width:300px">
-    </div>
-    </div>
-    <div class="details">
-        <p><strong>Type:</strong> Statisticile pentru Infractionalitate în funcție de an, sex și vârstă</p>
-        <p class="item-description"><strong>Description:</strong> Datele statistice despre infracțiunile înregistrate în diferite categorii</p>
-    </div>
-</div>
 
 <div class="tab-buttons">
     <button class="tablinks" onclick="openTab(event, 'Graph')">Graph</button>
@@ -71,8 +120,12 @@ echo "<script>
         <thead>
         <tr>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(1)">Numar Persoane Infractionale<span class="sort-arrow" id="arrow-1"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(2)">Numar Grupari Infractionale <span class="sort-arrow" id="arrow-2"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(1)">TotalConsumption <span class="sort-arrow" id="arrow-1"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(2)">Masculin <span class="sort-arrow" id="arrow-2"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(3)">Feminin <span class="sort-arrow" id="arrow-3"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(4)">&lt;25 <span class="sort-arrow" id="arrow-4"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(5)">25-34 <span class="sort-arrow" id="arrow-5"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(6)">&gt;35 <span class="sort-arrow" id="arrow-6"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -81,33 +134,25 @@ echo "<script>
 
 <div id="Map" class="tabcontent">
 
-    <div id="map-container">
-        <div class="map-image">
-            <?php echo file_get_contents('map/romania_map.svg'); ?>
+        <div id="map-container">
+            <div class="map-image">
+                <?php echo file_get_contents('../../map/romania_map.svg'); ?>
+            </div>
         </div>
-    </div>
 
-    <div id="info-container">
-        <h2 id="region-title"></h2>
-        <p id="region-population"></p>
-        <p id="region-area"></p>
-        <p id="region-density"></p>
-        <p id="region-description"></p>
-    </div>
+        <div id="tooltip" class="hidden"></div>
 
-    <div id="tooltip" class="hidden"></div>
-
-    <div class="slider-container-map">
-        <input type="range" min="2020" max="2024" value="2020" class="sliderMap" id="startYearSliderMap">
-        <div class="year-markers-map">
-            <div class="year-marker-map" style="left: 0%;">2020</div>
-            <div class="year-marker-map" style="left: 25%;">2021</div>
-            <div class="year-marker-map" style="left: 50%;">2022</div>
-            <div class="year-marker-map" style="left: 75%;">2023</div>
-            <div class="year-marker-map" style="left: 100%;">2024</div>
+        <div class="slider-container-map">
+            <input type="range" min="2020" max="2024" value="2020" class="sliderMap" id="startYearSliderMap">
+            <div class="year-markers-map">
+                <div class="year-marker-map" style="left: 0%;">2020</div>
+                <div class="year-marker-map" style="left: 25%;">2021</div>
+                <div class="year-marker-map" style="left: 50%;">2022</div>
+                <div class="year-marker-map" style="left: 75%;">2023</div>
+                <div class="year-marker-map" style="left: 100%;">2024</div>
+            </div>
+            <div id="selectedYearMap">2020</div>
         </div>
-        <div id="selectedYearMap">2020</div>
-    </div>
 </div>
 
 <div class="slider-container">
@@ -127,38 +172,85 @@ echo "<script>
 <script>
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
+    // Process the PHP data
     var years = graphData1.map(function(e) {
         return e.year;
     });
 
-    var nr_p = graphData1.map(function(e) {
+    var consumption = graphData1.map(function(e) {
         let values = Object.values(e);
         return values;
     });
 
-    var nr_g = graphData2.map(function(e) {
-        console.log(e)
-        let values = e.numar;
+    var consumption_ma = graphData2.map(function(e) {
+        let values = Object.values(e);
         return values;
     });
 
+    var consumption_f = graphData3.map(function(e) {
+        let values = Object.values(e);
+        return values;
+    });
+
+    var consumption_y = graphData4.map(function(e) {
+        let values = Object.values(e);
+        return values;
+    });
+
+    var consumption_mi = graphData5.map(function(e) {
+        let values = Object.values(e);
+        return values;
+    });
+
+    var consumption_o = graphData6.map(function(e) {
+        let values = Object.values(e);
+        return values;
+    });
 
     const graficLinie = new Chart(ctx, {
         type: 'line',
         data: {
             labels: years,
             datasets: [{
-                label: 'Numar Persoane Infractionale',
-                data: nr_p,
+                label: 'Consum in anul respectiv',
+                data: consumption,
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             },
                 {
-                    label: 'Numar Grupari Infractionale',
-                    data: nr_g,
+                    label: 'Masculin',
+                    data: consumption_ma,
                     fill: false,
                     borderColor: 'rgb(0, 0, 204)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Feminin',
+                    data: consumption_f,
+                    fill: false,
+                    borderColor: 'rgb(255, 0, 255)',
+                    tension: 0.1
+                },
+                {
+                    label: '<25',
+                    data: consumption_y,
+                    fill: false,
+                    borderColor: 'rgb(208,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: '25-34',
+                    data: consumption_mi,
+                    fill: false,
+                    borderColor: 'rgb(55,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: '>35',
+                    data: consumption_o,
+                    fill: false,
+                    borderColor: 'rgb(168,5,5)',
                     tension: 0.1
                 },
             ]
@@ -188,12 +280,20 @@ echo "<script>
         const selectedEndYear = Math.max(startYear, endYear);
 
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
-        const filteredPersoane = nr_p.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredGrupari = nr_g.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumption = consumption.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionMa = consumption_ma.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionF = consumption_f.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionY = consumption_y.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionMi = consumption_mi.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionO = consumption_o.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
 
         graficLinie.data.labels = filteredYears;
-        graficLinie.data.datasets[0].data = filteredPersoane;
-        graficLinie.data.datasets[1].data = filteredGrupari;
+        graficLinie.data.datasets[0].data = filteredConsumption;
+        graficLinie.data.datasets[1].data = filteredConsumptionMa;
+        graficLinie.data.datasets[2].data = filteredConsumptionF;
+        graficLinie.data.datasets[3].data = filteredConsumptionY;
+        graficLinie.data.datasets[4].data = filteredConsumptionMi;
+        graficLinie.data.datasets[5].data = filteredConsumptionO;
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
@@ -208,11 +308,18 @@ echo "<script>
             let cell1 = row.insertCell(0);
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
-
+            let cell4 = row.insertCell(3);
+            let cell5 = row.insertCell(4);
+            let cell6 = row.insertCell(5);
+            let cell7 = row.insertCell(6);
 
             cell1.innerHTML = years[i];
-            cell2.innerHTML = nr_p[i][1];
-            cell3.innerHTML = nr_g[i];
+            cell2.innerHTML = consumption[i][1];
+            cell3.innerHTML = consumption_ma[i][1];
+            cell4.innerHTML = consumption_f[i][1];
+            cell5.innerHTML = consumption_y[i][1];
+            cell6.innerHTML = consumption_mi[i][1];
+            cell7.innerHTML = consumption_o[i][1];
         }
     }
 
@@ -383,25 +490,25 @@ echo "<script>
         }
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll("svg path").forEach(function(path) {
-            path.addEventListener("click", function() {
-                var regiune = this.getAttribute("id");
-                fetch(`get_regiune_info.php?regiune=${regiune}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        var infoContainer = document.getElementById("info-container");
-                        infoContainer.innerHTML = `
-                            <h2>${regiune}</h2>
-                            <p>Populație: ${data.populatie}</p>
-                            <p>Suprafață: ${data.suprafata}</p>
-                            <p>Densitate: ${data.densitate}</p>
-                        `;
-                    })
-                    .catch(error => console.error('Error:', error));
-            });
-        });
-    });
+    // document.addEventListener("DOMContentLoaded", function() {
+    //     document.querySelectorAll("svg path").forEach(function(path) {
+    //         path.addEventListener("click", function() {
+    //             var regiune = this.getAttribute("id");
+    //             fetch(`get_judet_info.php?regiune=${regiune}`)
+    //                 .then(response => response.json())
+    //                 .then(data => {
+    //                     var infoContainer = document.getElementById("info-container");
+    //                     infoContainer.innerHTML = `
+    //                         <h2>${regiune}</h2>
+    //                         <p>Populație: ${data.populatie}</p>
+    //                         <p>Suprafață: ${data.suprafata}</p>
+    //                         <p>Densitate: ${data.densitate}</p>
+    //                     `;
+    //                 })
+    //                 .catch(error => console.error('Error:', error));
+    //         });
+    //     });
+    // });
 
     startYearSliderMap = document.getElementById('startYearSliderMap');
     startYearSliderMap.addEventListener('input', updateYearMap);

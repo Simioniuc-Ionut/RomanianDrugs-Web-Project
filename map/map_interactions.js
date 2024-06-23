@@ -8,12 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var selectedDrug = document.getElementById('drug-name');
     var drugName = selectedDrug.textContent.trim();
 
+    // Adaugăm o variabilă globală pentru calea către fișierul JSON specific fiecărei pagini
+    var dataFile = 'drug_data.json'; // Default
+
+    // Verificăm dacă există un atribut data-file specificat pe body pentru a decide ce fișier JSON să folosim
+    if (document.body.dataset.file) {
+        dataFile = document.body.dataset.file;
+    }
     console.log(drugName);
 
     judete.forEach(function(judet) {
         judet.addEventListener('click', function(event) {
             var regionId = judet.id;
-            fetch(`map/get_judet_info.php?judet=${regionId}`)
+            fetch(`../../map/get_judet_info.php?judet=${regionId}&dataFile=${dataFile}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {

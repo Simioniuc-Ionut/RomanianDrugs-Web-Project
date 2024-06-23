@@ -2,7 +2,7 @@
 
 <?php
 
-    require_once "RefactoringDataBase/DataBase.php";
+    require_once "../DataBase.php";
 
     ?>
 
@@ -11,8 +11,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Romanian Drug Explorer</title>
-        <link rel="stylesheet" href="style.css">
-        <?php include "NavBar.php"; ?>
+        <link rel="stylesheet" href="../../style.css">
+        <?php include "navBar.php"; ?>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     </head>
@@ -20,7 +20,7 @@
 
     <div class="container">
         <div class="content" id="drug-list">
-            <img alt src="imaginiDroguri/canabis.jpg"  class="box__img">
+            <img alt src="../../imaginiDroguri/canabis.jpg" class="box__img">
             <!-- Conținutul va fi încărcat dinamic aici -->
         </div>
         <div id="contact-us"></div>
@@ -30,7 +30,7 @@
     <script>
         $(document).ready(function() {
             $.ajax({
-                url: 'RefactoringDataBase/index.php/get/allDrugs',
+                url: '../index.php/get/allDrugs',
                 method: 'GET',
                 success: function(data) {
                     const drugs = JSON.parse(data);
@@ -41,7 +41,7 @@
                     <a href="element-pagin.php?id=${drug.id}" class="box__link">
                         <div class="box">
                             <text class="box__text">${drug.name}</text>
-                            <img alt="drog" src="imaginiDroguri/${drug.image}" class="box__img">
+                            <img alt="drog" src="../../imaginiDroguri/${drug.image}" class="box__img">
                         </div>
                     </a>`;
                     });

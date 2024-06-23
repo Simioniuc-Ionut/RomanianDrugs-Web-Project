@@ -1,6 +1,5 @@
 <?php
 
-// DrugManager.php
 class DrugManager extends DataManager {
     //upload in db
     public function uploadInDataBase($year,$uploadFile): void

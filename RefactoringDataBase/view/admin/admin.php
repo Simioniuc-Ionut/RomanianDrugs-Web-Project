@@ -1,14 +1,29 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header('Location: adminLogin.php');
+    exit;
+}
+
+// Log out
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header('Location: adminLogin.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drug Management</title>
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="style2_admin_button.scss">
+    <link rel="stylesheet" href="../../../style2.css">
+    <link rel="stylesheet" href="../../../style2_admin_button.scss">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('RefactoringDataBase/index.php/get/drugsName')
+            fetch('../../../RefactoringDataBase/index.php/get/drugsName')
                 .then(response => {
                     console.log('Response status:', response.status);
                     return response.json();
@@ -31,17 +46,18 @@
 
             // Definează obiectele forms cu id-urile și URL-urile corespunzătoare
             const forms = [
-                { id: 'addDrugForm', url: 'RefactoringDataBase/index.php/add/drug' },
-                { id: 'updateNameForm', url: 'RefactoringDataBase/index.php/update/name' },
-                { id: 'updateTypeForm', url: 'RefactoringDataBase/index.php/update/type' },
-                { id: 'updateImageForm', url: 'RefactoringDataBase/index.php/update/image' },
-                { id: 'updateDescriptionForm', url: 'RefactoringDataBase/index.php/update/description' },
-                { id: 'deleteDrugForm', url: 'RefactoringDataBase/index.php/delete/drug' },
-                { id: 'uploadFileForm', url: 'RefactoringDataBase/index.php/upload' },
-                { id: 'generateDataForm', url: 'RefactoringDataBase/index.php/generateDataInJudete' },
-                { id: 'generateCampaniiForm', url: 'RefactoringDataBase/index.php/generateDataInCampanii' },
-                { id: 'generateInfractionalitatiForm', url: 'RefactoringDataBase/index.php/generateDataInInfractiuni'},
-                { id: 'generateUrgenteMedicaleFrom', url: 'RefactoringDataBase/index.php/generateDataInUrgenteMedicale'}
+                { id: 'addDrugForm', url: '../../index.php/add/drug' },
+                { id: 'updateNameForm', url: '../../index.php/update/name' },
+                { id: 'updateTypeForm', url: '../../index.php/update/type' },
+                { id: 'updateImageForm', url: '../../index.php/update/image' },
+                { id: 'updateDescriptionForm', url: '../../index.php/update/description' },
+                { id: 'deleteDrugForm', url: '../../index.php/delete/drug' },
+                { id: 'uploadFileForm', url: '../../index.php/upload' },
+                { id: 'generateDataForm', url: '../../index.php/generateDataInJudete' },
+                { id: 'generateCampaniiForm', url: '../../index.php/generateDataInCampanii' },
+                { id: 'generateInfractionalitatiForm', url: '../../index.php/generateDataInInfractiuni'},
+                {id: 'generateUrgenteMedicaleFrom', url: '../../index.php/generateDataInUrgenteMedicale'},
+                {id: 'createAdminForm', url: 'createAdminAccount.php'}
             ];
 
             forms.forEach(form => {
@@ -77,10 +93,9 @@
                     xhr.send(formData);
                 });
             });
-
-
-
         });
+
+
     </script>
     <style>
         #message {
@@ -98,32 +113,32 @@
 <div class="container">
     <h2>Add Drug</h2>
     <form id="addDrugForm" novalidate>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="add_drug_name">Name:</label>
+        <input type="text" id="add_drug_name" name="name" required>
 
-        <label for="type">Type:</label>
-        <div id="type">
-            <input type="checkbox" id="type1" name="type[]" value="CNS Depressant">
-            <label for="type1">CNS Depressant</label>
-            <input type="checkbox" id="type2" name="type[]" value="CNS Stimulants">
-            <label for="type2">CNS Stimulants</label>
-            <input type="checkbox" id="type3" name="type[]" value="Hallucinogens">
-            <label for="type3">Hallucinogens</label>
-            <input type="checkbox" id="type4" name="type[]" value="Dissociative Anesthetics">
-            <label for="type4">Dissociative Anesthetics</label>
-            <input type="checkbox" id="type5" name="type[]" value="Narcotic Analgesics">
-            <label for="type5">Narcotic Analgesics</label>
-            <input type="checkbox" id="type6" name="type[]" value="Inhalants">
-            <label for="type6">Inhalants</label>
-            <input type="checkbox" id="type7" name="type[]" value="Cannabis">
-            <label for="type7">Cannabis</label>
+        <label>Type:</label>
+        <div id="add_drug_type">
+            <input type="checkbox" id="add_type1" name="type[]" value="CNS Depressant">
+            <label for="add_type1">CNS Depressant</label>
+            <input type="checkbox" id="add_type2" name="type[]" value="CNS Stimulants">
+            <label for="add_type2">CNS Stimulants</label>
+            <input type="checkbox" id="add_type3" name="type[]" value="Hallucinogens">
+            <label for="add_type3">Hallucinogens</label>
+            <input type="checkbox" id="add_type4" name="type[]" value="Dissociative Anesthetics">
+            <label for="add_type4">Dissociative Anesthetics</label>
+            <input type="checkbox" id="add_type5" name="type[]" value="Narcotic Analgesics">
+            <label for="add_type5">Narcotic Analgesics</label>
+            <input type="checkbox" id="add_type6" name="type[]" value="Inhalants">
+            <label for="add_type6">Inhalants</label>
+            <input type="checkbox" id="add_type7" name="type[]" value="Cannabis">
+            <label for="add_type7">Cannabis</label>
         </div>
 
-        <label for="image">Image:</label>
-        <input type="text" id="image" name="image" required>
+        <label for="add_image">Image:</label>
+        <input type="text" id="add_image" name="image" required>
 
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="4" required></textarea>
+        <label for="add_description">Description:</label>
+        <textarea id="add_description" name="description" rows="4" required></textarea>
 
         <button type="submit">Add</button>
     </form>
@@ -206,11 +221,11 @@
     <div>
         <h2>Generate Data in Counties</h2>
         <form id="generateDataForm" novalidate enctype="multipart/form-data">
-            <label for="select_year">Select Year:</label>
-            <input type="number" id="select_year" name="year" min="2000" max="2100" required>
+            <label for="select_year_counties">Select Year:</label>
+            <input type="number" id="select_year_counties" name="year" min="2000" max="2100" required>
             <br><br>
-            <label for="drug_name">Select Drugs:</label>
-            <select id="drug_name" name="name" required>
+            <label for="drug_name_counties">Select Drugs:</label>
+            <select id="drug_name_counties" name="name" required>
                 <!-- Options will be populated by JavaScript -->
             </select>
             <br><br>
@@ -219,10 +234,10 @@
     </div>
     <!-- Formular pentru generarea datelor în campanii -->
     <div>
-    <h2>Generate Data in Campanii</h2>
+        <h2>Generate Data in Campanii</h2>
         <form id="generateCampaniiForm" method="post">
-            <label for="year">Anul:</label>
-            <input type="number" id="year" name="year" required>
+            <label for="year_campanii">Anul:</label>
+            <input type="number" id="year_campanii" name="year" required>
             <button type="submit">Generate Data</button>
         </form>
     </div>
@@ -230,8 +245,8 @@
     <div>
         <h2>Generate Data in Condamnari</h2>
         <form id="generateInfractionalitatiForm" method="post">
-            <label for="year">Anul:</label>
-            <input type="number" id="year" name="year" required>
+            <label for="year_infractiuni">Anul:</label>
+            <input type="number" id="year_infractiuni" name="year" required>
             <button type="submit">Generate Data</button>
         </form>
     </div>
@@ -239,17 +254,36 @@
     <div>
         <h2>Generare Date Urgente Medicale</h2>
         <form id="generateUrgenteMedicaleFrom" method="post">
-            <label for="year">Anul:</label>
-            <input type="number" id="year" name="year" required>
+            <label for="year_urgente_medicale">Anul:</label>
+            <input type="number" id="year_urgente_medicale" name="year" required>
             <button type="submit">Generate Data</button>
         </form>
     </div>
-
+    <!-- Formular pentru crearea unui nou cont de admin -->
+    <div>
+        <h2>Welcome to Admin Panel</h2>
+        <form id="createAdminForm" method="post">
+            <h2>Create New Admin Account</h2>
+            <label for="new_username">Username:</label>
+            <input type="text" id="new_username" name="new_username" required>
+            <label for="new_password">Password:</label>
+            <input type="password" id="new_password" name="new_password" required>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
 </div>
 
+
+<!-- Buton de Logout -->
+<form action="" method="get">
+    <button type="submit" name="logout" class="logout-button">Logout</button>
+</form>
+
+<!-- Button de back -->
 <div id="message"></div>
-<form action="HomePage.php" method="get" id="backForm">
+<form action="../../view/homePage.php" method="get" id="backForm">
     <button type="submit" class="fixed-back-button">Back</button>
 </form>
+
 </body>
 </html>

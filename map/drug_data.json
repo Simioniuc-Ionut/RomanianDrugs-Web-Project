@@ -60,6 +60,16 @@
                         "total_droguri": 126
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 0,
+                        "total_droguri": 467
+                    }
+                ]
             }
         ]
     },
@@ -122,6 +132,16 @@
                         "an": "2023",
                         "confiscari": 39,
                         "total_droguri": 384
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 24,
+                        "total_droguri": 127
                     }
                 ]
             }
@@ -188,6 +208,16 @@
                         "total_droguri": 70
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 51,
+                        "total_droguri": 190
+                    }
+                ]
             }
         ]
     },
@@ -250,6 +280,16 @@
                         "an": "2023",
                         "confiscari": 67,
                         "total_droguri": 470
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 44,
+                        "total_droguri": 488
                     }
                 ]
             }
@@ -316,6 +356,16 @@
                         "total_droguri": 326
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 68,
+                        "total_droguri": 414
+                    }
+                ]
             }
         ]
     },
@@ -378,6 +428,16 @@
                         "an": "2023",
                         "confiscari": 53,
                         "total_droguri": 236
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 15,
+                        "total_droguri": 270
                     }
                 ]
             }
@@ -444,6 +504,16 @@
                         "total_droguri": 39
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 64,
+                        "total_droguri": 428
+                    }
+                ]
             }
         ]
     },
@@ -506,6 +576,16 @@
                         "an": "2023",
                         "confiscari": 68,
                         "total_droguri": 193
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 54,
+                        "total_droguri": 260
                     }
                 ]
             }
@@ -572,6 +652,16 @@
                         "total_droguri": 342
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 3,
+                        "total_droguri": 326
+                    }
+                ]
             }
         ]
     },
@@ -634,6 +724,16 @@
                         "an": "2023",
                         "confiscari": 12,
                         "total_droguri": 465
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 58,
+                        "total_droguri": 243
                     }
                 ]
             }
@@ -700,6 +800,16 @@
                         "total_droguri": 469
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 28,
+                        "total_droguri": 320
+                    }
+                ]
             }
         ]
     },
@@ -762,6 +872,16 @@
                         "an": "2023",
                         "confiscari": 81,
                         "total_droguri": 128
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 11,
+                        "total_droguri": 174
                     }
                 ]
             }
@@ -828,6 +948,16 @@
                         "total_droguri": 133
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 66,
+                        "total_droguri": 452
+                    }
+                ]
             }
         ]
     },
@@ -890,6 +1020,16 @@
                         "an": "2023",
                         "confiscari": 8,
                         "total_droguri": 101
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 74,
+                        "total_droguri": 23
                     }
                 ]
             }
@@ -956,6 +1096,16 @@
                         "total_droguri": 385
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 11,
+                        "total_droguri": 288
+                    }
+                ]
             }
         ]
     },
@@ -1018,6 +1168,16 @@
                         "an": "2023",
                         "confiscari": 63,
                         "total_droguri": 416
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 86,
+                        "total_droguri": 412
                     }
                 ]
             }
@@ -1084,6 +1244,16 @@
                         "total_droguri": 194
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 7,
+                        "total_droguri": 482
+                    }
+                ]
             }
         ]
     },
@@ -1146,6 +1316,16 @@
                         "an": "2023",
                         "confiscari": 50,
                         "total_droguri": 395
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 53,
+                        "total_droguri": 383
                     }
                 ]
             }
@@ -1212,6 +1392,16 @@
                         "total_droguri": 145
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 83,
+                        "total_droguri": 283
+                    }
+                ]
             }
         ]
     },
@@ -1274,6 +1464,16 @@
                         "an": "2023",
                         "confiscari": 27,
                         "total_droguri": 143
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 19,
+                        "total_droguri": 69
                     }
                 ]
             }
@@ -1340,6 +1540,16 @@
                         "total_droguri": 441
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 41,
+                        "total_droguri": 444
+                    }
+                ]
             }
         ]
     },
@@ -1402,6 +1612,16 @@
                         "an": "2023",
                         "confiscari": 72,
                         "total_droguri": 460
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 31,
+                        "total_droguri": 299
                     }
                 ]
             }
@@ -1468,6 +1688,16 @@
                         "total_droguri": 128
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 90,
+                        "total_droguri": 130
+                    }
+                ]
             }
         ]
     },
@@ -1530,6 +1760,16 @@
                         "an": "2023",
                         "confiscari": 21,
                         "total_droguri": 28
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 91,
+                        "total_droguri": 480
                     }
                 ]
             }
@@ -1596,6 +1836,16 @@
                         "total_droguri": 434
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 16,
+                        "total_droguri": 5
+                    }
+                ]
             }
         ]
     },
@@ -1658,6 +1908,16 @@
                         "an": "2023",
                         "confiscari": 98,
                         "total_droguri": 453
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 100,
+                        "total_droguri": 214
                     }
                 ]
             }
@@ -1724,6 +1984,16 @@
                         "total_droguri": 474
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 26,
+                        "total_droguri": 37
+                    }
+                ]
             }
         ]
     },
@@ -1786,6 +2056,16 @@
                         "an": "2023",
                         "confiscari": 84,
                         "total_droguri": 164
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 32,
+                        "total_droguri": 456
                     }
                 ]
             }
@@ -1852,6 +2132,16 @@
                         "total_droguri": 54
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 3,
+                        "total_droguri": 260
+                    }
+                ]
             }
         ]
     },
@@ -1914,6 +2204,16 @@
                         "an": "2023",
                         "confiscari": 74,
                         "total_droguri": 43
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 81,
+                        "total_droguri": 199
                     }
                 ]
             }
@@ -1980,6 +2280,16 @@
                         "total_droguri": 488
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 49,
+                        "total_droguri": 333
+                    }
+                ]
             }
         ]
     },
@@ -2042,6 +2352,16 @@
                         "an": "2023",
                         "confiscari": 79,
                         "total_droguri": 13
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 24,
+                        "total_droguri": 295
                     }
                 ]
             }
@@ -2108,6 +2428,16 @@
                         "total_droguri": 197
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 26,
+                        "total_droguri": 492
+                    }
+                ]
             }
         ]
     },
@@ -2170,6 +2500,16 @@
                         "an": "2023",
                         "confiscari": 37,
                         "total_droguri": 348
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 27,
+                        "total_droguri": 13
                     }
                 ]
             }
@@ -2236,6 +2576,16 @@
                         "total_droguri": 127
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 45,
+                        "total_droguri": 397
+                    }
+                ]
             }
         ]
     },
@@ -2298,6 +2648,16 @@
                         "an": "2023",
                         "confiscari": 98,
                         "total_droguri": 199
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 68,
+                        "total_droguri": 29
                     }
                 ]
             }
@@ -2364,6 +2724,16 @@
                         "total_droguri": 203
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 89,
+                        "total_droguri": 453
+                    }
+                ]
             }
         ]
     },
@@ -2426,6 +2796,16 @@
                         "an": "2023",
                         "confiscari": 44,
                         "total_droguri": 387
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 56,
+                        "total_droguri": 422
                     }
                 ]
             }
@@ -2492,6 +2872,16 @@
                         "total_droguri": 77
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 90,
+                        "total_droguri": 194
+                    }
+                ]
             }
         ]
     },
@@ -2554,6 +2944,16 @@
                         "an": "2023",
                         "confiscari": 17,
                         "total_droguri": 356
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 87,
+                        "total_droguri": 295
                     }
                 ]
             }
@@ -2620,6 +3020,16 @@
                         "total_droguri": 118
                     }
                 ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 71,
+                        "total_droguri": 264
+                    }
+                ]
             }
         ]
     },
@@ -2682,6 +3092,16 @@
                         "an": "2023",
                         "confiscari": 39,
                         "total_droguri": 245
+                    }
+                ]
+            },
+            {
+                "drugname": "Cocaina",
+                "ani": [
+                    {
+                        "an": "2024",
+                        "confiscari": 35,
+                        "total_droguri": 285
                     }
                 ]
             }

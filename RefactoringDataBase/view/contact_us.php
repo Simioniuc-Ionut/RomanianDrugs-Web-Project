@@ -9,8 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="style.css">
-    <?php include "NavBar.php"; ?>
+    <link rel="stylesheet" href="../../style.css">
+    <?php include "navBar.php"; ?>
 
 </head>
 <body>
@@ -39,11 +39,11 @@
 
         <button type="submit" class="form-button-contact">Submit</button>
     </form>
-    <a href="adminLogin.php" class="admin-login-button">Admin Login</a>
+    <a href="admin/adminLogin.php" class="admin-login-button">Admin Login</a>
 </div>
 
 
-<?php include "Footer.php"; ?>
+<?php include "footer.php"; ?>
 </body>
 </html>
 

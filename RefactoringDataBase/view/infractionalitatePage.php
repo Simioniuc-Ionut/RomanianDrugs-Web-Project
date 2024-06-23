@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Urgente Medicale</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="map/style.css">
-    <link rel="stylesheet" href="style_element_pagina.css">
-    <?php include "NavBar.php"; ?>
-    <script src="map/map_interactions.js"></script>
+    <title>Infractionalitate</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../map/style.css">
+    <link rel="stylesheet" href="../../style_element_pagina.css">
+    <?php include "navBar.php"; ?>
+    <script src="../../map/map_interactions.js" data-file="condamnari_data.json"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
     <style>
@@ -16,27 +16,26 @@
         }
     </style>
 </head>
-<body>
+<body data-file="condamnari_data.json">
 
 <?php
-require_once "db_connect.php";
-global $dbConnection;
+require_once "../../RefactoringDataBase/DataBase.php";
+ $dbConnection = new Database();
 
-
-$graphDataQuery1 = "SELECT * FROM urgente_tip_sex WHERE sex='Masculin' ORDER BY year";
+$graphDataQuery1 = "SELECT year, numar FROM grupari_infractionale WHERE categorie = 'numar_persoane' ORDER BY year";
 $graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
 $graphDataStmt1->execute();
 $graphData1 = $graphDataStmt1->fetchAll(PDO::FETCH_ASSOC);
 
-$graphDataQuery2 = "SELECT * FROM urgente_tip_sex WHERE sex='Feminin' ORDER BY year";
+$graphDataQuery2 = "SELECT numar FROM grupari_infractionale WHERE categorie = 'numar_grupari' ORDER BY year";
 $graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
 $graphDataStmt2->execute();
 $graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<script>
     var graphData1 = " . json_encode($graphData1) . "; 
-     
-   var graphData2 = " . json_encode($graphData2) . "; 
+      
+    var graphData2 = " . json_encode($graphData2) . "; 
          
     </script>";
 
@@ -44,36 +43,14 @@ echo "<script>
 
 <div class="container_item">
     <div class="item-image">
-    <h2 class="item-name">Urgente Medicale</h2>
+    <h2 class="item-name">Infractionalitate</h2>
     <div class="box_image_element">
-    <img src="imaginiDroguri/urgenteMedicale.jpg" alt="Urgente Medicale" style="width:100%;max-width:300px">
+        <img src="../../imaginiDroguri/infractionalitate.jpg" alt="Urgente Medicale" style="width:100%;max-width:300px">
     </div>
     </div>
     <div class="details">
-        <p><strong>Type:</strong> Statisticile pentru Urgente Medicale în funcție de an, sex și vârstă</p>
-        <p class="item-description"><strong>Description:</strong> Datele statistice despre urgențele medicale înregistrate în diferite categorii. Aceste date sunt esențiale pentru a înțelege tendințele și modelele de urgențe medicale și pentru a informa strategiile de prevenire și intervenție.</p>
-    </div>
-</div>
-<div class="container_item">
-    <div class="campaign">
-        <h1 class="campaign-title">Campanii de Prevenire a Consumului de Droguri</h1>
-        <p class="campaign-description">Consumul de droguri este o problemă majoră în societatea modernă, afectând milioane de vieți în fiecare an. Pentru a combate această problemă, au fost lansate numeroase campanii de prevenire a consumului de droguri, atât la nivel local, cât și la nivel național și global.</p>
-
-        <h2 class="campaign-section-title">Scopul Campaniilor de Prevenire</h2>
-        <p class="campaign-section-description">Scopul principal al acestor campanii este de a informa și educa publicul despre pericolele și riscurile asociate consumului de droguri. Ele își propun să reducă prevalența consumului de droguri în rândul populației și să promoveze un stil de viață sănătos și lipsit de substanțe toxice.</p>
-
-        <h2 class="campaign-section-title">Inițiative și Proiecte</h2>
-        <p class="campaign-section-description">Campaniile de prevenire a consumului de droguri implică o varietate de inițiative și proiecte, inclusiv:</p>
-        <ul class="campaign-list">
-            <li>Educație și conștientizare în școli și comunități</li>
-            <li>Distribuirea de materiale informative și resurse educaționale</li>
-            <li>Evenimente și întâlniri comunitare pentru promovarea unui stil de viață sănătos</li>
-            <li>Campanii media și sociale pentru sensibilizarea publicului</li>
-            <li>Programare de consiliere și sprijin pentru cei afectați de consumul de droguri</li>
-        </ul>
-
-        <h2 class="campaign-section-title">Implicarea Comunității</h2>
-        <p class="campaign-section-description">Un aspect important al acestor campanii este implicarea comunității. Prin colaborarea între organizațiile guvernamentale și neguvernamentale, grupurile comunitare și membrii societății în general, putem construi un mediu mai sănătos și mai sigur pentru toți.</p>
+        <p><strong>Type:</strong> Statisticile pentru Infractionalitate în funcție de an, sex și vârstă</p>
+        <p class="item-description"><strong>Description:</strong> Datele statistice despre infracțiunile înregistrate în diferite categorii</p>
     </div>
 </div>
 
@@ -94,9 +71,8 @@ echo "<script>
         <thead>
         <tr>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(1)">Masculin <span class="sort-arrow" id="arrow-1"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(2)">Feminin <span class="sort-arrow" id="arrow-2"></span></div></th>
-
+            <th><div class="header-container" onclick="sortTable(1)">Numar Persoane Infractionale<span class="sort-arrow" id="arrow-1"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(2)">Numar Grupari Infractionale <span class="sort-arrow" id="arrow-2"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -107,7 +83,7 @@ echo "<script>
 
     <div id="map-container">
         <div class="map-image">
-            <?php echo file_get_contents('map/romania_map.svg'); ?>
+            <?php echo file_get_contents('../../map/romania_map.svg'); ?>
         </div>
     </div>
 
@@ -148,7 +124,6 @@ echo "<script>
 </div>
 
 
-
 <script>
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
@@ -156,54 +131,36 @@ echo "<script>
         return e.year;
     });
 
-    var male = graphData1.map(function(e) {
-
+    var nr_p = graphData1.map(function(e) {
         let values = Object.values(e);
-        let selectedValues = values.slice(2, -1);
-        let sum = 0;
-
-        selectedValues.forEach(function(value) {
-            console.log(value);
-            sum +=value;
-        });
-
-        return sum;
+        return values;
     });
 
-    var female = graphData2.map(function(e) {
-        let values = Object.values(e);
-        let selectedValues = values.slice(2, -1);
-        let sum = 0;
-
-        selectedValues.forEach(function(value) {
-            console.log(value);
-            sum +=value;
-        });
-
-        return sum;
+    var nr_g = graphData2.map(function(e) {
+        console.log(e)
+        let values = e.numar;
+        return values;
     });
-
 
 
     const graficLinie = new Chart(ctx, {
         type: 'line',
         data: {
             labels: years,
-            datasets: [
+            datasets: [{
+                label: 'Numar Persoane Infractionale',
+                data: nr_p,
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            },
                 {
-                    label: 'Masculin',
-                    data: male,
+                    label: 'Numar Grupari Infractionale',
+                    data: nr_g,
                     fill: false,
                     borderColor: 'rgb(0, 0, 204)',
                     tension: 0.1
                 },
-                {
-                    label: 'Feminin',
-                    data: female,
-                    fill: false,
-                    borderColor: 'rgb(255, 0, 255)',
-                    tension: 0.1
-                }
             ]
         }
     });
@@ -231,13 +188,12 @@ echo "<script>
         const selectedEndYear = Math.max(startYear, endYear);
 
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
-        const filteredMale = male.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
-        const filteredFemale = female.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredPersoane = nr_p.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredGrupari = nr_g.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
 
         graficLinie.data.labels = filteredYears;
-        graficLinie.data.datasets[0].data = filteredMale;
-        graficLinie.data.datasets[1].data = filteredFemale;
-
+        graficLinie.data.datasets[0].data = filteredPersoane;
+        graficLinie.data.datasets[1].data = filteredGrupari;
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
@@ -253,10 +209,10 @@ echo "<script>
             let cell2 = row.insertCell(1);
             let cell3 = row.insertCell(2);
 
-            cell1.innerHTML = years[i];
-            cell2.innerHTML = male[i];
-            cell3.innerHTML = female[i];
 
+            cell1.innerHTML = years[i];
+            cell2.innerHTML = nr_p[i][1];
+            cell3.innerHTML = nr_g[i];
         }
     }
 
@@ -431,7 +387,7 @@ echo "<script>
         document.querySelectorAll("svg path").forEach(function(path) {
             path.addEventListener("click", function() {
                 var regiune = this.getAttribute("id");
-                fetch(`get_regiune_info.php?regiune=${regiune}`)
+                fetch(`get_judet_info.php?regiune=${regiune}`)
                     .then(response => response.json())
                     .then(data => {
                         var infoContainer = document.getElementById("info-container");

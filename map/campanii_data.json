@@ -20,6 +20,11 @@
                 "an": "2019",
                 "campanii_prevenire": 45,
                 "campanii_combatere": 33
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 10,
+                "campanii_combatere": 3
             }
         ]
     },
@@ -44,6 +49,11 @@
                 "an": "2019",
                 "campanii_prevenire": 44,
                 "campanii_combatere": 12
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 45,
+                "campanii_combatere": 49
             }
         ]
     },
@@ -68,6 +78,11 @@
                 "an": "2019",
                 "campanii_prevenire": 15,
                 "campanii_combatere": 39
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 21,
+                "campanii_combatere": 11
             }
         ]
     },
@@ -92,6 +107,11 @@
                 "an": "2019",
                 "campanii_prevenire": 7,
                 "campanii_combatere": 30
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 11,
+                "campanii_combatere": 40
             }
         ]
     },
@@ -116,6 +136,11 @@
                 "an": "2019",
                 "campanii_prevenire": 39,
                 "campanii_combatere": 2
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 0,
+                "campanii_combatere": 18
             }
         ]
     },
@@ -140,6 +165,11 @@
                 "an": "2019",
                 "campanii_prevenire": 19,
                 "campanii_combatere": 22
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 16,
+                "campanii_combatere": 49
             }
         ]
     },
@@ -164,6 +194,11 @@
                 "an": "2019",
                 "campanii_prevenire": 48,
                 "campanii_combatere": 21
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 49,
+                "campanii_combatere": 43
             }
         ]
     },
@@ -188,6 +223,11 @@
                 "an": "2019",
                 "campanii_prevenire": 45,
                 "campanii_combatere": 5
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 40,
+                "campanii_combatere": 28
             }
         ]
     },
@@ -212,6 +252,11 @@
                 "an": "2019",
                 "campanii_prevenire": 12,
                 "campanii_combatere": 29
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 35,
+                "campanii_combatere": 4
             }
         ]
     },
@@ -236,6 +281,11 @@
                 "an": "2019",
                 "campanii_prevenire": 45,
                 "campanii_combatere": 38
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 33,
+                "campanii_combatere": 0
             }
         ]
     },
@@ -260,6 +310,11 @@
                 "an": "2019",
                 "campanii_prevenire": 23,
                 "campanii_combatere": 43
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 12,
+                "campanii_combatere": 46
             }
         ]
     },
@@ -284,6 +339,11 @@
                 "an": "2019",
                 "campanii_prevenire": 15,
                 "campanii_combatere": 23
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 36,
+                "campanii_combatere": 46
             }
         ]
     },
@@ -307,6 +367,11 @@
             {
                 "an": "2019",
                 "campanii_prevenire": 28,
+                "campanii_combatere": 42
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 29,
                 "campanii_combatere": 42
             }
         ]
@@ -332,6 +397,11 @@
                 "an": "2019",
                 "campanii_prevenire": 39,
                 "campanii_combatere": 19
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 35,
+                "campanii_combatere": 28
             }
         ]
     },
@@ -356,6 +426,11 @@
                 "an": "2019",
                 "campanii_prevenire": 7,
                 "campanii_combatere": 34
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 8,
+                "campanii_combatere": 13
             }
         ]
     },
@@ -380,6 +455,11 @@
                 "an": "2019",
                 "campanii_prevenire": 26,
                 "campanii_combatere": 13
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 43,
+                "campanii_combatere": 12
             }
         ]
     },
@@ -404,6 +484,11 @@
                 "an": "2019",
                 "campanii_prevenire": 26,
                 "campanii_combatere": 20
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 18,
+                "campanii_combatere": 15
             }
         ]
     },
@@ -428,6 +513,11 @@
                 "an": "2019",
                 "campanii_prevenire": 40,
                 "campanii_combatere": 4
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 14,
+                "campanii_combatere": 19
             }
         ]
     },
@@ -452,6 +542,11 @@
                 "an": "2019",
                 "campanii_prevenire": 1,
                 "campanii_combatere": 37
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 25,
+                "campanii_combatere": 21
             }
         ]
     },
@@ -476,6 +571,11 @@
                 "an": "2019",
                 "campanii_prevenire": 40,
                 "campanii_combatere": 19
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 50,
+                "campanii_combatere": 27
             }
         ]
     },
@@ -500,6 +600,11 @@
                 "an": "2019",
                 "campanii_prevenire": 15,
                 "campanii_combatere": 15
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 25,
+                "campanii_combatere": 48
             }
         ]
     },
@@ -524,6 +629,11 @@
                 "an": "2019",
                 "campanii_prevenire": 40,
                 "campanii_combatere": 8
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 10,
+                "campanii_combatere": 50
             }
         ]
     },
@@ -548,6 +658,11 @@
                 "an": "2019",
                 "campanii_prevenire": 45,
                 "campanii_combatere": 35
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 11,
+                "campanii_combatere": 26
             }
         ]
     },
@@ -572,6 +687,11 @@
                 "an": "2019",
                 "campanii_prevenire": 48,
                 "campanii_combatere": 40
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 15,
+                "campanii_combatere": 38
             }
         ]
     },
@@ -596,6 +716,11 @@
                 "an": "2019",
                 "campanii_prevenire": 30,
                 "campanii_combatere": 17
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 19,
+                "campanii_combatere": 4
             }
         ]
     },
@@ -620,6 +745,11 @@
                 "an": "2019",
                 "campanii_prevenire": 24,
                 "campanii_combatere": 6
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 25,
+                "campanii_combatere": 50
             }
         ]
     },
@@ -644,6 +774,11 @@
                 "an": "2019",
                 "campanii_prevenire": 38,
                 "campanii_combatere": 27
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 27,
+                "campanii_combatere": 22
             }
         ]
     },
@@ -668,6 +803,11 @@
                 "an": "2019",
                 "campanii_prevenire": 27,
                 "campanii_combatere": 9
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 7,
+                "campanii_combatere": 8
             }
         ]
     },
@@ -692,6 +832,11 @@
                 "an": "2019",
                 "campanii_prevenire": 41,
                 "campanii_combatere": 7
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 44,
+                "campanii_combatere": 18
             }
         ]
     },
@@ -716,6 +861,11 @@
                 "an": "2019",
                 "campanii_prevenire": 3,
                 "campanii_combatere": 30
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 35,
+                "campanii_combatere": 16
             }
         ]
     },
@@ -740,6 +890,11 @@
                 "an": "2019",
                 "campanii_prevenire": 47,
                 "campanii_combatere": 1
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 17,
+                "campanii_combatere": 20
             }
         ]
     },
@@ -764,6 +919,11 @@
                 "an": "2019",
                 "campanii_prevenire": 7,
                 "campanii_combatere": 10
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 46,
+                "campanii_combatere": 28
             }
         ]
     },
@@ -788,6 +948,11 @@
                 "an": "2019",
                 "campanii_prevenire": 4,
                 "campanii_combatere": 21
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 24,
+                "campanii_combatere": 36
             }
         ]
     },
@@ -812,6 +977,11 @@
                 "an": "2019",
                 "campanii_prevenire": 39,
                 "campanii_combatere": 49
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 33,
+                "campanii_combatere": 0
             }
         ]
     },
@@ -836,6 +1006,11 @@
                 "an": "2019",
                 "campanii_prevenire": 1,
                 "campanii_combatere": 22
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 5,
+                "campanii_combatere": 42
             }
         ]
     },
@@ -860,6 +1035,11 @@
                 "an": "2019",
                 "campanii_prevenire": 20,
                 "campanii_combatere": 25
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 46,
+                "campanii_combatere": 45
             }
         ]
     },
@@ -884,6 +1064,11 @@
                 "an": "2019",
                 "campanii_prevenire": 28,
                 "campanii_combatere": 49
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 18,
+                "campanii_combatere": 10
             }
         ]
     },
@@ -908,6 +1093,11 @@
                 "an": "2019",
                 "campanii_prevenire": 43,
                 "campanii_combatere": 44
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 3,
+                "campanii_combatere": 12
             }
         ]
     },
@@ -931,6 +1121,11 @@
             {
                 "an": "2019",
                 "campanii_prevenire": 31,
+                "campanii_combatere": 17
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 21,
                 "campanii_combatere": 17
             }
         ]
@@ -956,6 +1151,11 @@
                 "an": "2019",
                 "campanii_prevenire": 4,
                 "campanii_combatere": 3
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 39,
+                "campanii_combatere": 1
             }
         ]
     },
@@ -980,6 +1180,11 @@
                 "an": "2019",
                 "campanii_prevenire": 24,
                 "campanii_combatere": 35
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 40,
+                "campanii_combatere": 9
             }
         ]
     },
@@ -1004,6 +1209,11 @@
                 "an": "2019",
                 "campanii_prevenire": 19,
                 "campanii_combatere": 42
+            },
+            {
+                "an": "2024",
+                "campanii_prevenire": 32,
+                "campanii_combatere": 21
             }
         ]
     }
