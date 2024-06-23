@@ -1,0 +1,1220 @@
+{
+    "Alba": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 25,
+                "alte_infractiuni": 49
+            },
+            {
+                "an": "2021",
+                "condamnari": 65,
+                "alte_infractiuni": 62
+            },
+            {
+                "an": "2023",
+                "condamnari": 88,
+                "alte_infractiuni": 79
+            },
+            {
+                "an": "2019",
+                "condamnari": 70,
+                "alte_infractiuni": 9
+            },
+            {
+                "an": "2024",
+                "condamnari": 62,
+                "alte_infractiuni": 21
+            }
+        ]
+    },
+    "Arad": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 43,
+                "alte_infractiuni": 68
+            },
+            {
+                "an": "2021",
+                "condamnari": 54,
+                "alte_infractiuni": 71
+            },
+            {
+                "an": "2023",
+                "condamnari": 46,
+                "alte_infractiuni": 46
+            },
+            {
+                "an": "2019",
+                "condamnari": 6,
+                "alte_infractiuni": 30
+            },
+            {
+                "an": "2024",
+                "condamnari": 70,
+                "alte_infractiuni": 89
+            }
+        ]
+    },
+    "Arges": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 59,
+                "alte_infractiuni": 40
+            },
+            {
+                "an": "2021",
+                "condamnari": 78,
+                "alte_infractiuni": 41
+            },
+            {
+                "an": "2023",
+                "condamnari": 79,
+                "alte_infractiuni": 58
+            },
+            {
+                "an": "2019",
+                "condamnari": 88,
+                "alte_infractiuni": 35
+            },
+            {
+                "an": "2024",
+                "condamnari": 79,
+                "alte_infractiuni": 95
+            }
+        ]
+    },
+    "Bacau": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 75,
+                "alte_infractiuni": 0
+            },
+            {
+                "an": "2021",
+                "condamnari": 4,
+                "alte_infractiuni": 76
+            },
+            {
+                "an": "2023",
+                "condamnari": 9,
+                "alte_infractiuni": 23
+            },
+            {
+                "an": "2019",
+                "condamnari": 4,
+                "alte_infractiuni": 33
+            },
+            {
+                "an": "2024",
+                "condamnari": 31,
+                "alte_infractiuni": 81
+            }
+        ]
+    },
+    "Bihor": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 79,
+                "alte_infractiuni": 58
+            },
+            {
+                "an": "2021",
+                "condamnari": 5,
+                "alte_infractiuni": 96
+            },
+            {
+                "an": "2023",
+                "condamnari": 84,
+                "alte_infractiuni": 43
+            },
+            {
+                "an": "2019",
+                "condamnari": 82,
+                "alte_infractiuni": 45
+            },
+            {
+                "an": "2024",
+                "condamnari": 43,
+                "alte_infractiuni": 90
+            }
+        ]
+    },
+    "Bistrita-Nasaud": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 24,
+                "alte_infractiuni": 76
+            },
+            {
+                "an": "2021",
+                "condamnari": 36,
+                "alte_infractiuni": 80
+            },
+            {
+                "an": "2023",
+                "condamnari": 29,
+                "alte_infractiuni": 24
+            },
+            {
+                "an": "2019",
+                "condamnari": 34,
+                "alte_infractiuni": 70
+            },
+            {
+                "an": "2024",
+                "condamnari": 58,
+                "alte_infractiuni": 70
+            }
+        ]
+    },
+    "Botosani": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 88,
+                "alte_infractiuni": 12
+            },
+            {
+                "an": "2021",
+                "condamnari": 95,
+                "alte_infractiuni": 97
+            },
+            {
+                "an": "2023",
+                "condamnari": 75,
+                "alte_infractiuni": 29
+            },
+            {
+                "an": "2019",
+                "condamnari": 100,
+                "alte_infractiuni": 22
+            },
+            {
+                "an": "2024",
+                "condamnari": 13,
+                "alte_infractiuni": 33
+            }
+        ]
+    },
+    "Braila": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 13,
+                "alte_infractiuni": 8
+            },
+            {
+                "an": "2021",
+                "condamnari": 32,
+                "alte_infractiuni": 96
+            },
+            {
+                "an": "2023",
+                "condamnari": 25,
+                "alte_infractiuni": 85
+            },
+            {
+                "an": "2019",
+                "condamnari": 69,
+                "alte_infractiuni": 17
+            },
+            {
+                "an": "2024",
+                "condamnari": 30,
+                "alte_infractiuni": 52
+            }
+        ]
+    },
+    "Brasov": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 36,
+                "alte_infractiuni": 0
+            },
+            {
+                "an": "2021",
+                "condamnari": 75,
+                "alte_infractiuni": 23
+            },
+            {
+                "an": "2023",
+                "condamnari": 4,
+                "alte_infractiuni": 40
+            },
+            {
+                "an": "2019",
+                "condamnari": 21,
+                "alte_infractiuni": 6
+            },
+            {
+                "an": "2024",
+                "condamnari": 9,
+                "alte_infractiuni": 51
+            }
+        ]
+    },
+    "Bucuresti": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 81,
+                "alte_infractiuni": 87
+            },
+            {
+                "an": "2021",
+                "condamnari": 37,
+                "alte_infractiuni": 30
+            },
+            {
+                "an": "2023",
+                "condamnari": 76,
+                "alte_infractiuni": 62
+            },
+            {
+                "an": "2019",
+                "condamnari": 71,
+                "alte_infractiuni": 87
+            },
+            {
+                "an": "2024",
+                "condamnari": 83,
+                "alte_infractiuni": 78
+            }
+        ]
+    },
+    "Buzau": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 20,
+                "alte_infractiuni": 76
+            },
+            {
+                "an": "2021",
+                "condamnari": 95,
+                "alte_infractiuni": 19
+            },
+            {
+                "an": "2023",
+                "condamnari": 0,
+                "alte_infractiuni": 50
+            },
+            {
+                "an": "2019",
+                "condamnari": 28,
+                "alte_infractiuni": 49
+            },
+            {
+                "an": "2024",
+                "condamnari": 77,
+                "alte_infractiuni": 92
+            }
+        ]
+    },
+    "Calarasi": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 7,
+                "alte_infractiuni": 95
+            },
+            {
+                "an": "2021",
+                "condamnari": 77,
+                "alte_infractiuni": 83
+            },
+            {
+                "an": "2023",
+                "condamnari": 57,
+                "alte_infractiuni": 73
+            },
+            {
+                "an": "2019",
+                "condamnari": 2,
+                "alte_infractiuni": 62
+            },
+            {
+                "an": "2024",
+                "condamnari": 33,
+                "alte_infractiuni": 58
+            }
+        ]
+    },
+    "Caras-Severin": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 96,
+                "alte_infractiuni": 29
+            },
+            {
+                "an": "2021",
+                "condamnari": 78,
+                "alte_infractiuni": 96
+            },
+            {
+                "an": "2023",
+                "condamnari": 3,
+                "alte_infractiuni": 86
+            },
+            {
+                "an": "2019",
+                "condamnari": 92,
+                "alte_infractiuni": 56
+            },
+            {
+                "an": "2024",
+                "condamnari": 74,
+                "alte_infractiuni": 88
+            }
+        ]
+    },
+        "Cluj": {
+            "ani": [
+                {
+                    "an": "2020",
+                    "condamnari": 41,
+                    "alte_infractiuni": 83
+                },
+                {
+                    "an": "2021",
+                    "condamnari": 56,
+                    "alte_infractiuni": 47
+                },
+                {
+                    "an": "2023",
+                    "condamnari": 15,
+                    "alte_infractiuni": 58
+                },
+                {
+                    "an": "2019",
+                    "condamnari": 96,
+                    "alte_infractiuni": 74
+                },
+                {
+                    "an": "2024",
+                    "condamnari": 20,
+                    "alte_infractiuni": 3
+                }
+            ]
+        },
+    "Constanta": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 36,
+                "alte_infractiuni": 20
+            },
+            {
+                "an": "2021",
+                "condamnari": 56,
+                "alte_infractiuni": 76
+            },
+            {
+                "an": "2023",
+                "condamnari": 89,
+                "alte_infractiuni": 85
+            },
+            {
+                "an": "2019",
+                "condamnari": 0,
+                "alte_infractiuni": 85
+            },
+            {
+                "an": "2024",
+                "condamnari": 58,
+                "alte_infractiuni": 9
+            }
+        ]
+    },
+    "Covasna": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 95,
+                "alte_infractiuni": 11
+            },
+            {
+                "an": "2021",
+                "condamnari": 73,
+                "alte_infractiuni": 61
+            },
+            {
+                "an": "2023",
+                "condamnari": 99,
+                "alte_infractiuni": 48
+            },
+            {
+                "an": "2019",
+                "condamnari": 87,
+                "alte_infractiuni": 86
+            },
+            {
+                "an": "2024",
+                "condamnari": 70,
+                "alte_infractiuni": 68
+            }
+        ]
+    },
+    "Dambovita": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 36,
+                "alte_infractiuni": 98
+            },
+            {
+                "an": "2021",
+                "condamnari": 45,
+                "alte_infractiuni": 8
+            },
+            {
+                "an": "2023",
+                "condamnari": 36,
+                "alte_infractiuni": 74
+            },
+            {
+                "an": "2019",
+                "condamnari": 69,
+                "alte_infractiuni": 76
+            },
+            {
+                "an": "2024",
+                "condamnari": 17,
+                "alte_infractiuni": 93
+            }
+        ]
+    },
+    "Dolj": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 98,
+                "alte_infractiuni": 62
+            },
+            {
+                "an": "2021",
+                "condamnari": 92,
+                "alte_infractiuni": 15
+            },
+            {
+                "an": "2023",
+                "condamnari": 59,
+                "alte_infractiuni": 67
+            },
+            {
+                "an": "2019",
+                "condamnari": 3,
+                "alte_infractiuni": 67
+            },
+            {
+                "an": "2024",
+                "condamnari": 90,
+                "alte_infractiuni": 76
+            }
+        ]
+    },
+    "Galati": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 62,
+                "alte_infractiuni": 24
+            },
+            {
+                "an": "2021",
+                "condamnari": 92,
+                "alte_infractiuni": 61
+            },
+            {
+                "an": "2023",
+                "condamnari": 82,
+                "alte_infractiuni": 47
+            },
+            {
+                "an": "2019",
+                "condamnari": 82,
+                "alte_infractiuni": 93
+            },
+            {
+                "an": "2024",
+                "condamnari": 84,
+                "alte_infractiuni": 70
+            }
+        ]
+    },
+    "Giurgiu": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 93,
+                "alte_infractiuni": 37
+            },
+            {
+                "an": "2021",
+                "condamnari": 100,
+                "alte_infractiuni": 78
+            },
+            {
+                "an": "2023",
+                "condamnari": 79,
+                "alte_infractiuni": 60
+            },
+            {
+                "an": "2019",
+                "condamnari": 61,
+                "alte_infractiuni": 56
+            },
+            {
+                "an": "2024",
+                "condamnari": 41,
+                "alte_infractiuni": 4
+            }
+        ]
+    },
+    "Gorj": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 11,
+                "alte_infractiuni": 60
+            },
+            {
+                "an": "2021",
+                "condamnari": 14,
+                "alte_infractiuni": 95
+            },
+            {
+                "an": "2023",
+                "condamnari": 5,
+                "alte_infractiuni": 41
+            },
+            {
+                "an": "2019",
+                "condamnari": 78,
+                "alte_infractiuni": 47
+            },
+            {
+                "an": "2024",
+                "condamnari": 79,
+                "alte_infractiuni": 77
+            }
+        ]
+    },
+    "Harghita": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 46,
+                "alte_infractiuni": 85
+            },
+            {
+                "an": "2021",
+                "condamnari": 100,
+                "alte_infractiuni": 25
+            },
+            {
+                "an": "2023",
+                "condamnari": 31,
+                "alte_infractiuni": 85
+            },
+            {
+                "an": "2019",
+                "condamnari": 82,
+                "alte_infractiuni": 39
+            },
+            {
+                "an": "2024",
+                "condamnari": 65,
+                "alte_infractiuni": 48
+            }
+        ]
+    },
+    "Hunedoara": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 43,
+                "alte_infractiuni": 15
+            },
+            {
+                "an": "2021",
+                "condamnari": 55,
+                "alte_infractiuni": 79
+            },
+            {
+                "an": "2023",
+                "condamnari": 25,
+                "alte_infractiuni": 74
+            },
+            {
+                "an": "2019",
+                "condamnari": 11,
+                "alte_infractiuni": 14
+            },
+            {
+                "an": "2024",
+                "condamnari": 61,
+                "alte_infractiuni": 82
+            }
+        ]
+    },
+    "Ialomita": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 55,
+                "alte_infractiuni": 26
+            },
+            {
+                "an": "2021",
+                "condamnari": 62,
+                "alte_infractiuni": 59
+            },
+            {
+                "an": "2023",
+                "condamnari": 10,
+                "alte_infractiuni": 5
+            },
+            {
+                "an": "2019",
+                "condamnari": 33,
+                "alte_infractiuni": 61
+            },
+            {
+                "an": "2024",
+                "condamnari": 19,
+                "alte_infractiuni": 46
+            }
+        ]
+    },
+    "Iasi": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 23,
+                "alte_infractiuni": 0
+            },
+            {
+                "an": "2021",
+                "condamnari": 59,
+                "alte_infractiuni": 86
+            },
+            {
+                "an": "2023",
+                "condamnari": 56,
+                "alte_infractiuni": 87
+            },
+            {
+                "an": "2019",
+                "condamnari": 19,
+                "alte_infractiuni": 62
+            },
+            {
+                "an": "2024",
+                "condamnari": 42,
+                "alte_infractiuni": 75
+            }
+        ]
+    },
+    "Ilfov": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 50,
+                "alte_infractiuni": 6
+            },
+            {
+                "an": "2021",
+                "condamnari": 20,
+                "alte_infractiuni": 4
+            },
+            {
+                "an": "2023",
+                "condamnari": 4,
+                "alte_infractiuni": 88
+            },
+            {
+                "an": "2019",
+                "condamnari": 86,
+                "alte_infractiuni": 50
+            },
+            {
+                "an": "2024",
+                "condamnari": 4,
+                "alte_infractiuni": 43
+            }
+        ]
+    },
+    "Maramures": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 26,
+                "alte_infractiuni": 71
+            },
+            {
+                "an": "2021",
+                "condamnari": 20,
+                "alte_infractiuni": 87
+            },
+            {
+                "an": "2023",
+                "condamnari": 12,
+                "alte_infractiuni": 63
+            },
+            {
+                "an": "2019",
+                "condamnari": 31,
+                "alte_infractiuni": 8
+            },
+            {
+                "an": "2024",
+                "condamnari": 48,
+                "alte_infractiuni": 65
+            }
+        ]
+    },
+    "Mehedinti": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 48,
+                "alte_infractiuni": 10
+            },
+            {
+                "an": "2021",
+                "condamnari": 0,
+                "alte_infractiuni": 61
+            },
+            {
+                "an": "2023",
+                "condamnari": 72,
+                "alte_infractiuni": 30
+            },
+            {
+                "an": "2019",
+                "condamnari": 67,
+                "alte_infractiuni": 100
+            },
+            {
+                "an": "2024",
+                "condamnari": 5,
+                "alte_infractiuni": 96
+            }
+        ]
+    },
+    "Mures": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 12,
+                "alte_infractiuni": 49
+            },
+            {
+                "an": "2021",
+                "condamnari": 22,
+                "alte_infractiuni": 94
+            },
+            {
+                "an": "2023",
+                "condamnari": 49,
+                "alte_infractiuni": 98
+            },
+            {
+                "an": "2019",
+                "condamnari": 69,
+                "alte_infractiuni": 11
+            },
+            {
+                "an": "2024",
+                "condamnari": 96,
+                "alte_infractiuni": 47
+            }
+        ]
+    },
+    "Neamt": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 41,
+                "alte_infractiuni": 55
+            },
+            {
+                "an": "2021",
+                "condamnari": 69,
+                "alte_infractiuni": 62
+            },
+            {
+                "an": "2023",
+                "condamnari": 36,
+                "alte_infractiuni": 53
+            },
+            {
+                "an": "2019",
+                "condamnari": 68,
+                "alte_infractiuni": 42
+            },
+            {
+                "an": "2024",
+                "condamnari": 52,
+                "alte_infractiuni": 48
+            }
+        ]
+    },
+    "Olt": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 9,
+                "alte_infractiuni": 19
+            },
+            {
+                "an": "2021",
+                "condamnari": 72,
+                "alte_infractiuni": 90
+            },
+            {
+                "an": "2023",
+                "condamnari": 19,
+                "alte_infractiuni": 27
+            },
+            {
+                "an": "2019",
+                "condamnari": 26,
+                "alte_infractiuni": 52
+            },
+            {
+                "an": "2024",
+                "condamnari": 43,
+                "alte_infractiuni": 23
+            }
+        ]
+    },
+    "Prahova": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 81,
+                "alte_infractiuni": 77
+            },
+            {
+                "an": "2021",
+                "condamnari": 67,
+                "alte_infractiuni": 30
+            },
+            {
+                "an": "2023",
+                "condamnari": 98,
+                "alte_infractiuni": 3
+            },
+            {
+                "an": "2019",
+                "condamnari": 31,
+                "alte_infractiuni": 74
+            },
+            {
+                "an": "2024",
+                "condamnari": 50,
+                "alte_infractiuni": 13
+            }
+        ]
+    },
+    "Satu Mare": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 22,
+                "alte_infractiuni": 70
+            },
+            {
+                "an": "2021",
+                "condamnari": 14,
+                "alte_infractiuni": 19
+            },
+            {
+                "an": "2023",
+                "condamnari": 3,
+                "alte_infractiuni": 24
+            },
+            {
+                "an": "2019",
+                "condamnari": 36,
+                "alte_infractiuni": 55
+            },
+            {
+                "an": "2024",
+                "condamnari": 39,
+                "alte_infractiuni": 2
+            }
+        ]
+    },
+    "Salaj": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 76,
+                "alte_infractiuni": 52
+            },
+            {
+                "an": "2021",
+                "condamnari": 45,
+                "alte_infractiuni": 64
+            },
+            {
+                "an": "2023",
+                "condamnari": 7,
+                "alte_infractiuni": 64
+            },
+            {
+                "an": "2019",
+                "condamnari": 45,
+                "alte_infractiuni": 40
+            },
+            {
+                "an": "2024",
+                "condamnari": 100,
+                "alte_infractiuni": 21
+            }
+        ]
+    },
+    "Sibiu": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 64,
+                "alte_infractiuni": 2
+            },
+            {
+                "an": "2021",
+                "condamnari": 73,
+                "alte_infractiuni": 71
+            },
+            {
+                "an": "2023",
+                "condamnari": 39,
+                "alte_infractiuni": 4
+            },
+            {
+                "an": "2019",
+                "condamnari": 43,
+                "alte_infractiuni": 76
+            },
+            {
+                "an": "2024",
+                "condamnari": 69,
+                "alte_infractiuni": 23
+            }
+        ]
+    },
+    "Suceava": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 47,
+                "alte_infractiuni": 12
+            },
+            {
+                "an": "2021",
+                "condamnari": 90,
+                "alte_infractiuni": 8
+            },
+            {
+                "an": "2023",
+                "condamnari": 94,
+                "alte_infractiuni": 14
+            },
+            {
+                "an": "2019",
+                "condamnari": 60,
+                "alte_infractiuni": 92
+            },
+            {
+                "an": "2024",
+                "condamnari": 54,
+                "alte_infractiuni": 81
+            }
+        ]
+    },
+    "Teleorman": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 35,
+                "alte_infractiuni": 57
+            },
+            {
+                "an": "2021",
+                "condamnari": 88,
+                "alte_infractiuni": 69
+            },
+            {
+                "an": "2023",
+                "condamnari": 58,
+                "alte_infractiuni": 60
+            },
+            {
+                "an": "2019",
+                "condamnari": 78,
+                "alte_infractiuni": 30
+            },
+            {
+                "an": "2024",
+                "condamnari": 57,
+                "alte_infractiuni": 77
+            }
+        ]
+    },
+    "Timis": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 61,
+                "alte_infractiuni": 4
+            },
+            {
+                "an": "2021",
+                "condamnari": 22,
+                "alte_infractiuni": 50
+            },
+            {
+                "an": "2023",
+                "condamnari": 68,
+                "alte_infractiuni": 55
+            },
+            {
+                "an": "2019",
+                "condamnari": 46,
+                "alte_infractiuni": 49
+            },
+            {
+                "an": "2024",
+                "condamnari": 85,
+                "alte_infractiuni": 60
+            }
+        ]
+    },
+    "Tulcea": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 48,
+                "alte_infractiuni": 8
+            },
+            {
+                "an": "2021",
+                "condamnari": 48,
+                "alte_infractiuni": 29
+            },
+            {
+                "an": "2023",
+                "condamnari": 44,
+                "alte_infractiuni": 46
+            },
+            {
+                "an": "2019",
+                "condamnari": 46,
+                "alte_infractiuni": 92
+            },
+            {
+                "an": "2024",
+                "condamnari": 52,
+                "alte_infractiuni": 81
+            }
+        ]
+    },
+    "Valcea": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 62,
+                "alte_infractiuni": 83
+            },
+            {
+                "an": "2021",
+                "condamnari": 67,
+                "alte_infractiuni": 4
+            },
+            {
+                "an": "2023",
+                "condamnari": 41,
+                "alte_infractiuni": 70
+            },
+            {
+                "an": "2019",
+                "condamnari": 40,
+                "alte_infractiuni": 29
+            },
+            {
+                "an": "2024",
+                "condamnari": 22,
+                "alte_infractiuni": 74
+            }
+        ]
+    },
+    "Vaslui": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 31,
+                "alte_infractiuni": 44
+            },
+            {
+                "an": "2021",
+                "condamnari": 16,
+                "alte_infractiuni": 11
+            },
+            {
+                "an": "2023",
+                "condamnari": 60,
+                "alte_infractiuni": 61
+            },
+            {
+                "an": "2019",
+                "condamnari": 18,
+                "alte_infractiuni": 18
+            },
+            {
+                "an": "2024",
+                "condamnari": 64,
+                "alte_infractiuni": 84
+            }
+        ]
+    },
+    "Vrancea": {
+        "ani": [
+            {
+                "an": "2020",
+                "condamnari": 38,
+                "alte_infractiuni": 6
+            },
+            {
+                "an": "2021",
+                "condamnari": 37,
+                "alte_infractiuni": 60
+            },
+            {
+                "an": "2023",
+                "condamnari": 79,
+                "alte_infractiuni": 82
+            },
+            {
+                "an": "2019",
+                "condamnari": 51,
+                "alte_infractiuni": 3
+            },
+            {
+                "an": "2024",
+                "condamnari": 52,
+                "alte_infractiuni": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,926 @@
+{
+    "Alba": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 67,
+                "interventii": 60,
+                "bolnavi": 10
+            },
+            {
+                "an": "2021",
+                "recuperari": 32,
+                "interventii": 90,
+                "bolnavi": 53
+            },
+            {
+                "an": "2024",
+                "recuperari": 200,
+                "interventii": 232,
+                "bolnavi": 48
+            }
+        ]
+    },
+    "Arad": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 43,
+                "interventii": 59,
+                "bolnavi": 45
+            },
+            {
+                "an": "2021",
+                "recuperari": 19,
+                "interventii": 31,
+                "bolnavi": 90
+            },
+            {
+                "an": "2024",
+                "recuperari": 59,
+                "interventii": 52,
+                "bolnavi": 10
+            }
+        ]
+    },
+    "Arges": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 71,
+                "interventii": 47,
+                "bolnavi": 33
+            },
+            {
+                "an": "2021",
+                "recuperari": 73,
+                "interventii": 87,
+                "bolnavi": 50
+            },
+            {
+                "an": "2024",
+                "recuperari": 150,
+                "interventii": 136,
+                "bolnavi": 36
+            }
+        ]
+    },
+    "Bacau": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 58,
+                "interventii": 74,
+                "bolnavi": 21
+            },
+            {
+                "an": "2021",
+                "recuperari": 16,
+                "interventii": 66,
+                "bolnavi": 4
+            },
+            {
+                "an": "2024",
+                "recuperari": 61,
+                "interventii": 222,
+                "bolnavi": 14
+            }
+        ]
+    },
+    "Bihor": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 40,
+                "interventii": 82,
+                "bolnavi": 95
+            },
+            {
+                "an": "2021",
+                "recuperari": 6,
+                "interventii": 36,
+                "bolnavi": 5
+            },
+            {
+                "an": "2024",
+                "recuperari": 52,
+                "interventii": 42,
+                "bolnavi": 47
+            }
+        ]
+    },
+    "Bistrita-Nasaud": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 52,
+                "interventii": 29,
+                "bolnavi": 65
+            },
+            {
+                "an": "2021",
+                "recuperari": 70,
+                "interventii": 92,
+                "bolnavi": 19
+            },
+            {
+                "an": "2024",
+                "recuperari": 25,
+                "interventii": 59,
+                "bolnavi": 31
+            }
+        ]
+    },
+    "Botosani": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 36,
+                "interventii": 41,
+                "bolnavi": 27
+            },
+            {
+                "an": "2021",
+                "recuperari": 15,
+                "interventii": 53,
+                "bolnavi": 66
+            },
+            {
+                "an": "2024",
+                "recuperari": 191,
+                "interventii": 81,
+                "bolnavi": 11
+            }
+        ]
+    },
+    "Braila": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 73,
+                "interventii": 74,
+                "bolnavi": 62
+            },
+            {
+                "an": "2021",
+                "recuperari": 42,
+                "interventii": 55,
+                "bolnavi": 67
+            },
+            {
+                "an": "2024",
+                "recuperari": 75,
+                "interventii": 16,
+                "bolnavi": 44
+            }
+        ]
+    },
+    "Brasov": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 72,
+                "interventii": 83,
+                "bolnavi": 49
+            },
+            {
+                "an": "2021",
+                "recuperari": 82,
+                "interventii": 70,
+                "bolnavi": 17
+            },
+            {
+                "an": "2024",
+                "recuperari": 157,
+                "interventii": 14,
+                "bolnavi": 3
+            }
+        ]
+    },
+    "Bucuresti": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 7,
+                "interventii": 26,
+                "bolnavi": 40
+            },
+            {
+                "an": "2021",
+                "recuperari": 25,
+                "interventii": 25,
+                "bolnavi": 31
+            },
+            {
+                "an": "2024",
+                "recuperari": 97,
+                "interventii": 147,
+                "bolnavi": 45
+            }
+        ]
+    },
+    "Buzau": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 45,
+                "interventii": 5,
+                "bolnavi": 76
+            },
+            {
+                "an": "2021",
+                "recuperari": 37,
+                "interventii": 82,
+                "bolnavi": 99
+            },
+            {
+                "an": "2024",
+                "recuperari": 41,
+                "interventii": 108,
+                "bolnavi": 49
+            }
+        ]
+    },
+    "Calarasi": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 16,
+                "interventii": 7,
+                "bolnavi": 10
+            },
+            {
+                "an": "2021",
+                "recuperari": 91,
+                "interventii": 25,
+                "bolnavi": 96
+            },
+            {
+                "an": "2024",
+                "recuperari": 165,
+                "interventii": 42,
+                "bolnavi": 46
+            }
+        ]
+    },
+    "Caras-Severin": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 84,
+                "interventii": 14,
+                "bolnavi": 54
+            },
+            {
+                "an": "2021",
+                "recuperari": 40,
+                "interventii": 65,
+                "bolnavi": 25
+            },
+            {
+                "an": "2024",
+                "recuperari": 176,
+                "interventii": 93,
+                "bolnavi": 10
+            }
+        ]
+    },
+    "Cluj": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 35,
+                "interventii": 65,
+                "bolnavi": 60
+            },
+            {
+                "an": "2021",
+                "recuperari": 12,
+                "interventii": 13,
+                "bolnavi": 18
+            },
+            {
+                "an": "2024",
+                "recuperari": 112,
+                "interventii": 223,
+                "bolnavi": 30
+            }
+        ]
+    },
+    "Constanta": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 24,
+                "interventii": 19,
+                "bolnavi": 36
+            },
+            {
+                "an": "2021",
+                "recuperari": 42,
+                "interventii": 12,
+                "bolnavi": 70
+            },
+            {
+                "an": "2024",
+                "recuperari": 46,
+                "interventii": 177,
+                "bolnavi": 36
+            }
+        ]
+    },
+    "Covasna": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 30,
+                "interventii": 17,
+                "bolnavi": 75
+            },
+            {
+                "an": "2021",
+                "recuperari": 38,
+                "interventii": 9,
+                "bolnavi": 26
+            },
+            {
+                "an": "2024",
+                "recuperari": 90,
+                "interventii": 14,
+                "bolnavi": 41
+            }
+        ]
+    },
+    "Dambovita": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 26,
+                "interventii": 33,
+                "bolnavi": 63
+            },
+            {
+                "an": "2021",
+                "recuperari": 28,
+                "interventii": 55,
+                "bolnavi": 58
+            },
+            {
+                "an": "2024",
+                "recuperari": 55,
+                "interventii": 104,
+                "bolnavi": 30
+            }
+        ]
+    },
+    "Dolj": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 11,
+                "interventii": 42,
+                "bolnavi": 56
+            },
+            {
+                "an": "2021",
+                "recuperari": 57,
+                "interventii": 5,
+                "bolnavi": 64
+            },
+            {
+                "an": "2024",
+                "recuperari": 129,
+                "interventii": 151,
+                "bolnavi": 30
+            }
+        ]
+    },
+    "Galati": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 77,
+                "interventii": 42,
+                "bolnavi": 17
+            },
+            {
+                "an": "2021",
+                "recuperari": 43,
+                "interventii": 22,
+                "bolnavi": 67
+            },
+            {
+                "an": "2024",
+                "recuperari": 167,
+                "interventii": 83,
+                "bolnavi": 13
+            }
+        ]
+    },
+    "Giurgiu": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 66,
+                "interventii": 10,
+                "bolnavi": 52
+            },
+            {
+                "an": "2021",
+                "recuperari": 80,
+                "interventii": 38,
+                "bolnavi": 12
+            },
+            {
+                "an": "2024",
+                "recuperari": 187,
+                "interventii": 85,
+                "bolnavi": 19
+            }
+        ]
+    },
+    "Gorj": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 10,
+                "interventii": 93,
+                "bolnavi": 61
+            },
+            {
+                "an": "2021",
+                "recuperari": 22,
+                "interventii": 95,
+                "bolnavi": 41
+            },
+            {
+                "an": "2024",
+                "recuperari": 20,
+                "interventii": 176,
+                "bolnavi": 47
+            }
+        ]
+    },
+    "Harghita": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 75,
+                "interventii": 89,
+                "bolnavi": 36
+            },
+            {
+                "an": "2021",
+                "recuperari": 72,
+                "interventii": 13,
+                "bolnavi": 51
+            },
+            {
+                "an": "2024",
+                "recuperari": 117,
+                "interventii": 153,
+                "bolnavi": 10
+            }
+        ]
+    },
+    "Hunedoara": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 85,
+                "interventii": 37,
+                "bolnavi": 59
+            },
+            {
+                "an": "2021",
+                "recuperari": 45,
+                "interventii": 71,
+                "bolnavi": 73
+            },
+            {
+                "an": "2024",
+                "recuperari": 177,
+                "interventii": 204,
+                "bolnavi": 46
+            }
+        ]
+    },
+    "Ialomita": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 83,
+                "interventii": 11,
+                "bolnavi": 15
+            },
+            {
+                "an": "2021",
+                "recuperari": 2,
+                "interventii": 73,
+                "bolnavi": 99
+            },
+            {
+                "an": "2024",
+                "recuperari": 46,
+                "interventii": 185,
+                "bolnavi": 45
+            }
+        ]
+    },
+    "Iasi": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 86,
+                "interventii": 45,
+                "bolnavi": 68
+            },
+            {
+                "an": "2021",
+                "recuperari": 46,
+                "interventii": 27,
+                "bolnavi": 52
+            },
+            {
+                "an": "2024",
+                "recuperari": 191,
+                "interventii": 240,
+                "bolnavi": 36
+            }
+        ]
+    },
+    "Ilfov": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 37,
+                "interventii": 46,
+                "bolnavi": 52
+            },
+            {
+                "an": "2021",
+                "recuperari": 82,
+                "interventii": 16,
+                "bolnavi": 49
+            },
+            {
+                "an": "2024",
+                "recuperari": 90,
+                "interventii": 77,
+                "bolnavi": 11
+            }
+        ]
+    },
+    "Maramures": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 41,
+                "interventii": 75,
+                "bolnavi": 53
+            },
+            {
+                "an": "2021",
+                "recuperari": 4,
+                "interventii": 63,
+                "bolnavi": 21
+            },
+            {
+                "an": "2024",
+                "recuperari": 85,
+                "interventii": 138,
+                "bolnavi": 11
+            }
+        ]
+    },
+    "Mehedinti": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 90,
+                "interventii": 57,
+                "bolnavi": 54
+            },
+            {
+                "an": "2021",
+                "recuperari": 19,
+                "interventii": 58,
+                "bolnavi": 67
+            },
+            {
+                "an": "2024",
+                "recuperari": 106,
+                "interventii": 26,
+                "bolnavi": 7
+            }
+        ]
+    },
+    "Mures": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 56,
+                "interventii": 59,
+                "bolnavi": 34
+            },
+            {
+                "an": "2021",
+                "recuperari": 5,
+                "interventii": 8,
+                "bolnavi": 24
+            },
+            {
+                "an": "2024",
+                "recuperari": 33,
+                "interventii": 23,
+                "bolnavi": 25
+            }
+        ]
+    },
+    "Neamt": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 90,
+                "interventii": 4,
+                "bolnavi": 13
+            },
+            {
+                "an": "2021",
+                "recuperari": 97,
+                "interventii": 3,
+                "bolnavi": 72
+            },
+            {
+                "an": "2024",
+                "recuperari": 17,
+                "interventii": 239,
+                "bolnavi": 8
+            }
+        ]
+    },
+    "Olt": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 13,
+                "interventii": 87,
+                "bolnavi": 67
+            },
+            {
+                "an": "2021",
+                "recuperari": 71,
+                "interventii": 88,
+                "bolnavi": 11
+            },
+            {
+                "an": "2024",
+                "recuperari": 56,
+                "interventii": 93,
+                "bolnavi": 36
+            }
+        ]
+    },
+    "Prahova": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 11,
+                "interventii": 90,
+                "bolnavi": 13
+            },
+            {
+                "an": "2021",
+                "recuperari": 10,
+                "interventii": 40,
+                "bolnavi": 31
+            },
+            {
+                "an": "2024",
+                "recuperari": 14,
+                "interventii": 246,
+                "bolnavi": 45
+            }
+        ]
+    },
+    "Satu Mare": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 14,
+                "interventii": 37,
+                "bolnavi": 65
+            },
+            {
+                "an": "2021",
+                "recuperari": 62,
+                "interventii": 23,
+                "bolnavi": 96
+            },
+            {
+                "an": "2024",
+                "recuperari": 116,
+                "interventii": 77,
+                "bolnavi": 2
+            }
+        ]
+    },
+    "Salaj": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 84,
+                "interventii": 89,
+                "bolnavi": 46
+            },
+            {
+                "an": "2021",
+                "recuperari": 81,
+                "interventii": 5,
+                "bolnavi": 90
+            },
+            {
+                "an": "2024",
+                "recuperari": 188,
+                "interventii": 25,
+                "bolnavi": 18
+            }
+        ]
+    },
+    "Sibiu": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 57,
+                "interventii": 0,
+                "bolnavi": 35
+            },
+            {
+                "an": "2021",
+                "recuperari": 83,
+                "interventii": 99,
+                "bolnavi": 81
+            },
+            {
+                "an": "2024",
+                "recuperari": 136,
+                "interventii": 63,
+                "bolnavi": 33
+            }
+        ]
+    },
+    "Suceava": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 68,
+                "interventii": 10,
+                "bolnavi": 76
+            },
+            {
+                "an": "2021",
+                "recuperari": 24,
+                "interventii": 10,
+                "bolnavi": 67
+            },
+            {
+                "an": "2024",
+                "recuperari": 40,
+                "interventii": 117,
+                "bolnavi": 42
+            }
+        ]
+    },
+    "Teleorman": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 87,
+                "interventii": 100,
+                "bolnavi": 33
+            },
+            {
+                "an": "2021",
+                "recuperari": 82,
+                "interventii": 55,
+                "bolnavi": 80
+            },
+            {
+                "an": "2024",
+                "recuperari": 27,
+                "interventii": 206,
+                "bolnavi": 28
+            }
+        ]
+    },
+    "Timis": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 40,
+                "interventii": 36,
+                "bolnavi": 38
+            },
+            {
+                "an": "2021",
+                "recuperari": 100,
+                "interventii": 8,
+                "bolnavi": 40
+            },
+            {
+                "an": "2024",
+                "recuperari": 22,
+                "interventii": 224,
+                "bolnavi": 12
+            }
+        ]
+    },
+    "Tulcea": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 13,
+                "interventii": 7,
+                "bolnavi": 18
+            },
+            {
+                "an": "2021",
+                "recuperari": 52,
+                "interventii": 39,
+                "bolnavi": 97
+            },
+            {
+                "an": "2024",
+                "recuperari": 188,
+                "interventii": 184,
+                "bolnavi": 13
+            }
+        ]
+    },
+    "Valcea": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 30,
+                "interventii": 90,
+                "bolnavi": 9
+            },
+            {
+                "an": "2021",
+                "recuperari": 71,
+                "interventii": 76,
+                "bolnavi": 32
+            },
+            {
+                "an": "2024",
+                "recuperari": 27,
+                "interventii": 98,
+                "bolnavi": 31
+            }
+        ]
+    },
+    "Vaslui": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 41,
+                "interventii": 5,
+                "bolnavi": 95
+            },
+            {
+                "an": "2021",
+                "recuperari": 31,
+                "interventii": 24,
+                "bolnavi": 57
+            },
+            {
+                "an": "2024",
+                "recuperari": 191,
+                "interventii": 215,
+                "bolnavi": 18
+            }
+        ]
+    },
+    "Vrancea": {
+        "ani": [
+            {
+                "an": "2020",
+                "recuperari": 53,
+                "interventii": 26,
+                "bolnavi": 78
+            },
+            {
+                "an": "2021",
+                "recuperari": 78,
+                "interventii": 60,
+                "bolnavi": 99
+            },
+            {
+                "an": "2024",
+                "recuperari": 130,
+                "interventii": 105,
+                "bolnavi": 21
+            }
+        ]
+    }
+}
