@@ -111,114 +111,137 @@ if (isset($_GET['logout'])) {
 </head>
 <body>
 <div class="container">
+    <h1>Welcome to Admin Panel</h1>
+    <hr> <!-- Bara orizontală -->
     <h2>Add Drug</h2>
-    <form id="addDrugForm" novalidate>
-        <label for="add_drug_name">Name:</label>
-        <input type="text" id="add_drug_name" name="name" required>
+    <div class="container">
+        <form id="addDrugForm" novalidate>
+            <label for="add_drug_name">Name:</label>
+            <input type="text" id="add_drug_name" name="name" required>
 
-        <label>Type:</label>
-        <div id="add_drug_type">
-            <input type="checkbox" id="add_type1" name="type[]" value="CNS Depressant">
-            <label for="add_type1">CNS Depressant</label>
-            <input type="checkbox" id="add_type2" name="type[]" value="CNS Stimulants">
-            <label for="add_type2">CNS Stimulants</label>
-            <input type="checkbox" id="add_type3" name="type[]" value="Hallucinogens">
-            <label for="add_type3">Hallucinogens</label>
-            <input type="checkbox" id="add_type4" name="type[]" value="Dissociative Anesthetics">
-            <label for="add_type4">Dissociative Anesthetics</label>
-            <input type="checkbox" id="add_type5" name="type[]" value="Narcotic Analgesics">
-            <label for="add_type5">Narcotic Analgesics</label>
-            <input type="checkbox" id="add_type6" name="type[]" value="Inhalants">
-            <label for="add_type6">Inhalants</label>
-            <input type="checkbox" id="add_type7" name="type[]" value="Cannabis">
-            <label for="add_type7">Cannabis</label>
-        </div>
+            <label>Type:</label>
+            <div id="add_drug_type">
+                <input type="checkbox" id="add_type1" name="type[]" value="CNS Depressant">
+                <label for="add_type1">CNS Depressant</label>
+                <input type="checkbox" id="add_type2" name="type[]" value="CNS Stimulants">
+                <label for="add_type2">CNS Stimulants</label>
+                <input type="checkbox" id="add_type3" name="type[]" value="Hallucinogens">
+                <label for="add_type3">Hallucinogens</label>
+                <input type="checkbox" id="add_type4" name="type[]" value="Dissociative Anesthetics">
+                <label for="add_type4">Dissociative Anesthetics</label>
+                <input type="checkbox" id="add_type5" name="type[]" value="Narcotic Analgesics">
+                <label for="add_type5">Narcotic Analgesics</label>
+                <input type="checkbox" id="add_type6" name="type[]" value="Inhalants">
+                <label for="add_type6">Inhalants</label>
+                <input type="checkbox" id="add_type7" name="type[]" value="Cannabis">
+                <label for="add_type7">Cannabis</label>
+            </div>
 
-        <label for="add_image">Image:</label>
-        <input type="text" id="add_image" name="image" required>
+            <label for="add_image">Image:</label>
+            <input type="text" id="add_image" name="image" required>
 
-        <label for="add_description">Description:</label>
-        <textarea id="add_description" name="description" rows="4" required></textarea>
+            <label for="add_description">Description:</label>
+            <textarea id="add_description" name="description" rows="4" required></textarea>
 
-        <button type="submit">Add</button>
-    </form>
+            <button type="submit">Add</button>
+        </form>
+    </div>
     <!-- Form to update description -->
-    <form id="updateDescriptionForm" novalidate>
-        <h3>Update Description</h3>
-        <label for="desc_name">Drug Name:</label>
-        <select id="desc_name" name="name" required>
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="4" required></textarea>
-        <button type="submit">Update Description</button>
-    </form>
+    <hr> <!-- Bara orizontală -->
+    <div class = "container">
+        <form id="updateDescriptionForm" novalidate>
+            <h2>Update Description</h2>
+            <label for="desc_name">Drug Name:</label>
+            <select id="desc_name" name="name" required>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+            <button type="submit">Update Description</button>
+        </form>
+    </div>
     <!-- Form to update image -->
-    <form id="updateImageForm" enctype="multipart/form-data" novalidate>
-        <h3>Update Image</h3>
-        <label for="image_name">Drug Name:</label>
-        <select id="image_name" name="name" required>
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <label for="image">Image:</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
-        <button type="submit">Update Image</button>
-    </form>
+    <hr> <!-- Bara orizontală -->
+    <div class = "container">
+        <form id="updateImageForm" enctype="multipart/form-data" novalidate>
+            <h2>Update Image</h2>
+            <label for="image_name">Drug Name:</label>
+            <select id="image_name" name="name" required>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+            <button type="submit">Update Image</button>
+        </form>
+    </div>
     <!-- Form to update type based on name -->
-    <form id="updateTypeForm" novalidate>
-        <h3>Update Type</h3>
-        <label for="name">Name:</label>
-        <select id="name" name="name" required>
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <label for="type">Type:</label>
-        <div id="type">
-            <input type="checkbox" id="type1" name="type[]" value="CNS Depressant">
-            <label for="type1">CNS Depressant</label>
-            <input type="checkbox" id="type2" name="type[]" value="CNS Stimulants">
-            <label for="type2">CNS Stimulants</label>
-            <input type="checkbox" id="type3" name="type[]" value="Hallucinogens">
-            <label for="type3">Hallucinogens</label>
-            <input type="checkbox" id="type4" name="type[]" value="Dissociative Anesthetics">
-            <label for="type4">Dissociative Anesthetics</label>
-            <input type="checkbox" id="type5" name="type[]" value="Narcotic Analgesics">
-            <label for="type5">Narcotic Analgesics</label>
-            <input type="checkbox" id="type6" name="type[]" value="Inhalants">
-            <label for="type6">Inhalants</label>
-            <input type="checkbox" id="type7" name="type[]" value="Cannabis">
-            <label for="type7">Cannabis</label>
-        </div>
-        <button type="submit">Update Type</button>
-    </form>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
+        <form id="updateTypeForm" novalidate>
+            <h2>Update Type</h2>
+            <label for="name">Name:</label>
+            <select id="name" name="name" required>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <label for="type">Type:</label>
+            <div id="type">
+                <input type="checkbox" id="type1" name="type[]" value="CNS Depressant">
+                <label for="type1">CNS Depressant</label>
+                <input type="checkbox" id="type2" name="type[]" value="CNS Stimulants">
+                <label for="type2">CNS Stimulants</label>
+                <input type="checkbox" id="type3" name="type[]" value="Hallucinogens">
+                <label for="type3">Hallucinogens</label>
+                <input type="checkbox" id="type4" name="type[]" value="Dissociative Anesthetics">
+                <label for="type4">Dissociative Anesthetics</label>
+                <input type="checkbox" id="type5" name="type[]" value="Narcotic Analgesics">
+                <label for="type5">Narcotic Analgesics</label>
+                <input type="checkbox" id="type6" name="type[]" value="Inhalants">
+                <label for="type6">Inhalants</label>
+                <input type="checkbox" id="type7" name="type[]" value="Cannabis">
+                <label for="type7">Cannabis</label>
+            </div>
+            <button type="submit">Update Type</button>
+        </form>
+    </div>
    <!-- Form to update name based on current name -->
-    <form id="updateNameForm" novalidate>
-        <h3>Update Name</h3>
-        <label for="current_name">Current Name:</label>
-        <select id="current_name" name="current_name" required>
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <label for="new_name">New Name:</label>
-        <input type="text" id="new_name" name="new_name" required>
-        <button type="submit">Update Name</button>
-    </form>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
+        <form id="updateNameForm" novalidate>
+            <h2>Update Name</h2>
+            <label for="current_name">Current Name:</label>
+            <select id="current_name" name="current_name" required>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <label for="new_name">New Name:</label>
+            <input type="text" id="new_name" name="new_name" required>
+            <button type="submit">Update Name</button>
+        </form>
+    </div>
     <!-- Form to delete a drug -->
-    <form id="deleteDrugForm" novalidate>
-        <h3>Delete Drug</h3>
-        <label for="drug_name">Select Drug:</label>
-        <select id="drug_name" name="name" required>
-            <!-- Options will be populated by JavaScript -->
-        </select>
-        <button type="submit">Delete Drug</button>
-    </form>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
+        <form id="deleteDrugForm" novalidate>
+            <h2>Delete Drug</h2>
+            <label for="drug_name">Select Drug:</label>
+            <select id="drug_name" name="name" required>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <button type="submit">Delete Drug</button>
+        </form>
+    </div>
     <!-- Form to upload csv file -->
-    <h2>Upload CSV File</h2>
-    <form id="uploadFileForm" enctype="multipart/form-data" novalidate>
-        <label for="file">Upload CSV File:</label>
-        <input type="file" id="file" name="file" required>
-        <button type="submit">Upload</button>
-    </form>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
+        <h2>Upload CSV File</h2>
+        <form id="uploadFileForm" enctype="multipart/form-data" novalidate>
+            <label for="file">Upload CSV File:</label>
+            <input type="file" id="file" name="file" required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
     <!-- Formular pentru generarea datelor în județe -->
-    <div>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
         <h2>Generate Data in Counties</h2>
         <form id="generateDataForm" novalidate enctype="multipart/form-data">
             <label for="select_year_counties">Select Year:</label>
@@ -232,8 +255,10 @@ if (isset($_GET['logout'])) {
             <button type="submit">Generate Data</button>
         </form>
     </div>
+
     <!-- Formular pentru generarea datelor în campanii -->
-    <div>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
         <h2>Generate Data in Campanii</h2>
         <form id="generateCampaniiForm" method="post">
             <label for="year_campanii">Anul:</label>
@@ -242,7 +267,8 @@ if (isset($_GET['logout'])) {
         </form>
     </div>
     <!-- Formular pentru generarea datelor in infractiuni -->
-    <div>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
         <h2>Generate Data in Condamnari</h2>
         <form id="generateInfractionalitatiForm" method="post">
             <label for="year_infractiuni">Anul:</label>
@@ -250,8 +276,10 @@ if (isset($_GET['logout'])) {
             <button type="submit">Generate Data</button>
         </form>
     </div>
+
     <!-- Formular pentru generarea datelor in urgente medicale -->
-    <div>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
         <h2>Generare Date Urgente Medicale</h2>
         <form id="generateUrgenteMedicaleFrom" method="post">
             <label for="year_urgente_medicale">Anul:</label>
@@ -260,8 +288,8 @@ if (isset($_GET['logout'])) {
         </form>
     </div>
     <!-- Formular pentru crearea unui nou cont de admin -->
-    <div>
-        <h2>Welcome to Admin Panel</h2>
+    <hr> <!-- Bara orizontală -->
+    <div class="container">
         <form id="createAdminForm" method="post">
             <h2>Create New Admin Account</h2>
             <label for="new_username">Username:</label>
@@ -271,6 +299,7 @@ if (isset($_GET['logout'])) {
             <button type="submit">Create Account</button>
         </form>
     </div>
+    <hr> <!-- Bara orizontală -->
 </div>
 
 
