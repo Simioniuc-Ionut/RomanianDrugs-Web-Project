@@ -1,13 +1,42 @@
--- Tabel pt campanii de prevenire
+create table admins
+(
+    id            int auto_increment
+        primary key,
+    username      varchar(50)  not null,
+    password_hash varchar(255) not null,
+    constraint username
+        unique (username)
+);
+
+create table campanii_judete
+(
+    id                 int auto_increment
+        primary key,
+    judete             varchar(255) null,
+    an                 int          null,
+    campanii_prevenire int          null,
+    campanii_combatere int          null
+);
+
 create table campanii_prevenire
 (
     id            int auto_increment
         primary key,
     proiecte      varchar(50) null,
     nr_activitati int         null,
-    year          int        NOT null
+    year          int         null
 );
--- Tabel drugstable
+
+create table condamnari_judete
+(
+    id               int auto_increment
+        primary key,
+    judete           varchar(255) null,
+    condamnari       int          null,
+    an               int          null,
+    alte_infractiuni int          null
+);
+
 create table drugstable
 (
     id          int(10) auto_increment
@@ -17,7 +46,7 @@ create table drugstable
     image       varchar(255) not null,
     description text         not null
 );
--- Tabel pentru droguri confiscate
+
 create table droguri_confiscate
 (
     grame       int         null,
@@ -33,111 +62,136 @@ create table droguri_confiscate
     constraint droguri_confiscate_drugstable__fk
         foreign key (id_drog_tip) references drugstable (id)
 );
+
+create table droguri_judete
+(
+    id_drog       int          not null,
+    id            int auto_increment
+        primary key,
+    confiscari    int          null,
+    total_droguri int          null,
+    judete        varchar(255) not null,
+    an            int          not null,
+    constraint droguri_judete_drugstable_id_fk
+        foreign key (id_drog) references drugstable (id)
+            on update cascade on delete cascade
+);
+
 create table grupari_infractionale
 (
     id        int auto_increment
         primary key,
-    categorie varchar(255)  null,
-    numar     int           null,
+    categorie varchar(255) not null,
+    numar     int          not null,
     year      int          not null
 );
+
 create table pedepse_aplicate
 (
-    id           int auto_increment
+    id            int auto_increment
         primary key,
-    tip_pedeapsa varchar(255)  null,
-    lege_143_2000 int           null,
-    lege_194_2011 int           null,
-    year         int          not null
-);
--- Tabel pentru persoanele cercetate, trimise in judecata si condamnate
-CREATE TABLE persoane_cercetate_judecata_condamnate (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    categorie VARCHAR(255)  NULL,
-    numar INT  NULL,
-    year INT NOT NULL
+    tip_pedeapsa  varchar(255) not null,
+    lege_143_2000 int          not null,
+    lege_194_2011 int          not null,
+    year          int          not null
 );
 
--- Tabel pentru persoanele condamnate pe incadrare juridica
-CREATE TABLE persoane_condamnate_incadrarea_juridica (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    incadrare_juridica VARCHAR(255)  NULL,
-    numar INT  NULL,
-    year INT NOT NULL
+create table persoane_cercetate_judecata_condamnate
+(
+    id        int auto_increment
+        primary key,
+    categorie varchar(255) not null,
+    numar     int          not null,
+    year      int          not null
 );
 
--- Tabel pentru persoanele condamnate pe sexe
-CREATE TABLE persoane_condamnate_sexe (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    sex VARCHAR(10)  NULL,
-    majore INT  NULL,
-    minore INT  NULL,
-    year INT NOT NULL
+create table persoane_condamnate_incadrarea_juridica
+(
+    id                 int auto_increment
+        primary key,
+    incadrare_juridica varchar(255) not null,
+    numar              int          not null,
+    year               int          not null
 );
 
--- Tabel pentru situatia gruparilor infractionale
-CREATE TABLE grupari_infractionale (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    categorie VARCHAR(255)  NULL,
-    numar INT  NULL,
-    year INT NOT NULL
+create table persoane_condamnate_sexe
+(
+    id     int auto_increment
+        primary key,
+    sex    varchar(10) not null,
+    majore int         not null,
+    minore int         not null,
+    year   int         not null
 );
 
--- Tabel pentru situatia pedepselor aplicate
-CREATE TABLE pedepse_aplicate (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    tip_pedeapsa VARCHAR(255)  NULL,
-    lege_143_2000 INT  NULL,
-    lege_194_2011 INT  NULL,
-    year INT NOT NULL
+create table urgente_medicale_judete
+(
+    id          int auto_increment
+        primary key,
+    judete      varchar(255) null,
+    an          int          null,
+    recuperari  int          null,
+    interventii int          null,
+    bolnavi     int          null
 );
 
--- Tabel pentru distributia cazurilor in functie de tipul drogului si sex
-CREATE TABLE urgente_tip_sex (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    sex VARCHAR(10)  NULL,
-    canabis INT  NULL,
-    stimulanti INT  NULL,
-    opiacee INT  NULL,
-    nsp INT NOT NULL
+create table urgente_tip_cale
+(
+    id         int auto_increment
+        primary key,
+    cale       varchar(50) not null,
+    canabis    int         not null,
+    stimulanti int         not null,
+    opiacee    int         not null,
+    nsp        int         not null,
+    year       int         not null
 );
 
--- Tabel pentru distributia cazurilor in functie de tipul drogului si varsta
-CREATE TABLE urgente_tip_varsta (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    varsta VARCHAR(10)  NULL,
-    canabis INT  NULL,
-    stimulanti INT  NULL,
-    opiacee INT  NULL,
-    nsp INT NOT NULL
+create table urgente_tip_diagnostic
+(
+    id         int auto_increment
+        primary key,
+    diagnostic varchar(50) not null,
+    canabis    int         not null,
+    stimulanti int         not null,
+    opiacee    int         not null,
+    nsp        int         not null,
+    year       int         null
 );
 
--- Tabel pentru distributia cazurilor in functie de tipul drogului si calea de administrare
-CREATE TABLE urgente_tip_cale (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    cale VARCHAR(50)  NULL,
-    canabis INT  NULL,
-    stimulanti INT  NULL,
-    opiacee INT  NULL,
-    nsp INT NOT NULL
+create table urgente_tip_model
+(
+    id         int auto_increment
+        primary key,
+    model      varchar(50) not null,
+    canabis    int         not null,
+    stimulanti int         not null,
+    opiacee    int         not null,
+    nsp        int         not null,
+    year       int         null
 );
 
--- Tabel pentru distributia cazurilor in functie de tipul drogului si modelul de consum
-CREATE TABLE urgente_tip_model (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    model VARCHAR(50)  NULL,
-    canabis INT  NULL,
-    stimulanti INT  NULL,
-    opiacee INT  NULL,
-    nsp INT NOT NULL
+create table urgente_tip_sex
+(
+    id         int auto_increment
+        primary key,
+    sex        varchar(10) not null,
+    canabis    int         not null,
+    stimulanti int         not null,
+    opiacee    int         not null,
+    nsp        int         not null,
+    year       int         null
 );
 
--- Tabel pentru distributia cazurilor in functie de tipul drogului si diagnosticul de urgenta
-CREATE TABLE urgente_tip_diagnostic (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    diagnostic VARCHAR(50)  NULL,
-    canabis INT  NULL,
-    stimulanti INT  NULL,
-    opiacee INT  NULL,
-    nsp INT NOT NULL
+create table urgente_tip_varsta
+(
+    id         int auto_increment
+        primary key,
+    varsta     varchar(10) not null,
+    canabis    int         not null,
+    stimulanti int         not null,
+    opiacee    int         not null,
+    nsp        int         not null,
+    year       int         null
 );
+
