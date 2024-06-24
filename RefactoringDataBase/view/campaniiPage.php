@@ -813,7 +813,7 @@ echo "<script>
 
 <div id="grafB" class="center hidden">
     <label>Type of export
-        <select id="exportFormatChart1" class="export-format">
+        <select id="exportFormatChart" class="export-format">
             <option value="png">PNG</option>
             <option value="svg">SVG</option>
         </select>
