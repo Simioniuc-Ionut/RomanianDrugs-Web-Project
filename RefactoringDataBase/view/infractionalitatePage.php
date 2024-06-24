@@ -25,12 +25,12 @@
 require_once "../../RefactoringDataBase/DataBase.php";
  $dbConnection = new Database();
 
-$graphDataQuery1 = "SELECT year, numar FROM grupari_infractionale WHERE categorie = 'numar_persoane' ORDER BY year";
+$graphDataQuery1 = "SELECT year, numar_grupari FROM grupari_infractionale WHERE categorie = 'Grupări de crimă organizată' ORDER BY year";
 $graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
 $graphDataStmt1->execute();
 $graphData1 = $graphDataStmt1->fetchAll(PDO::FETCH_ASSOC);
 
-$graphDataQuery2 = "SELECT numar FROM grupari_infractionale WHERE categorie = 'numar_grupari' ORDER BY year";
+$graphDataQuery2 = "SELECT numar_grupari FROM grupari_infractionale WHERE categorie = 'Grupări de contrabandiști' ORDER BY year";
 $graphDataStmt2 = $dbConnection->prepare($graphDataQuery2);
 $graphDataStmt2->execute();
 $graphData2 = $graphDataStmt2->fetchAll(PDO::FETCH_ASSOC);
@@ -138,8 +138,8 @@ echo "<script>
         <thead>
         <tr>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(1)">Numar Persoane Infractionale<span class="sort-arrow" id="arrow-1"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(2)">Numar Grupari Infractionale <span class="sort-arrow" id="arrow-2"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(1)">Grupări de crimă organizată<span class="sort-arrow" id="arrow-1"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(2)">Grupări de contrabandiști <span class="sort-arrow" id="arrow-2"></span></div></th>
             <th><div class="header-container" onclick="sortTable(3)">Persoane cercetate<span class="sort-arrow" id="arrow-3"></span></div></th>
             <th><div class="header-container" onclick="sortTable(4)">Persoane trimise în judecată <span class="sort-arrow" id="arrow-4"></span></div></th>
             <th><div class="header-container" onclick="sortTable(5)">Persoane condamnate<span class="sort-arrow" id="arrow-5"></span></div></th>
@@ -211,7 +211,7 @@ echo "<script>
     });
 
     var nr_g = graphData2.map(function(e) {
-        let values = e.numar;
+        let values = e.numar_grupari;
         return values;
     });
 
@@ -258,14 +258,14 @@ echo "<script>
         data: {
             labels: years,
             datasets: [{
-                label: 'Numar Persoane Infractionale',
+                label: 'Grupări de crimă organizată',
                 data: nr_p,
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             },
                 {
-                    label: 'Numar Grupari Infractionale',
+                    label: 'Grupări de contrabandiști',
                     data: nr_g,
                     fill: false,
                     borderColor: 'rgb(0, 0, 204)',
