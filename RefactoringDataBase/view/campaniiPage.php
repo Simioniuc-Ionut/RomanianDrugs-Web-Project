@@ -558,7 +558,13 @@ echo "<script>
 
 
     function exportTable(data) {
-        var format = document.getElementById('exportFormatTable').value;
+
+        var format;
+        if(data=='dataTable1')
+            format = document.getElementById('exportFormatTable1').value;
+        else
+            format = document.getElementById('exportFormatTable1').value;
+
         var table = document.getElementById(data);
         if (format === 'png') {
             var canvas = document.createElement('canvas');
@@ -807,7 +813,7 @@ echo "<script>
 
 <div id="grafB" class="center hidden">
     <label>Type of export
-        <select id="exportFormatChart" class="export-format">
+        <select id="exportFormatChart1" class="export-format">
             <option value="png">PNG</option>
             <option value="svg">SVG</option>
         </select>
@@ -817,7 +823,7 @@ echo "<script>
 
 <div id="tableB" class="center hidden">
     <label>Type of export
-        <select id="exportFormatTable" class="export-format">
+        <select id="exportFormatTable1" class="export-format">
             <option value="png">PNG</option>
             <option value="svg">SVG</option>
         </select>
