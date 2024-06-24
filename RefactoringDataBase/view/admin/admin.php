@@ -242,7 +242,7 @@ if (isset($_GET['logout'])) {
     <!-- Formular pentru generarea datelor în județe -->
     <hr> <!-- Bara orizontală -->
     <div class="container">
-        <h2>Generate Data in Counties</h2>
+        <h2>Generate Data in Drugs</h2>
         <form id="generateDataForm" novalidate enctype="multipart/form-data">
             <label for="select_year_counties">Select Year:</label>
             <input type="number" id="select_year_counties" name="year" min="2000" max="2100" required>
