@@ -17,6 +17,17 @@
         .hidden {
             display: none;
         }
+        .table-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .table-nav button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
     </style>
 
 </head>
@@ -41,14 +52,72 @@ $graphDataStmt = $dbConnection->prepare($graphDataQuery);
 $graphDataStmt->execute();
 $graphData = $graphDataStmt->fetchAll(PDO::FETCH_ASSOC);
 
+$graphDataQuery3 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='Proiect național NECENZURAT-12 activități/proiect' ORDER BY year";
+$graphDataStmt3 = $dbConnection->prepare($graphDataQuery3);
+$graphDataStmt3->execute();
+$graphData3 = $graphDataStmt3->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery4 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='Proiect național MESAJUL MEU ANTIDROG (Nivel gimna' ORDER BY year";
+$graphDataStmt4 = $dbConnection->prepare($graphDataQuery4);
+$graphDataStmt4->execute();
+$graphData4 = $graphDataStmt4->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery5 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='Proiect național EU ŞI COPILUL MEU-9 activități/pr' ORDER BY year";
+$graphDataStmt5 = $dbConnection->prepare($graphDataQuery5);
+$graphDataStmt5->execute();
+$graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery6 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='Proiect național CUM SĂ CREŞTEM SĂNĂTOŞI -7 activi' ORDER BY year";
+$graphDataStmt6 = $dbConnection->prepare($graphDataQuery6);
+$graphDataStmt6->execute();
+$graphData6 = $graphDataStmt6->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery7 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='Proiect național ABC-UL EMOŢIILOR-6 activități/pro' ORDER BY year";
+$graphDataStmt7 = $dbConnection->prepare($graphDataQuery7);
+$graphDataStmt7->execute();
+$graphData7 = $graphDataStmt7->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery8 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='În mediul universitar' ORDER BY year";
+$graphDataStmt8 = $dbConnection->prepare($graphDataQuery8);
+$graphDataStmt8->execute();
+$graphData8 = $graphDataStmt8->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery9 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='În mediul primar, gimnazial şi liceal' ORDER BY year";
+$graphDataStmt9 = $dbConnection->prepare($graphDataQuery9);
+$graphDataStmt9->execute();
+$graphData9 = $graphDataStmt9->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery10 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='În mediul preşcolar' ORDER BY year";
+$graphDataStmt10 = $dbConnection->prepare($graphDataQuery10);
+$graphDataStmt10->execute();
+$graphData10 = $graphDataStmt10->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery11 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='În familie' ORDER BY year";
+$graphDataStmt11 = $dbConnection->prepare($graphDataQuery11);
+$graphDataStmt11->execute();
+$graphData11 = $graphDataStmt11->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery12 = "SELECT nr_activitati FROM campanii_prevenire WHERE proiecte='Campania 19 ZILE DE PREVENIRE A ABUZURILOR ȘI VIOL' ORDER BY year";
+$graphDataStmt12 = $dbConnection->prepare($graphDataQuery12);
+$graphDataStmt12->execute();
+$graphData12 = $graphDataStmt12->fetchAll(PDO::FETCH_ASSOC);
+
 
 echo "<script>
 
     var graphData = " . json_encode($graphData) . ";
-
     var graphData1 = " . json_encode($graphData1) . "; 
-    
-    var graphData2 = " . json_encode($graphData2) . "; 
+    var graphData2 = " . json_encode($graphData2) . ";
+    var graphData3 = " . json_encode($graphData3) . ";
+    var graphData4 = " . json_encode($graphData4) . ";
+    var graphData5 = " . json_encode($graphData5) . ";
+    var graphData6 = " . json_encode($graphData6) . ";
+    var graphData7 = " . json_encode($graphData7) . ";
+    var graphData8 = " . json_encode($graphData8) . ";
+    var graphData9 = " . json_encode($graphData9) . ";
+    var graphData10 = " . json_encode($graphData10) . ";
+    var graphData11 = " . json_encode($graphData11) . ";
+    var graphData12 = " . json_encode($graphData12) . ";
        
     </script>";
 
@@ -100,15 +169,42 @@ echo "<script>
 </div>
 
 <div id="Table" class="tabcontent table-data">
-    <table id="dataTable">
-        <thead>
-        <tr>
-            <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(1)">Numele Campaniei <span class="sort-arrow" id="arrow-1"></span></div></th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="table-nav">
+        <button id="prevTable" onclick="switchTable(-1)">&#9664;</button>
+        <span id="tableTitle">Table 1</span>
+        <button id="nextTable" onclick="switchTable(1)">&#9654;</button>
+    </div>
+    <div id="dataTableContainer1">
+        <table id="dataTable1">
+            <thead>
+            <tr>
+                <th><div class="header-container" onclick="sortTable(0, 'dataTable1')">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(1, 'dataTable1')">Numele Campaniei <span class="sort-arrow" id="arrow-1"></span></div></th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="dataTableContainer2" class="hidden">
+        <table id="dataTable2">
+            <thead>
+            <tr>
+                <th><div class="header-container" onclick="sortTable(0, 'dataTable2')">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(1, 'dataTable2')">Proiect național NECENZURAT-12<span class="sort-arrow" id="arrow-1"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(2, 'dataTable2')">Proiect național MESAJUL MEU ANTIDROG<span class="sort-arrow" id="arrow-2"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(3, 'dataTable2')">Proiect național EU ŞI COPILUL MEU-9<span class="sort-arrow" id="arrow-3"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(4, 'dataTable2')">Proiect național CUM SĂ CREŞTEM SĂNĂTOŞI<span class="sort-arrow" id="arrow-4"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(5, 'dataTable2')">Proiect național ABC-UL EMOŢIILOR-6<span class="sort-arrow" id="arrow-5"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(6, 'dataTable2')">În mediul universitar<span class="sort-arrow" id="arrow-6"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(7, 'dataTable2')">În mediul primar, gimnazial şi liceal<span class="sort-arrow" id="arrow-7"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(8, 'dataTable2')">În mediul preşcolar<span class="sort-arrow" id="arrow-8"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(9, 'dataTable2')">În familieÎn familie<span class="sort-arrow" id="arrow-9"></span></div></th>
+                <th><div class="header-container" onclick="sortTable(10, 'dataTable2')">Campania 19 ZILE DE PREVENIRE A ABUZURILOR ȘI VIOL<span class="sort-arrow" id="arrow-10"></span></div></th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 </div>
 
 <div id="Map" class="tabcontent">
@@ -150,6 +246,8 @@ echo "<script>
 
 <script>
 
+
+
     var ctx = document.getElementById('graficLinie').getContext('2d');
 
     // Process the PHP data
@@ -161,6 +259,38 @@ echo "<script>
         return e.count;
     });
 
+    var p1 = graphData3.map(function (e){
+        return e.nr_activitati;
+    });
+
+    var p2 = graphData4.map(function (e){
+        return e.nr_activitati;
+    });
+    var p3 = graphData5.map(function (e){
+        return e.nr_activitati;
+    });
+    var p4 = graphData6.map(function (e){
+        return e.nr_activitati;
+    });
+    var p5 = graphData7.map(function (e){
+        return e.nr_activitati;
+    });
+    var p6 = graphData8.map(function (e){
+        return e.nr_activitati;
+    });
+    var p7 = graphData9.map(function (e){
+        return e.nr_activitati;
+    });
+    var p8 = graphData10.map(function (e){
+        return e.nr_activitati;
+    });
+    var p9 = graphData11.map(function (e){
+        return e.nr_activitati;
+    });
+    var p10 = graphData12.map(function (e){
+        return e.nr_activitati;
+    });
+
     const graficLinie = new Chart(ctx, {
         type: 'line',
         data: {
@@ -169,9 +299,80 @@ echo "<script>
                 label: 'Numărul de campanii pe an',
                 data: counts,
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: 'rgb(55,255,0)',
                 tension: 0.1
-            }]
+            },
+                {
+                    label: 'Proiect național NECENZURAT-12 activități/proiect',
+                    data: p1,
+                    fill: false,
+                    borderColor: 'rgb(0,98,255)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Proiect național MESAJUL MEU ANTIDROG',
+                    data: p2,
+                    fill: false,
+                    borderColor: 'rgb(3,151,255)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Proiect național EU ŞI COPILUL MEU-9',
+                    data: p3,
+                    fill: false,
+                    borderColor: 'rgb(0,0,0)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Proiect național CUM SĂ CREŞTEM SĂNĂTOŞI',
+                    data: p4,
+                    fill: false,
+                    borderColor: 'rgb(241,49,49)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Proiect național ABC-UL EMOŢIILOR-6',
+                    data: p5,
+                    fill: false,
+                    borderColor: 'rgb(209,120,21)',
+                    tension: 0.1
+                },
+                {
+                    label: 'În mediul universitar',
+                    data: p6,
+                    fill: false,
+                    borderColor: 'rgb(103,15,15)',
+                    tension: 0.1
+                },
+                {
+                    label: 'În mediul primar, gimnazial şi liceal',
+                    data: p7,
+                    fill: false,
+                    borderColor: 'rgb(237,8,8)',
+                    tension: 0.1
+                },
+                {
+                    label: 'În mediul preşcolar',
+                    data: p8,
+                    fill: false,
+                    borderColor: 'rgb(204,0,201)',
+                    tension: 0.1
+                },
+                {
+                    label: 'În familie',
+                    data: p9,
+                    fill: false,
+                    borderColor: 'rgb(22,60,16)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Campania 19 ZILE DE PREVENIRE A ABUZURILOR ȘI VIOLCampania naţională media de prevenire a consumului',
+                    data: p10,
+                    fill: false,
+                    borderColor: 'rgb(208,255,0)',
+                    tension: 0.1
+                }
+            ]
         }
     });
 
@@ -199,41 +400,43 @@ echo "<script>
 
         const filteredYears = years.filter(year => year >= selectedStartYear && year <= selectedEndYear);
         const filteredCounts = counts.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP1 = p1.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP2 = p2.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP3 = p3.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP4 = p4.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP5 = p5.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP6 = p6.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP7 = p7.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP8 = p8.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP9 = p9.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredP10 = p10.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+
+
 
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredCounts;
+        graficLinie.data.datasets[1].data = filteredP1;
+        graficLinie.data.datasets[2].data = filteredP2;
+        graficLinie.data.datasets[3].data = filteredP3;
+        graficLinie.data.datasets[4].data = filteredP4;
+        graficLinie.data.datasets[5].data = filteredP5;
+        graficLinie.data.datasets[6].data = filteredP6;
+        graficLinie.data.datasets[7].data = filteredP7;
+        graficLinie.data.datasets[8].data = filteredP8;
+        graficLinie.data.datasets[9].data = filteredP9;
+        graficLinie.data.datasets[10].data = filteredP10;
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
     }
 
-    function populateTable() {
-        const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
-        tableBody.innerHTML = '';
-
-        for (const item of graphData) {
-            if(item.proiecte) {
-                let row = tableBody.insertRow();
-                let cell1 = row.insertCell(0);
-                let cell2 = row.insertCell(1);
-
-                cell1.innerHTML = item.year;
-                cell2.innerHTML = item.proiecte;
-            }
-        }
-
-    }
 
     document.addEventListener('DOMContentLoaded', function() {
-        populateTable();
+        loadTableData1();
+        loadTableData2();
         document.getElementsByClassName('tablinks')[0].click();
     });
 
-
-    document.addEventListener('DOMContentLoaded', function() {
-        populateTable();
-        document.getElementsByClassName('tablinks')[0].click();
-    });
 
     function openTab(evt, tabName) {
 
@@ -256,24 +459,28 @@ echo "<script>
             document.getElementById('grafB').classList.add('hidden');
             document.getElementById('mapB').classList.add('hidden');
             document.getElementById('tableB').classList.remove('hidden');
+            document.getElementById('tableB2').classList.add('hidden');
         } else if(tabName === 'Graph') {
             sliderContainer.classList.remove("hidden");
             document.getElementById('grafB').classList.remove('hidden');
             document.getElementById('tableB').classList.add('hidden');
+            document.getElementById('tableB2').classList.add('hidden');
             document.getElementById('mapB').classList.add('hidden');
+
         } else {
             sliderContainer.classList.add("hidden");
             document.getElementById('grafB').classList.add('hidden');
             document.getElementById('tableB').classList.add('hidden');
+            document.getElementById('tableB2').classList.add('hidden');
             document.getElementById('mapB').classList.remove('hidden');
         }
     }
 
-    // Sort table function
-    let sortDirections = [true, true, true, true, true, true, true]; // Default sort directions
+
+    let sortDirections = [true, true, true, true, true, true, true];
 
     function sortTable(columnIndex) {
-        const table = document.getElementById('dataTable');
+        const table = document.getElementById('dataTable1');
         const rows = Array.from(table.rows).slice(1);
         const ascending = sortDirections[columnIndex];
         const isNumericColumn = columnIndex !== 0;
@@ -350,9 +557,9 @@ echo "<script>
     }
 
 
-    function exportTable() {
+    function exportTable(data) {
         var format = document.getElementById('exportFormatTable').value;
-        var table = document.getElementById('dataTable');
+        var table = document.getElementById(data);
         if (format === 'png') {
             var canvas = document.createElement('canvas');
             var tableWidth = table.offsetWidth;
@@ -401,19 +608,44 @@ echo "<script>
         fetch('../../map/campanii_data.json') // Încărcăm fișierul judete.json
             .then(response => response.json())
             .then(data => {
+                var csvContent = "data:text/csv;charset=utf-8,";
                 // Selectarea tabelului și antetelor
-                var table = document.getElementById('dataTable');
+                var table = document.getElementById('dataTable1');
                 var headers = Array.from(table.querySelectorAll('thead th')).map(header => header.innerText.trim());
+
+                var table2 = document.getElementById('dataTable2');
+                var headers2 = Array.from(table2.querySelectorAll('thead th')).map(header => header.innerText.trim());
 
                 // Colectarea datelor din fiecare rând al tabelului
                 var rows = [];
+
+                csvContent += headers.join(',') + '\n';
 
                 Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
                     var rowData = Array.from(row.querySelectorAll('td')).map(cell => cell.innerText.trim());
                     rows.push(rowData);
                 });
 
+                rows.forEach(row => {
+                    csvContent += row.join(',') + '\n';
+                });
 
+                csvContent += headers2.join(',') + '\n';
+
+                rows = [];
+
+                Array.from(table2.querySelectorAll('tbody tr')).forEach(row => {
+                    var rowData = Array.from(row.querySelectorAll('td')).map(cell => cell.innerText.trim());
+                    rows.push(rowData);
+                });
+
+                rows.forEach(row => {
+                    csvContent += row.join(',') + '\n';
+                });
+
+                csvContent += 'Map data:\n';
+
+                rows = [];
                 Object.keys(data).forEach(judet => {
 
                     data[judet].ani.forEach(an => {
@@ -427,13 +659,7 @@ echo "<script>
                     });
                 });
 
-                // Construim șirul CSV
-                var csvContent = "data:text/csv;charset=utf-8,";
 
-                // Adăugăm antetul la șirul CSV
-                csvContent += headers.join(',') + '\n';
-
-                // Adăugăm datele din fiecare rând la șirul CSV
                 rows.forEach(row => {
                     csvContent += row.join(',') + '\n';
                 });
@@ -450,26 +676,6 @@ echo "<script>
     }
 
 
-    // document.addEventListener("DOMContentLoaded", function() {
-    //     document.querySelectorAll("svg path").forEach(function(path) {
-    //         path.addEventListener("click", function() {
-    //             var regiune = this.getAttribute("id");
-    //             fetch(`get_judet_info.php?regiune=${regiune}`)
-    //                 .then(response => response.json())
-    //                 .then(data => {
-    //                     var infoContainer = document.getElementById("info-container");
-    //                     infoContainer.innerHTML = `
-    //                         <h2>${regiune}</h2>
-    //                         <p>Populație: ${data.populatie}</p>
-    //                         <p>Suprafață: ${data.suprafata}</p>
-    //                         <p>Densitate: ${data.densitate}</p>
-    //                     `;
-    //                 })
-    //                 .catch(error => console.error('Error:', error));
-    //         });
-    //     });
-    // });
-
     startYearSliderMap = document.getElementById('startYearSliderMap');
     startYearSliderMap.addEventListener('input', updateYearMap);
 
@@ -480,6 +686,122 @@ echo "<script>
 
         yearMapSelect.textContent = yearMapStart.value;
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        loadTableData1();
+        loadTableData2();
+
+        let currentTable = 1;
+        function switchTable(direction) {
+            currentTable += direction;
+            if (currentTable < 1) currentTable = 2;
+            if (currentTable > 2) currentTable = 1;
+            document.getElementById("dataTableContainer1").classList.add("hidden");
+            document.getElementById("dataTableContainer2").classList.add("hidden");
+            document.getElementById("tableTitle").innerText = "Table " + currentTable;
+            if (currentTable === 1) {
+                document.getElementById("dataTableContainer1").classList.remove("hidden");
+                document.getElementById('tableB').classList.remove('hidden');
+                document.getElementById('tableB2').classList.add('hidden');
+            } else {
+                document.getElementById("dataTableContainer2").classList.remove("hidden");
+                document.getElementById('tableB').classList.add('hidden');
+                document.getElementById('tableB2').classList.remove('hidden');
+            }
+        }
+        window.switchTable = switchTable;
+
+
+    });
+
+    function loadTableData1() {
+        const tableBody = document.getElementById('dataTable1').getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = '';
+
+        for (const item of graphData) {
+            if(item.proiecte) {
+                let row = tableBody.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+
+                cell1.innerHTML = item.year;
+                cell2.innerHTML = item.proiecte;
+            }
+        }
+    }
+
+    function loadTableData2(){
+        const tableBody = document.getElementById('dataTable2').getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = '';
+
+            for (let i = 0; i < years.length; i++)
+            {
+                let row = tableBody.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                let cell3 = row.insertCell(2);
+                let cell4 = row.insertCell(3);
+                let cell5 = row.insertCell(4);
+                let cell6 = row.insertCell(5);
+                let cell7 = row.insertCell(6);
+                let cell8 = row.insertCell(7);
+                let cell9 = row.insertCell(8);
+                let cell10 = row.insertCell(9);
+                let cell11 = row.insertCell(10);
+
+
+                cell1.innerHTML = years[i] || 0;
+                cell2.innerHTML = p1[i] || 0;
+                cell3.innerHTML = p2[i] || 0;
+                cell4.innerHTML = p3[i] || 0;
+                cell5.innerHTML = p4[i] || 0;
+                cell6.innerHTML = p5[i] || 0;
+                cell7.innerHTML = p6[i] || 0;
+                cell8.innerHTML = p7[i] || 0;
+                cell9.innerHTML = p8[i] || 0;
+                cell10.innerHTML = p9[i] || 0;
+                cell11.innerHTML = p10[i] || 0;
+
+            }
+    }
+
+    function sortTable(n, tableId) {
+        const table = document.getElementById(tableId);
+        let rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                if (dir === "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir === "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount === 0 && dir === "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+
 
 </script>
 
@@ -500,7 +822,17 @@ echo "<script>
             <option value="svg">SVG</option>
         </select>
     </label>
-    <button class="text-button" onclick="exportTable()">Export Table</button>
+    <button class="text-button" onclick="exportTable('dataTable1')">Export Table</button>
+</div>
+
+<div id="tableB2" class="center hidden">
+    <label>Type of export
+        <select id="exportFormatTable2" class="export-format">
+            <option value="png">PNG</option>
+            <option value="svg">SVG</option>
+        </select>
+    </label>
+    <button class="text-button" onclick="exportTable('dataTable2')">Export Table</button>
 </div>
 
 <div id="mapB" class="center hidden">
