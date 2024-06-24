@@ -343,15 +343,62 @@
                 <li id="urgente-page"><b> Pagina specifica urgentelor medicale</b></li>
                 <li style="list-style: none">
                 <ul>
-                    <li>Aceasta pagina prezinta date despre urgente medicale unde de asemenea cuprinde date ce pot fi exportate de utilizator.
+                    <li>Aceasta pagina prezinta date despre urgente medicale, unde de asemenea cuprinde date ce pot fi exportate de utilizator.
                    </li>
-                    <li class="pictures" style="list-style: none"><img alt="overview" src="description-element-page.png"
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="urgente-page.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="graf-urgente.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="table-urgente.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="map-urgente.png"
+                                                                           width=800>
+                   </li>
+                    </ul>
+                </li> 
+                 <li id="=inf-page"><b> Pagina specifica urgentelor medicale</b></li>
+                <li style="list-style: none">
+                <ul>
+                    <li>Aceasta pagina prezinta date despre infractionalitati, unde de asemenea cuprinde date ce pot fi exportate de utilizator.
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="inf-page.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="graf-inf.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="table-inf.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="map-inf.png"
                                                                            width=800>
                    </li>
                     </ul>
                 </li> 
                  <li id="campings-page"><b> Pagina specifica campaniilor anti-drog</b></li>
                 <li style="list-style: none">
+                 <ul>
+                    <li>Aceasta pagina prezinta date despre campanii anti-drog, unde de asemenea cuprinde date ce pot fi exportate de utilizator.
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="camp-page.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="graf-camp.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="table1-camp.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="table2-camp.png"
+                                                                           width=800>
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="map-camp.png"
+                                                                           width=800>
+                   </li>
+                    </ul>
                  </li> 
                  <li id="admin"><b>Pagina Administratorului</b></li>
                 <li style="list-style: none">
