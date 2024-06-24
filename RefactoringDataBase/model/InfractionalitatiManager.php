@@ -6,7 +6,7 @@ class InfractionalitatiManager extends DataManager{
     {
         $f = $this->openCSV($uploadFile);
         $afisareOdata=0;
-
+        $successMessage = '';
         $statements = [
             'persoane_cercetate_judecata_condamnate' => $this->dbConnection->prepare("INSERT INTO persoane_cercetate_judecata_condamnate (categorie, numar, year) VALUES (?, ?, ?)"),
             'persoane_condamnate_incadrarea_juridica' => $this->dbConnection->prepare("INSERT INTO persoane_condamnate_incadrarea_juridica (incadrare_juridica, numar, year) VALUES (?, ?, ?)"),
@@ -39,14 +39,16 @@ class InfractionalitatiManager extends DataManager{
             if (isset($statements[$current_section])) {
                 $params = $current_section === 'persoane_condamnate_sexe' ? array_merge(array_slice($row, 0, 3), [$year]) : array_merge(array_slice($row, 0, 2), [$year]);
                 $statements[$current_section]->execute($params);
-                if(!$afisareOdata) {
-                    echo "Datele au fost adăugate cu succes în baza de date.";
-                    $afisareOdata=1;
+                if (!$afisareOdata) {
+                    $successMessage = "Datele au fost adăugate cu succes în baza de date.";
+                    $afisareOdata = 1;
                 }
             }
         }
 
         fclose($f);
+        // Returnează răspunsul JSON o singură dată, la finalul procesului
+        echo json_encode(["message" => $successMessage]);
     }
     public function generateDataInInfractiuni($year): void {
         // Anul pentru care se generează datele
