@@ -532,14 +532,24 @@
                  <section id="other">
                     <h4>4.5 Alte funcționalități</h4>
                     <h5 id="other-1">4.5.1 Descriere și generalități</h5>
+                    <p> Functionalitatea de a trimite emailuri <p>
+                     <ul>
+                    <li>Aceasta pagina prezinta un form ce poate fi trimis catre ownerul serverului in caz ca utilizatorul are nevoie de ceva si de aici adminul se poate conecta.
+                   </li>
+                   <li class="pictures" style="list-style: none"><img alt="overview" src="contact-us.png"
+                                                                           width=800>
+                        </li>
+                    </ul>
                     <h5 id="other-2">4.5.2 Actualizarea informațiilor</h5>
                     <ol>
                         <li>
+                        Actualizarea de informatii se face de catre admin, din admin pannel dupa logare.
                         </li>
                     </ol>
                     <h5 id="other-3">4.5.3 Cerințe de funcționare</h5>
                     <ul>
                         <li>
+                        Programul este responsive, deci pentru a vizualiza siteul este nevoie doar de un dispozitiv cu conexiune la internet.
                         </li>
                     </ul>
                 </section>
