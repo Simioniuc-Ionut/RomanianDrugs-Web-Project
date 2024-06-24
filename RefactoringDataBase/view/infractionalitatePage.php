@@ -317,7 +317,7 @@ echo "<script>
                     label: 'Legea nr. 194/2011',
                     data: lg_4,
                     fill: false,
-                    borderColor: 'rgb(3,151,255)',
+                    borderColor: 'rgb(0,98,255)',
                     tension: 0.1
                 },
             ]
@@ -593,7 +593,7 @@ echo "<script>
                             var rowData = [
                                 judet,
                                 an.condamnari,
-                                an.alte_infractiuni
+                                an.alte_infractiuni,
                                 an.an,
                             ];
                             rows.push(rowData);
