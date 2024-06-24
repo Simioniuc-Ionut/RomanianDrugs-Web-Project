@@ -400,18 +400,6 @@
                    </li>
                     </ul>
                  </li> 
-                 <li id="admin"><b>Pagina Administratorului</b></li>
-                <li style="list-style: none">
-                    <ul>
-                        <li>Pagina afișează interfață pentru <b>adminstrator</b>.</li>
-                        <li>Administratorul are capacitatea de a adaugă/modifică
-                            anumite droguri de pe site.
-                        </li>
-                        <li class="pictures" style="list-style: none"><img alt="overview" src="administrator.png"
-                                                                           width=800>
-                        </li>
-                    </ul>
-                </li>
         </ul>
         <section id="hardware-interface">
                 <h4>3.2 Interfața Hardware</h4>
@@ -466,6 +454,12 @@
                 </section>
                  <section id="administrator">
                     <h4>4.3 Secțiunea Admin</h4>
+                    <ul>
+                        <li> Pentru a putea accesa partea de admin, ai nevoie de un cont de admin<li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="login.png" width=800></li>
+                        <li> User/Pass se afla in baza de date, parola fiind Hashed<li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="pass.png" width=800></li>
+                    </ul>
                     <h5 id="administrator-1">4.3.1 Descriere și generalități</h5>
                     Secțiunea <b>Admin</b> este destinată dezvoltatorilor paginii <b>administrator</b> și
                     această
@@ -474,6 +468,7 @@
                     va putea adauga/modifica anumite tipuri de droguri. Totodată, acesta este
                     capabil să șteargă
                     anumite tipuri de droguri.
+                    <p class="pictures" style="list-style: none"><img alt="overview" src="admin-page.png" width=800></p>
                     <h5 id="administrator-2">4.3.2 Actualizare informațiilor</h5>
                     <ul>
                         <li>
@@ -501,7 +496,7 @@
                 </section>
                  <section id="other">
                     <h4>4.5 Alte funcționalități</h4>
-                    <h5 id="other-1">4.6.1 Descriere și generalități</h5>
+                    <h5 id="other-1">4.5.1 Descriere și generalități</h5>
                     <h5 id="other-2">4.5.2 Actualizarea informațiilor</h5>
                     <ol>
                         <li>
