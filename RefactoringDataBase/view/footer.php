@@ -27,10 +27,12 @@
                 of news, updates, helpful tips, and
                 exclusive offers.
             </p>
-            <form action="#">
-                <input type="text" placeholder="Your email" required>
+            <form id="newsletterForm">
+                <input type="text" name="email" placeholder="Your email" required>
                 <button type="submit">SUBSCRIBE</button>
             </form>
+            <div id="message"></div>
+
             <div class="icons">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
@@ -39,4 +41,28 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'subscribe.php', true);
+
+            xhr.onload = function() {
+                var messageDiv = document.getElementById('message');
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    messageDiv.textContent = xhr.responseText;
+                    messageDiv.style.color = 'green';
+                } else {
+                    messageDiv.textContent = 'An error occurred: ' + xhr.responseText;
+                    messageDiv.style.color = 'red';
+                }
+            };
+
+            xhr.send(formData);
+        });
+    </script>
+
 </section>
+
