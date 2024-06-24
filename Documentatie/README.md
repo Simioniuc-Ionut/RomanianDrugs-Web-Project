@@ -477,12 +477,45 @@
                             în baza de
                             date.
                         </li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="add.png" width=800></li>
                         <li>
-                            În momentul în care adminul modifica date despre un drog, informațiile despre
+                            Adminul poate selecta un drog existent din baza de date, iar informațiile despre
                             acestea sunt
                             actualizate în baza de
                             date.
                         </li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="update-desc.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="update-imag.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="update-type.png" width=800></li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="update-name.png" width=800></li>
+                        <li>
+                            Adminul poate selecta un drog existent din baza de date si sa-l stearga, iar informațiile despre
+                            acestea sunt
+                            sterse din baza de
+                            date.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="delete.png" width=800></li>
+                        <li>
+                            Adminul poate incarca fisiere CSV, iar aceste date
+                            ajuta la popularea bazei de date.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="upload.png" width=800></li>
+                         <li>
+                            Adminul poate genera date despre droguri din CSV-urile respective selectand un anul dorit. 
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="generate-drug.png" width=800></li>
+                         <li>
+                            Adminul poate genera Jsonuri cu date din anul respectiv, acestea fiind luate din baza de date.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="generate.png" width=800></li>
+                        <li>
+                            Adminul poate creea conturi de amin.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="create.png" width=800></li>
+                         <li>
+                            Adminul se poate deloga de la cont sau intoarce pe pagina principala, acesta pastrandu-si datele de la login cu ajutorul sesiunii.
+                        </li>
+                        <li class="pictures" style="list-style: none"><img alt="overview" src="logout.png" width=800></li>
                     </ul>
                     <h5 id="administrator-3">4.3.3 Condiții de funcționare</h5>
                     <ul>
