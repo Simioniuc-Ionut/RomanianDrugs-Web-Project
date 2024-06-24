@@ -560,11 +560,14 @@
                     <h4>5.1 Protecția datelor</h4>
                     <p>
                         Aplicația va asigura confidențialitatea datelor prin intermediul unei criptări.
+                        Parolele conturilor de admin sunt hashuite ,astfel pastranduse securitatea si confidientialitatea parolei respective.
                     </p>
                 </section>
                 <section id="security">
                     <h4>5.2 Securizarea datelor</h4>
                     <p>
+                        Aplicatia este securizata impotriva atacurilor de tip SQL Injection . S-au folosit diferite mecanimse de securizare
+                        precum  prepared statements și parameterized queries.
                     </p>
                 </section>
                 <section id="software-attributes">
@@ -573,6 +576,8 @@
                         <li>Adaptabilitate</li>
                         <li>Ușurință în utilizare</li>
                         <li>Flexibilitate</li>
+                        <li>Mobilitate</li>
+                        <li>Securitate</li>
                     </ul>
                 </section>
         </section>
@@ -585,3 +590,4 @@
         Browser-ul tău nu suportă video tag-ul HTML5.
     </video>
 </html>
+
