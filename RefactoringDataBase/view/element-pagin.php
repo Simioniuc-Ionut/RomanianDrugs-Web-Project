@@ -451,7 +451,7 @@ if ($row) {
     startYearSliderMap.addEventListener('input', updateYearMap);
 
     function exportAll() {
-        fetch('../../map/judete.json') // Încărcăm fișierul judete.json
+        fetch('../../map/drug_data.json') // Încărcăm fișierul judete.json
             .then(response => response.json())
             .then(data => {
                     // Selectarea tabelului și antetelor
