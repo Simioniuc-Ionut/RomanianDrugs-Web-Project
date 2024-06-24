@@ -165,7 +165,7 @@ private DataManager $dataManager;
                 $this->dataManager->generateDataInUrgenteMedicale($year);
                 break;
             case 'contact':
-                var_dump("pla controller");
+                var_dump(" controller methode");
                 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
 
                     error_log('POST data: ' . print_r($_POST, true));
@@ -182,7 +182,7 @@ private DataManager $dataManager;
                 else {
                     $this->sendJsonResponse(['error' => 'Missing parameters for sending email'], 400);
                 }
-                break;
+            break;
             // Adăugați aici alte acțiuni...
             default:
                 http_response_code(405);
@@ -247,8 +247,8 @@ private DataManager $dataManager;
         http_response_code(405);
         echo json_encode(["message" => "Method not allowed"]);
     }
-     #[NoReturn] private function sendJsonResponse($data, $statusCode = 200)
-    {
+     #[NoReturn] private function sendJsonResponse($data, $statusCode = 200): void
+     {
 
         var_dump($data);
         header('Content-Type: application/json');
@@ -256,7 +256,7 @@ private DataManager $dataManager;
         http_response_code($statusCode);
 
         echo json_encode($data);
-        exit; // Asigură-te că scriptul se oprește aici
+      //  exit; // Asigură-te că scriptul se oprește aici
     }
 }
 

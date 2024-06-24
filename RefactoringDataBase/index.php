@@ -68,7 +68,7 @@ $routes = [
     $controller->processRequest('generateDataInUrgenteMedicale');
     },
     'contact' => function() use ($controller) {
-        var_dump("pla");
+
        $controller->processRequest('contact');
 
     }

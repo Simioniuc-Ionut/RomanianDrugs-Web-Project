@@ -1,9 +1,9 @@
 <?php
-//use PHPMailer\PHPMailer\PHPMailer;
-//use PHPMailer\PHPMailer\Exception;
-//
-//require '../../vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
+require_once __DIR__ . '/../../vendor/autoload.php';
 class ContactManager
 {
     private $dbConnection;
@@ -115,16 +115,18 @@ class ContactManager
 
     public function sendConfirmationEmail($name, $email): bool {
 //        $mail = new PHPMailer(true);
+//        error_log($mail->getLastMessageID() . ' ' . $mail->ErrorInfo . ' ' . $mail->isSMTP());
 //        try {
 //            //Server settings
 //            $mail->isSMTP();
-//            $mail->Host       = 'smtp.gmail.com';
+//            $mail->Host       = '127.0.0.1';
+//            $mail->Port       = 1025;
 //            $mail->SMTPAuth   = true;
 //            $mail->Username   = 'simioniucionut1@gmail.com';
 //            $mail->Password   = 'yamjnvwrmtiiuvt';
-//            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-//            $mail->Port       = 587;
-//
+//            $mail->SMTPSecure = 'tls'; // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+//            $mail->SMTPDebug = 2; // Adaugat pentru debugging
+//            $mail->Debugoutput = 'error_log'; // Adaugat pentru debugging
 //            //Recipients
 //            $mail->setFrom('simioniucionut1@gmail.com', 'Mailer');
 //            $mail->addAddress($email, $name);
@@ -145,10 +147,12 @@ class ContactManager
         $to = $email;
         $subject = "Thank you for your feedback";
         $body = "Dear $name,\n\nThank you for your feedback. We will get back to you with more information soon.\n\nBest regards,\nRomanian Drugs";
-        $headers = 'From: simioniucionut1@gmail.com' . "\r\n" .
-            'Reply-To: simioniucionut1@gmail.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-
+        $headers = array("From: simioniucionut1@gmail.com",
+            "Reply-To: simioniucionut1@gmail.com",
+            "X-Mailer: PHP/" . PHP_VERSION
+        );
+        $headers = implode("\r\n", $headers);
+        mail($to, $subject, $body, $headers);
         if (!mail($to, $subject, $body, $headers)) {
             error_log("Email failed to send");
             return false;

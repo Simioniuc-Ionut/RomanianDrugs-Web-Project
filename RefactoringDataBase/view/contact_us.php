@@ -56,26 +56,26 @@
 <!--            });-->
 <!--        });-->
 <!--    </script>-->
-    <style>
-        #message {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            display: none;
-        }
-        #message.success {
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-        }
-        #message.error {
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-        }
-
-    </style>
+<!--    <style>-->
+<!--        #message {-->
+<!--            position: fixed;-->
+<!--            bottom: 10px;-->
+<!--            right: 10px;-->
+<!--            background-color: #f0f0f0;-->
+<!--            padding: 10px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            display: none;-->
+<!--        }-->
+<!--        #message.success {-->
+<!--            background-color: #d4edda;-->
+<!--            border-color: #c3e6cb;-->
+<!--        }-->
+<!--        #message.error {-->
+<!--            background-color: #f8d7da;-->
+<!--            border-color: #f5c6cb;-->
+<!--        }-->
+<!---->
+<!--    </style>-->
 </head>
 
 <body>
