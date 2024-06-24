@@ -550,14 +550,14 @@
                     <h4>5.1 Protecția datelor</h4>
                     <p>
                         Aplicația va asigura confidențialitatea datelor prin intermediul unei criptări.
-                        Parolele conturilor de admin sunt hashuite ,astfel pastranduse securitatea si protectia parolei respective.
+                        Parolele conturilor de admin sunt hashuite ,astfel pastranduse securitatea si confidientialitatea parolei respective.
                     </p>
                 </section>
                 <section id="security">
                     <h4>5.2 Securizarea datelor</h4>
                     <p>
                         Aplicatia este securizata impotriva atacurilor de tip SQL Injection . S-au folosit diferite mecanimse de securizare
-                        precum prepareStmt sau (alt mecanims).
+                        precum  prepared statements și parameterized queries.
                     </p>
                 </section>
                 <section id="software-attributes">
