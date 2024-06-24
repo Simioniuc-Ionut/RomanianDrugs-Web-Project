@@ -437,9 +437,11 @@
                  <section id="utilizatori">
                     <h4>4.2 Secțiunea de utilizatori</h4>
                     <h5 id="utilizatori-1">4.2.1 Descriere și generalități</h5>
+                    <p> Pe site utilizatorul poate naviga printre diferitele tipuri de droguri sau poate vizualiza alte 3 tipuri de pagini referitoare la dorguri<p>
                     <h5 id="utilizatori-2">4.2.2 Actualizarea informațiilor</h5>
                     <ul>
                         <li>
+                        Informatiile sunt actualizate in functie de preferintele utilizatorului, acestea pot fi vizualizate in 3 moduri: graf, tabel si harta, datele fiind filtrate in 3 moduri diferite.
                         </li>
                     </ul>
                     <h5 id="utilizatori-3">4.2.3 Condiții de funcționare</h5>
