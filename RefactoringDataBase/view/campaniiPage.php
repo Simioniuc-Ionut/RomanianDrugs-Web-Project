@@ -104,7 +104,7 @@ echo "<script>
         <thead>
         <tr>
             <th><div class="header-container" onclick="sortTable(0)">Year <span class="sort-arrow" id="arrow-0"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(1)">Numar de Campanii <span class="sort-arrow" id="arrow-1"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(1)">Numele Campaniei <span class="sort-arrow" id="arrow-1"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -421,6 +421,7 @@ echo "<script>
                                 judet,
                                 an.campanii_prevenire,
                                 an.campanii_combatere,
+                                an.an,
                             ];
                             rows.push(rowData);
                     });
