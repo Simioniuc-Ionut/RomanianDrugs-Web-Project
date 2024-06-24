@@ -291,7 +291,7 @@
                  <li id="element-page"><b> Pagina specifica fiecarui drog</b></li>
                 <li style="list-style: none">
                     <ul>
-                    <li>Aceasta pagina prezinta imagini , tipul si descrierea dorgului respectiv.
+                    <li>Aceasta pagina prezinta imagini , tipul si descrierea drogului respectiv.
                    </li>
                     <li class="pictures" style="list-style: none"><img alt="overview" src="description-element-page.png"
                                                                            width=800>
@@ -437,7 +437,7 @@
                  <section id="utilizatori">
                     <h4>4.2 Secțiunea de utilizatori</h4>
                     <h5 id="utilizatori-1">4.2.1 Descriere și generalități</h5>
-                    <p> Pe site utilizatorul poate naviga printre diferitele tipuri de droguri sau poate vizualiza alte 3 tipuri de pagini referitoare la dorguri<p>
+                    <p> Pe site utilizatorul poate naviga printre diferitele tipuri de droguri sau poate vizualiza alte 3 tipuri de pagini referitoare la droguri<p>
                     <h5 id="utilizatori-2">4.2.2 Actualizarea informațiilor</h5>
                     <ul>
                         <li>
