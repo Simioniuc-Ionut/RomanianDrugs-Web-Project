@@ -509,7 +509,7 @@
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="overview" src="generate.png" width=800></li>
                         <li>
-                            Adminul poate creea conturi de amin.
+                            Adminul poate creea conturi de admin.
                         </li>
                         <li class="pictures" style="list-style: none"><img alt="overview" src="create.png" width=800></li>
                          <li>
