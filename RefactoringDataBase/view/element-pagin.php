@@ -91,7 +91,7 @@ if ($row) {
             <th><div class="header-container" onclick="sortTable(2)">Mililitri<span class="sort-arrow" id="arrow-2"></span></div></th>
             <th><div class="header-container" onclick="sortTable(3)">Doze pe Buc<span class="sort-arrow" id="arrow-3"></span></div></th>
             <th><div class="header-container" onclick="sortTable(4)">Comprimate<span class="sort-arrow" id="arrow-4"></span></div></th>
-            <th><div class="header-container" onclick="sortTable(5)">Grame<span class="sort-arrow" id="arrow-5"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(5)">Kg<span class="sort-arrow" id="arrow-5"></span></div></th>
         </tr>
         </tr>
         </thead>
@@ -175,7 +175,7 @@ if ($row) {
 
     var grame = graphData1.map(function (e){
         if(e.grame)
-            return e.grame;
+            return parseInt(e.grame / 1000);
 
         return 0;
     });
@@ -213,7 +213,7 @@ if ($row) {
                     tension: 0.1
                 },
                 {
-                    label: 'Grame',
+                    label: 'Kg',
                     data: grame,
                     fill: false,
                     borderColor: 'rgb(0,0,0)',

@@ -58,20 +58,38 @@ $graphDataStmt8 = $dbConnection->prepare($graphDataQuery8);
 $graphDataStmt8->execute();
 $graphData8 = $graphDataStmt8->fetchAll(PDO::FETCH_ASSOC);
 
+$graphDataQuery9 = "SELECT * FROM urgente_tip_model WHERE model ='Consum singular' ORDER BY year";
+$graphDataStmt9 = $dbConnection->prepare($graphDataQuery9);
+$graphDataStmt9->execute();
+$graphData9 = $graphDataStmt9->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery10 = "SELECT * FROM urgente_tip_model WHERE model ='Consum combinat' ORDER BY year";
+$graphDataStmt10 = $dbConnection->prepare($graphDataQuery10);
+$graphDataStmt10->execute();
+$graphData10 = $graphDataStmt10->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery11 = "SELECT * FROM urgente_tip_diagnostic WHERE diagnostic ='Supradoză' ORDER BY year";
+$graphDataStmt11 = $dbConnection->prepare($graphDataQuery11);
+$graphDataStmt11->execute();
+$graphData11 = $graphDataStmt11->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery12 = "SELECT * FROM urgente_tip_diagnostic WHERE diagnostic ='Sevraj' ORDER BY year";
+$graphDataStmt12 = $dbConnection->prepare($graphDataQuery12);
+$graphDataStmt12->execute();
+$graphData12 = $graphDataStmt12->fetchAll(PDO::FETCH_ASSOC);
+
 echo "<script>
-    var graphData1 = " . json_encode($graphData1) . "; 
-     
-   var graphData2 = " . json_encode($graphData2) . "; 
-   
-    var graphData4 = " . json_encode($graphData4) . "; 
-    
+    var graphData1 = " . json_encode($graphData1) . ";    
+    var graphData2 = " . json_encode($graphData2) . "; 
+    var graphData4 = " . json_encode($graphData4) . ";  
     var graphData5 = " . json_encode($graphData5) . ";
-    
-    var graphData6 = " . json_encode($graphData6) . ";
-    
+    var graphData6 = " . json_encode($graphData6) . ";  
     var graphData7 = " . json_encode($graphData7) . ";
-    
-    var graphData8 = " . json_encode($graphData8) . ";
+    var graphData8 = " . json_encode($graphData8) . ";  
+    var graphData9 = " . json_encode($graphData9) . ";  
+    var graphData10 = " . json_encode($graphData10) . ";
+    var graphData11 = " . json_encode($graphData11) . ";
+    var graphData12 = " . json_encode($graphData12) . ";
          
     </script>";
 
@@ -133,6 +151,10 @@ echo "<script>
             <th><div class="header-container" onclick="sortTable(5)">&gt;35 <span class="sort-arrow" id="arrow-5"></span></div></th>
             <th><div class="header-container" onclick="sortTable(6)">Oral/fumat/prizat <span class="sort-arrow" id="arrow-6"></span></div></th>
             <th><div class="header-container" onclick="sortTable(7)">Injectabil <span class="sort-arrow" id="arrow-7"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(8)">Consum singular<span class="sort-arrow" id="arrow-8"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(9)">Consum combinat<span class="sort-arrow" id="arrow-9"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(10)">Supradoză<span class="sort-arrow" id="arrow-10"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(11)">Sevraj<span class="sort-arrow" id="arrow-11"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -216,6 +238,10 @@ echo "<script>
     var consumption_o = getSumOfSelectedValues(graphData6);
     var consumption_OFP = getSumOfSelectedValues(graphData7);
     var consumption_inj = getSumOfSelectedValues(graphData8);
+    var consumption_sing = getSumOfSelectedValues(graphData9);
+    var consumption_comb = getSumOfSelectedValues(graphData10);
+    var consumption_sup = getSumOfSelectedValues(graphData11);
+    var consumption_sev = getSumOfSelectedValues(graphData12);
 
     const graficLinie = new Chart(ctx, {
         type: 'line',
@@ -271,6 +297,34 @@ echo "<script>
                     borderColor: 'rgb(0,0,0)',
                     tension: 0.1
                 },
+                {
+                    label: 'Consum singular',
+                    data: consumption_sing,
+                    fill: false,
+                    borderColor: 'rgb(162,255,0)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Consum combinat',
+                    data: consumption_comb,
+                    fill: false,
+                    borderColor: 'rgb(209,120,21)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Supradoză',
+                    data: consumption_sup,
+                    fill: false,
+                    borderColor: 'rgb(237,8,8)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Sevraj',
+                    data: consumption_sev,
+                    fill: false,
+                    borderColor: 'rgb(103,15,15)',
+                    tension: 0.1
+                },
 
             ]
         }
@@ -306,6 +360,10 @@ echo "<script>
         const filteredConsumptionO = consumption_o.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filteredConsumptionOFP = consumption_OFP.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filteredConsumptionInj = consumption_inj.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionSing = consumption_sing.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionComb = consumption_comb.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionSup = consumption_sup.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredConsumptionSev = consumption_sev.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
 
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredMale;
@@ -315,6 +373,11 @@ echo "<script>
         graficLinie.data.datasets[4].data = filteredConsumptionO;
         graficLinie.data.datasets[5].data = filteredConsumptionOFP;
         graficLinie.data.datasets[6].data = filteredConsumptionInj;
+        graficLinie.data.datasets[7].data = filteredConsumptionSing;
+        graficLinie.data.datasets[8].data = filteredConsumptionComb;
+        graficLinie.data.datasets[9].data = filteredConsumptionSup;
+        graficLinie.data.datasets[10].data = filteredConsumptionSev;
+
 
         graficLinie.update();
 
@@ -335,15 +398,23 @@ echo "<script>
             let cell6 = row.insertCell(5);
             let cell7 = row.insertCell(6);
             let cell8 = row.insertCell(7);
+            let cell9 = row.insertCell(8);
+            let cell10 = row.insertCell(9);
+            let cell11 = row.insertCell(10);
+            let cell12 = row.insertCell(11);
 
-            cell1.innerHTML = years[i];
-            cell2.innerHTML = male[i];
-            cell3.innerHTML = female[i];
-            cell4.innerHTML = consumption_y[i];
-            cell5.innerHTML = consumption_mi[i];
-            cell6.innerHTML = consumption_o[i];
-            cell7.innerHTML = consumption_OFP[i];
-            cell8.innerHTML = consumption_inj[i];
+            cell1.innerHTML = years[i] || 0;
+            cell2.innerHTML = male[i] || 0;
+            cell3.innerHTML = female[i] || 0;
+            cell4.innerHTML = consumption_y[i] || 0;
+            cell5.innerHTML = consumption_mi[i] || 0;
+            cell6.innerHTML = consumption_o[i] || 0;
+            cell7.innerHTML = consumption_OFP[i] || 0;
+            cell8.innerHTML = consumption_inj[i] || 0;
+            cell9.innerHTML = consumption_sing[i] || 0;
+            cell10.innerHTML = consumption_comb[i] || 0;
+            cell11.innerHTML = consumption_sup[i] || 0;
+            cell12.innerHTML = consumption_sev[i] || 0;
 
         }
     }

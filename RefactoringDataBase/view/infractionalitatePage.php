@@ -50,17 +50,39 @@ $graphDataStmt5 = $dbConnection->prepare($graphDataQuery5);
 $graphDataStmt5->execute();
 $graphData5 = $graphDataStmt5->fetchAll(PDO::FETCH_ASSOC);
 
+$graphDataQuery6 = "SELECT numar FROM persoane_condamnate_incadrarea_juridica WHERE incadrare_juridica = 'Art.2 din Legea nr. 143/2000' ORDER BY year";
+$graphDataStmt6 = $dbConnection->prepare($graphDataQuery6);
+$graphDataStmt6->execute();
+$graphData6 = $graphDataStmt6->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery7 = "SELECT numar FROM persoane_condamnate_incadrarea_juridica WHERE incadrare_juridica = 'Art.3 din Legea nr. 143/2000' ORDER BY year";
+$graphDataStmt7 = $dbConnection->prepare($graphDataQuery7);
+$graphDataStmt7->execute();
+$graphData7 = $graphDataStmt7->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery8 = "SELECT numar FROM persoane_condamnate_incadrarea_juridica WHERE incadrare_juridica = 'Art.4 din Legea nr. 143/2000' ORDER BY year";
+$graphDataStmt8 = $dbConnection->prepare($graphDataQuery8);
+$graphDataStmt8->execute();
+$graphData8 = $graphDataStmt8->fetchAll(PDO::FETCH_ASSOC);
+
+$graphDataQuery9 = "SELECT numar FROM persoane_condamnate_incadrarea_juridica WHERE incadrare_juridica = 'Legea nr. 194/2011' ORDER BY year";
+$graphDataStmt9 = $dbConnection->prepare($graphDataQuery9);
+$graphDataStmt9->execute();
+$graphData9 = $graphDataStmt9->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 
 echo "<script>
-    var graphData1 = " . json_encode($graphData1) . "; 
-      
-    var graphData2 = " . json_encode($graphData2) . "; 
-    
-     var graphData3 = " . json_encode($graphData3) . "; 
-     
-     var graphData4 = " . json_encode($graphData4) . "; 
-     
-     var graphData5 = " . json_encode($graphData5) . "; 
+     var graphData1 = " . json_encode($graphData1) . ";    
+     var graphData2 = " . json_encode($graphData2) . ";   
+     var graphData3 = " . json_encode($graphData3) . ";     
+     var graphData4 = " . json_encode($graphData4) . ";   
+     var graphData5 = " . json_encode($graphData5) . ";
+     var graphData6 = " . json_encode($graphData6) . ";
+     var graphData7 = " . json_encode($graphData7) . "; 
+     var graphData8 = " . json_encode($graphData8) . "; 
+     var graphData9 = " . json_encode($graphData9) . "; 
          
     </script>";
 
@@ -121,6 +143,10 @@ echo "<script>
             <th><div class="header-container" onclick="sortTable(3)">Persoane cercetate<span class="sort-arrow" id="arrow-3"></span></div></th>
             <th><div class="header-container" onclick="sortTable(4)">Persoane trimise în judecată <span class="sort-arrow" id="arrow-4"></span></div></th>
             <th><div class="header-container" onclick="sortTable(5)">Persoane condamnate<span class="sort-arrow" id="arrow-5"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(6)">Art.2 din Legea nr. 143/2000<span class="sort-arrow" id="arrow-6"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(7)">Art.3 din Legea nr. 143/2000<span class="sort-arrow" id="arrow-7"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(8)">Art.4 din Legea nr. 143/2000<span class="sort-arrow" id="arrow-8"></span></div></th>
+            <th><div class="header-container" onclick="sortTable(9)">Legea nr. 194/2011<span class="sort-arrow" id="arrow-9"></span></div></th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -206,6 +232,27 @@ echo "<script>
         return values;
     });
 
+    var lg_1 = graphData6.map(function(e) {
+        let values = e.numar;
+
+        return values;
+    });
+    var lg_2 = graphData7.map(function(e) {
+        let values = e.numar;
+
+        return values;
+    });
+    var lg_3 = graphData8.map(function(e) {
+        let values = e.numar;
+
+        return values;
+    });
+    var lg_4 = graphData9.map(function(e) {
+        let values = e.numar;
+
+        return values;
+    });
+
     const graficLinie = new Chart(ctx, {
         type: 'line',
         data: {
@@ -245,6 +292,34 @@ echo "<script>
                     borderColor: 'rgb(204,0,201)',
                     tension: 0.1
                 },
+                {
+                    label: 'Art.2 din Legea nr. 143/2000',
+                    data: lg_1,
+                    fill: false,
+                    borderColor: 'rgb(209,120,21)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Art.3 din Legea nr. 143/2000',
+                    data: lg_2,
+                    fill: false,
+                    borderColor: 'rgb(241,49,49)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Art.4 din Legea nr. 143/2000',
+                    data: lg_3,
+                    fill: false,
+                    borderColor: 'rgb(0,0,0)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Legea nr. 194/2011',
+                    data: lg_4,
+                    fill: false,
+                    borderColor: 'rgb(0,98,255)',
+                    tension: 0.1
+                },
             ]
         }
     });
@@ -277,12 +352,21 @@ echo "<script>
         const filtered1 = nr_1.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filtered2 = nr_2.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
         const filtered3 = nr_3.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredLg1 = lg_1.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredLg2 = lg_2.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredLg3 = lg_3.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+        const filteredLg4 = lg_4.filter((_, index) => years[index] >= selectedStartYear && years[index] <= selectedEndYear);
+
         graficLinie.data.labels = filteredYears;
         graficLinie.data.datasets[0].data = filteredPersoane;
         graficLinie.data.datasets[1].data = filteredGrupari;
         graficLinie.data.datasets[2].data = filtered1;
         graficLinie.data.datasets[3].data = filtered2;
         graficLinie.data.datasets[4].data = filtered3;
+        graficLinie.data.datasets[4].data = filteredLg1;
+        graficLinie.data.datasets[4].data = filteredLg2;
+        graficLinie.data.datasets[4].data = filteredLg3;
+        graficLinie.data.datasets[4].data = filteredLg4;
         graficLinie.update();
 
         selectedYear.textContent = `${selectedStartYear} - ${selectedEndYear}`;
@@ -300,14 +384,22 @@ echo "<script>
             let cell4 = row.insertCell(3);
             let cell5 = row.insertCell(4);
             let cell6 = row.insertCell(5);
+            let cell7 = row.insertCell(6);
+            let cell8 = row.insertCell(7);
+            let cell9 = row.insertCell(8);
+            let cell10 = row.insertCell(9);
 
 
-            cell1.innerHTML = years[i];
-            cell2.innerHTML = nr_p[i][1];
-            cell3.innerHTML = nr_g[i];
-            cell4.innerHTML = nr_1[i];
-            cell5.innerHTML = nr_2[i];
-            cell6.innerHTML = nr_3[i];
+            cell1.innerHTML = years[i] || 0;
+            cell2.innerHTML = nr_p[i][1] || 0;
+            cell3.innerHTML = nr_g[i] || 0;
+            cell4.innerHTML = nr_1[i] || 0;
+            cell5.innerHTML = nr_2[i] || 0;
+            cell6.innerHTML = nr_3[i] || 0;
+            cell7.innerHTML = lg_1[i] || 0;
+            cell8.innerHTML = lg_2[i] || 0;
+            cell9.innerHTML = lg_3[i] || 0;
+            cell10.innerHTML = lg_4[i] || 0;
         }
     }
 
@@ -500,9 +592,9 @@ echo "<script>
                     data[judet].ani.forEach(an => {
                             var rowData = [
                                 judet,
-                                an.an,
                                 an.condamnari,
-                                an.alte_infractiuni
+                                an.alte_infractiuni,
+                                an.an,
                             ];
                             rows.push(rowData);
                     });
