@@ -111,7 +111,7 @@
             </span>
                     <ul>
                         <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
-                            <a href="mailto:hutanstefan1@gmail.com" property="schema:email">hutanstefan1@gmail.com</a>
+                            <a href="mailto:hutanstefan@gmail.com" property="schema:email">hutanstefan@gmail.com</a>
                         </li>
                     </ul>
             </ul>
@@ -184,12 +184,16 @@
             Fiecare utilizator va avea acces la urmatoarele funcționălități:
             <ul>
                 <li>să consulte pagină "Home" unde va putea selecta unul din drogurile disponibile pe site.</li>
-                <li>să acceseze pagina "Campagnis" pentru a accesa pagia cu campaniile anti-drog.</li>
-                <li>să acceseze pagina "Despre" pentru a accesa scurtă descriere a paginii web</li>
-                <li>să acceseze pagina "Ajutor" pentru a beneficia de sfaturi în vederea utilizării aplicației</li>
+                <li>să consulte pagină unui drog unde va putea filtra si descarca date despre acesta.</li>
+                <li>să acceseze pagina "Campagnis" pentru a accesa pagia cu campaniile anti-drog in ultimii ani, avand posibilitatea de a descarca si filtra date despre acestea.</li>
+                <li>să acceseze pagina "Infractionalitate" pentru a accesa pagia cu infractionalitati, avand posibilitatea de a descarca si filtra date despre acestea.</li>
+                <li>să acceseze pagina "Urgente Medicale" pentru a accesa pagia cu urgente medicale, avand posibilitatea de a descarca si filtra date despre acestea.</li>
+                <li>să acceseze pagina "About" pentru a accesa scurtă descriere a paginii web</li>
+                <li>să acceseze pagina "Contact Us" pentru a putea trimite un email de in caz ca utilizatorul are nevoie de ceva.</li>
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate elimina date din baza de date</li>
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate adăuga noi droguri ,cu imagini descriere si tipul acestora in baza de date</li>
                 <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate modifica/actualiza anumite informatii din baza de date</li>
+                <li>dacă utilizatorul are rol de <b>admin</b>, acesta poate adauga fisiere csv iar cu ajutorul lor sunt adaugate date din baza de date</li>
             </ul>
         </section>
           <section id="users">
@@ -198,7 +202,7 @@
             <ul>
                     <ul>
                         <li>orice categorie de oameni care doresc sa se informeze si sa caute date si informatii despre un anumit
-                            drog si care doresc sa vizualizeze grafice.
+                            drog si care doresc sa vizualizeze grafice,tabele,mape.
                         </li>
                     </ul>
                 <li>
@@ -277,8 +281,11 @@
                  <li id="help-page"><b> Pagina de ajutor</b></li>
                 <li style="list-style: none">
                     <ul>
-                    <li>Aceasta pagina prezinta o documentatie despre functionalitatiile paginii.
+                    <li>Aceasta pagina prezinta un form ce poate fi trimis catre ownerul serverului in caz ca utilizatorul are nevoie de ceva si de aici adminul se poate conecta.
                    </li>
+                   <li class="pictures" style="list-style: none"><img alt="overview" src="contact-us.png"
+                                                                           width=800>
+                        </li>
                     </ul>
                 </li> 
                  <li id="element-page"><b> Pagina specifica fiecarui drog</b></li>
@@ -290,12 +297,57 @@
                                                                            width=800>
                    </li>
                     </ul>
+                     <ul>
+                    <li> Utilizatorul poate selecta ce fel de modalitate sa vada datele.
+                    </li>
+                     <li class="pictures" style="list-style: none"><img alt="overview" src="tab.png"
+                                                                           width=800>
+                        </li>
+                    </ul>
                     <ul>
-                    <li> Sub pagina principala va mai exista un grafic si un buton care modifica graficul in functie de anul selectat.
+                    <li> Pot fi modificate datele graficul in functie de anul selectat.
                     </li>
                      <li class="pictures" style="list-style: none"><img alt="overview" src="grafic.png"
                                                                            width=800>
                         </li>
+                    </ul>
+                    <ul>
+                    <li> Sub grafic utilizatorul poate exporta datele din acesta in format png si svg.
+                    </li>
+                     <li class="pictures" style="list-style: none"><img alt="overview" src="export-graf.png"
+                                                                           width=800>
+                        </li>
+                    </ul>
+                    <ul>
+                    <li> Tabelul poate fi sortat crescator si descrescator in functie de ce coloana alege utilizatorul, acesta avand posibilitatea de a fi exportat.
+                    </li>
+                     <li class="pictures" style="list-style: none"><img alt="overview" src="table.png"
+                                                                           width=800>
+                        </li>
+                    </ul>
+                    <ul>
+                    <li> Harta filtreaza date in functie de judete, ce pot fi exportate, in functie de anul selectat.
+                    </li>
+                     <li class="pictures" style="list-style: none"><img alt="overview" src="map.png"
+                                                                           width=800>
+                        </li>
+                    </ul>
+                    <ul>
+                    <li> Butonul de "Export All" exporta toate datele din graf/tabel/harta in format CSV.
+                    </li>
+                     <li class="pictures" style="list-style: none"><img alt="overview" src="exportall.png"
+                                                                           width=800>
+                        </li>
+                    </ul>
+                </li> 
+                <li id="urgente-page"><b> Pagina specifica urgentelor medicale</b></li>
+                <li style="list-style: none">
+                <ul>
+                    <li>Aceasta pagina prezinta date despre urgente medicale unde de asemenea cuprinde date ce pot fi exportate de utilizator.
+                   </li>
+                    <li class="pictures" style="list-style: none"><img alt="overview" src="description-element-page.png"
+                                                                           width=800>
+                   </li>
                     </ul>
                 </li> 
                  <li id="campings-page"><b> Pagina specifica campaniilor anti-drog</b></li>
