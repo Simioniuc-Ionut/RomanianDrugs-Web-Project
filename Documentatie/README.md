@@ -584,10 +584,10 @@
     </section>
 </section>
 </article>
-</body>
 <video width="600" controls>
-        <source src="rename.mkv" type="video/mp4">
-        Browser-ul tău nu suportă video tag-ul HTML5.
-    </video>
+    <source src="rename.mkv" type="video/x-matroska">
+    Browser-ul tău nu suportă video tag-ul HTML5.
+</video>
+</body>
 </html>
 
