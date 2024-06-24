@@ -22,7 +22,6 @@
 require_once "../../RefactoringDataBase/DataBase.php";
  $dbConnection= new Database();
 
-
 $graphDataQuery1 = "SELECT * FROM urgente_tip_sex WHERE sex='Masculin' ORDER BY year";
 $graphDataStmt1 = $dbConnection->prepare($graphDataQuery1);
 $graphDataStmt1->execute();
@@ -92,7 +91,6 @@ echo "<script>
     var graphData12 = " . json_encode($graphData12) . ";
          
     </script>";
-
 ?>
 
 <div class="container_item">

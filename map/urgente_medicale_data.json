@@ -18,6 +18,12 @@
                 "recuperari": 200,
                 "interventii": 232,
                 "bolnavi": 48
+            },
+            {
+                "an": "2022",
+                "recuperari": 90,
+                "interventii": 44,
+                "bolnavi": 49
             }
         ]
     },
@@ -40,6 +46,12 @@
                 "recuperari": 59,
                 "interventii": 52,
                 "bolnavi": 10
+            },
+            {
+                "an": "2022",
+                "recuperari": 60,
+                "interventii": 10,
+                "bolnavi": 18
             }
         ]
     },
@@ -62,6 +74,12 @@
                 "recuperari": 150,
                 "interventii": 136,
                 "bolnavi": 36
+            },
+            {
+                "an": "2022",
+                "recuperari": 43,
+                "interventii": 91,
+                "bolnavi": 22
             }
         ]
     },
@@ -84,6 +102,12 @@
                 "recuperari": 61,
                 "interventii": 222,
                 "bolnavi": 14
+            },
+            {
+                "an": "2022",
+                "recuperari": 154,
+                "interventii": 43,
+                "bolnavi": 8
             }
         ]
     },
@@ -106,6 +130,12 @@
                 "recuperari": 52,
                 "interventii": 42,
                 "bolnavi": 47
+            },
+            {
+                "an": "2022",
+                "recuperari": 183,
+                "interventii": 14,
+                "bolnavi": 12
             }
         ]
     },
@@ -128,6 +158,12 @@
                 "recuperari": 25,
                 "interventii": 59,
                 "bolnavi": 31
+            },
+            {
+                "an": "2022",
+                "recuperari": 39,
+                "interventii": 86,
+                "bolnavi": 16
             }
         ]
     },
@@ -150,6 +186,12 @@
                 "recuperari": 191,
                 "interventii": 81,
                 "bolnavi": 11
+            },
+            {
+                "an": "2022",
+                "recuperari": 102,
+                "interventii": 195,
+                "bolnavi": 31
             }
         ]
     },
@@ -172,6 +214,12 @@
                 "recuperari": 75,
                 "interventii": 16,
                 "bolnavi": 44
+            },
+            {
+                "an": "2022",
+                "recuperari": 103,
+                "interventii": 139,
+                "bolnavi": 45
             }
         ]
     },
@@ -194,6 +242,12 @@
                 "recuperari": 157,
                 "interventii": 14,
                 "bolnavi": 3
+            },
+            {
+                "an": "2022",
+                "recuperari": 195,
+                "interventii": 155,
+                "bolnavi": 43
             }
         ]
     },
@@ -216,6 +270,12 @@
                 "recuperari": 97,
                 "interventii": 147,
                 "bolnavi": 45
+            },
+            {
+                "an": "2022",
+                "recuperari": 92,
+                "interventii": 230,
+                "bolnavi": 49
             }
         ]
     },
@@ -238,6 +298,12 @@
                 "recuperari": 41,
                 "interventii": 108,
                 "bolnavi": 49
+            },
+            {
+                "an": "2022",
+                "recuperari": 88,
+                "interventii": 214,
+                "bolnavi": 39
             }
         ]
     },
@@ -260,6 +326,12 @@
                 "recuperari": 165,
                 "interventii": 42,
                 "bolnavi": 46
+            },
+            {
+                "an": "2022",
+                "recuperari": 16,
+                "interventii": 51,
+                "bolnavi": 19
             }
         ]
     },
@@ -282,6 +354,12 @@
                 "recuperari": 176,
                 "interventii": 93,
                 "bolnavi": 10
+            },
+            {
+                "an": "2022",
+                "recuperari": 84,
+                "interventii": 35,
+                "bolnavi": 21
             }
         ]
     },
@@ -304,6 +382,12 @@
                 "recuperari": 112,
                 "interventii": 223,
                 "bolnavi": 30
+            },
+            {
+                "an": "2022",
+                "recuperari": 119,
+                "interventii": 193,
+                "bolnavi": 49
             }
         ]
     },
@@ -326,6 +410,12 @@
                 "recuperari": 46,
                 "interventii": 177,
                 "bolnavi": 36
+            },
+            {
+                "an": "2022",
+                "recuperari": 122,
+                "interventii": 238,
+                "bolnavi": 25
             }
         ]
     },
@@ -348,6 +438,12 @@
                 "recuperari": 90,
                 "interventii": 14,
                 "bolnavi": 41
+            },
+            {
+                "an": "2022",
+                "recuperari": 27,
+                "interventii": 225,
+                "bolnavi": 8
             }
         ]
     },
@@ -370,6 +466,12 @@
                 "recuperari": 55,
                 "interventii": 104,
                 "bolnavi": 30
+            },
+            {
+                "an": "2022",
+                "recuperari": 40,
+                "interventii": 80,
+                "bolnavi": 7
             }
         ]
     },
@@ -392,6 +494,12 @@
                 "recuperari": 129,
                 "interventii": 151,
                 "bolnavi": 30
+            },
+            {
+                "an": "2022",
+                "recuperari": 32,
+                "interventii": 146,
+                "bolnavi": 41
             }
         ]
     },
@@ -414,6 +522,12 @@
                 "recuperari": 167,
                 "interventii": 83,
                 "bolnavi": 13
+            },
+            {
+                "an": "2022",
+                "recuperari": 175,
+                "interventii": 203,
+                "bolnavi": 40
             }
         ]
     },
@@ -436,6 +550,12 @@
                 "recuperari": 187,
                 "interventii": 85,
                 "bolnavi": 19
+            },
+            {
+                "an": "2022",
+                "recuperari": 93,
+                "interventii": 47,
+                "bolnavi": 16
             }
         ]
     },
@@ -458,6 +578,12 @@
                 "recuperari": 20,
                 "interventii": 176,
                 "bolnavi": 47
+            },
+            {
+                "an": "2022",
+                "recuperari": 195,
+                "interventii": 191,
+                "bolnavi": 31
             }
         ]
     },
@@ -480,6 +606,12 @@
                 "recuperari": 117,
                 "interventii": 153,
                 "bolnavi": 10
+            },
+            {
+                "an": "2022",
+                "recuperari": 54,
+                "interventii": 205,
+                "bolnavi": 21
             }
         ]
     },
@@ -502,6 +634,12 @@
                 "recuperari": 177,
                 "interventii": 204,
                 "bolnavi": 46
+            },
+            {
+                "an": "2022",
+                "recuperari": 33,
+                "interventii": 25,
+                "bolnavi": 18
             }
         ]
     },
@@ -524,6 +662,12 @@
                 "recuperari": 46,
                 "interventii": 185,
                 "bolnavi": 45
+            },
+            {
+                "an": "2022",
+                "recuperari": 180,
+                "interventii": 225,
+                "bolnavi": 43
             }
         ]
     },
@@ -546,6 +690,12 @@
                 "recuperari": 191,
                 "interventii": 240,
                 "bolnavi": 36
+            },
+            {
+                "an": "2022",
+                "recuperari": 35,
+                "interventii": 52,
+                "bolnavi": 48
             }
         ]
     },
@@ -568,6 +718,12 @@
                 "recuperari": 90,
                 "interventii": 77,
                 "bolnavi": 11
+            },
+            {
+                "an": "2022",
+                "recuperari": 152,
+                "interventii": 71,
+                "bolnavi": 6
             }
         ]
     },
@@ -590,6 +746,12 @@
                 "recuperari": 85,
                 "interventii": 138,
                 "bolnavi": 11
+            },
+            {
+                "an": "2022",
+                "recuperari": 21,
+                "interventii": 242,
+                "bolnavi": 36
             }
         ]
     },
@@ -612,6 +774,12 @@
                 "recuperari": 106,
                 "interventii": 26,
                 "bolnavi": 7
+            },
+            {
+                "an": "2022",
+                "recuperari": 90,
+                "interventii": 101,
+                "bolnavi": 13
             }
         ]
     },
@@ -634,6 +802,12 @@
                 "recuperari": 33,
                 "interventii": 23,
                 "bolnavi": 25
+            },
+            {
+                "an": "2022",
+                "recuperari": 180,
+                "interventii": 52,
+                "bolnavi": 28
             }
         ]
     },
@@ -656,6 +830,12 @@
                 "recuperari": 17,
                 "interventii": 239,
                 "bolnavi": 8
+            },
+            {
+                "an": "2022",
+                "recuperari": 115,
+                "interventii": 63,
+                "bolnavi": 0
             }
         ]
     },
@@ -678,6 +858,12 @@
                 "recuperari": 56,
                 "interventii": 93,
                 "bolnavi": 36
+            },
+            {
+                "an": "2022",
+                "recuperari": 85,
+                "interventii": 162,
+                "bolnavi": 20
             }
         ]
     },
@@ -700,6 +886,12 @@
                 "recuperari": 14,
                 "interventii": 246,
                 "bolnavi": 45
+            },
+            {
+                "an": "2022",
+                "recuperari": 69,
+                "interventii": 187,
+                "bolnavi": 28
             }
         ]
     },
@@ -722,6 +914,12 @@
                 "recuperari": 116,
                 "interventii": 77,
                 "bolnavi": 2
+            },
+            {
+                "an": "2022",
+                "recuperari": 179,
+                "interventii": 142,
+                "bolnavi": 8
             }
         ]
     },
@@ -744,6 +942,12 @@
                 "recuperari": 188,
                 "interventii": 25,
                 "bolnavi": 18
+            },
+            {
+                "an": "2022",
+                "recuperari": 162,
+                "interventii": 31,
+                "bolnavi": 12
             }
         ]
     },
@@ -766,6 +970,12 @@
                 "recuperari": 136,
                 "interventii": 63,
                 "bolnavi": 33
+            },
+            {
+                "an": "2022",
+                "recuperari": 66,
+                "interventii": 185,
+                "bolnavi": 9
             }
         ]
     },
@@ -788,6 +998,12 @@
                 "recuperari": 40,
                 "interventii": 117,
                 "bolnavi": 42
+            },
+            {
+                "an": "2022",
+                "recuperari": 63,
+                "interventii": 42,
+                "bolnavi": 8
             }
         ]
     },
@@ -810,6 +1026,12 @@
                 "recuperari": 27,
                 "interventii": 206,
                 "bolnavi": 28
+            },
+            {
+                "an": "2022",
+                "recuperari": 109,
+                "interventii": 176,
+                "bolnavi": 46
             }
         ]
     },
@@ -832,6 +1054,12 @@
                 "recuperari": 22,
                 "interventii": 224,
                 "bolnavi": 12
+            },
+            {
+                "an": "2022",
+                "recuperari": 187,
+                "interventii": 133,
+                "bolnavi": 34
             }
         ]
     },
@@ -854,6 +1082,12 @@
                 "recuperari": 188,
                 "interventii": 184,
                 "bolnavi": 13
+            },
+            {
+                "an": "2022",
+                "recuperari": 155,
+                "interventii": 118,
+                "bolnavi": 20
             }
         ]
     },
@@ -876,6 +1110,12 @@
                 "recuperari": 27,
                 "interventii": 98,
                 "bolnavi": 31
+            },
+            {
+                "an": "2022",
+                "recuperari": 185,
+                "interventii": 117,
+                "bolnavi": 6
             }
         ]
     },
@@ -898,6 +1138,12 @@
                 "recuperari": 191,
                 "interventii": 215,
                 "bolnavi": 18
+            },
+            {
+                "an": "2022",
+                "recuperari": 193,
+                "interventii": 103,
+                "bolnavi": 20
             }
         ]
     },
@@ -920,6 +1166,12 @@
                 "recuperari": 130,
                 "interventii": 105,
                 "bolnavi": 21
+            },
+            {
+                "an": "2022",
+                "recuperari": 78,
+                "interventii": 184,
+                "bolnavi": 45
             }
         ]
     }

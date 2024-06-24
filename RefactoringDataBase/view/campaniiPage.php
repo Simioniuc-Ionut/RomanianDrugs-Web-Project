@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../map/style.css">
     <link rel="stylesheet" href="../../style_element_pagina.css">
     <?php include "navBar.php"; ?>
-    <script src="../../map/map_interactions.js" data-file="drug_data.json"></script>
+    <script src="../../map/map_interactions.js" data-file="campanii_data.json"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
     <style>
